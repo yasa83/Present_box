@@ -90,8 +90,9 @@ h1, h2, h3, h4, h5, h6, figure {
   margin: 0;
   padding: 0;
   width: 100%;
-  padding: 40px 0;
+  padding: 15px 0;
   z-index: 1001;
+  background-color: #ffffff;
 }
 @media screen and (max-width: 768px) {
   .fh5co-nav {
@@ -107,7 +108,7 @@ h1, h2, h3, h4, h5, h6, figure {
 }
 .fh5co-nav a {
   padding: 5px 10px;
-  color: #fff;
+  color: #F14E95;
 }
 @media screen and (max-width: 768px) {
   .fh5co-nav .menu-1, .fh5co-nav .menu-2 {
@@ -117,24 +118,27 @@ h1, h2, h3, h4, h5, h6, figure {
 .fh5co-nav ul {
   padding: 0;
   margin: 2px 0 0 0;
+  color: #F14E95;
 }
 .fh5co-nav ul li {
   padding: 0;
   margin: 0;
   list-style: none;
   display: inline;
+  color: #F14E95;
 }
 .fh5co-nav ul li a {
   font-size: 14px;
   padding: 30px 10px;
   text-transform: uppercase;
-  color: rgba(255, 255, 255, 0.5);
+  color: #F14E95;
   -webkit-transition: 0.5s;
   -o-transition: 0.5s;
   transition: 0.5s;
+  color: #F14E95;
 }
 .fh5co-nav ul li a:hover, .fh5co-nav ul li a:focus, .fh5co-nav ul li a:active {
-  color: white;
+  color: #F14E95;
 }
 .fh5co-nav ul li.has-dropdown {
   position: relative;
@@ -170,7 +174,7 @@ h1, h2, h3, h4, h5, h6, figure {
   width: 0;
   position: absolute;
   pointer-events: none;
-  border-bottom-color: #fff;
+  border-bottom-color: #F14E95;
   border-width: 8px;
   margin-left: -8px;
 }
@@ -184,7 +188,7 @@ h1, h2, h3, h4, h5, h6, figure {
 .fh5co-nav ul li.has-dropdown .dropdown li a {
   padding: 2px 0;
   display: block;
-  color: #999999;
+  color: #F14E95;
   line-height: 1.2;
   text-transform: none;
   font-size: 15px;
@@ -219,7 +223,7 @@ h1, h2, h3, h4, h5, h6, figure {
   box-shadow: 0px 14px 20px -9px rgba(0, 0, 0, 0.75);
 }
 .fh5co-nav ul li.active > a {
-  color: #fff !important;
+  color: #F14E95 !important;
 }
 
 #fh5co-counter,
