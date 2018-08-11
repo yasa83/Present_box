@@ -96,15 +96,15 @@
 		<div class="container">
 			<div class="row">
 				<div class="flame">
-					<img src="images/image2.png" class="image fluied" align="left" style="margin:10px 20px 10px 50px;">
+					<img src="images/friend1.png" class="image fluied" align="left" style="margin:10px 20px 10px 50px;">
 						<div class="main-center">
-							<p>名前<p>			     
+							<p>名前<p>
 								<section class="profile clearfix" style="display: inline-block;">
-									<img src="images/image1.png" class="present-image">
-									<img src="images/image1.png" class="present-image">
-									<img src="images/image1.png" class="present-image">
-									<img src="images/image1.png" class="present-image">
-									<img src="images/image1.png" class="present-image">
+									<img src="images/present1.png" class="present-image">
+									<img src="images/present1.png" class="present-image">
+									<img src="images/present1.png" class="present-image">
+									<img src="images/present1.png" class="present-image">
+									<img src="images/present1.png" class="present-image">
 								</section>
 					</div>
 				</div>
