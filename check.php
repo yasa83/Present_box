@@ -33,7 +33,7 @@
                         <!-- ③ -->
                         <form method="POST" action="">
                             <!-- ④ -->
-                            <a href="signup.php ?action=rewrite" class="btn btn-default">&laquo;&nbsp;戻る</a> | 
+                            <a href="signup.php"class="btn btn-default">&laquo;&nbsp;戻る</a>
                             <!-- ⑤ -->
                             <input type="hidden" name="action" value="submit">
                             <input type="submit" class="btn btn-primary" value="ユーザー登録">
@@ -52,3 +52,5 @@
         <script src="../assets/js/bootstrap.js"></script>
     </body>
 </html>
+
+
