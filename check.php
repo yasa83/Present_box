@@ -2,7 +2,7 @@
 <html lang="ja">
     <head>
     <meta charset="utf-8">
-        <title>check.php</title>
+        <title>確認画面</title>
         <link rel="stylesheet" type="text/css" href="assets/css/bootstrap.css">
         <link rel="stylesheet" type="text/css" href="assets/css/font-awesome.css">
     </head>
