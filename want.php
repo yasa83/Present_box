@@ -62,27 +62,57 @@
     </div>
     <!-- ナビゲーション終わり -->
 
-    <!-- ヘッダー始まり -->
-    <header id="fh5co-header" class="fh5co-cover fh5co-cover-sm" role="banner" style="background-image:url(images/background-image1.jpg);">
-        <div class="overlay"></div>
-        <div class="fh5co-container">
-            <div class="row">
-                <div class="col-md-8 col-md-offset-2 text-center">
-                    <div class="display-t">
-                        <div class="display-tc animate-box" data-animate-effect="fadeIn">
-                            <h1>Whose present</h1>
-                            <h2>do you search?</h2>
-                            <div class=“input-group”>
-                                <input type=“text” class=“form-control” placeholder=“テキスト入力欄“>
-                                <span class=“input-group-btn”>
-                                    <button type=“button” class=“btn btn-default”>Search</button>
-                                </span>
-                            </div>
 
-                        </div>
-                    </div>
-                </div>
-            </div>
+
+    <!-- ヘッダー始まり -->
+    <header id="fh5co-header" class="fh5co-cover fh5co-cover-sm" role="banner" style="background-image:url(images/want.jpg);">
+        <div class="overlay"></div>
+
+
+    <div class="container">
+      <div class="col-xs-8 col-xs-offset-2 thumbnail">
+        <h2 class="text-center content_header">Want List</h2>
+        <form method="POST" action="#" enctype="multipart/form-data">
+          <div class="form-group">
+            <label for="title">Title</label>
+            <input type="text" name="input_title" class="form-control" id="title" placeholder="あなたが欲しいものを入力してください">
+          </div>
+
+
+          <div class="form-group">
+            <label for="price">Price</label>
+            <input type="text" name="input_price" class="form-control" value="" placeholder="だいたいの値段を入力してください">
+          </div>
+
+          <div class="form-group">
+            <label for="detail">Detail</label>
+            <input type="text" name="input_detail" class="form-control" rows="10" placeholder="どこで買えるか　なぜ欲しいのかなどを入力してください" value="">
+          </div>
+
+          <div class="form-group">
+            <label for="img_name"></label>
+            <input type="file" name="input_img_name" id="image/*"
+            id="img_name">
+            <?php if(isset($errors['img_name']) && $errors['img_name'] == 'blank'): ?>
+            <p class="text-danger">画像を選択してください</p>
+            <?php endif; ?>
+            <?php if(isset($errors['img_name']) && $errors['img_name'] == 'type'): ?>
+            <p class="text-danger">拡張子が「jpg」「png」「gif」「jpge」の画像を選択して下さい</p>
+            <?php endif; ?>
+          </div>
+
+          <br>
+
+          <ul class="nav navbar-nav navbar-left">
+            <li class="active"><a href="index.php" style="margin: 15px,background-color: black;">Back</a></li>
+          </ul>
+          <input type="submit" class="btn btn-primary" value="POST">
+        </form>
+      </div>
+    </div>
+
+
+
         </div>
     </header>
     <!-- ヘッダー終わり -->
