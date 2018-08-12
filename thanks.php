@@ -7,16 +7,11 @@
 
 <title>登録完了</title>
 
-<body>
+<body background="images/box.jpg">
+<!-- <div class="jumbotron text-xs-center"> -->
 
-<div class="jumbotron text-xs-center">
-  <h1>登録ありがとうございます</h1>
-  <hr>
-  <p>
-    Having trouble? <a href="">Contact us</a>
-  </p>
-  <p class="lead">
-    <a class="btn btn-primary btn-sm" href="https://bootstrapcreative.com/" role="button">サイン</a>
-  </p>
-</div>
+  <h1>アカウントの作成が完了しました</h1>
+<h3>Thank you for registration</h3>
+<hr>
+      <a href="#" class="fancy-button"><span>signin</span></a>
 </body>
