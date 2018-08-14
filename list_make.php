@@ -3,7 +3,7 @@
 <head>
     <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <link rel="icon" type="images/favicon.png" href="images/favicon.png"”>
+    <link rel="icon" type="images/favicon.png" href="images/favicon.png">
     <title>Present Box</title>
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <meta name="description" content="Free HTML5 Template by FREEHTML5.CO" />
@@ -69,7 +69,7 @@
         <div class="overlay"></div>
 
 
-    <div class="container">
+    <div class="container" style="padding-top:50px;">
       <div class="col-xs-8 col-xs-offset-2 thumbnail">
         <h2 class="text-center content_header">Want List</h2>
         <form method="POST" action="#" enctype="multipart/form-data">
