@@ -17,6 +17,7 @@ body {
   line-height: 1.7;
   color: #828282;
   background: #fff;
+  margin-top: 120px;
 }
 
 #page {
@@ -90,7 +91,7 @@ h1, h2, h3, h4, h5, h6, figure {
   margin: 0;
   padding: 0;
   width: 100%;
-  padding: 15px 0;
+  padding: 10px 0;
   z-index: 1001;
   background-color: #ffffff;
 }
@@ -1866,6 +1867,7 @@ form label {
     border-radius:25px;
 }
 
+
 .modal-content {
     position:fixed;
     display:none;
@@ -1923,3 +1925,6 @@ form label {
     left: 50%;
     bottom: 0;
 }
+
+/*ここからthanks*/
+
