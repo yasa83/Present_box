@@ -64,15 +64,15 @@
     <!-- ヘッダー始まり -->
     <header id="fh5co-header" class="fh5co-cover fh5co-cover-sm" role="banner" style="background-image:url(images/background-image1.jpg);">
         <div class="overlay"></div>
-        <div class="fh5co-container">
+        <div class="fh5co-container ">
             <div class="row">
                 <div class="col-md-8 col-md-offset-2 text-center">
                     <div class="display-t">
                         <div class="display-tc animate-box" data-animate-effect="fadeIn">
                             <h1>Whose present</h1>
                             <h2>do you search?</h2>
-                            <div class=“input-group”>
-                                <div class="row  text-center">
+                            <div class=“input-group">
+                                <div class="row  text-center " style="padbding-top: 100px">
                                     <div class="col-xs-6 text-right" >
                                         <a href="#" class="btn btn-default btn-sm" style="font-size: 20px;">新規登録</a>
                                     </div>
@@ -89,105 +89,67 @@
         </header>
         <!-- ヘッダー終わり -->
 
-
+        <br>
+        <br>
         <!--wrap始まり-->
-        <div id="wrap">
-            <div class="content">
-
-                <!-- 登録した友達 -->
-                <hr>
-                <div class="container">
-                    <div class="row">
-                        <div class="flame">
-                            <img src="images/friend1.png" class="image fluied" align="left" style="margin:10px 20px 10px 50px;">
-                            <div class="main-center">
-                                <p>名前</p>
-                                <section class="profile clearfix" style="display: inline-block;">
-                                    <img src="images/present1.png" class="present-image">
-                                    <img src="images/present1.png" class="present-image">
-                                    <img src="images/present1.png" class="present-image">
-                                    <img src="images/present1.png" class="present-image">
-                                    <img src="images/present1.png" class="present-image">
-                                </section>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-
-
-                <hr>
-                <div class="container">
-                    <div class="row">
-                        <div class="flame">
-                            <img src="images/friend1.png" class="image fluied" align="left" style="margin:10px 20px 10px 50px;">
-                            <div class="main-center">
-                                <p>名前</p>
-                                <section class="profile clearfix" style="display: inline-block;">
-                                    <img src="images/present1.png" class="present-image">
-                                    <img src="images/present1.png" class="present-image">
-                                    <img src="images/present1.png" class="present-image">
-                                    <img src="images/present1.png" class="present-image">
-                                    <img src="images/present1.png" class="present-image">
-                                </section>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-
-                <hr>
-                <div class="container">
-                    <div class="row">
-                        <div class="flame">
-                            <img src="images/friend1.png" class="image fluied" align="left" style="margin:10px 20px 10px 50px;">
-                            <div class="main-center">
-                                <p>名前</p>
-                                <section class="profile clearfix" style="display: inline-block;">
-                                    <img src="images/present1.png" class="present-image">
-                                    <img src="images/present1.png" class="present-image">
-                                    <img src="images/present1.png" class="present-image">
-                                    <img src="images/present1.png" class="present-image">
-                                    <img src="images/present1.png" class="present-image">
-                                </section>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-
-
-
+        <div class="container" style="background-color: #f5f5f5; height: 1500px">
+          <div class="row">
+            <div class="col-md-7" style="background-color: #F14E95; height: 500px">
+                <p style="color: white;">aiueokai</p>
             </div>
-        </div> 
-        <!--wrap終わり-->
+            <div class="col-md-5" style="height: 500px">
+                <p style="color: #F14E95;">hogehoge</p>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-md-5" style="height: 500px">
+                <p style="color: #F14E95;">aaaaaaa</p>
+            </div>
+            <div class="col-md-7" style="background-color: #F14E95; height: 500px">
+                <p style="color: white;">aiueokai</p>
+            </div>
+        </div>
+          <div class="row">
+            <div class="col-md-7" style="background-color: #F14E95; height: 500px">
+                <p style="color: white;">aiueokai</p>
+            </div>
+            <div class="col-md-5" style="height: 500px">
+                <p style="color: #F14E95;">hogehoge</p>
+            </div>
+        </div>
+
+    </div>
+    <!--wrap終わり-->
 
 
 
 
-        <!-- フッター始まり -->
-        <footer id="fh5co-footer" role="contentinfo">
-            <div class="container">
-                <div class="row copyright">
-                    <div class="col-md-12 text-center">
-                        <p>
-                            <small class="block">&copy; チームはしうち　Nexseed</small> 
-                        </p>
-                        <p>
-                            <ul class="fh5co-social-icons">
-                                <li><a href="#"><i class="icon-twitter"></i></a></li>
-                                <li><a href="#"><i class="icon-facebook"></i></a></li>
-                            </ul>
-                        </p>
-                    </div>
+    <!-- フッター始まり -->
+    <footer id="fh5co-footer" role="contentinfo">
+        <div class="container">
+            <div class="row copyright">
+                <div class="col-md-12 text-center">
+                    <p>
+                        <small class="block">&copy; チームはしうち　Nexseed</small> 
+                    </p>
+                    <p>
+                        <ul class="fh5co-social-icons">
+                            <li><a href="#"><i class="icon-twitter"></i></a></li>
+                            <li><a href="#"><i class="icon-facebook"></i></a></li>
+                        </ul>
+                    </p>
                 </div>
             </div>
-        </footer>
-        <!-- フッター終わり -->
+        </div>
+    </footer>
+    <!-- フッター終わり -->
 
 
-        <!-- 画面遷移用の矢印 -->
-    </div>
-    <div class="gototop js-top">
-        <a href="#" class="js-gotop"><i class="icon-arrow-up"></i></a>
-    </div>
+    <!-- 画面遷移用の矢印 -->
+</div>
+<div class="gototop js-top">
+    <a href="#" class="js-gotop"><i class="icon-arrow-up"></i></a>
+</div>
 </div>
 
 <!-- jQuery -->
