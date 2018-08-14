@@ -141,208 +141,256 @@
 			<div class="col-xs-4 get_1" align="center"><button type="button" class="btn square_btn">もらったもの</button></div>
 			<div class="col-xs-4 want_1" align="center"><button type="button" class="btn square_btn">ほしいもの</button></div>
 		</div>
+
 		<!-- あげたもの -->
 		<div class="row row-bottom-padded-md " id="give-picture">
 			<div class="col-md-12">
 				<br>
 				<h1 class="text-center">あげたもの</h1>
 
-<img src= alt="baby-1151351_1920" width="1920" height="1440" class="img-responsive thumbnail　aligncenter size-full wp-image-425" data-toggle="modal" data-target="#image_Modal" style="cursor:pointer" /> //レスポンシブ対応・サムネイルに変更・画像上にポインターを置くと矢印から指になる
- 
-<div class="modal fade" id="image_Modal" tabindex="-1" role="dialog" aria-labelledby="myLargeModalLabel">
-<div class="modal-dialog modal-lg modal-middle"> //モーダルウィンドウの縦表示位置を調整・画像を大きく見せる
-<div class="modal-content">
- 
-<div class="modal-body">
-<img src="http://pilgrim-guild.com/wp-content/uploads/2016/11/baby-1151351_1920.jpg" alt="baby-1151351_1920" width="1920" height="1440" class="aligncenter size-full wp-image-425" alt="baby-1151351_1920" />
-</div>
-<div class="modal-img_footer">
-<p>モーダル商品</p> //テキスト表示
-<button type="button" class="btn btn-success" data-dismiss="modal">Close</button> //ボタンを取り付け
-</div>
- 
-</div>
-</div>
-</div>
-
-
-
-<!-- 				<div class="col-xs-4">
-					<div class="thumbnail">
-						<a  class ="js-modal" href="#"><img class ="js-modal" src="images/gallery-1.jpg"></a>
-						<div class="caption">
-							<p>画像です</p>
-						</div>
+				<div class="row">
+					<div class="col-xs-4 ">
+						<a data-target="con1" class="modal-open"><img src="images/gallery-1.jpg" class="picture-size"></a>
 					</div>
-				</div>
- -->
-				<!-- モーダル・ダイアログ -->
-<!-- 				<div class="modal fade" id="sampleModal" tabindex="-1">
-					<div class="modal-dialog">
-						<div class="modal-content">
-							<div class="modal-header">
-								<button type="button" class="close" data-dismiss="modal"><span>×</span></button>
-								<h4 class="modal-title">タイトル</h4>
+
+					<div class="col-xs-4">
+						<a data-target="con2" class="modal-open"><img src="images/friend1.png" class="picture-size"></a>
+					</div>
+
+					<div class="col-xs-4">
+						<a data-target="con3" class="modal-open"><img src="images/friend1.png" class="picture-size"></a>
+					</div>
+
+
+					<!-- モーダル -->
+					<div id="con1" class="modal-content" style="width: 800px; height: 500px;">
+						<div class="row">
+							<div class="col-md-6">
+								<br><br><img src="images/gallery-1.jpg" class="picture-size">
 							</div>
-							<div class="modal-body">
-								本文
-							</div>
-							<div class="modal-footer">
-								<button type="button" class="btn btn-default" data-dismiss="modal">閉じる</button>
-								<button type="button" class="btn btn-primary">ボタン</button>
+							<div class="col-md-6" style="font-size: 25px; line-height: 4em;">
+								<ul class="text-left" >
+									<li>商品名</li>
+									<li>値段</li>
+									<li>ひとこと</li>
+								</ul>
+								<p style="font-size: 15px; line-height: 1em;">リンク1の内容です。</p>
+								<br>
+								<p><a class="modal-close right-under">閉じる</a></p>
 							</div>
 						</div>
 					</div>
+
+					<div id="con2" class="modal-content" style="width: 800px; height: 500px;">
+						<div class="row">
+							<div class="col-md-6">
+								<br><br><img src="images/friend1.png" class="picture-size">
+							</div>
+							<div class="col-md-6"><p>リンク1の内容です。</p>
+								<p><a class="modal-close">閉じる</a></p>
+							</div>
+						</div>
+					</div>
+
+					<div id="con3" class="modal-content" style="width: 800px; height: 500px;">
+						<div class="row">
+							<div class="col-md-6">
+								<br><br><img src="images/friend1.png" class="picture-size">
+							</div>
+							<div class="col-md-6"><p>リンク1の内容です。</p>
+								<p><a class="modal-close">閉じる</a></p>
+							</div>
+						</div>
+					</div>
 				</div>
- -->				<!--  -->
-			</li>
-		</ul>
-	</div>
-</div>
-<!-- もらったもの -->
-<div class="row row-bottom-padded-md " id="get-picture">
-	<div class="col-md-12">
-		<br>
-		<h1 class="text-center">もらったもの</h1>
-		<ul id="fh5co-gallery-list">
-
-			<li class="one-third animate-box" data-animate-effect="fadeIn" style="background-image: url(images/gallery-1.jpg); ">
-				<a href="images/gallery-1.jpg">
-					<div class="case-studies-summary">
-						<span>14 Photos</span>
-						<h2>Two Glas of Juice</h2>
-					</div>
-				</a>
-			</li>
-			<li class="one-third animate-box" data-animate-effect="fadeIn" style="background-image: url(images/gallery-2.jpg); ">
-				<a href="#" class="color-2">
-					<div class="case-studies-summary">
-						<span>30 Photos</span>
-						<h2>Timer starts now!</h2>
-					</div>
-				</a>
-			</li>
-
-
-			<li class="one-third animate-box" data-animate-effect="fadeIn" style="background-image: url(images/gallery-3.jpg); ">
-				<a href="#" class="color-3">
-					<div class="case-studies-summary">
-						<span>90 Photos</span>
-						<h2>Beautiful sunset</h2>
-					</div>
-				</a>
-			</li>
-		</ul>
-	</div>
-</div>
-
-<!-- ほしいもの -->
-<div class="row row-bottom-padded-md " id="want-picture">
-	<div class="col-md-12">
-		<br>
-		<h1 class="text-center">ほしいもの</h1>
-		<ul id="fh5co-gallery-list">
-
-			<li class="one-third animate-box" data-animate-effect="fadeIn" style="background-image: url(images/gallery-1.jpg); ">
-				<a href="images/gallery-1.jpg">
-					<div class="case-studies-summary">
-						<span>14 Photos</span>
-						<h2>Two Glas of Juice</h2>
-					</div>
-				</a>
-			</li>
-			<li class="one-third animate-box" data-animate-effect="fadeIn" style="background-image: url(images/gallery-2.jpg); ">
-				<a href="#" class="color-2">
-					<div class="case-studies-summary">
-						<span>30 Photos</span>
-						<h2>Timer starts now!</h2>
-					</div>
-				</a>
-			</li>
-
-
-			<li class="one-third animate-box" data-animate-effect="fadeIn" style="background-image: url(images/gallery-3.jpg); ">
-				<a href="#" class="color-3">
-					<div class="case-studies-summary">
-						<span>90 Photos</span>
-						<h2>Beautiful sunset</h2>
-					</div>
-				</a>
-			</li>
-			<li class="one-third animate-box" data-animate-effect="fadeIn" style="background-image: url(images/gallery-4.jpg); ">
-				<a href="#" class="color-4">
-					<div class="case-studies-summary">
-						<span>12 Photos</span>
-						<h2>Company's Conference Room</h2>
-					</div>
-				</a>
-			</li>
-		</ul>
-	</div>
-</div>
-
-
-</div>
-</div>
-
-
-
-<footer id="fh5co-footer" role="contentinfo">
-	<div class="container">
-
-		<div class="row copyright">
-			<div class="col-md-12 text-center">
-				<p>
-					<small class="block">&copy; 2016 Free HTML5. All Rights Reserved.</small> 
-					<small class="block">Designed by <a href="http://freehtml5.co/" target="_blank">FREEHTML5.co</a> Demo Images: <a href="http://unsplash.co/" target="_blank">Unsplash</a></small>
-				</p>
-				<p>
-					<ul class="fh5co-social-icons">
-						<li><a href="#"><i class="icon-twitter"></i></a></li>
-						<li><a href="#"><i class="icon-facebook"></i></a></li>
-						<li><a href="#"><i class="icon-linkedin"></i></a></li>
-						<li><a href="#"><i class="icon-dribbble"></i></a></li>
-					</ul>
-				</p>
 			</div>
 		</div>
 
+
+
+
+
+		<!-- もらったもの -->
+		<div class="row row-bottom-padded-md " id="get-picture">
+			<div class="col-md-12">
+				<br>
+				<h1 class="text-center">もらったもの</h1>
+
+				<div class="row">
+					<div class="col-xs-4 ">
+						<a data-target="con4" class="modal-open"><img src="images/gallery-1.jpg" class="picture-size"></a>
+
+					</div>
+
+					<div class="col-xs-4">
+						<a data-target="con5" class="modal-open"><img src="images/friend1.png" class="picture-size"></a>
+					</div>
+
+					<div class="col-xs-4">
+						<a data-target="con6" class="modal-open"><img src="images/friend1.png" class="picture-size"></a>
+					</div>
+
+
+					<!-- モーダル -->
+					<div id="con4" class="modal-content" style="width: 800px; height: 500px;">
+						<div class="row">
+							<div class="col-md-6">
+								<br><br><img src="images/gallery-1.jpg" class="picture-size">
+							</div>
+							<div class="col-md-6"><p>リンク1の内容です。</p>
+								<p><a class="modal-close">閉じる</a></p>
+							</div>
+						</div>
+					</div>
+
+					<div id="con5" class="modal-content" style="width: 800px; height: 500px;">
+						<div class="row">
+							<div class="col-md-6">
+								<br><br><img src="images/friend1.png" class="picture-size">
+							</div>
+							<div class="col-md-6"><p>リンク1の内容です。</p>
+								<p><a class="modal-close">閉じる</a></p>
+							</div>
+						</div>
+					</div>
+
+					<div id="con6" class="modal-content" style="width: 800px; height: 500px;">
+						<div class="row">
+							<div class="col-md-8">
+								<br><br><img src="images/friend1.png" class="picture-size">
+							</div>
+							<div class="col-md-4"><p>リンク1の内容です。</p>
+								<p><a class="modal-close">閉じる</a></p>
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+
+
+		<!-- ほしいもの -->
+		<div class="row row-bottom-padded-md " id="want-picture">
+			<div class="col-md-12">
+				<br>
+				<h1 class="text-center">ほしいもの</h1>
+
+				<div class="row">
+					<div class="col-xs-4 ">
+						<a data-target="con7" class="modal-open"><img src="images/gallery-1.jpg" class="picture-size"></a>
+
+					</div>
+
+					<div class="col-xs-4">
+						<a data-target="con8" class="modal-open"><img src="images/friend1.png" class="picture-size"></a>
+					</div>
+
+					<div class="col-xs-4">
+						<a data-target="con9" class="modal-open"><img src="images/friend1.png" class="picture-size"></a>
+					</div>
+
+
+					<!-- モーダル -->
+					<div id="con7" class="modal-content" style="width: 800px; height: 500px;">
+						<div class="row">
+							<div class="col-md-6">
+								<br><br><img src="images/gallery-1.jpg" class="picture-size">
+							</div>
+							<div class="col-md-6">
+								<ul>
+									<li>商品名</li>
+									<li>値段</li>
+									<li>ひとこと</li>
+								</ul>
+								<p>リンク1の内容です。</p>
+								<p><a class="modal-close">閉じる</a></p>
+							</div>
+						</div>
+					</div>
+
+					<div id="con8" class="modal-content" style="width: 800px; height: 500px;">
+						<div class="row">
+							<div class="col-md-6">
+								<br><br><img src="images/friend1.png" class="picture-size">
+							</div>
+							<div class="col-md-6"><p>リンク1の内容です。</p>
+								<p><a class="modal-close">閉じる</a></p>
+							</div>
+						</div>
+					</div>
+
+					<div id="con9" class="modal-content" style="width: 800px; height: 500px;">
+						<div class="row">
+							<div class="col-md-6">
+								<br><br><img src="images/friend1.png" class="picture-size">
+							</div>
+							<div class="col-md-6"><p>リンク1の内容です。</p>
+								<p><a class="modal-close">閉じる</a></p>
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
 	</div>
-</footer>
 </div>
 
-<div class="gototop js-top">
-	<a href="#" class="js-gotop"><i class="icon-arrow-up"></i></a>
-</div>
+		<footer id="fh5co-footer" role="contentinfo">
+			<div class="container">
 
-<!-- jQuery -->
-<script src="js/jquery.min.js"></script>
-<!-- jQuery Easing -->
-<script src="js/jquery.easing.1.3.js"></script>
-<!-- Bootstrap -->
-<script src="js/bootstrap.min.js"></script>
-<!-- Waypoints -->
-<script src="js/jquery.waypoints.min.js"></script>
-<!-- Carousel -->
-<script src="js/owl.carousel.min.js"></script>
-<!-- countTo -->
-<script src="js/jquery.countTo.js"></script>
+				<div class="row copyright">
+					<div class="col-md-12 text-center">
+						<p>
+							<small class="block">&copy; 2016 Free HTML5. All Rights Reserved.</small> 
+							<small class="block">Designed by <a href="http://freehtml5.co/" target="_blank">FREEHTML5.co</a> Demo Images: <a href="http://unsplash.co/" target="_blank">Unsplash</a></small>
+						</p>
+						<p>
+							<ul class="fh5co-social-icons">
+								<li><a href="#"><i class="icon-twitter"></i></a></li>
+								<li><a href="#"><i class="icon-facebook"></i></a></li>
+								<li><a href="#"><i class="icon-linkedin"></i></a></li>
+								<li><a href="#"><i class="icon-dribbble"></i></a></li>
+							</ul>
+						</p>
+					</div>
+				</div>
 
-<!-- Stellar -->
-<script src="js/jquery.stellar.min.js"></script>
-<!-- Magnific Popup -->
-<script src="js/jquery.magnific-popup.min.js"></script>
-<script src="js/magnific-popup-options.js"></script>
-<!-- 	自分で作ったやつ -->
-<script src="js/script.js"></script>
+			</div>
+		</footer>
+	</div>
 
-<!-- // <script src="https://cdnjs.cloudflare.com/ajax/libs/prism/0.0.1/prism.min.js"></script> -->
-<script src="js/simplyCountdown.js"></script>
-<!-- Main -->
-<script src="js/main.js"></script>
+	<div class="gototop js-top">
+		<a href="#" class="js-gotop"><i class="icon-arrow-up"></i></a>
+	</div>
 
-<script>
-	var d = new Date(new Date().getTime() + 200 * 120 * 120 * 2000);
+	<!-- jQuery -->
+	<script src="js/jquery.min.js"></script>
+	<!-- jQuery Easing -->
+	<script src="js/jquery.easing.1.3.js"></script>
+	<!-- Bootstrap -->
+	<script src="js/bootstrap.min.js"></script>
+	<!-- Waypoints -->
+	<script src="js/jquery.waypoints.min.js"></script>
+	<!-- Carousel -->
+	<script src="js/owl.carousel.min.js"></script>
+	<!-- countTo -->
+	<script src="js/jquery.countTo.js"></script>
+
+	<!-- Stellar -->
+	<script src="js/jquery.stellar.min.js"></script>
+	<!-- Magnific Popup -->
+	<script src="js/jquery.magnific-popup.min.js"></script>
+	<script src="js/magnific-popup-options.js"></script>
+	<!-- 	自分で作ったやつ -->
+	<script src="js/script.js"></script>
+
+	<!-- // <script src="https://cdnjs.cloudflare.com/ajax/libs/prism/0.0.1/prism.min.js"></script> -->
+	<script src="js/simplyCountdown.js"></script>
+	<!-- Main -->
+	<script src="js/main.js"></script>
+
+	<script>
+		var d = new Date(new Date().getTime() + 200 * 120 * 120 * 2000);
 
     // default example
     simplyCountdown('.simply-countdown-one', {
