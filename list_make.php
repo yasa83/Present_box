@@ -3,7 +3,7 @@
 <head>
     <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <link rel="icon" type="images/favicon.png" href="images/favicon.png"”>
+    <link rel="icon" type="images/favicon.png" href="images/favicon.png">
     <title>Present Box</title>
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <meta name="description" content="Free HTML5 Template by FREEHTML5.CO" />
@@ -66,27 +66,36 @@
 
     <!-- ヘッダー始まり -->
     <header id="fh5co-header" class="fh5co-cover fh5co-cover-sm" role="banner" style="background-image:url(images/want.jpg);">
-        <div class="overlay" style="padding: 20px"></div>
+        <div class="overlay"></div>
 
 
-    <div class="container" style="padding-top:50px;">
+    <div class="container" style="padding-top:45px;">
       <div class="col-xs-8 col-xs-offset-2 thumbnail">
-        <h2 class="text-center content_header">Want List</h2>
+        <h2 class="text-center content_header">register present</h2>
         <form method="POST" action="#" enctype="multipart/form-data">
           <div class="form-group">
-            <label for="title">Title</label>
-            <input type="text" name="input_title" class="form-control" id="title" placeholder="あなたが欲しいものを入力してください">
+                <label class="checkbox-inline">
+                <input type="checkbox" name="cb1">あげたもの
+                </label>
+                <label class="checkbox-inline">
+                <input type="checkbox" name="cb2">もらったもの
+                </label>
+          </div>
+
+          <div class="form-group">
+            <label for="present">Present</label>
+            <input type="text" name="input_name" class="form-control" value="" placeholder="商品名">
           </div>
 
 
           <div class="form-group">
-            <label for="price">Price</label>
-            <input type="text" name="input_price" class="form-control" value="" placeholder="だいたいの値段を入力してください">
+            <label for="date">date</label>
+            <input type="date" name="input_date" class="form-control" value="" placeholder="もらった・あげた日付を登録してください">
           </div>
 
           <div class="form-group">
             <label for="detail">Detail</label>
-            <input type="text" name="input_detail" class="form-control" rows="10" placeholder="どこで買えるかなどを入力してください" value="">
+            <input type="text" name="input_detail" class="form-control" rows="10" placeholder="メモを入力してください" value="">
           </div>
 
           <div class="form-group">
@@ -104,109 +113,15 @@
           <br>
 
           <ul class="nav navbar-nav navbar-left">
-            <li class="active"><a href="index.php" style="margin: 15px,background-color: black;">Back</a></li>
+            <li class="active"><a href="index.php" style="margin: 15px,background-color: black;">友達のページに戻る</a></li>
           </ul>
-          <input type="submit" class="btn btn-primary" value="POST">
+          <input type="submit" class="btn btn-primary" value="登録">
         </form>
       </div>
     </div>
         </div>
     </header>
     <!-- ヘッダー終わり -->
-
-
-<!--wrap始まり-->
-
-    <div id="fh5co-gallery">
-        <div class="container">
-            <div class="row">
-                <div class="col-md-8 col-md-offset-2 text-center fh5co-heading animate-box">
-                    <h2>your wants list</h2>
-                    <p>あなたがほしいもの</p>
-                </div>
-            </div>
-            <div class="row row-bottom-padded-md">
-                <div class="col-md-12">
-                    <ul id="fh5co-gallery-list">
-                        
-                        <li class="one-third animate-box" data-animate-effect="fadeIn" style="background-image: url(images/gallery-1.jpg); "> 
-                        <a href="images/gallery-1.jpg">
-                            <div class="case-studies-summary">
-                                <h2>商品名</h2>
-                            </div>
-                        </a>
-                    </li>
-                    <li class="one-third animate-box" data-animate-effect="fadeIn" style="background-image: url(images/gallery-2.jpg); ">
-                        <a href="#" class="color-2">
-                            <div class="case-studies-summary">
-                               <h2>商品名</h2>
-                            </div>
-                        </a>
-                    </li>
-
-
-                    <li class="one-third animate-box" data-animate-effect="fadeIn" style="background-image: url(images/gallery-3.jpg); ">
-                        <a href="#" class="color-3">
-                            <div class="case-studies-summary">
-                               <h2>商品名</h2>
-                            </div>
-                        </a>
-                    </li>
-                    <li class="one-third animate-box" data-animate-effect="fadeIn" style="background-image: url(images/gallery-4.jpg); ">
-                        <a href="#" class="color-4">
-                            <div class="case-studies-summary">
-                               <h2>商品名</h2>
-                            </div>
-                        </a>
-                    </li>
-
-                        <li class="one-third animate-box" data-animate-effect="fadeIn" style="background-image: url(images/gallery-5.jpg); ">
-                            <a href="#" class="color-3">
-                                <div class="case-studies-summary">
-                                   <h2>商品名</h2>
-                                </div>
-                            </a>
-                        </li>
-                        <li class="one-third animate-box" data-animate-effect="fadeIn" style="background-image: url(images/gallery-6.jpg); ">
-                            <a href="#" class="color-4">
-                                <div class="case-studies-summary">
-                                 <h2>商品名</h2>
-                                </div>
-                            </a>
-                        </li>
-
-                        <li class="one-third animate-box" data-animate-effect="fadeIn" style="background-image: url(images/gallery-7.jpg); ">
-                            <a href="#" class="color-4">
-                                <div class="case-studies-summary">
-                                    <h2>商品名</h2>
-                                </div>
-                            </a>
-                        </li>
-
-                        <li class="one-third animate-box" data-animate-effect="fadeIn" style="background-image: url(images/gallery-8.jpg); "> 
-                            <a href="#" class="color-5">
-                                <div class="case-studies-summary">
-                                    <h2>商品名</h2>
-                                </div>
-                            </a>
-                        </li>
-                        <li class="one-third animate-box" data-animate-effect="fadeIn" style="background-image: url(images/gallery-9.jpg); ">
-                            <a href="#" class="color-6">
-                                <div class="case-studies-summary">
-                                    <h2>商品名</h2>
-                                </div>
-                            </a>
-                        </li>
-                    </ul>       
-                </div>
-            </div>
-        </div>
-    </div>
-
-
-            <!--wrap終わり-->
-
-
 
 
     <!-- フッター始まり -->
