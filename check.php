@@ -2,17 +2,19 @@
 <html lang="ja">
     <head>
     <meta charset="utf-8">
-        <title>確認画面</title>
+        <title>Present Box</title>
         <link rel="stylesheet" type="text/css" href="assets/css/bootstrap.css">
          <link rel="stylesheet" type="text/css" href="css/check2.css">
         <link rel="stylesheet" type="text/css" href="assets/css/font-awesome.css">
-    </head>
+         <link rel="icon" type="images/favicon.png" href="images/favicon.png">
+       
+             </head>
     <body style="margin-top: 60px" class="background">
         <div class="container">
             <div class="row">
                 <!-- ここから -->
                     <div class="col-xs-6 thumbnail">
-                        <h2 class="text-center content_header">アカウント情報確認</h2>
+                        <h2 class="text-center content_header">Is the inputted content again?</h2>
                         <div class="row">
                             <div class="col-xs-4">
                                 <img src="images/check.jpg" class="img-responsive img-thumbnail">
@@ -38,8 +40,8 @@
                                 <form method="POST" action="thanks.php">
                                     <!-- ⑤ -->
                                     <input type="hidden" name="action" value="submit">
-                                    <input type="submit" class="btn btn-primary" value="ユーザー登録">
-                                    <a href="signup.php" class="btn btn-default">&laquo;&nbsp;戻る</a>
+                                    <input type="submit" class="btn btn-primary" value="user register">
+                                    <a href="signup.php" class="btn btn-default"><font color="#F14E95">&laquo;&nbsp;back</a></font>
                                 </form>
                             </div>
                         </div>
