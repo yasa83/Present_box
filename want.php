@@ -3,7 +3,7 @@
 <head>
     <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <link rel="icon" type="images/favicon.png" href="images/favicon.png"”>
+     <link rel="icon" type="images/favicon.png" href="assets/images/favicon.png">
     <title>Present Box</title>
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <meta name="description" content="Free HTML5 Template by FREEHTML5.CO" />
@@ -14,37 +14,37 @@
     <link href="https://fonts.googleapis.com/css?family=Sacramento" rel="stylesheet">
 
     <!-- Animate.css -->
-    <link rel="stylesheet" href="css/animate.css">
+    <link rel="stylesheet" href="assets/css/animate.css">
     <!-- Icomoon Icon Fonts-->
-    <link rel="stylesheet" href="css/icomoon.css">
+    <link rel="stylesheet" href="assets/css/icomoon.css">
     <!-- Bootstrap  -->
-    <link rel="stylesheet" href="css/bootstrap.css">
+    <link rel="stylesheet" href="assets/css/bootstrap.css">
 
     <!-- Magnific Popup -->
-    <link rel="stylesheet" href="css/magnific-popup.css">
+    <link rel="stylesheet" href="assets/css/magnific-popup.css">
 
     <!-- Owl Carousel  -->
-    <link rel="stylesheet" href="css/owl.carousel.min.css">
-    <link rel="stylesheet" href="css/owl.theme.default.min.css">
+    <link rel="stylesheet" href="assets/css/owl.carousel.min.css">
+    <link rel="stylesheet" href="assets/css/owl.theme.default.min.css">
     <!-- Theme style  -->
-    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="assets/css/style.css">
+    <link rel="stylesheet" href="assets/css/thanks.css">
     <!-- Modernizr JS -->
-    <script src="js/modernizr-2.6.2.min.js"></script>
+    <script src="assets/js/modernizr-2.6.2.min.js"></script>
 </head>
 <body>
     <!-- ナビゲーション始まり -->
     <div class="fh5co-loader"></div>
-    <div id="page">
         <nav class="fh5co-nav" role="navigation">
             <div class="container">
                 <div class="row">
                     <div class="col-xs-4">
-                        <div id="fh5co-logo"><a href="home.html">Present Box<strong>.</strong></a></div>
+                        <div id="fh5co-logo"><a href="home.php">Present Box<strong>.</strong></a></div>
                     </div>
                     <div class="col-xs-8 text-right menu-1">
                         <ul>
-                            <li><a href="#">signout</a></li>
-                            <li class="active"><a href="#">mypage</a></li>
+                            <li><a href="signin.php">signout</a></li>
+                            <li class="active"><a href="home.php">mypage</a></li>
                             <li class="has-dropdown">
                             <a href="#"></a>
                             <ul class="dropdown">
@@ -64,7 +64,7 @@
 
 
     <!-- ヘッダー始まり -->
-    <header id="fh5co-header" class="fh5co-cover fh5co-cover-sm" role="banner" style="background-image:url(images/want.jpg);">
+    <header id="fh5co-header" class="fh5co-cover fh5co-cover-sm" role="banner" style="background-image:url(assets/images/want.jpg);">
         <div class="overlay" style="padding: 20px"></div>
 
 
@@ -129,14 +129,14 @@
                 <div class="col-md-12">
                     <ul id="fh5co-gallery-list">
                         
-                        <li class="one-third animate-box" data-animate-effect="fadeIn" style="background-image: url(images/gallery-1.jpg); "> 
+                        <li class="one-third animate-box" data-animate-effect="fadeIn" style="background-image: url(assets/images/gallery-1.jpg); "> 
                         <a href="images/gallery-1.jpg">
                             <div class="case-studies-summary">
                                 <h2>商品名</h2>
                             </div>
                         </a>
                     </li>
-                    <li class="one-third animate-box" data-animate-effect="fadeIn" style="background-image: url(images/gallery-2.jpg); ">
+                    <li class="one-third animate-box" data-animate-effect="fadeIn" style="background-image: url(assets/images/gallery-2.jpg); ">
                         <a href="#" class="color-2">
                             <div class="case-studies-summary">
                                <h2>商品名</h2>
@@ -145,14 +145,14 @@
                     </li>
 
 
-                    <li class="one-third animate-box" data-animate-effect="fadeIn" style="background-image: url(images/gallery-3.jpg); ">
+                    <li class="one-third animate-box" data-animate-effect="fadeIn" style="background-image: url(assets/images/gallery-3.jpg); ">
                         <a href="#" class="color-3">
                             <div class="case-studies-summary">
                                <h2>商品名</h2>
                             </div>
                         </a>
                     </li>
-                    <li class="one-third animate-box" data-animate-effect="fadeIn" style="background-image: url(images/gallery-4.jpg); ">
+                    <li class="one-third animate-box" data-animate-effect="fadeIn" style="background-image: url(assets/images/gallery-4.jpg); ">
                         <a href="#" class="color-4">
                             <div class="case-studies-summary">
                                <h2>商品名</h2>
@@ -160,14 +160,14 @@
                         </a>
                     </li>
 
-                        <li class="one-third animate-box" data-animate-effect="fadeIn" style="background-image: url(images/gallery-5.jpg); ">
+                        <li class="one-third animate-box" data-animate-effect="fadeIn" style="background-image: url(assets/images/gallery-5.jpg); ">
                             <a href="#" class="color-3">
                                 <div class="case-studies-summary">
                                    <h2>商品名</h2>
                                 </div>
                             </a>
                         </li>
-                        <li class="one-third animate-box" data-animate-effect="fadeIn" style="background-image: url(images/gallery-6.jpg); ">
+                        <li class="one-third animate-box" data-animate-effect="fadeIn" style="background-image: url(assets/mages/gallery-6.jpg); ">
                             <a href="#" class="color-4">
                                 <div class="case-studies-summary">
                                  <h2>商品名</h2>
@@ -175,7 +175,7 @@
                             </a>
                         </li>
 
-                        <li class="one-third animate-box" data-animate-effect="fadeIn" style="background-image: url(images/gallery-7.jpg); ">
+                        <li class="one-third animate-box" data-animate-effect="fadeIn" style="background-image: url(assets/images/gallery-7.jpg); ">
                             <a href="#" class="color-4">
                                 <div class="case-studies-summary">
                                     <h2>商品名</h2>
@@ -183,14 +183,14 @@
                             </a>
                         </li>
 
-                        <li class="one-third animate-box" data-animate-effect="fadeIn" style="background-image: url(images/gallery-8.jpg); "> 
+                        <li class="one-third animate-box" data-animate-effect="fadeIn" style="background-image: url(assets/images/gallery-8.jpg); "> 
                             <a href="#" class="color-5">
                                 <div class="case-studies-summary">
                                     <h2>商品名</h2>
                                 </div>
                             </a>
                         </li>
-                        <li class="one-third animate-box" data-animate-effect="fadeIn" style="background-image: url(images/gallery-9.jpg); ">
+                        <li class="one-third animate-box" data-animate-effect="fadeIn" style="background-image: url(assets/images/gallery-9.jpg); ">
                             <a href="#" class="color-6">
                                 <div class="case-studies-summary">
                                     <h2>商品名</h2>
@@ -237,28 +237,28 @@
 </div>
 </div>
 
+
 <!-- jQuery -->
-<script src="js/jquery.min.js"></script>
+<script src="assets/js/jquery.min.js"></script>
 <!-- jQuery Easing -->
-<script src="js/jquery.easing.1.3.js"></script>
+<script src="assets/js/jquery.easing.1.3.js"></script>
 <!-- Bootstrap -->
-<script src="js/bootstrap.min.js"></script>
+<script src="assets/js/bootstrap.min.js"></script>
 <!-- Waypoints -->
-<script src="js/jquery.waypoints.min.js"></script>
+<script src="assets/js/jquery.waypoints.min.js"></script>
 <!-- Carousel -->
-<script src="js/owl.carousel.min.js"></script>
+<script src="assets/js/owl.carousel.min.js"></script>
 <!-- countTo -->
-<script src="js/jquery.countTo.js"></script>
+<script src="assets/js/jquery.countTo.js"></script>
 
 <!-- Stellar -->
-<script src="js/jquery.stellar.min.js"></script>
+<script src="assets/js/jquery.stellar.min.js"></script>
 <!-- Magnific Popup -->
-<script src="js/jquery.magnific-popup.min.js"></script>
-<script src="js/magnific-popup-options.js"></script>
+<script src="assets/js/jquery.magnific-popup.min.js"></script>
+<script src="assets/js/magnific-popup-options.js"></script>
 
 <!-- Main -->
-<script src="js/main.js"></script>
+<script src="assets/js/main.js"></script>
 
 </body>
 </html>
-

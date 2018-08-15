@@ -3,6 +3,7 @@
 <head>
     <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
+     <link rel="icon" type="images/favicon.png" href="assets/images/favicon.png">
     <title>Present Box</title>
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <meta name="description" content="Free HTML5 Template by FREEHTML5.CO" />
@@ -13,56 +14,27 @@
     <link href="https://fonts.googleapis.com/css?family=Sacramento" rel="stylesheet">
 
     <!-- Animate.css -->
-    <link rel="stylesheet" href="css/animate.css">
+    <link rel="stylesheet" href="assets/css/animate.css">
     <!-- Icomoon Icon Fonts-->
-    <link rel="stylesheet" href="css/icomoon.css">
+    <link rel="stylesheet" href="assets/css/icomoon.css">
     <!-- Bootstrap  -->
-    <link rel="stylesheet" href="css/bootstrap.css">
+    <link rel="stylesheet" href="assets/css/bootstrap.css">
 
     <!-- Magnific Popup -->
-    <link rel="stylesheet" href="css/magnific-popup.css">
+    <link rel="stylesheet" href="assets/css/magnific-popup.css">
 
     <!-- Owl Carousel  -->
-    <link rel="stylesheet" href="css/owl.carousel.min.css">
-    <link rel="stylesheet" href="css/owl.theme.default.min.css">
+    <link rel="stylesheet" href="assets/css/owl.carousel.min.css">
+    <link rel="stylesheet" href="assets/css/owl.theme.default.min.css">
     <!-- Theme style  -->
-    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="assets/css/style.css">
     <!-- Modernizr JS -->
-    <script src="js/modernizr-2.6.2.min.js"></script>
+    <script src="assets/js/modernizr-2.6.2.min.js"></script>
 </head>
 <body>
 
-    <!-- ナビゲーション始まり -->
-    <div class="fh5co-loader"></div>
-    <div id="page">
-        <nav class="fh5co-nav" role="navigation">
-            <div class="container">
-                <div class="row">
-                    <div class="col-xs-4">
-                        <div id="fh5co-logo"><a href="home.html">Present Box<strong>.</strong></a></div>
-                    </div>
-                    <div class="col-xs-8 text-right menu-1">
-                        <ul>
-                            <li><a href="＃">signout</a></li>
-                            <li class="active"><a href="#">mypage</a></li>
-                            <li class="has-dropdown">
-                                <a href="#"></a>
-                                <ul class="dropdown">
-                                    <li><a href="#">present</a></li>
-                                    <li><a href="#">friends</a></li>
-                                </li>
-                                <li><a href="#">####</a></li>
-                            </ul>
-                        </ul>
-                    </div>
-                </div>
-            </div>
-        </nav>
-    </div>
-    <!-- ナビゲーション終わり -->
-
     <!-- ヘッダー始まり -->
-    <header id="fh5co-header" class="fh5co-cover fh5co-cover-sm" role="banner" style="background-image:url(images/background-image1.jpg);">
+    <header id="fh5co-header" class="fh5co-cover fh5co-cover-sm" role="banner" style="background-image:url(assets/images/background-image1.jpg);">
         <div class="overlay"></div>
         <div class="fh5co-container">
             <div class="row">
@@ -74,10 +46,10 @@
                             <div class=“input-group”>
                                 <div class="row  text-center">
                                     <div class="col-xs-6 text-right" >
-                                        <a href="#" class="btn btn-default btn-sm" style="font-size: 20px;">新規登録</a>
+                                        <a href="signup.php" class="btn btn-default btn-sm" style="font-size: 20px;">新規登録</a>
                                     </div>
                                     <div class="col-xs-6 text-left">
-                                        <a href="#" class="btn btn-default btn-sm" style="font-size: 20px;">サインイン</a>
+                                        <a href="signin.php" class="btn btn-default btn-sm" style="font-size: 20px;">サインイン</a>
                                     </div>
                                 </div>
 
@@ -108,7 +80,7 @@
                 <div class="container">
                     <div class="row">
                         <div class="flame">
-                            <img src="images/web.png" class="image fluied" align="left" style="margin:10px 20px 10px 50px;">
+                            <img src="assets/images/web.png" class="image fluied" align="left" style="margin:10px 20px 10px 50px;">
                             <div class="main-center">
                                 <p>LolemLorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
                             </div>
@@ -120,7 +92,7 @@
                 <div class="container">
                     <div class="row">
                         <div class="flame">
-                            <img src="images/web.png" class="image fluied" align="left" style="margin:10px 20px 10px 50px;">
+                            <img src="assets/images/web.png" class="image fluied" align="left" style="margin:10px 20px 10px 50px;">
                             <div class="main-center">
                                 <p>LolemLorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
                             </div>
@@ -132,7 +104,7 @@
                 <div class="container">
                     <div class="row">
                         <div class="flame">
-                            <img src="images/web.png" class="image fluied" align="left" style="margin:10px 20px 10px 50px;">
+                            <img src="assets/images/web.png" class="image fluied" align="left" style="margin:10px 20px 10px 50px;">
                             <div class="main-center">
                                 <p>LolemLorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
                             </div>
@@ -180,26 +152,26 @@
 </div>
 
 <!-- jQuery -->
-<script src="js/jquery.min.js"></script>
+<script src="assets/js/jquery.min.js"></script>
 <!-- jQuery Easing -->
-<script src="js/jquery.easing.1.3.js"></script>
+<script src="assets/js/jquery.easing.1.3.js"></script>
 <!-- Bootstrap -->
-<script src="js/bootstrap.min.js"></script>
+<script src="assets/js/bootstrap.min.js"></script>
 <!-- Waypoints -->
-<script src="js/jquery.waypoints.min.js"></script>
+<script src="assets/js/jquery.waypoints.min.js"></script>
 <!-- Carousel -->
-<script src="js/owl.carousel.min.js"></script>
+<script src="assets/js/owl.carousel.min.js"></script>
 <!-- countTo -->
-<script src="js/jquery.countTo.js"></script>
+<script src="assets/js/jquery.countTo.js"></script>
 
 <!-- Stellar -->
-<script src="js/jquery.stellar.min.js"></script>
+<script src="assets/js/jquery.stellar.min.js"></script>
 <!-- Magnific Popup -->
-<script src="js/jquery.magnific-popup.min.js"></script>
-<script src="js/magnific-popup-options.js"></script>
+<script src="assets/js/jquery.magnific-popup.min.js"></script>
+<script src="assets/js/magnific-popup-options.js"></script>
 
 <!-- Main -->
-<script src="js/main.js"></script>
+<script src="assets/js/main.js"></script>
 
 </body>
 </html>

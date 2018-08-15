@@ -28,21 +28,42 @@
     <link rel="stylesheet" href="assets/css/owl.theme.default.min.css">
     <!-- Theme style  -->
     <link rel="stylesheet" href="assets/css/style.css">
-    <link rel="stylesheet" href="assets/css/thanks.css">
     <!-- Modernizr JS -->
     <script src="assets/js/modernizr-2.6.2.min.js"></script>
 </head>
+<body background="assets/images/alcohl.jpg">
+	
+	<div class="limiter">
+		<div class="container-login100" style="">
+			<div class="wrap-login100 p-t-30 p-b-50">
+				<span class="login100-form-title p-b-41">
+					Account Login
+				</span>
+				<form class="login100-form validate-form p-b-33 p-t-5" action="#">
 
-<body background="assts/images/box.jpg">
+					<div class="wrap-input100 validate-input" data-validate = "Enter username">
+						<input class="input100" type="text" name="username" placeholder="User ID">
+						<span class="focus-input100" data-placeholder="&#xe82a;"></span>
+					</div>
 
+					<div class="wrap-input100 validate-input" data-validate="Enter password">
+						<input class="input100" type="password" name="pass" placeholder="Password">
+						<span class="focus-input100" data-placeholder="&#xe80f;"></span>
+					</div>
 
-  <h1>アカウントの作成が完了しました</h1>
-<h3>Thank you for registration</h3>
-<hr>
-      <a href="signin.php" class="fancy-button"><span>signin</span></a>
-</body>
+					<div class="container-login100-form-btn m-t-32">
 
+						<button class="login100-form-btn">
+							<a href="home.php">Login</a>
+						</button>
+						
+					</div>
 
+				</form>
+			</div>
+		</div>
+	</div>
+	
 
 <!-- jQuery -->
 <script src="assets/js/jquery.min.js"></script>
@@ -68,5 +89,3 @@
 
 </body>
 </html>
-
-

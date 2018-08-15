@@ -1,11 +1,37 @@
 <!DOCTYPE html>
-<html lang="ja">
-    <head>
+<html class="no-js"> 
+<head>
     <meta charset="utf-8">
-        <title>確認画面</title>
-        <link rel="stylesheet" type="text/css" href="assets/css/bootstrap.css">
-        <link rel="stylesheet" type="text/css" href="assets/css/font-awesome.css">
-    </head>
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+     <link rel="icon" type="images/favicon.png" href="assets/images/favicon.png">
+    <title>Present Box</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="description" content="Free HTML5 Template by FREEHTML5.CO" />
+    <meta name="keywords" content="free html5, free template, free bootstrap, html5, css3, mobile first, responsive" />
+    <meta name="author" content="FREEHTML5.CO" />
+
+    <link href='https://fonts.googleapis.com/css?family=Work+Sans:400,300,600,400italic,700' rel='stylesheet' type='text/css'>
+    <link href="https://fonts.googleapis.com/css?family=Sacramento" rel="stylesheet">
+
+    <!-- Animate.css -->
+    <link rel="stylesheet" href="assets/css/animate.css">
+    <!-- Icomoon Icon Fonts-->
+    <link rel="stylesheet" href="assets/css/icomoon.css">
+    <!-- Bootstrap  -->
+    <link rel="stylesheet" href="assets/css/bootstrap.css">
+
+    <!-- Magnific Popup -->
+    <link rel="stylesheet" href="assets/css/magnific-popup.css">
+
+    <!-- Owl Carousel  -->
+    <link rel="stylesheet" href="assets/css/owl.carousel.min.css">
+    <link rel="stylesheet" href="assets/css/owl.theme.default.min.css">
+    <!-- Theme style  -->
+    <link rel="stylesheet" href="assets/css/style.css">
+    <!-- Modernizr JS -->
+    <script src="assets/js/modernizr-2.6.2.min.js"></script>
+</head>
+
     <body style="margin-top: 60px">
         <div class="container">
             <div class="row">
@@ -41,13 +67,47 @@
                 </div>
             </div>
             <!-- ここまで -->
-                <!-- <img src="../user_profile_img/"<?php echo $_SESSION['register']['img_name']; ?>"> -->
-                 
-                  </div><!-- ここにコンテンツ -->
+        <!-- フッター始まり -->
+        <footer id="fh5co-footer" role="contentinfo">
+            <div class="container">
+                <div class="row copyright">
+                    <div class="col-md-12 text-center">
+                        <p>
+                            <small class="block">&copy; チームはしうち　Nexseed</small> 
+                        </p>
+                        <p>
+                            <ul class="fh5co-social-icons">
+                                <li><a href="#"><i class="icon-twitter"></i></a></li>
+                                <li><a href="#"><i class="icon-facebook"></i></a></li>
+                            </ul>
+                        </p>
+                    </div>
+                </div>
             </div>
-        </div>
-        <script src="../assets/js/jquery-3.1.1.js"></script>
-        <script src="../assets/js/jquery-migrate-1.4.1.js"></script>
-        <script src="../assets/js/bootstrap.js"></script>
-    </body>
+        </footer>
+        <!-- フッター終わり -->
+
+<!-- jQuery -->
+<script src="assets/js/jquery.min.js"></script>
+<!-- jQuery Easing -->
+<script src="assets/js/jquery.easing.1.3.js"></script>
+<!-- Bootstrap -->
+<script src="assets/js/bootstrap.min.js"></script>
+<!-- Waypoints -->
+<script src="assets/js/jquery.waypoints.min.js"></script>
+<!-- Carousel -->
+<script src="assets/js/owl.carousel.min.js"></script>
+<!-- countTo -->
+<script src="assets/js/jquery.countTo.js"></script>
+
+<!-- Stellar -->
+<script src="assets/js/jquery.stellar.min.js"></script>
+<!-- Magnific Popup -->
+<script src="assets/js/jquery.magnific-popup.min.js"></script>
+<script src="assets/js/magnific-popup-options.js"></script>
+
+<!-- Main -->
+<script src="assets/js/main.js"></script>
+
+</body>
 </html>
