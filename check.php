@@ -14,12 +14,12 @@
                 <h2 class="text-center content_header">アカウント情報確認</h2>
                 <div class="row">
                     <div class="col-xs-4">
-                        <img src="users_profile_images" class="img-responsive img-thumbnail">
+                        <img src="images/check.jpg" class="img-responsive img-thumbnail">
                     </div>
                     <div class="col-xs-8">
                         <div>
                             <span>ユーザー名</span>
-                            <p class="lead">ドラえもん</p>
+                            <p class="lead">石原さとみ</p>
                         </div>
                         <div>
                             <span>メールアドレス</span>
@@ -42,7 +42,7 @@
                 </div>
             </div>
             <!-- ここまで -->
-                <!-- <img src="../user_profile_img/"<?php echo $_SESSION['register']['img_name']; ?>"> -->
+                <!-- <img src="../user_profile_img/"<?php //echo $_SESSION['register']['img_name']; ?>"> -->
                  
                   </div><!-- ここにコンテンツ -->
             </div>
