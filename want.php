@@ -32,7 +32,6 @@
     <script src="js/modernizr-2.6.2.min.js"></script>
 </head>
 <body>
-
     <!-- ナビゲーション始まり -->
     <div class="fh5co-loader"></div>
     <div id="page">
@@ -44,7 +43,7 @@
                     </div>
                     <div class="col-xs-8 text-right menu-1">
                         <ul>
-                            <li><a href="＃">signout</a></li>
+                            <li><a href="#">signout</a></li>
                             <li class="active"><a href="#">mypage</a></li>
                             <li class="has-dropdown">
                             <a href="#"></a>
@@ -66,13 +65,14 @@
 
     <!-- ヘッダー始まり -->
     <header id="fh5co-header" class="fh5co-cover fh5co-cover-sm" role="banner" style="background-image:url(images/want.jpg);">
-        <div class="overlay"></div>
+        <div class="overlay" style="padding: 20px"></div>
 
 
-    <div class="container">
+    <div class="container" style="padding-top:50px;">
       <div class="col-xs-8 col-xs-offset-2 thumbnail">
         <h2 class="text-center content_header">Want List</h2>
-        <form method="POST" action="#" enctype="multipart/form-data">
+
+        <form method="POST" action="want.php" enctype="multipart/form-data">
           <div class="form-group">
             <label for="title">Title</label>
             <input type="text" name="input_title" class="form-control" id="title" placeholder="あなたが欲しいものを入力してください">
@@ -104,7 +104,7 @@
           <br>
 
           <ul class="nav navbar-nav navbar-left">
-            <li class="active"><a href="index.php" style="margin: 15px,background-color: black;">Back</a></li>
+            <li class="active"><a href="home.php" style="margin: 15px,background-color: black;">Back</a></li>
           </ul>
           <input type="submit" class="btn btn-primary" value="POST">
         </form>
@@ -132,16 +132,14 @@
                         <li class="one-third animate-box" data-animate-effect="fadeIn" style="background-image: url(images/gallery-1.jpg); "> 
                         <a href="images/gallery-1.jpg">
                             <div class="case-studies-summary">
-                                <span>14 Photos</span>
-                                <h2>Two Glas of Juice</h2>
+                                <h2>商品名</h2>
                             </div>
                         </a>
                     </li>
                     <li class="one-third animate-box" data-animate-effect="fadeIn" style="background-image: url(images/gallery-2.jpg); ">
                         <a href="#" class="color-2">
                             <div class="case-studies-summary">
-                                <span>30 Photos</span>
-                                <h2>Timer starts now!</h2>
+                               <h2>商品名</h2>
                             </div>
                         </a>
                     </li>
@@ -150,16 +148,14 @@
                     <li class="one-third animate-box" data-animate-effect="fadeIn" style="background-image: url(images/gallery-3.jpg); ">
                         <a href="#" class="color-3">
                             <div class="case-studies-summary">
-                                <span>90 Photos</span>
-                                <h2>Beautiful sunset</h2>
+                               <h2>商品名</h2>
                             </div>
                         </a>
                     </li>
                     <li class="one-third animate-box" data-animate-effect="fadeIn" style="background-image: url(images/gallery-4.jpg); ">
                         <a href="#" class="color-4">
                             <div class="case-studies-summary">
-                                <span>12 Photos</span>
-                                <h2>Company's Conference Room</h2>
+                               <h2>商品名</h2>
                             </div>
                         </a>
                     </li>
@@ -167,16 +163,14 @@
                         <li class="one-third animate-box" data-animate-effect="fadeIn" style="background-image: url(images/gallery-5.jpg); ">
                             <a href="#" class="color-3">
                                 <div class="case-studies-summary">
-                                    <span>50 Photos</span>
-                                    <h2>Useful baskets</h2>
+                                   <h2>商品名</h2>
                                 </div>
                             </a>
                         </li>
                         <li class="one-third animate-box" data-animate-effect="fadeIn" style="background-image: url(images/gallery-6.jpg); ">
                             <a href="#" class="color-4">
                                 <div class="case-studies-summary">
-                                    <span>45 Photos</span>
-                                    <h2>Skater man in the road</h2>
+                                 <h2>商品名</h2>
                                 </div>
                             </a>
                         </li>
@@ -184,8 +178,7 @@
                         <li class="one-third animate-box" data-animate-effect="fadeIn" style="background-image: url(images/gallery-7.jpg); ">
                             <a href="#" class="color-4">
                                 <div class="case-studies-summary">
-                                    <span>35 Photos</span>
-                                    <h2>Two Glas of Juice</h2>
+                                    <h2>商品名</h2>
                                 </div>
                             </a>
                         </li>
@@ -193,16 +186,14 @@
                         <li class="one-third animate-box" data-animate-effect="fadeIn" style="background-image: url(images/gallery-8.jpg); "> 
                             <a href="#" class="color-5">
                                 <div class="case-studies-summary">
-                                    <span>90 Photos</span>
-                                    <h2>Timer starts now!</h2>
+                                    <h2>商品名</h2>
                                 </div>
                             </a>
                         </li>
                         <li class="one-third animate-box" data-animate-effect="fadeIn" style="background-image: url(images/gallery-9.jpg); ">
                             <a href="#" class="color-6">
                                 <div class="case-studies-summary">
-                                    <span>56 Photos</span>
-                                    <h2>Beautiful sunset</h2>
+                                    <h2>商品名</h2>
                                 </div>
                             </a>
                         </li>

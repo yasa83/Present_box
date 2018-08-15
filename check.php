@@ -31,12 +31,11 @@
                             <p class="lead">●●●●●●●●</p>
                         </div>
                         <!-- ③ -->
-                        <form method="POST" action="">
-                            <!-- ④ -->
-                            <a href="signup.php ?action=rewrite" class="btn btn-default">&laquo;&nbsp;戻る</a> | 
+                        <form method="POST" action="thanks.php">
                             <!-- ⑤ -->
                             <input type="hidden" name="action" value="submit">
                             <input type="submit" class="btn btn-primary" value="ユーザー登録">
+                            <a href="signup.php" class="btn btn-default">&laquo;&nbsp;戻る</a>
                         </form>
                     </div>
                 </div>
