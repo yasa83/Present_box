@@ -13,5 +13,5 @@
   <h1>アカウントの作成が完了しました</h1>
 <h3>Thank you for registration</h3>
 <hr>
-      <a href="#" class="fancy-button"><span>signin</span></a>
+      <a href="signin.html" class="fancy-button"><span>signin</span></a>
 </body>

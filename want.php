@@ -32,7 +32,6 @@
     <script src="js/modernizr-2.6.2.min.js"></script>
 </head>
 <body>
-
     <!-- ナビゲーション始まり -->
     <div class="fh5co-loader"></div>
     <div id="page">
@@ -44,7 +43,7 @@
                     </div>
                     <div class="col-xs-8 text-right menu-1">
                         <ul>
-                            <li><a href="＃">signout</a></li>
+                            <li><a href="#">signout</a></li>
                             <li class="active"><a href="#">mypage</a></li>
                             <li class="has-dropdown">
                             <a href="#"></a>
@@ -72,7 +71,8 @@
     <div class="container" style="padding-top:50px;">
       <div class="col-xs-8 col-xs-offset-2 thumbnail">
         <h2 class="text-center content_header">Want List</h2>
-        <form method="POST" action="#" enctype="multipart/form-data">
+
+        <form method="POST" action="want.php" enctype="multipart/form-data">
           <div class="form-group">
             <label for="title">Title</label>
             <input type="text" name="input_title" class="form-control" id="title" placeholder="あなたが欲しいものを入力してください">
@@ -104,7 +104,7 @@
           <br>
 
           <ul class="nav navbar-nav navbar-left">
-            <li class="active"><a href="index.php" style="margin: 15px,background-color: black;">Back</a></li>
+            <li class="active"><a href="home.php" style="margin: 15px,background-color: black;">Back</a></li>
           </ul>
           <input type="submit" class="btn btn-primary" value="POST">
         </form>

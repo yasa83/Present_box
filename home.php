@@ -33,6 +33,9 @@
 </head>
 <body>
 
+
+<!-- ナビゲーションはホームのみ動く -->
+
 	<!-- ナビゲーション始まり -->
 	<div class="fh5co-loader"></div>
 	<div id="page">
@@ -44,8 +47,8 @@
 					</div>
 					<div class="col-xs-8 text-right menu-1">
 						<ul>
-							<li><a href="＃">signout</a></li>
-							<li class="active"><a href="#">mypage</a></li>
+							<li><a href="signin.html">signout</a></li>
+							<li class="active"><a href="want.php">mypage</a></li>
 							<li class="has-dropdown">
 							<a href="#"></a>
 							<ul class="dropdown">
