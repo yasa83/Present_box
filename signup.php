@@ -85,10 +85,12 @@
                         </div>
 
                         <div class="form-group ">
-                            <button type="button" class="btn btn-primary btn-lg btn-block login-button">Register</button>
+                            <a href="check.php">
+                                <button type="button" class="btn btn-primary btn-lg btn-block login-button">Register</button>
+                            </a>
                         </div>
                         <div class="login-register">
-                            <a href="index.php">Login</a>
+                            <a href="signin.html">Login</a>
                          </div>
                     </form>
                 </div>
