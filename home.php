@@ -33,15 +33,14 @@
 </head>
 
 
-<!-- ナビゲーションはホームのみ動く -->
-
+<body>
     <!-- ナビゲーション始まり -->
     <div class="fh5co-loader"></div>
         <nav class="fh5co-nav" role="navigation">
             <div class="container">
                 <div class="row">
                     <div class="col-xs-4">
-                        <div id="fh5co-logo"><a href="home.php">Present Box<strong>.</strong></a></div>
+                        <div id="fh5co-logo"><a href="home.php">Present Box</a></div>
                     </div>
                     <div class="col-xs-8 text-right menu-1">
                         <ul>
@@ -62,6 +61,7 @@
         </nav>
     </div>
     <!-- ナビゲーション終わり -->
+
 
 
 	<!-- ヘッダー始まり -->
@@ -89,25 +89,22 @@
 	</header>
 	<!-- ヘッダー終わり -->
 
-
-<!--wrap始まり-->
-<div id="wrap">
-	<div class="content">
-
-		<!-- 登録した友達 -->
 		<hr>
 		<div class="container">
 			<div class="row">
 				<div class="flame">
-					<img src="assets/images/friend1.png" class="image fluied" align="left" style="margin:10px 20px 10px 50px;">
-						<div class="main-center">
-							<p>名前</p>
 								<section class="profile clearfix" style="display: inline-block;">
-									<img src="assets/images/present1.png" class="present-image">
-									<img src="assets/images/present1.png" class="present-image">
-									<img src="assets/images/present1.png" class="present-image">
-									<img src="assets/images/present1.png" class="present-image">
-									<img src="assets/images/present1.png" class="present-image">
+									<a href="">友達の名前</a>
+									<div class="container">
+								    <div class="row">
+
+								        <div class="col-sm-3"><img src="assets/images/friend1.png" class="image fluied" align="left" style="margin:10px 20px 10px 50px;"></div>
+								        <div class="col-sm-2" ><img src="assets/images/present1.png" class="present-image" style="padding-top: 20px"></div>
+								        <div class="col-sm-2"><img src="assets/images/present1.png" class="present-image" style="padding-top: 20px"></div>
+								        <div class="col-sm-2"><img src="assets/images/present1.png" class="present-image" style="padding-top: 20px"></div>
+								        <div class="col-sm-2"><img src="assets/images/present1.png" class="present-image" style="padding-top: 20px"></div>
+								    </div>
+								 
 								</section>
 					</div>
 				</div>
@@ -115,50 +112,6 @@
 		</div>
 
 
-		<hr>
-		<div class="container">
-			<div class="row">
-				<div class="flame col-md-12 center">
-					<img src="assets/images/friend1.png" class="image fluied" align="left" style="margin:10px 20px 10px 50px;">
-						<div class="main-center">
-							<p>名前</p>
-							<div class="col-md-10 col-md-offset-2 ">
-								<section class="profile clearfix" style="display: inline-block;">
-									<img src="assets/images/present1.png" class="present-image">
-									<img src="assets/images/present1.png" class="present-image">
-									<img src="assets/images/present1.png" class="present-image">
-									<img src="assets/images/present1.png" class="present-image">
-									<img src="assets/images/present1.png" class="present-image">
-								</section>
-							</div>
-					</div>
-				</div>
-			</div>
-		</div>
-
-				<hr>
-		<div class="container">
-			<div class="row">
-				<div class="flame">
-					<img src="assets/images/friend1.png" class="image fluied" align="left" style="margin:10px 20px 10px 50px;">
-						<div class="main-center">
-							<p>名前</p>
-								<section class="profile clearfix" style="display: inline-block;">
-									<img src="assets/images/present1.png" class="present-image">
-									<img src="assets/images/present1.png" class="present-image">
-									<img src="assets/images/present1.png" class="present-image">
-									<img src="assets/images/present1.png" class="present-image">
-									<img src="assets/images/present1.png" class="present-image">
-								</section>
-					</div>
-				</div>
-			</div>
-		</div>
-
-
-
-	</div>
-</div> 
 			<!--wrap終わり-->
 
 
