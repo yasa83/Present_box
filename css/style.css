@@ -1928,4 +1928,12 @@ form label {
 .p-5{
   padding-top: 100px;
 }
+.picture-ajust {
+  object-fit: cover; /* この一行を追加するだけ！ */
+}
+.img-profile{
 
+ display: block;
+
+ margin: 0 auto;
+}
