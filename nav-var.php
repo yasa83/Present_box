@@ -11,7 +11,7 @@
                         <ul>
                             <li class="active space-1"><a href="signin.php">signout</a></li>
                             <li class="active space-1"><a href="want.php">mypage</a></li>
-                            <li class="active space-1"><a href="signin.php">registration</a></li>
+                            <li class="active space-1"><a href="list_make.php">registration</a></li>
                         </ul>
                     </div>
                 </div>
