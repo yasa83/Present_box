@@ -74,10 +74,10 @@
                             <div class=“input-group”>
                                 <div class="row  text-center">
                                     <div class="col-xs-6 text-right" >
-                                        <a href="#" class="btn btn-default btn-sm" style="font-size: 20px;">新規登録</a>
+                                        <a href="signup.php" class="btn btn-default btn-sm" style="font-size: 20px;">新規登録</a>
                                     </div>
                                     <div class="col-xs-6 text-left">
-                                        <a href="#" class="btn btn-default btn-sm" style="font-size: 20px;">サインイン</a>
+                                        <a href="signin.html" class="btn btn-default btn-sm" style="font-size: 20px;">サインイン</a>
                                     </div>
                                 </div>
 

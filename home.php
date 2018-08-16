@@ -120,9 +120,9 @@
 		<div class="container">
 			<div class="row">
 				<div class="flame">
-					<img src="images/friend1.png" class="image fluied" align="left" style="margin:10px 20px 10px 50px;">
+					<a href="list.html"><img src="images/friend1.png" class="image fluied" align="left" style="margin:10px 20px 10px 50px;"></a>
 						<div class="main-center">
-							<p>名前</p>
+							<p><a href="list.html">名前</a></p>
 								<section class="profile clearfix" style="display: inline-block;">
 									<img src="images/present1.png" class="present-image">
 									<img src="images/present1.png" class="present-image">
