@@ -5,7 +5,7 @@
 /*//////////////////////////////////////////////////////////////////
 [ FONT ]*/
 
-@font-face {
+/*@font-face {
   font-family: Ubuntu-Regular;
   src: url('../fonts/ubuntu/Ubuntu-Regular.ttf'); 
 }
@@ -13,7 +13,9 @@
 @font-face {
   font-family: Ubuntu-Bold;
   src: url('../fonts/ubuntu/Ubuntu-Bold.ttf'); 
-}
+}*/
+
+@import url('https://fonts.googleapis.com/css?family=Montserrat');
 
 
 
@@ -47,10 +49,10 @@ body, html {
 
 /*---------------------------------------------*/
 a {
-	font-family: Ubuntu-Regular;
+	font-family: 'Montserrat', sans-serif;
 	font-size: 14px;
 	line-height: 1.7;
-	color: #666666;
+	color: white;
 	margin: 0px;
 	transition: all 0.4s;
 	-webkit-transition: all 0.4s;
@@ -189,7 +191,7 @@ iframe {
   height: 100%;
   top: 0;
   left: 0;
-  background-color: rgba(0,0,0,0.40);
+  
 }
 
 .wrap-login100 {
@@ -212,7 +214,7 @@ iframe {
 
 .login100-form-logo {
   font-size: 60px; 
-  color: #333333;
+  color: white;
 
   display: -webkit-box;
   display: -webkit-flex;
@@ -224,13 +226,13 @@ iframe {
   width: 120px;
   height: 120px;
   border-radius: 50%;
-  background-color: #fff;
+  background-color: white;
   margin: 0 auto;
 }
 
 .login100-form-title {
-  font-family: Ubuntu-Bold;
-  font-size: 28px;
+  font-family: 'Montserrat', sans-serif;
+  font-size: 32px;
   color: #fff;
   line-height: 1.2;
   text-align: center;
@@ -247,11 +249,11 @@ iframe {
   width: 100%;
   position: relative;
   border-bottom: 1px solid #e6e6e6;
-  padding: 29px 0;
+  padding: 20px 20px;
 }
 
 .input100 {
-  font-family: Ubuntu-Regular;
+  font-family: 'Montserrat', sans-serif;;
   font-size: 20px;
   color: #555555;
   line-height: 1.2;
@@ -356,6 +358,8 @@ iframe {
   display: flex;
   flex-wrap: wrap;
   justify-content: center;
+  padding-top: 8px;
+padding-bottom: 8px;
 }
 
 .login100-form-btn {
