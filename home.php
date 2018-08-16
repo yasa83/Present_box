@@ -37,32 +37,7 @@
 <!-- ナビゲーションはホームのみ動く -->
 
 	<!-- ナビゲーション始まり -->
-	<div class="fh5co-loader"></div>
-	<div id="page">
-		<nav class="fh5co-nav" role="navigation">
-			<div class="container">
-				<div class="row">
-					<div class="col-xs-4">
-						<div id="fh5co-logo"><a href="home.html">Present Box<strong>.</strong></a></div>
-					</div>
-					<div class="col-xs-8 text-right menu-1">
-						<ul>
-							<li><a href="signin.html">signout</a></li>
-							<li class="active"><a href="want.php">mypage</a></li>
-							<li class="has-dropdown">
-							<a href="#"></a>
-							<ul class="dropdown">
-								<li><a href="#">present</a></li>
-								<li><a href="#">friends</a></li>
-							</li>
-							<li><a href="#">####</a></li>
-							</ul>
-						</ul>
-					</div>
-				</div>
-			</div>
-		</nav>
-	</div>
+<?php include('nav-var.php'); ?>
 	<!-- ナビゲーション終わり -->
 
 	<!-- ヘッダー始まり -->
@@ -120,9 +95,9 @@
 		<div class="container">
 			<div class="row">
 				<div class="flame">
-					<a href="list.html"><img src="images/friend1.png" class="image fluied" align="left" style="margin:10px 20px 10px 50px;"></a>
+					<a href="list.php"><img src="images/friend1.png" class="image fluied" align="left" style="margin:10px 20px 10px 50px;"></a>
 						<div class="main-center">
-							<p><a href="list.html">名前</a></p>
+							<p><a href="list.php">名前</a></p>
 								<section class="profile clearfix" style="display: inline-block;">
 									<img src="images/present1.png" class="present-image">
 									<img src="images/present1.png" class="present-image">
