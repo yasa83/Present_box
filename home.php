@@ -88,8 +88,51 @@
 		</div>
 	</header>
 	<!-- ヘッダー終わり -->
+<body>
+		<hr>
+		<div class="container">
+			<div class="row">
+				<div class="flame">
+								<section class="profile clearfix" style="display: inline-block;">
+									<a href="list.php">友達の名前</a>
+									<div class="container">
+								    <div class="row">
+
+								        <div class="col-sm-3"><img src="assets/images/friend1.png" class="image fluied" align="left" style="margin:10px 20px 10px 50px;" href="list.php"></div>
+								        <div class="col-sm-2" ><img src="assets/images/present1.png" class="present-image" style="padding-top: 20px"></div>
+								        <div class="col-sm-2"><img src="assets/images/present1.png" class="present-image" style="padding-top: 20px"></div>
+								        <div class="col-sm-2"><img src="assets/images/present1.png" class="present-image" style="padding-top: 20px"></div>
+								        <div class="col-sm-2"><img src="assets/images/present1.png" class="present-image" style="padding-top: 20px"></div>
+								    </div>
+								 
+								</section>
+					</div>
+				</div>
+			</div>
+		</div>
 
 		<hr>
+		<div class="container">
+			<div class="row">
+				<div class="flame">
+								<section class="profile clearfix" style="display: inline-block;">
+									<br><a href="list.php">友達の名前</a>
+									<div class="container">
+								    <div class="row">
+
+								        <div class="col-sm-3"><img src="assets/images/friend1.png" class="image fluied" align="left" style="margin:10px 20px 10px 50px;"></div>
+								        <div class="col-sm-2" ><img src="assets/images/present1.png" class="present-image" style="padding-top: 20px"></div>
+								        <div class="col-sm-2"><img src="assets/images/present1.png" class="present-image" style="padding-top: 20px"></div>
+								        <div class="col-sm-2"><img src="assets/images/present1.png" class="present-image" style="padding-top: 20px"></div>
+								        <div class="col-sm-2"><img src="assets/images/present1.png" class="present-image" style="padding-top: 20px"></div>
+								    </div>
+								 
+								</section>
+					</div>
+				</div>
+			</div>
+		</div>
+				<hr>
 		<div class="container">
 			<div class="row">
 				<div class="flame">
@@ -110,7 +153,7 @@
 				</div>
 			</div>
 		</div>
-
+</body>
 
 			<!--wrap終わり-->
 

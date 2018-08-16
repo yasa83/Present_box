@@ -40,17 +40,17 @@
 			<div class="container">
 				<div class="row">
 					<div class="col-xs-4">
-						<div id="fh5co-logo"><a href="home.html">Present Box<strong>.</strong></a></div>
+						<div id="fh5co-logo"><a href="home.php">Present Box<strong>.</strong></a></div>
 					</div>
 					<div class="col-xs-8 text-right menu-1">
 						<ul>
-							<li><a href="＃">signout</a></li>
-							<li class="active"><a href="#">mypage</a></li>
+							<li><a href="signin.php">signout</a></li>
+							<li class="active"><a href="want.php">mypage</a></li>
 							<li class="has-dropdown">
 								<a href="#"></a>
 								<ul class="dropdown">
-									<li><a href="#">present</a></li>
-									<li><a href="#">friends</a></li>
+									<li><a href="list.php">present</a></li>
+									<li><a href="home.php">friends</a></li>
 								</li>
 								<li><a href="#">####</a></li>
 							</ul>
@@ -66,14 +66,14 @@
 </div>
 </nav>
 
-<header id="fh5co-header" class="fh5co-cover" role="banner" style="background-image:url(images/img_bg_2.jpg);" data-stellar-background-ratio="0.5">
+<header id="fh5co-header" class="fh5co-cover" role="banner" style="background-image:url(assets/images/img_bg_2.jpg);" data-stellar-background-ratio="0.5">
 	<div class="overlay"></div>
 	<div class="container">
 		<div class="row">
 			<div class="col-md-8 col-md-offset-2 text-center">
 				<div class="display-t">
 					<div class="display-tc animate-box" data-animate-effect="fadeIn">
-						<h1>トモダチの名前</h1>
+						<h1>友達の名前</h1>
 						<h2>誕生日</h2>
 					</div>
 				</div>
@@ -88,7 +88,7 @@
 		<div class="row">
 			<div class="col-md-8 col-md-offset-2 text-center fh5co-heading animate-box">
 				<span>Our Memories</span>
-				<h2>プレゼントボックス</h2>
+				<h2>Present Box</h2>
 				<p></p>
 
 				<form method="GET" action="" class="" role="search">
@@ -116,15 +116,15 @@
 
 				<div class="row">
 					<div class="col-xs-4 ">
-						<a data-target="con1" class="modal-open"><img src="images/gallery-1.jpg" class="picture-size"></a>
+						<a data-target="con1" class="modal-open"><img src="assets/images/present2.jpg" class="picture-size"></a>
 					</div>
 
 					<div class="col-xs-4">
-						<a data-target="con2" class="modal-open"><img src="images/friend1.png" class="picture-size"></a>
+						<a data-target="con2" class="modal-open"><img src="assets/images/present2.jpg" class="picture-size"></a>
 					</div>
 
 					<div class="col-xs-4">
-						<a data-target="con3" class="modal-open"><img src="images/friend1.png" class="picture-size"></a>
+						<a data-target="con3" class="modal-open"><img src="assets/images/present2.jpg" class="picture-size"></a>
 					</div>
 
 
@@ -132,7 +132,7 @@
 					<div id="con1" class="modal-content" style="width: 800px; height: 500px;">
 						<div class="row">
 							<div class="col-md-6">
-								<br><br><img src="images/gallery-1.jpg" class="picture-size">
+								<br><br><img src="assets/images/gallery-1.jpg" class="picture-size">
 							</div>
 							<div class="col-md-6" style="font-size: 25px; line-height: 4em;">
 								<ul class="text-left" >
@@ -150,7 +150,7 @@
 					<div id="con2" class="modal-content" style="width: 800px; height: 500px;">
 						<div class="row">
 							<div class="col-md-6">
-								<br><br><img src="images/friend1.png" class="picture-size">
+								<br><br><img src="assets/images/friend1.png" class="picture-size">
 							</div>
 							<div class="col-md-6"><p>リンク1の内容です。</p>
 								<p><a class="modal-close">閉じる</a></p>
@@ -161,7 +161,7 @@
 					<div id="con3" class="modal-content" style="width: 800px; height: 500px;">
 						<div class="row">
 							<div class="col-md-6">
-								<br><br><img src="images/friend1.png" class="picture-size">
+								<br><br><img src="assets/images/friend1.png" class="picture-size">
 							</div>
 							<div class="col-md-6"><p>リンク1の内容です。</p>
 								<p><a class="modal-close">閉じる</a></p>
@@ -184,16 +184,16 @@
 
 				<div class="row">
 					<div class="col-xs-4 ">
-						<a data-target="con4" class="modal-open"><img src="images/gallery-1.jpg" class="picture-size"></a>
+						<a data-target="con4" class="modal-open"><img src="assets/images/present2.jpg" class="picture-size"></a>
 
 					</div>
 
 					<div class="col-xs-4">
-						<a data-target="con5" class="modal-open"><img src="images/friend1.png" class="picture-size"></a>
+						<a data-target="con5" class="modal-open"><img src="assets/images/present2.png" class="picture-size"></a>
 					</div>
 
 					<div class="col-xs-4">
-						<a data-target="con6" class="modal-open"><img src="images/friend1.png" class="picture-size"></a>
+						<a data-target="con6" class="modal-open"><img src="assets/images/present2.png" class="picture-size"></a>
 					</div>
 
 
@@ -243,16 +243,16 @@
 
 				<div class="row">
 					<div class="col-xs-4 ">
-						<a data-target="con7" class="modal-open"><img src="images/gallery-1.jpg" class="picture-size"></a>
+						<a data-target="con7" class="modal-open"><img src="assets/images/preset3.jpg" class="picture-size"></a>
 
 					</div>
 
 					<div class="col-xs-4">
-						<a data-target="con8" class="modal-open"><img src="images/friend1.png" class="picture-size"></a>
+						<a data-target="con8" class="modal-open"><img src="assets/images/preset3.png" class="picture-size"></a>
 					</div>
 
 					<div class="col-xs-4">
-						<a data-target="con9" class="modal-open"><img src="images/friend1.png" class="picture-size"></a>
+						<a data-target="con9" class="modal-open"><img src="assets/images/preset3.png" class="picture-size"></a>
 					</div>
 
 

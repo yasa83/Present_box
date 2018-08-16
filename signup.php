@@ -38,7 +38,7 @@
                 <div class="panel-heading">
                    <div class="panel-title text-center">
                         <h1 class="title">register</h1>
-                        <hr />
+                        <hr>
                     </div>
                 </div> 
                 <div class="main-login main-center">
