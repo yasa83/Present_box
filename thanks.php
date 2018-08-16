@@ -14,5 +14,5 @@
     <p>thank you for registration</p>
 </div>
 
-      <a href="signin.html" class="fancy-button"><span>signin</span></a>
+      <a href="signin.php" class="fancy-button"><span>signin</span></a>
 </body>
