@@ -32,34 +32,6 @@
 </head>
 <body>
 
-    <!-- ナビゲーション始まり -->
-    <div class="fh5co-loader"></div>
-    <div id="page">
-        <nav class="fh5co-nav" role="navigation">
-            <div class="container">
-                <div class="row">
-                    <div class="col-xs-4">
-                        <div id="fh5co-logo"><a href="home.html">Present Box<strong>.</strong></a></div>
-                    </div>
-                    <div class="col-xs-8 text-right menu-1">
-                        <ul>
-                            <li><a href="＃">signout</a></li>
-                            <li class="active"><a href="#">mypage</a></li>
-                            <li class="has-dropdown">
-                                <a href="#"></a>
-                                <ul class="dropdown">
-                                    <li><a href="#">present</a></li>
-                                    <li><a href="#">friends</a></li>
-                                </li>
-                                <li><a href="#">####</a></li>
-                            </ul>
-                        </ul>
-                    </div>
-                </div>
-            </div>
-        </nav>
-    </div>
-    <!-- ナビゲーション終わり -->
 
     <!-- ヘッダー始まり -->
     <header id="fh5co-header" class="fh5co-cover fh5co-cover-sm" role="banner" style="background-image:url(images/background-image1.jpg);">
