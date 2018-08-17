@@ -30,11 +30,10 @@
     <!-- Modernizr JS -->
     <script src="js/modernizr-2.6.2.min.js"></script>
 </head>
-<body>
-
+<body id="upper">
 
     <!-- ヘッダー始まり -->
-    <header id="fh5co-header" class="fh5co-cover fh5co-cover-sm" role="banner" style="background-image:url(images/background-image1.jpg);">
+    <header id="fh5co-header" class="fh5co-cover fh5co-cover-sm " role="banner" style="background-image:url(images/background-image1.jpg);">
         <div class="overlay"></div>
         <div class="fh5co-container">
             <div class="row">
@@ -46,10 +45,10 @@
                             <div class=“input-group”>
                                 <div class="row  text-center">
                                     <div class="col-xs-6 text-right" >
-                                        <a href="signup.php" class="btn btn-default btn-sm" style="font-size: 20px;">新規登録</a>
+                                        <a href="signup.php" class="btn btn-default btn-sm" style="font-size: 20px;">new resister</a>
                                     </div>
                                     <div class="col-xs-6 text-left">
-                                        <a href="signin.html" class="btn btn-default btn-sm" style="font-size: 20px;">サインイン</a>
+                                        <a href="signin.php" class="btn btn-default btn-sm" style="font-size: 20px;">sign in</a>
                                     </div>
                                 </div>
 
@@ -58,97 +57,89 @@
                     </div>
                 </div>
             </div>
-        </header>
-        <!-- ヘッダー終わり -->
+        </div>
+    </header>
+    <!-- ヘッダー終わり -->
 
 
-        <!--wrap始まり-->
-
-    <div id="fh5co-gallery">
-        <div class="container">
-            <div class="row">
-                <div class="col-md-8 col-md-offset-2 text-center fh5co-heading animate-box">
-                    <h2>How to use</h2>
-                    <p>つかいかた</p>
-                </div>
+    <!--wrap始まり-->
+    <br>
+    <div class="container">
+        <div class="row">
+            <div class="col-md-8 col-md-offset-2 text-center fh5co-heading animate-box">
+                <h2>How to use</h2>
+                <p>つかいかた</p>
             </div>
-            <div class="row row-bottom-padded-md">
-                <div class="col-md-12">
-                    <ul id="fh5co-gallery-list">
+        </div>
+        <div class="row row-bottom-padded-md">
+            <ul id="fh5co-gallery-list">
                 <!-- 登録した友達 -->
                 <hr>
-                <div class="container">
-                    <div class="row">
-                        <div class="flame">
-                            <img src="images/web.png" class="image fluied" align="left" style="margin:10px 20px 10px 50px;">
-                            <div class="main-center">
-                                <p>LolemLorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
-                            </div>
+                <div class="row" style="background-color: #f5f5f5; padding: 20px 20px;" >
+                    <div class="flame">
+                        <img src="images/web.png" class="image fluied" align="left" style="margin:10px 20px 10px 50px;">
+                        <div class="main-center">
+                            <p>LolemLorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
+                        </div>
+                    </div>
+                </div>
+
+
+                <hr>
+                <div class="row" style="background-color: #f5f5f5; padding: 20px 20px;" >
+                    <div class="flame">
+                        <img src="images/web.png" class="image fluied" align="left" style="margin:10px 20px 10px 50px;">
+                        <div class="main-center">
+                            <p>LolemLorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
                         </div>
                     </div>
                 </div>
 
                 <hr>
-                <div class="container">
-                    <div class="row">
-                        <div class="flame">
-                            <img src="images/web.png" class="image fluied" align="left" style="margin:10px 20px 10px 50px;">
-                            <div class="main-center">
-                                <p>LolemLorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
-                            </div>
+                <div class="row" style="background-color: #f5f5f5; padding: 20px 20px;" >
+                    <div class="flame">
+                        <img src="images/web.png" class="image fluied" align="left" style="margin:10px 20px 10px 50px;">
+                        <div class="main-center">
+                            <p>LolemLorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
                         </div>
                     </div>
                 </div>
+            </ul>
+        </div>
+    </div>
 
-                                <hr>
-                <div class="container">
-                    <div class="row">
-                        <div class="flame">
-                            <img src="images/web.png" class="image fluied" align="left" style="margin:10px 20px 10px 50px;">
-                            <div class="main-center">
-                                <p>LolemLorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-                    </ul>       
+
+    <!--wrap終わり-->
+
+
+
+
+    <!-- フッター始まり -->
+    <footer id="fh5co-footer" role="contentinfo">
+        <div class="container">
+            <div class="row copyright">
+                <div class="col-md-12 text-center">
+                    <p>
+                        <small class="block">&copy; チームはしうち　Nexseed</small> 
+                    </p>
+                    <p>
+                        <ul class="fh5co-social-icons">
+                            <li><a href="#"><i class="icon-twitter"></i></a></li>
+                            <li><a href="#"><i class="icon-facebook"></i></a></li>
+                        </ul>
+                    </p>
                 </div>
             </div>
         </div>
-    </div>
-                
-
-        <!--wrap終わり-->
+    </footer>
+    <!-- フッター終わり -->
 
 
-
-
-        <!-- フッター始まり -->
-        <footer id="fh5co-footer" role="contentinfo">
-            <div class="container">
-                <div class="row copyright">
-                    <div class="col-md-12 text-center">
-                        <p>
-                            <small class="block">&copy; チームはしうち　Nexseed</small> 
-                        </p>
-                        <p>
-                            <ul class="fh5co-social-icons">
-                                <li><a href="#"><i class="icon-twitter"></i></a></li>
-                                <li><a href="#"><i class="icon-facebook"></i></a></li>
-                            </ul>
-                        </p>
-                    </div>
-                </div>
-            </div>
-        </footer>
-        <!-- フッター終わり -->
-
-
-        <!-- 画面遷移用の矢印 -->
-    </div>
-    <div class="gototop js-top">
-        <a href="#" class="js-gotop"><i class="icon-arrow-up"></i></a>
-    </div>
+    <!-- 画面遷移用の矢印 -->
+</div>
+<div class="gototop js-top">
+    <a href="#" class="js-gotop"><i class="icon-arrow-up"></i></a>
+</div>
 </div>
 
 <!-- jQuery -->
