@@ -40,7 +40,7 @@
 
 
     <!-- ヘッダー始まり -->
-    <header id="fh5co-header" class="fh5co-cover fh5co-cover-sm" role="banner" style="background-image:url(images/want.jpg);">
+    <header id="fh5co-header" class="fh5co-cover fh5co-cover-sm" role="banner" style="background-image:url(assets/images/want.jpg);">
         <div class="overlay"></div>
 
 
@@ -128,27 +128,8 @@
 </div>
 
 
-<!-- jQuery -->
-<script src="assets/js/jquery.min.js"></script>
-<!-- jQuery Easing -->
-<script src="assets/js/jquery.easing.1.3.js"></script>
-<!-- Bootstrap -->
-<script src="assets/js/bootstrap.min.js"></script>
-<!-- Waypoints -->
-<script src="assets/js/jquery.waypoints.min.js"></script>
-<!-- Carousel -->
-<script src="assets/js/owl.carousel.min.js"></script>
-<!-- countTo -->
-<script src="assets/js/jquery.countTo.js"></script>
-
-<!-- Stellar -->
-<script src="assets/js/jquery.stellar.min.js"></script>
-<!-- Magnific Popup -->
-<script src="assets/js/jquery.magnific-popup.min.js"></script>
-<script src="assets/js/magnific-popup-options.js"></script>
-
-<!-- Main -->
-<script src="assets/js/main.js"></script>
+<!-- スクリプトの変更 -->
+<?php include('jque.php'); ?>
 
 </body>
 </html>

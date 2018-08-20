@@ -13,27 +13,27 @@
     <link href="https://fonts.googleapis.com/css?family=Sacramento" rel="stylesheet">
 
     <!-- Animate.css -->
-    <link rel="stylesheet" href="css/animate.css">
+    <link rel="stylesheet" href="assets/css/animate.css">
     <!-- Icomoon Icon Fonts-->
-    <link rel="stylesheet" href="css/icomoon.css">
+    <link rel="stylesheet" href="assets/css/icomoon.css">
     <!-- Bootstrap  -->
-    <link rel="stylesheet" href="css/bootstrap.css">
+    <link rel="stylesheet" href="assets/css/bootstrap.css">
 
     <!-- Magnific Popup -->
-    <link rel="stylesheet" href="css/magnific-popup.css">
+    <link rel="stylesheet" href="assets/css/magnific-popup.css">
 
     <!-- Owl Carousel  -->
-    <link rel="stylesheet" href="css/owl.carousel.min.css">
-    <link rel="stylesheet" href="css/owl.theme.default.min.css">
+    <link rel="stylesheet" href="assets/css/owl.carousel.min.css">
+    <link rel="stylesheet" href="assets/css/owl.theme.default.min.css">
     <!-- Theme style  -->
-    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="assets/css/style.css">
     <!-- Modernizr JS -->
-    <script src="js/modernizr-2.6.2.min.js"></script>
+    <script src="assets/js/modernizr-2.6.2.min.js"></script>
 </head>
 <body id="upper">
 
     <!-- ヘッダー始まり -->
-    <header id="fh5co-header" class="fh5co-cover fh5co-cover-sm " role="banner" style="background-image:url(images/background-image1.jpg);">
+    <header id="fh5co-header" class="fh5co-cover fh5co-cover-sm " role="banner" style="background-image:url(assets/images/background-image1.jpg);">
         <div class="overlay"></div>
         <div class="fh5co-container">
             <div class="row">
@@ -63,7 +63,7 @@
 
 
     <!--wrap始まり-->
-    <br>
+    <br><br>
     <div class="container">
         <div class="row">
             <div class="col-md-8 col-md-offset-2 text-center fh5co-heading animate-box">
@@ -77,31 +77,31 @@
                 <hr>
                 <div class="row" style="background-color: #f5f5f5; padding: 20px 20px;" >
                     <div class="flame">
-                        <img src="images/web.png" class="image fluied" align="left" style="margin:10px 20px 10px 50px;">
-                        <div class="main-center">
+                        <img src="assets/images/web.png" class="image fluied" align="left" style="margin:10px 20px 10px 50px;">
+                        <!-- <div class="main-center"> -->
                             <p>LolemLorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
-                        </div>
+                        <!-- </div> -->
                     </div>
                 </div>
 
 
                 <hr>
-                <div class="row" style="background-color: #f5f5f5; padding: 20px 20px;" >
+                 <div class="row" style="background-color: #f5f5f5; padding: 20px 20px;" >
                     <div class="flame">
-                        <img src="images/web.png" class="image fluied" align="left" style="margin:10px 20px 10px 50px;">
-                        <div class="main-center">
+                        <img src="assets/images/web.png" class="image fluied" align="left" style="margin:10px 20px 10px 50px;">
+                        <!-- <div class="main-center"> -->
                             <p>LolemLorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
-                        </div>
+                        <!-- </div> -->
                     </div>
                 </div>
 
                 <hr>
-                <div class="row" style="background-color: #f5f5f5; padding: 20px 20px;" >
+                 <div class="row" style="background-color: #f5f5f5; padding: 20px 20px;" >
                     <div class="flame">
-                        <img src="images/web.png" class="image fluied" align="left" style="margin:10px 20px 10px 50px;">
-                        <div class="main-center">
+                        <img src="assets/images/web.png" class="image fluied" align="left" style="margin:10px 20px 10px 50px;">
+                        <!-- <div class="main-center"> -->
                             <p>LolemLorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
-                        </div>
+                        <!-- </div> -->
                     </div>
                 </div>
             </ul>
@@ -142,27 +142,9 @@
 </div>
 </div>
 
-<!-- jQuery -->
-<script src="js/jquery.min.js"></script>
-<!-- jQuery Easing -->
-<script src="js/jquery.easing.1.3.js"></script>
-<!-- Bootstrap -->
-<script src="js/bootstrap.min.js"></script>
-<!-- Waypoints -->
-<script src="js/jquery.waypoints.min.js"></script>
-<!-- Carousel -->
-<script src="js/owl.carousel.min.js"></script>
-<!-- countTo -->
-<script src="js/jquery.countTo.js"></script>
 
-<!-- Stellar -->
-<script src="js/jquery.stellar.min.js"></script>
-<!-- Magnific Popup -->
-<script src="js/jquery.magnific-popup.min.js"></script>
-<script src="js/magnific-popup-options.js"></script>
-
-<!-- Main -->
-<script src="js/main.js"></script>
+<!-- スクリプトの変更 -->
+<?php include('jque.php'); ?>
 
 </body>
 </html>

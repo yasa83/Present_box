@@ -41,24 +41,24 @@
 <link href="https://fonts.googleapis.com/css?family=Sacramento" rel="stylesheet">
 
 <!-- Animate.css -->
-<link rel="stylesheet" href="css/animate.css">
+<link rel="stylesheet" href="assets/css/animate.css">
 <!-- Icomoon Icon Fonts-->
-<link rel="stylesheet" href="css/icomoon.css">
+<link rel="stylesheet" href="assets/css/icomoon.css">
 <!-- Bootstrap  -->
-<link rel="stylesheet" href="css/bootstrap.css">
+<link rel="stylesheet" href="assets/css/bootstrap.css">
 
 <!-- Magnific Popup -->
-<link rel="stylesheet" href="css/magnific-popup.css">
+<link rel="stylesheet" href="assets/css/magnific-popup.css">
 
 <!-- Owl Carousel  -->
-<link rel="stylesheet" href="css/owl.carousel.min.css">
-<link rel="stylesheet" href="css/owl.theme.default.min.css">
+<link rel="stylesheet" href="assets/css/owl.carousel.min.css">
+<link rel="stylesheet" href="assets/css/owl.theme.default.min.css">
 
 <!-- Theme style  -->
-<link rel="stylesheet" href="css/style.css">
+<link rel="stylesheet" href="assets/css/style.css">
 
 <!-- Modernizr JS -->
-<script src="js/modernizr-2.6.2.min.js"></script>
+<script src="assets/js/modernizr-2.6.2.min.js"></script>
 <!-- FOR IE9 below -->
 	<!--[if lt IE 9]>
 	<script src="js/respond.min.js"></script>
@@ -150,15 +150,15 @@
 
 				<div class="row">
 					<div class="col-xs-4 ">
-						<a data-target="con1" class="modal-open"><img src="images/prezent_1.jpg" class="picture-size"></a>
+						<a data-target="con1" class="modal-open"><img src="assets/images/present3.jpg" class="picture-size"></a>
 					</div>
 
 					<div class="col-xs-4">
-						<a data-target="con2" class="modal-open"><img src="images/prezent_2.jpg" class="picture-size"></a>
+						<a data-target="con2" class="modal-open"><img src="assets/images/present3.jpg" class="picture-size"></a>
 					</div>
 
 					<div class="col-xs-4">
-						<a data-target="con3" class="modal-open"><img src="images/prezent_3.jpg" class="picture-size"></a>
+						<a data-target="con3" class="modal-open"><img src="assets/images/present3.jpg" class="picture-size"></a>
 					</div>
 
 
@@ -166,7 +166,7 @@
 					<div id="con1" class="modal-content" style="width: 800px; height: 500px;">
 						<div class="row">
 							<div class="col-md-6">
-								<br><br><img src="images/prezent_1.jpg" class="picture-size">
+								<br><br><img src="assets/images/present3.jpg" class="picture-size">
 							</div>
 							<div class="col-md-6" style="font-size: 25px; line-height: 4em;">
 								<ul class="text-left" >
@@ -184,7 +184,7 @@
 					<div id="con2" class="modal-content" style="width: 800px; height: 500px;">
 						<div class="row">
 							<div class="col-md-6">
-								<br><br><img src="images/prezent_2.jpg" class="picture-size">
+								<br><br><img src="assets/images/present_2.png" class="picture-size">
 							</div>
 							<div class="col-md-6"><p>リンク1の内容です。</p>
 								<p><a class="modal-close">閉じる</a></p>
@@ -195,7 +195,7 @@
 					<div id="con3" class="modal-content" style="width: 800px; height: 500px;">
 						<div class="row">
 							<div class="col-md-6">
-								<br><br><img src="images/prezent_3.jpg" class="picture-size">
+								<br><br><img src="assets/images/present_3.png" class="picture-size">
 							</div>
 							<div class="col-md-6"><p>リンク1の内容です。</p>
 								<p><a class="modal-close">閉じる</a></p>
@@ -218,16 +218,16 @@
 
 				<div class="row">
 					<div class="col-xs-4 ">
-						<a data-target="con4" class="modal-open"><img src="images/gallery-1.jpg" class="picture-size"></a>
+						<a data-target="con4" class="modal-open"><img src="assets/images/gallery-1.jpg" class="picture-size"></a>
 
 					</div>
 
 					<div class="col-xs-4">
-						<a data-target="con5" class="modal-open"><img src="images/friend1.png" class="picture-size"></a>
+						<a data-target="con5" class="modal-open"><img src="assets/images/friend1.png" class="picture-size"></a>
 					</div>
 
 					<div class="col-xs-4">
-						<a data-target="con6" class="modal-open"><img src="images/friend1.png" class="picture-size"></a>
+						<a data-target="con6" class="modal-open"><img src="assets/images/friend1.png" class="picture-size"></a>
 					</div>
 
 
@@ -235,7 +235,7 @@
 					<div id="con4" class="modal-content" style="width: 800px; height: 500px;">
 						<div class="row">
 							<div class="col-md-6">
-								<br><br><img src="images/gallery-1.jpg" class="picture-size">
+								<br><br><img src="assets/images/gallery-1.jpg" class="picture-size">
 							</div>
 							<div class="col-md-6"><p>リンク1の内容です。</p>
 								<p><a class="modal-close">閉じる</a></p>
@@ -246,7 +246,7 @@
 					<div id="con5" class="modal-content" style="width: 800px; height: 500px;">
 						<div class="row">
 							<div class="col-md-6">
-								<br><br><img src="images/friend1.png" class="picture-size">
+								<br><br><img src="assets/images/friend1.png" class="picture-size">
 							</div>
 							<div class="col-md-6"><p>リンク1の内容です。</p>
 								<p><a class="modal-close">閉じる</a></p>
@@ -257,7 +257,7 @@
 					<div id="con6" class="modal-content" style="width: 800px; height: 500px;">
 						<div class="row">
 							<div class="col-md-8">
-								<br><br><img src="images/friend1.png" class="picture-size">
+								<br><br><img src="assets/images/friend1.png" class="picture-size">
 							</div>
 							<div class="col-md-4"><p>リンク1の内容です。</p>
 								<p><a class="modal-close">閉じる</a></p>
@@ -277,16 +277,16 @@
 
 				<div class="row">
 					<div class="col-xs-4 ">
-						<a data-target="con7" class="modal-open"><img src="images/gallery-1.jpg" class="picture-size"></a>
+						<a data-target="con7" class="modal-open"><img src="assets/images/gallery-1.jpg" class="picture-size"></a>
 
 					</div>
 
 					<div class="col-xs-4">
-						<a data-target="con8" class="modal-open"><img src="images/friend1.png" class="picture-size"></a>
+						<a data-target="con8" class="modal-open"><img src="assets/images/friend1.png" class="picture-size"></a>
 					</div>
 
 					<div class="col-xs-4">
-						<a data-target="con9" class="modal-open"><img src="images/friend1.png" class="picture-size"></a>
+						<a data-target="con9" class="modal-open"><img src="assets/images/friend1.png" class="picture-size"></a>
 					</div>
 
 
@@ -294,7 +294,7 @@
 					<div id="con7" class="modal-content" style="width: 800px; height: 500px;">
 						<div class="row">
 							<div class="col-md-6">
-								<br><br><img src="images/gallery-1.jpg" class="picture-size">
+								<br><br><img src="assets/images/gallery-1.jpg" class="picture-size">
 							</div>
 							<div class="col-md-6">
 								<ul>
@@ -311,7 +311,7 @@
 					<div id="con8" class="modal-content" style="width: 800px; height: 500px;">
 						<div class="row">
 							<div class="col-md-6">
-								<br><br><img src="images/friend1.png" class="picture-size">
+								<br><br><img src="assets/images/friend1.png" class="picture-size">
 							</div>
 							<div class="col-md-6"><p>リンク1の内容です。</p>
 								<p><a class="modal-close">閉じる</a></p>
@@ -322,7 +322,7 @@
 					<div id="con9" class="modal-content" style="width: 800px; height: 500px;">
 						<div class="row">
 							<div class="col-md-6">
-								<br><br><img src="images/friend1.png" class="picture-size">
+								<br><br><img src="assets/images/friend1.png" class="picture-size">
 							</div>
 							<div class="col-md-6"><p>リンク1の内容です。</p>
 								<p><a class="modal-close">閉じる</a></p>
@@ -363,32 +363,8 @@
 		<a href="#" class="js-gotop"><i class="icon-arrow-up"></i></a>
 	</div>
 
-	<!-- jQuery -->
-	<script src="js/jquery.min.js"></script>
-	<!-- jQuery Easing -->
-	<script src="js/jquery.easing.1.3.js"></script>
-	<!-- Bootstrap -->
-	<script src="js/bootstrap.min.js"></script>
-	<!-- Waypoints -->
-	<script src="js/jquery.waypoints.min.js"></script>
-	<!-- Carousel -->
-	<script src="js/owl.carousel.min.js"></script>
-	<!-- countTo -->
-	<script src="js/jquery.countTo.js"></script>
-
-	<!-- Stellar -->
-	<script src="js/jquery.stellar.min.js"></script>
-	<!-- Magnific Popup -->
-	<script src="js/jquery.magnific-popup.min.js"></script>
-	<script src="js/magnific-popup-options.js"></script>
-	<!-- 	自分で作ったやつ -->
-	<script src="js/script.js"></script>
-
-	<!-- // <script src="https://cdnjs.cloudflare.com/ajax/libs/prism/0.0.1/prism.min.js"></script> -->
-	<script src="js/simplyCountdown.js"></script>
-	<!-- Main -->
-	<script src="js/main.js"></script>
-
+<!-- スクリプトの変更 -->
+<?php include('jque.php'); ?>
 	<script>
 		var d = new Date(new Date().getTime() + 200 * 120 * 120 * 2000);
 
