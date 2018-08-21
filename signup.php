@@ -1,44 +1,35 @@
+
 <!DOCTYPE html>
-<html class="no-js"> 
-<head>
-    <meta charset="utf-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-     <link rel="icon" type="images/favicon.png" href="assets/images/favicon.png">
-    <title>Present Box</title>
-    <meta name="viewport" content="width=device-width, initial-scale=1">
-    <meta name="description" content="Free HTML5 Template by FREEHTML5.CO" />
-    <meta name="keywords" content="free html5, free template, free bootstrap, html5, css3, mobile first, responsive" />
-    <meta name="author" content="FREEHTML5.CO" />
+<html lang="en">
+    <head> 
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <link rel="stylesheet" type="text/css" href="assets/css/bootstrap.css">
 
-    <link href='https://fonts.googleapis.com/css?family=Work+Sans:400,300,600,400italic,700' rel='stylesheet' type='text/css'>
-    <link href="https://fonts.googleapis.com/css?family=Sacramento" rel="stylesheet">
+        <!-- Website CSS style -->
+  
 
-    <!-- Animate.css -->
-    <link rel="stylesheet" href="assets/css/animate.css">
-    <!-- Icomoon Icon Fonts-->
-    <link rel="stylesheet" href="assets/css/icomoon.css">
-    <!-- Bootstrap  -->
-    <link rel="stylesheet" href="assets/css/bootstrap.css">
-
-    <!-- Magnific Popup -->
-    <link rel="stylesheet" href="assets/css/magnific-popup.css">
-
-    <!-- Owl Carousel  -->
-    <link rel="stylesheet" href="assets/css/owl.carousel.min.css">
-    <link rel="stylesheet" href="assets/css/owl.theme.default.min.css">
-    <!-- Theme style  -->
-    <link rel="stylesheet" href="assets/css/style.css">
-    <!-- Modernizr JS -->
-    <script src="assets/js/modernizr-2.6.2.min.js"></script>
-</head>
+        <!-- Website Font style -->
+        <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.6.1/css/font-awesome.min.css">
+        
+        <!-- Google Fonts -->
+        <link href='https://fonts.googleapis.com/css?family=Passion+One' rel='stylesheet' type='text/css'>
+        <link href='https://fonts.googleapis.com/css?family=Oxygen' rel='stylesheet' type='text/css'>
+        <link rel="icon" type="images/favicon.png" href="assets/images/favicon.png">
+        <title>Present Box</title>
+        <link href="//maxcdn.bootstrapcdn.com/bootstrap/3.3.0/css/bootstrap.min.css" rel="stylesheet" id="bootstrap-css">
+        <link rel="stylesheet" type="text/css" href="assets/css/signup2.css">
+        <script src="//maxcdn.bootstrapcdn.com/bootstrap/3.3.0/js/bootstrap.min.js"></script>
+        <script src="//code.jquery.com/jquery-1.11.1.min.js"></script>
+        <!------ Include the above in your HEAD tag ---------->
+    </head>
     <body>
-        <body background="assets/images/background-image1.jpg">
+        <body background="images/signup.jpg">
         <div class="container">
             <div class="row main">
                 <div class="panel-heading">
                    <div class="panel-title text-center">
                         <h1 class="title">register</h1>
-                        <hr>
+                        <hr />
                     </div>
                 </div> 
                 <div class="main-login main-center">
@@ -100,34 +91,13 @@
                             </a>
                         </div>
                         <div class="login-register">
-                            <a href="signin.php">Login</a>
+                            <a href="signin.html">Login</a>
                          </div>
                     </form>
                 </div>
             </div>
         </div>
 
-<!-- jQuery -->
-<script src="assets/js/jquery.min.js"></script>
-<!-- jQuery Easing -->
-<script src="assets/js/jquery.easing.1.3.js"></script>
-<!-- Bootstrap -->
-<script src="assets/js/bootstrap.min.js"></script>
-<!-- Waypoints -->
-<script src="assets/js/jquery.waypoints.min.js"></script>
-<!-- Carousel -->
-<script src="assets/js/owl.carousel.min.js"></script>
-<!-- countTo -->
-<script src="assets/js/jquery.countTo.js"></script>
-
-<!-- Stellar -->
-<script src="assets/js/jquery.stellar.min.js"></script>
-<!-- Magnific Popup -->
-<script src="assets/js/jquery.magnific-popup.min.js"></script>
-<script src="assets/js/magnific-popup-options.js"></script>
-
-<!-- Main -->
-<script src="assets/js/main.js"></script>
-
-</body>
+        <script type="text/javascript" src="assets/js/bootstrap.js"></script>
+    </body>
 </html>
