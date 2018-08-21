@@ -62,6 +62,8 @@
         <!-- ヘッダー終わり -->
 
 
+
+
         <!--wrap始まり-->
 
     <div id="fh5co-gallery">
@@ -72,48 +74,51 @@
                     <p>つかいかた</p>
                 </div>
             </div>
-            <div class="row row-bottom-padded-md">
-                <div class="col-md-12">
-                    <ul id="fh5co-gallery-list">
-                <!-- 登録した友達 -->
-                <hr>
-                <div class="container">
-                    <div class="row">
-                        <div class="flame">
-                            <img src="assets/images/web.png" class="image fluied" align="left" style="margin:10px 20px 10px 50px;">
-                            <div class="main-center">
-                                <p>LolemLorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
-                            </div>
-                        </div>
-                    </div>
-                </div>
 
-                <hr>
-                <div class="container">
-                    <div class="row">
-                        <div class="flame">
-                            <img src="assets/images/web.png" class="image fluied" align="left" style="margin:10px 20px 10px 50px;">
-                            <div class="main-center">
-                                <p>LolemLorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
-                            </div>
-                        </div>
+            <div class="container" style="background-color: #f5f5f5;margin-bottom: 20px;">
+                <div class="row">
+                    <div class="col-xs-12 col-md-4">
+                        <img src="assets/images/web.png" class="image fluied" align="left" style="margin:10px 20px 10px 50px;">
                     </div>
-                </div>
-
-                                <hr>
-                <div class="container">
-                    <div class="row">
-                        <div class="flame">
-                            <img src="assets/images/web.png" class="image fluied" align="left" style="margin:10px 20px 10px 50px;">
-                            <div class="main-center">
-                                <p>LolemLorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
-                            </div>
-                        </div>
+                    <div class="col-xs-12 col-md-8">
+                         <p>LolemLorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
                     </div>
-                </div>
-                    </ul>       
                 </div>
             </div>
+
+            <div class="container" style="margin-bottom: 20px;">
+                <div class="row">
+                    <div class="col-xs-12 col-md-4">
+                        <img src="assets/images/web.png" class="image fluied" align="left" style="margin:10px 20px 10px 50px;">
+                    </div>
+                    <div class="col-xs-12 col-md-8">
+                            <p>LolemLorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
+                    </div>
+                </div>
+            </div>
+
+            <div class="container" style="background-color: #f5f5f5;margin-bottom: 20px;">
+                <div class="row">
+                    <div class="col-xs-12 col-md-4">
+                        <img src="assets/images/web.png" class="image fluied" align="left" style="margin:10px 20px 10px 50px;">
+                    </div>
+                    <div class="col-xs-12 col-md-8">
+                         <p>LolemLorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
+                    </div>
+                </div>
+            </div>
+
+            <div class="container" style="margin-bottom: 20px;">
+                <div class="row">
+                    <div class="col-xs-12 col-md-4">
+                        <img src="assets/images/web.png" class="image fluied" align="left" style="margin:10px 20px 10px 50px;">
+                    </div>
+                    <div class="col-xs-12 col-md-8">
+                            <p>LolemLorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
+                    </div>
+                </div>
+            </div>
+
         </div>
     </div>
                 
@@ -129,12 +134,13 @@
                 <div class="row copyright">
                     <div class="col-md-12 text-center">
                         <p>
-                            <small class="block">&copy; チームはしうち　Nexseed</small> 
+                            <small class="block">&copy; 43batch チームはしうち　Nexseed<br>
+                            FREEHTML5.CO</small> 
                         </p>
                         <p>
                             <ul class="fh5co-social-icons">
-                                <li><a href="#"><i class="icon-twitter"></i></a></li>
-                                <li><a href="#"><i class="icon-facebook"></i></a></li>
+                                <li><a href="https://twitter.com/nexseed_cebu"><i class="icon-twitter"></i></a></li>
+                                <li><a href="https://www.facebook.com/NexSeed/"><i class="icon-facebook"></i></a></li>
                             </ul>
                         </p>
                     </div>
@@ -145,11 +151,11 @@
 
 
         <!-- 画面遷移用の矢印 -->
-    </div>
+
     <div class="gototop js-top">
         <a href="#" class="js-gotop"><i class="icon-arrow-up"></i></a>
     </div>
-</div>
+
 
 <!-- jQuery -->
 <script src="assets/js/jquery.min.js"></script>
