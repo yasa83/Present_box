@@ -46,10 +46,10 @@
                             <div class=“input-group”>
                                 <div class="row  text-center">
                                     <div class="col-xs-6 text-right" >
-                                        <a href="signup.php" class="btn btn-default btn-sm" style="font-size: 20px;">新規登録</a>
+                                        <a href="signup.php" class="btn btn-default btn-sm right" style="font-size: 20px;">new register</a>
                                     </div>
                                     <div class="col-xs-6 text-left">
-                                        <a href="signin.php" class="btn btn-default btn-sm" style="font-size: 20px;">サインイン</a>
+                                        <a href="signin.php" class="btn btn-default btn-sm left" style="font-size: 20px;">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;signin&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</a>
                                     </div>
                                 </div>
 
