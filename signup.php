@@ -76,9 +76,7 @@
                         </a>
                     </div>
                     <div class="back">
-                        <a href="index.php">
-                        <button type="button" class="btn btn-primary btn-lg btn-block back-button" style="background-color: gray; border-color: gray;">back</button> 
-                        </a>
+                        <a href="index.php" class="btn btn-default"><font color="#F14E95">&laquo;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;back</a></font>
                     </div>
                 </form>
             </div>
