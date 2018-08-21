@@ -10,7 +10,7 @@
        
 </head>
 <body>
-<div src="assets/images/alcohl.jpg/">
+<div src="assets/images/alcohl.jpg">
     <div class="container">
     <div class="row">
         <!-- ここから -->
