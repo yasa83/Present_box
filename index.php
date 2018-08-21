@@ -45,14 +45,17 @@
                             <h2>このwebサイトは、友達にあげたプレゼントを管理・記録するページです。<br>「去年あの子になにあげたっけ？」「リップをあげたのはあの子だったかな？」<br>そんな悩みを解決するために、友達にあげたプレゼントを、写真付き、年別、友達別に管理することができます。<br>お友達へのプレゼントを考えるときにぜひ活用して下さい。</h2>
                             <div class=“input-group”>
                                 <div class="row  text-center">
-                                    <div class="col-xs-6 text-right" >
+                                    <div class="col-sm-6 text-right" >
                                         <a href="signup.php" class="btn btn-default btn-sm right" style="font-size: 20px;">new register</a>
                                     </div>
-                                    <div class="col-xs-6 text-left">
+                                    <div class="col-sm-6 text-left">
                                         <a href="signin.php" class="btn btn-default btn-sm left" style="font-size: 20px;">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;signin&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</a>
                                     </div>
                                 </div>
 
+                         <div class="row"></div>
+   
+   
                             </div>
                         </div>
                     </div>
@@ -61,7 +64,13 @@
         </header>
         <!-- ヘッダー終わり -->
 
-
+<div class="container">
+    <div class="row">
+        <div class="col-sm-6"></div>
+        <div class="col-sm-6"></div>
+    </div>
+    <div class="row"></div>
+</div>
 
 
         <!--wrap始まり-->
@@ -118,7 +127,6 @@
                     </div>
                 </div>
             </div>
-
         </div>
     </div>
                 
@@ -126,6 +134,10 @@
         <!--wrap終わり-->
 
 
+        <!-- 画面遷移用の矢印 -->
+    <div class="gototop js-top">
+        <a href="#" class="js-gotop"><i class="icon-arrow-up"></i></a>
+    </div>
 
 
         <!-- フッター始まり -->
@@ -148,13 +160,6 @@
             </div>
         </footer>
         <!-- フッター終わり -->
-
-
-        <!-- 画面遷移用の矢印 -->
-
-    <div class="gototop js-top">
-        <a href="#" class="js-gotop"><i class="icon-arrow-up"></i></a>
-    </div>
 
 
 <!-- jQuery -->
