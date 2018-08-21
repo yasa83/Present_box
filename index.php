@@ -84,7 +84,7 @@
                 </div>
             </div>
 
-            <div class="container" style="background-color: #f5f5f5;margin-bottom: 20px;">
+            <div class="container1" style="background-color: #f5f5f5;margin-bottom: 20px;">
                 <div class="row">
                     <div class="col-xs-12 col-md-4">
                         <img src="assets/images/web.png" class="image fluied" align="left" style="margin:10px 20px 10px 50px;">
@@ -95,7 +95,7 @@
                 </div>
             </div>
 
-            <div class="container" style="margin-bottom: 20px;">
+            <div class="container2" style="margin-bottom: 20px;">
                 <div class="row">
                     <div class="col-xs-12 col-md-4">
                         <img src="assets/images/web.png" class="image fluied" align="left" style="margin:10px 20px 10px 50px;">
@@ -106,7 +106,7 @@
                 </div>
             </div>
 
-            <div class="container" style="background-color: #f5f5f5;margin-bottom: 20px;">
+            <div class="container3" style="background-color: #f5f5f5;margin-bottom: 20px;">
                 <div class="row">
                     <div class="col-xs-12 col-md-4">
                         <img src="assets/images/web.png" class="image fluied" align="left" style="margin:10px 20px 10px 50px;">
@@ -117,7 +117,7 @@
                 </div>
             </div>
 
-            <div class="container" style="margin-bottom: 20px;">
+            <div class="container4" style="margin-bottom: 20px;">
                 <div class="row">
                     <div class="col-xs-12 col-md-4">
                         <img src="assets/images/web.png" class="image fluied" align="left" style="margin:10px 20px 10px 50px;">
