@@ -15,13 +15,13 @@
 <title>Present Box</title>
 
 <link href="//maxcdn.bootstrapcdn.com/bootstrap/3.3.0/css/bootstrap.min.css" rel="stylesheet" id="bootstrap-css">
-<link rel="stylesheet" type="text/css" href="css/signup2.css">
+<link rel="stylesheet" type="text/css" href="assets/css/style.css">
 <script src="//maxcdn.bootstrapcdn.com/bootstrap/3.3.0/js/bootstrap.min.js"></script>
 <script src="//code.jquery.com/jquery-1.11.1.min.js"></script>
 <!------ Include the above in your HEAD tag ---------->
 </head>
 <body>
-<body background="images/signup.jpg">
+<body>
 <div class="container">
 <div class="row main">
 <div class="panel-heading">
@@ -85,7 +85,7 @@
 
 <div class="form-group ">
 <a href="check.php">
-<button type="button" class="btn btn-primary btn-lg btn-block login-button">Register</button>
+<button type="button" class="btn btn-primary btn-lgo btn-block login-button">Register</button>
 </a>
 </div>
 <div class="login-register">

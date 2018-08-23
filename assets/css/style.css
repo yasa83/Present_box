@@ -1947,7 +1947,7 @@ form label {
  */
 
 body, html{
-    border-image: url(images/signup.jpg);
+    background-image: url(../images/alcohl.jpg);
     background-position: center center;
 
      height: 105%;
@@ -2015,3 +2015,4 @@ input::-webkit-input-placeholder {
     font-size: 11px;
     text-align: center;
     }
+
