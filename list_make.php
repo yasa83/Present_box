@@ -34,32 +34,7 @@
 <body>
 
     <!-- ナビゲーション始まり -->
-    <div class="fh5co-loader"></div>
-    <div id="page">
-        <nav class="fh5co-nav" role="navigation">
-            <div class="container">
-                <div class="row">
-                    <div class="col-xs-4">
-                        <div id="fh5co-logo"><a href="home.html">Present Box<strong>.</strong></a></div>
-                    </div>
-                    <div class="col-xs-8 text-right menu-1">
-                        <ul>
-                            <li><a href="＃">signout</a></li>
-                            <li class="active"><a href="#">mypage</a></li>
-                            <li class="has-dropdown">
-                            <a href="#"></a>
-                            <ul class="dropdown">
-                                <li><a href="#">present</a></li>
-                                <li><a href="#">friends</a></li>
-                            </li>
-                            <li><a href="#">####</a></li>
-                            </ul>
-                        </ul>
-                    </div>
-                </div>
-            </div>
-        </nav>
-    </div>
+<?php include('nav-var.php'); ?>
     <!-- ナビゲーション終わり -->
 
 
@@ -72,7 +47,7 @@
     <div class="container" style="padding-top:45px;">
       <div class="col-xs-8 col-xs-offset-2 thumbnail">
         <h2 class="text-center content_header">register present</h2>
-        <form method="POST" action="#" enctype="multipart/form-data">
+        <form method="POST" action="list.php" enctype="multipart/form-data">
           <div class="form-group">
                 <label class="checkbox-inline">
                 <input type="checkbox" name="cb1">あげたもの
@@ -113,7 +88,7 @@
           <br>
 
           <ul class="nav navbar-nav navbar-left">
-            <li class="active"><a href="index.php" style="margin: 15px,background-color: black;">友達のページに戻る</a></li>
+            <li class="active"><a href="list.php" style="margin: 15px,background-color: black;">友達のページに戻る</a></li>
           </ul>
           <input type="submit" class="btn btn-primary" value="登録">
         </form>
