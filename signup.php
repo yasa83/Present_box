@@ -10,9 +10,13 @@ s<!DOCTYPE html>
     <link href='https://fonts.googleapis.com/css?family=Passion+One' rel='stylesheet' type='text/css'>
     <link href='https://fonts.googleapis.com/css?family=Oxygen' rel='stylesheet' type='text/css'>
     <link rel="icon" type="images/favicon.png" href="assets/images/favicon.png">
-    <title>Present Box</title>
+    
     <link href="//maxcdn.bootstrapcdn.com/bootstrap/3.3.0/css/bootstrap.min.css" rel="stylesheet" id="bootstrap-css">
     <link rel="stylesheet" type="text/css" href="assets/css/style.css">
+    <link rel="stylesheet" type="text/css" href="assets/css/signup.css">
+
+<title>Present Box</title>
+
 </head>
 <body background="assets/images/alcohl.jpg">
     <div class="container">
@@ -32,6 +36,16 @@ s<!DOCTYPE html>
                             <div class="input-group">
                                 <span class="input-group-addon"><i class="fa fa-user fa" aria-hidden="true"></i></span>
                                 <input type="text" class="form-control" name="name" id="name"  placeholder="Enter your Name"/>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="form-group">
+                        <label for="username" class="cols-sm-2 control-label">Your Birthday</label>
+                        <div class="cols-sm-10">
+                            <div class="input-group">
+                                <span class="input-group-addon"><i class="fa fa-users fa" aria-hidden="true"></i></span>
+                                <input type="text" class="form-control" name="username" id="username"  placeholder="Enter your Birthday"/>
                             </div>
                         </div>
                     </div>
@@ -63,6 +77,13 @@ s<!DOCTYPE html>
                                 <span class="input-group-addon"><i class="fa fa-lock fa-lg" aria-hidden="true"></i></span>
                                 <input type="password" class="form-control" name="confirm" id="confirm"  placeholder="Confirm your Password"/>
                             </div>
+                        </div>
+                    </div>
+
+                    <div class="form-group">
+                        <label for="img_name" class="cols-sm-2 control-label">profile image</label>
+                        <div class="cols-sm-10">
+                            <input type="file" name="input_img_name" id="img_name" >
                         </div>
                     </div>
 
