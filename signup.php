@@ -1,5 +1,16 @@
 <?php
 
+$errors = array();
+
+if(!empty($_POST)){
+    $name = $_POST['users_name'];
+
+    if($name == ''){
+        $errors['name'] = 'blank';
+        var_dump($errors['name']);
+        die();
+    }
+}
 
 
 
@@ -31,14 +42,16 @@
                 </div>
             </div> 
             <div class="main-login main-center">
-                <form class="form-horizontal" method="post" action="#">
-                    
+                <form class="form-horizontal" method="post" action="" enctype="multipart/form-data">
                     <div class="form-group">
                         <label for="name" class="cols-sm-2 control-label">Your Name</label>
                         <div class="cols-sm-10">
                             <div class="input-group">
                                 <span class="input-group-addon"><i class="fa fa-user fa" aria-hidden="true"></i></span>
-                                <input type="text" class="form-control" name="name" id="name"  placeholder="Enter your Name"/>
+                                <input type="text" class="form-control" name="users_name" id="name"  placeholder="Enter your Name">
+                                <?php if(isset($errors['name']) && $errors['name'] == 'blank'): ?>
+                                    <p class="text-danger">Enter your name</p>
+                                <?php endif; ?>
                             </div>
                         </div>
                     </div>
@@ -48,7 +61,7 @@
                         <div class="cols-sm-10">
                             <div class="input-group">
                                 <span class="input-group-addon"><i class="fa fa-users fa" aria-hidden="true"></i></span>
-                                <input type="text" class="form-control" name="username" id="username"  placeholder="Enter your User ID"/>
+                                <input type="text" class="form-control" name="users_name" id="username"  placeholder="Enter your User ID"/>
                             </div>
                         </div>
                     </div>
@@ -74,9 +87,7 @@
                     </div>
 
                     <div class="form-group ">
-                        <a href="check.php">
-                            <button type="button" class="btn btn-primary btn-lg btn-block login-button">Register</button>
-                        </a>
+                        <button class="btn btn-primary btn-lg btn-block login-button">Register</button>
                     </div>
                     <div class="back">
                         <a href="index.php" class="btn btn-default"><font color="#F14E95">&laquo;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;back</a></font>
