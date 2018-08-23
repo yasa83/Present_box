@@ -32,161 +32,149 @@
 	<script src="js/modernizr-2.6.2.min.js"></script>
 </head>
 <body>
-
-
-<!-- ナビゲーションはホームのみ動く -->
-
-	<!-- ナビゲーション始まり -->
 <?php include('nav-var.php'); ?>
-	<!-- ナビゲーション終わり -->
+<!-- ヘッダー始まり -->
+    <header id="fh5co-header" class="fh5co-cover fh5co-cover-sm" role="banner" style="background-image:url(assets/images/background-image1.jpg);" style="background-size: 100%;">
+        <div class="overlay"></div>
+        <div class="fh5co-container">
+            <div class="row">
+                <div class="col-md-8 col-md-offset-2 text-center">
+                    <div class="display-t">
+                        <div class="display-tc animate-box" data-animate-effect="fadeIn">
+                            <h1>Whose present</h1>
+                            <h2>do you search?</h2>
+                            <form>
+                                <div class=“input-group”>
+                                <input type=“text” placeholder=“友達の名前や商品名を入力してください“>
+                                <span class=“input-group-btn”>
+                                    <button type=“button” class=“btn">Search</button>
+                                </span>
+                                </div>
+                            </form>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </header>
+<!-- ヘッダー終わり -->
+<body>
+    <hr>
+    <div class="container">
+        <div class="row">
+            <div class="flame">
+                <section class="profile clearfix" style="display: inline-block;">
+                    <a href="list.php">友達の名前</a>
+                    <div class="container">
+                        <div class="row">
 
-	<!-- ヘッダー始まり -->
-	<header id="fh5co-header" class="fh5co-cover fh5co-cover-sm" role="banner" style="background-image:url(images/background-image1.jpg);">
-		<div class="overlay"></div>
-		<div class="fh5co-container">
-			<div class="row">
-				<div class="col-md-8 col-md-offset-2 text-center">
-					<div class="display-t">
-						<div class="display-tc animate-box" data-animate-effect="fadeIn">
-							<h1>Whose present</h1>
-							<h2>do you search?</h2>
-							<div class=“input-group”>
-								<input type=“text” class=“form-control” placeholder=“テキスト入力欄“>
-								<span class=“input-group-btn”>
-									<button type=“button” class=“btn btn-default”>Search</button>
-								</span>
-							</div>
+                            <div class="col-sm-3"><img src="assets/images/friend1.png" class="image fluied" align="left" style="margin:10px 20px 10px 50px;" href="list.php"></div>
+                            <div class="col-sm-2" ><img src="assets/images/present1.png" class="present-image" style="padding-top: 20px"></div>
+                            <div class="col-sm-2"><img src="assets/images/present1.png" class="present-image" style="padding-top: 20px"></div>
+                            <div class="col-sm-2"><img src="assets/images/present1.png" class="present-image" style="padding-top: 20px"></div>
+                            <div class="col-sm-2"><img src="assets/images/present1.png" class="present-image" style="padding-top: 20px"></div>
+                        </div>
 
-						</div>
-					</div>
-				</div>
-			</div>
-		</div>
-	</header>
-	<!-- ヘッダー終わり -->
+                    </section>
+                </div>
+            </div>
+        </div>
+    </div>
 
+    <hr>
+    <div class="container">
+        <div class="row">
+            <div class="flame">
+                <section class="profile clearfix" style="display: inline-block;">
+                    <br><a href="list.php">友達の名前</a>
+                    <div class="container">
+                        <div class="row">
 
-<!--wrap始まり-->
-<div id="wrap">
-	<div class="content">
+                            <div class="col-sm-3"><img src="assets/images/friend1.png" class="image fluied" align="left" style="margin:10px 20px 10px 50px;"></div>
+                            <div class="col-sm-2" ><img src="assets/images/present1.png" class="present-image" style="padding-top: 20px"></div>
+                            <div class="col-sm-2"><img src="assets/images/present1.png" class="present-image" style="padding-top: 20px"></div>
+                            <div class="col-sm-2"><img src="assets/images/present1.png" class="present-image" style="padding-top: 20px"></div>
+                            <div class="col-sm-2"><img src="assets/images/present1.png" class="present-image" style="padding-top: 20px"></div>
+                        </div>
 
-		<!-- 登録した友達 -->
-		<hr>
-		<div class="container">
-			<div class="row">
-				<div class="flame">
-					<img src="images/friend1.png" class="image fluied" align="left" style="margin:10px 20px 10px 50px;">
-						<div class="main-center">
-							<p>名前</p>
-								<section class="profile clearfix" style="display: inline-block;">
-									<img src="images/present1.png" class="present-image">
-									<img src="images/present1.png" class="present-image">
-									<img src="images/present1.png" class="present-image">
-									<img src="images/present1.png" class="present-image">
-									<img src="images/present1.png" class="present-image">
-								</section>
-					</div>
-				</div>
-			</div>
-		</div>
+                    </section>
+                </div>
+            </div>
+        </div>
+    </div>
+    <hr>
+    <div class="container">
+        <div class="row">
+            <div class="flame">
+                <section class="profile clearfix" style="display: inline-block;">
+                    <a href="">友達の名前</a>
+                    <div class="container">
+                        <div class="row">
 
+                            <div class="col-sm-3"><img src="assets/images/friend1.png" class="image fluied" align="left" style="margin:10px 20px 10px 50px;"></div>
+                            <div class="col-sm-2" ><img src="assets/images/present1.png" class="present-image" style="padding-top: 20px"></div>
+                            <div class="col-sm-2"><img src="assets/images/present1.png" class="present-image" style="padding-top: 20px"></div>
+                            <div class="col-sm-2"><img src="assets/images/present1.png" class="present-image" style="padding-top: 20px"></div>
+                            <div class="col-sm-2"><img src="assets/images/present1.png" class="present-image" style="padding-top: 20px"></div>
+                        </div>
 
-		<hr>
-		<div class="container">
-			<div class="row">
-				<div class="flame">
-					<a href="list.php"><img src="images/friend1.png" class="image fluied" align="left" style="margin:10px 20px 10px 50px;"></a>
-						<div class="main-center">
-							<p><a href="list.php">名前</a></p>
-								<section class="profile clearfix" style="display: inline-block;">
-									<img src="images/present1.png" class="present-image">
-									<img src="images/present1.png" class="present-image">
-									<img src="images/present1.png" class="present-image">
-									<img src="images/present1.png" class="present-image">
-									<img src="images/present1.png" class="present-image">
-								</section>
-					</div>
-				</div>
-			</div>
-		</div>
+                    </section>
+                </div>
+            </div>
+        </div>
+    </div>
+</body>
 
-				<hr>
-		<div class="container">
-			<div class="row">
-				<div class="flame">
-					<img src="images/friend1.png" class="image fluied" align="left" style="margin:10px 20px 10px 50px;">
-						<div class="main-center">
-							<p>名前</p>
-								<section class="profile clearfix" style="display: inline-block;">
-									<img src="images/present1.png" class="present-image">
-									<img src="images/present1.png" class="present-image">
-									<img src="images/present1.png" class="present-image">
-									<img src="images/present1.png" class="present-image">
-									<img src="images/present1.png" class="present-image">
-								</section>
-					</div>
-				</div>
-			</div>
-		</div>
-
-
-
-	</div>
-</div> 
-			<!--wrap終わり-->
-
-
-
-
-	<!-- フッター始まり -->
-	<footer id="fh5co-footer" role="contentinfo">
-		<div class="container">
-			<div class="row copyright">
-				<div class="col-md-12 text-center">
-					<p>
-						<small class="block">&copy; チームはしうち　Nexseed</small> 
-					</p>
-					<p>
-						<ul class="fh5co-social-icons">
-							<li><a href="#"><i class="icon-twitter"></i></a></li>
-							<li><a href="#"><i class="icon-facebook"></i></a></li>
-						</ul>
-					</p>
-				</div>
-			</div>
-		</div>
-	</footer>
-	<!-- フッター終わり -->
+<!--wrap終わり-->
+<!-- フッター始まり -->
+<footer id="fh5co-footer" role="contentinfo">
+    <div class="container">
+        <div class="row copyright">
+            <div class="col-md-12 text-center">
+                <p>
+                    <small class="block">&copy; チームはしうち　Nexseed</small> 
+                </p>
+                <p>
+                    <ul class="fh5co-social-icons">
+                        <li><a href="#"><i class="icon-twitter"></i></a></li>
+                        <li><a href="#"><i class="icon-facebook"></i></a></li>
+                    </ul>
+                </p>
+            </div>
+        </div>
+    </div>
+</footer>
+<!-- フッター終わり -->
 
 
 <!-- 画面遷移用の矢印 -->
 </div>
 <div class="gototop js-top">
-	<a href="#" class="js-gotop"><i class="icon-arrow-up"></i></a>
+    <a href="#" class="js-gotop"><i class="icon-arrow-up"></i></a>
 </div>
 </div>
 
 <!-- jQuery -->
-<script src="js/jquery.min.js"></script>
+<script src="assets/js/jquery.min.js"></script>
 <!-- jQuery Easing -->
-<script src="js/jquery.easing.1.3.js"></script>
+<script src="assets/js/jquery.easing.1.3.js"></script>
 <!-- Bootstrap -->
-<script src="js/bootstrap.min.js"></script>
+<script src="assets/js/bootstrap.min.js"></script>
 <!-- Waypoints -->
-<script src="js/jquery.waypoints.min.js"></script>
+<script src="assets/js/jquery.waypoints.min.js"></script>
 <!-- Carousel -->
-<script src="js/owl.carousel.min.js"></script>
+<script src="assets/js/owl.carousel.min.js"></script>
 <!-- countTo -->
-<script src="js/jquery.countTo.js"></script>
+<script src="assets/js/jquery.countTo.js"></script>
 
 <!-- Stellar -->
-<script src="js/jquery.stellar.min.js"></script>
+<script src="assets/js/jquery.stellar.min.js"></script>
 <!-- Magnific Popup -->
-<script src="js/jquery.magnific-popup.min.js"></script>
-<script src="js/magnific-popup-options.js"></script>
+<script src="assets/js/jquery.magnific-popup.min.js"></script>
+<script src="assets/js/magnific-popup-options.js"></script>
 
 <!-- Main -->
-<script src="js/main.js"></script>
+<script src="assets/js/main.js"></script>
 
 </body>
 </html>
