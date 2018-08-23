@@ -6,7 +6,6 @@
     <link rel="icon" type="images/favicon.png" href="assets/images/favicon.png">
     <link rel="stylesheet" type="text/css" href="assets/css/bootstrap.css">
     <link rel="stylesheet" type="text/css" href="assets/css/style.css">
-    <link rel="stylesheet" type="text/css" href="assets/css/font-awesome.css">
 </head>
 <body>
     <div src="assets/images/alcohl.jpg">
@@ -17,7 +16,7 @@
                     <h2 class="text-center content_header">Can you check again?</h2>
                     <div class="row">
                         <div class="col-xs-4">
-                            <img src="images/check.jpg" class="img-responsive img-thumbnail">
+                            <img src="assets/images/friend1.png" class="img-responsive img-thumbnail">
                         </div>
                         <div class="col-xs-8">
                             <div>
@@ -50,8 +49,5 @@
             </div>
         </div>
     </div>
-    <script src="assets/js/jquery-3.1.1.js"></script>
-    <script src="assets/js/jquery-migrate-1.4.1.js"></script>
-    <script src="assets/js/bootstrap.js"></script>
 </body>
 </html>

@@ -4,9 +4,9 @@
 	<title>Present Box</title>
 	<meta charset="UTF-8">
 	<meta name="viewport" content="width=device-width, initial-scale=1">
-	 <link rel="icon" type="images/favicon.png" href="images/favicon.png">
-	<link rel="stylesheet" type="text/css" href="css/signin.css">
-	<link rel="stylesheet" type="text/css" href="css/util.css">
+	 <link rel="icon" type="images/favicon.png" href="assets/images/favicon.png">
+	<link rel="stylesheet" type="text/css" href="assets/css/signin.css">
+	<link rel="stylesheet" type="text/css" href="assets/css/util.css">
 
 </head>
 <body background="images/alcohl.jpg">
