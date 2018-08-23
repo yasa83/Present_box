@@ -2,8 +2,8 @@
 <html lang="ja">
         <head>
         <meta charset="utf-8">
-        <link rel="stylesheet" type="text/css" href="css/thanks.css">
-        <link rel="icon" type="images/favicon.png" href="images/favicon.png">
+        <link rel="stylesheet" type="text/css" href="assets/css/thanks.css">
+        <link rel="icon" type="images/favicon.png" href="assets/images/favicon.png">
 
           </head>
 

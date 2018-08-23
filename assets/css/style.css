@@ -16,7 +16,6 @@ body {
   font-size: 16px;
   line-height: 1.7;
   color: #828282;
-  background: #fff;
 }
 
 #page {
@@ -88,7 +87,6 @@ h1, h2, h3, h4, h5, h6, figure {
   position: fixed;
   top: 0;
   margin: 0;
-  padding: 0;
   width: 100%;
   padding: 10px 0;
   z-index: 1001;
@@ -1949,7 +1947,6 @@ form label {
  */
 
 body, html{
-    border-image: url(assets/images/signup.jpg);
     background-position: center center;
     height: 105%;
     background-repeat: no-repeat;
