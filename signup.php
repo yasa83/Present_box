@@ -4,33 +4,49 @@ $errors = array();
 
 if(!empty($_POST)){
     $name = $_POST['users_name'];
+    $birthday = $_POST['users_birthday'];
+    $id = $_POST['users_id'];
+    $password = $_POST['users_password'];
 
     if($name == ''){
         $errors['name'] = 'blank';
-
     }
+
+    if($birthday == ''){
+        $errors['birthday'] = 'blank';
+    }
+
+    if($id == ''){
+        $errors['id'] = 'blank';
+    }
+
+    if($password == ''){
+        $errors['password'] = 'blank';
+    }
+
+
 }
 
 
 ?>
+
+
 <!DOCTYPE html>
 <html lang="en">
-<head> 
+<head>
     <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="icon" type="images/favicon.png" href="assets/images/favicon.png">
+    
     <link rel="stylesheet" type="text/css" href="assets/css/bootstrap.css">
     <!-- Website Font style -->
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.6.1/css/font-awesome.min.css">
-    
     <!-- Google Fonts -->
     <link href='https://fonts.googleapis.com/css?family=Passion+One' rel='stylesheet' type='text/css'>
     <link href='https://fonts.googleapis.com/css?family=Oxygen' rel='stylesheet' type='text/css'>
-    <link rel="icon" type="images/favicon.png" href="assets/images/favicon.png">
-    
     <link href="//maxcdn.bootstrapcdn.com/bootstrap/3.3.0/css/bootstrap.min.css" rel="stylesheet" id="bootstrap-css">
     <link rel="stylesheet" type="text/css" href="assets/css/style.css">
     <link rel="stylesheet" type="text/css" href="assets/css/signup.css">
-
-<title>Present Box</title>
+    <title>Present Box</title>
 
 </head>
 <body background="assets/images/alcohl.jpg">
@@ -39,7 +55,6 @@ if(!empty($_POST)){
             <div class="panel-heading">
                <div class="panel-title text-center">
                     <h1 class="title">register</h1>
-                    <hr>
                 </div>
             </div> 
             <div class="main-login main-center">
@@ -49,20 +64,17 @@ if(!empty($_POST)){
                         <div class="cols-sm-10">
                             <div class="input-group">
                                 <span class="input-group-addon"><i class="fa fa-user fa" aria-hidden="true"></i></span>
-                                <input type="text" class="form-control" name="users_name" id="name"  placeholder="Enter your Name">
+                                <input type="text" class="form-control" name="users_name" id="name"  placeholder="Enter your Name" required>
                             </div>
-                            <?php if(isset($errors['name']) && $errors['name'] == 'blank'): ?>
-                                <p class="text-danger">名前を入力してください</p>
-                            <?php endif; ?>
                         </div>
                     </div>
 
                     <div class="form-group">
-                        <label for="username" class="cols-sm-2 control-label">Your Birthday</label>
+                        <label for="birthday" class="cols-sm-2 control-label">Your Birthday</label>
                         <div class="cols-sm-10">
                             <div class="input-group">
                                 <span class="input-group-addon"><i class="fa fa-users fa" aria-hidden="true"></i></span>
-                                <input type="text" class="form-control" name="username" id="username"  placeholder="Enter your Birthday"/>
+                                <input type="date" class="form-control" name="users_birthday" id="birthday"  placeholder="Enter your Birthday" required>
                             </div>
                         </div>
                     </div>
@@ -72,7 +84,7 @@ if(!empty($_POST)){
                         <div class="cols-sm-10">
                             <div class="input-group">
                                 <span class="input-group-addon"><i class="fa fa-users fa" aria-hidden="true"></i></span>
-                                <input type="text" class="form-control" name="users_name" id="username"  placeholder="Enter your User ID"/>
+                                <input type="text" class="form-control" name="users_id" id="users_id"  placeholder="Enter your User ID" required>
                             </div>
                         </div>
                     </div>
@@ -82,8 +94,9 @@ if(!empty($_POST)){
                         <div class="cols-sm-10">
                             <div class="input-group">
                                 <span class="input-group-addon"><i class="fa fa-lock fa-lg" aria-hidden="true"></i></span>
-                                <input type="password" class="form-control" name="password" id="password"  placeholder="Enter your Password"/>
+                                <input type="password" class="form-control" name="users_password" id="password"  placeholder="Enter your Password" required>
                             </div>
+                            <?php if(isset($errors['']))?>
                         </div>
                     </div>
 
@@ -92,7 +105,7 @@ if(!empty($_POST)){
                         <div class="cols-sm-10">
                             <div class="input-group">
                                 <span class="input-group-addon"><i class="fa fa-lock fa-lg" aria-hidden="true"></i></span>
-                                <input type="password" class="form-control" name="confirm" id="confirm"  placeholder="Confirm your Password"/>
+                                <input type="password" class="form-control" name="confirm" id="confirm"  placeholder="Confirm your Password" oninput="CheckPassword(this)" required>
                             </div>
                         </div>
                     </div>
@@ -114,5 +127,7 @@ if(!empty($_POST)){
             </div>
         </div>
     </div>
+    <script src="assets/js/jquery.min.js"></script>
+    <script src="assets/js/signup.js"></script>
 </body>
 </html>
