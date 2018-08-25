@@ -35,7 +35,6 @@ if(!empty($_POST)){
         if($file_type != 'jpg' && $file_type !='png' && $file_type!='gif'){
             $errors['img_name'] = 'type';
         }
-
     }else{
         $errors['img_name']= 'blank';
     }
@@ -148,6 +147,10 @@ if(!empty($_POST)){
                             <?php if(isset($errors['img_name'])&& $errors['img_name'] == 'blank'): ?>
                                 <p class="text-danger">enter your image</p>
                             <?php endif;?>
+                            <?php if(isset($errors['img_name'])&& $errors['img_name'] == 'type'): ?>
+                                <p class="text-danger">only 'jpg'.'png','gif' type</p>
+                            <?php endif;?>
+
                         </div>
                     </div>
 
