@@ -9,14 +9,15 @@ if(isset($_REQUEST['action']) && $_REQUEST['action'] == 'rewrite'){
     $_POST['users_password'] = $_SESSION['register']['password'];
 
     $errors['rewrite'] = true;
+
+    // var_dump($_POST['users_name']);
+    // die();
 }
 
-$errors = array();
 $name = '';
 $birthday = '';
 $id = '';
-
-
+$errors = array();
 
 if(!empty($_POST)){
     $name = $_POST['users_name'];
@@ -39,7 +40,7 @@ if(!empty($_POST)){
     $count = strlen($password);
     if($password == ''){
         $errors['password'] = 'blank';
-    }elseif ($count<4 || 16 < $count) {
+    }elseif ($count < 4 || 16 < $count) {
         $errors['password'] = 'length';
     }
 
@@ -76,6 +77,7 @@ if(!empty($_POST)){
     }
 }
 
+
 ?>
 
 
@@ -111,7 +113,7 @@ if(!empty($_POST)){
                         <div class="cols-sm-10">
                             <div class="input-group">
                                 <span class="input-group-addon"><i class="fa fa-user fa" aria-hidden="true"></i></span>
-                                <input type="text" class="form-control" name="users_name" id="name"  placeholder="Enter your Name">
+                                <input type="text" class="form-control" name="users_name" id="name"  placeholder="Enter your Name" value="<?php echo htmlspecialchars($name); ?>">
                             </div>
                             <?php if(isset($errors['name']) && $errors['name'] == 'blank'): ?>
                                     <p class="text-danger">Enter your name</p>
@@ -124,7 +126,7 @@ if(!empty($_POST)){
                         <div class="cols-sm-10">
                             <div class="input-group">
                                 <span class="input-group-addon"><i class="fa fa-users fa" aria-hidden="true"></i></span>
-                                <input type="date" class="form-control" name="users_birthday" id="birthday"  placeholder="Enter your Birthday">
+                                <input type="date" class="form-control" name="users_birthday" id="birthday"  placeholder="Enter your Birthday" value="<?php echo htmlspecialchars($birthday); ?>">
                             </div>
                             <?php if(isset($errors['birthday']) && $errors['birthday'] == 'blank'): ?>
                                     <p class="text-danger">Enter your birthday</p>
@@ -137,7 +139,7 @@ if(!empty($_POST)){
                         <div class="cols-sm-10">
                             <div class="input-group">
                                 <span class="input-group-addon"><i class="fa fa-users fa" aria-hidden="true"></i></span>
-                                <input type="text" class="form-control" name="users_id" id="users_id"  placeholder="Enter your User ID">
+                                <input type="text" class="form-control" name="users_id" id="users_id"  placeholder="Enter your User ID" value="<?php echo htmlspecialchars($id); ?>">
                             </div>
                             <?php if(isset($errors['id']) && $errors['id'] == 'blank'): ?>
                                     <p class="text-danger">Enter your id</p>
