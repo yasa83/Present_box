@@ -1,9 +1,8 @@
 <?php
 session_start();
 date_default_timezone_set('Asia/Manila');
-$errors = array();
 
-if(isset($_GET['action']) && $_GET['action'] == 'rewrite'){
+if(isset($_REQUEST['action']) && $_REQUEST['action'] == 'rewrite'){
     $_POST['users_name'] = $_SESSION['register']['name'];
     $_POST['users_birthday'] = $_SESSION['register']['birthday'];
     $_POST['users_id'] = $_SESSION['register']['id'];
@@ -11,6 +10,13 @@ if(isset($_GET['action']) && $_GET['action'] == 'rewrite'){
 
     $errors['rewrite'] = true;
 }
+
+$errors = array();
+$name = '';
+$birthday = '';
+$id = '';
+
+
 
 if(!empty($_POST)){
     $name = $_POST['users_name'];
@@ -99,7 +105,7 @@ if(!empty($_POST)){
                 </div>
             </div> 
             <div class="main-login main-center">
-                <form class="form-horizontal" method="post" action="" enctype="multipart/form-data">
+                <form class="form-horizontal" method="POST" action="signup.php" enctype="multipart/form-data">
                     <div class="form-group">
                         <label for="name" class="cols-sm-2 control-label">Your Name</label>
                         <div class="cols-sm-10">

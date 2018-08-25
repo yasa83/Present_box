@@ -53,7 +53,7 @@ if(!isset($_SESSION['register'])){
                         <form method="POST" action="thanks.php">
                             <input type="hidden" name="action" value="submit">
                             <input type="submit" class="btn btn-primary" value="user register">
-                            <a href="signup.php?action=rewite" class="btn btn-default" font color="#F14E95">&laquo;&nbsp;back</a>
+                            <a href="signup.php?action=rewrite" class="btn btn-default" font color="#F14E95">&laquo;&nbsp;back</a>
                         </form>
                         </div>
                     </div>
