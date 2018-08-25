@@ -27,16 +27,19 @@ if(!empty($_POST)){
         $errors['password'] = 'length';
     }
 
+    $file_name = array();
     $file_name = $_FILES['users_img_name']['name'];
     if(!empty($file_name)){
+        $file_type = substr($file_name, -3);
+        $file_type = strtolower($file_type);
+        if($file_type != 'jpg' && $file_type !='png' && $file_type!='gif'){
+            $errors['img_name'] = 'type';
+        }
 
     }else{
         $errors['img_name']= 'blank';
     }
 }
-
-
-
 
 ?>
 
@@ -45,8 +48,7 @@ if(!empty($_POST)){
 <html lang="en">
 <head>
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <link rel="icon" type="images/favicon.png" href="assets/images/favicon.png">
-    
+<link rel="icon" type="images/favicon.png" href="assets/images/favicon.png">
     <link rel="stylesheet" type="text/css" href="assets/css/bootstrap.css">
     <!-- Website Font style -->
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.6.1/css/font-awesome.min.css">
@@ -142,7 +144,7 @@ if(!empty($_POST)){
                     <div class="form-group">
                         <label for="img_name" class="cols-sm-2 control-label">profile image</label>
                         <div class="cols-sm-10">
-                            <input type="file" name="users_img_name" id="img_name" >
+                            <input type="file" name="users_img_name" id="img_name" accept="image/*" >
                             <?php if(isset($errors['img_name'])&& $errors['img_name'] == 'blank'): ?>
                                 <p class="text-danger">enter your image</p>
                             <?php endif;?>
