@@ -1,5 +1,6 @@
 <?php
 session_start();
+require('dbconnect.php');
 
 if(!isset($_SESSION['register'])){
     header('Location:signup.php');
@@ -11,6 +12,17 @@ if(!isset($_SESSION['register'])){
     $id = $_SESSION['register']['id'];
     $password = $_SESSION['register']['password'];
     $img_name = $_SESSION['register']['img_name'] ;
+
+    if(!empty($_POST)){
+        $sql = 'INSERT INTO `users` SET `users_name` =?, `birthday`=?,`users_id` = ?, `password`=?, `img_name`=?';
+        $data = array($name,$birthday,$id,password_hash($password,PASSWORD_DEFAULT),$img_name);
+        $stmt = $dbh->prepare($sql);
+        $stmt->execute($data);
+
+        unset($_SESSION['register']);
+        header('Location: thanks.php');
+        exit();
+    }
 
 
 ?>
@@ -50,7 +62,7 @@ if(!isset($_SESSION['register'])){
                             <span>password</span>
                             <p class="lead">●●●●●●●●</p>
                         </div>
-                        <form method="POST" action="thanks.php">
+                        <form method="POST" action="check.php">
                             <input type="hidden" name="action" value="submit">
                             <input type="submit" class="btn btn-primary" value="user register">
                             <a href="signup.php?action=rewrite" class="btn btn-default" font color="#F14E95">&laquo;&nbsp;back</a>

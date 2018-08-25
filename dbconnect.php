@@ -1,5 +1,5 @@
 <?php
-    $dsn = 'mysql:dbname=LearnSNS;host=localhost';
+    $dsn = 'mysql:dbname=Toronto;host=localhost';
     $user = 'root';
     $password='';
     $dbh = new PDO($dsn, $user, $password);
