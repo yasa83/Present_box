@@ -17,6 +17,12 @@ if(!empty($_POST)){
         	$errors['signin'] = 'failed';
         }
 
+        if(password_verify($password,$record['password'])){
+
+        }else{
+        	$errors['signin'] = 'failed';
+        }
+
 
     }else{
         $errors['signin'] = 'blank';
