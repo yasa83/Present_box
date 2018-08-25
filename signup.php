@@ -152,13 +152,16 @@ if(!empty($_POST)){
                         <div class="cols-sm-10">
                             <div class="input-group">
                                 <span class="input-group-addon"><i class="fa fa-lock fa-lg" aria-hidden="true"></i></span>
-                                <input type="password" class="form-control" name="users_password" id="password"  placeholder="Enter your Password">
+                                <input type="password" class="form-control" name="users_password" id="password"  placeholder="4〜16 letters Password">
                             </div>
                             <?php if(isset($errors['password']) && $errors['password'] == 'blank'): ?>
                                     <p class="text-danger">Enter your password</p>
                             <?php endif;?>
                             <?php if(isset($errors['password']) && $errors['password'] == 'length'): ?>
                                 <p class="text-danger">please enter 4〜16 letters</p>
+                            <?php endif; ?>
+                            <?php if(!empty($errors)): ?>
+                                <p class="text-danger">enter password again</p>
                             <?php endif; ?>
                         </div>
                     </div>
@@ -173,8 +176,9 @@ if(!empty($_POST)){
                             <?php if(isset($errors['password']) && $errors['password'] == 'blank'): ?>
                                     <p class="text-danger">Enter your password</p>
                             <?php endif;?>
-
-
+                            <?php if(!empty($errors)): ?>
+                                <p class="text-danger">enter password again</p>
+                            <?php endif; ?>
                         </div>
                     </div>
 
