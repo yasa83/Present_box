@@ -3,6 +3,15 @@ session_start();
 date_default_timezone_set('Asia/Manila');
 $errors = array();
 
+if(isset($_GET['action']) && $_GET['action'] == 'rewrite'){
+    $_POST['users_name'] = $_SESSION['register']['name'];
+    $_POST['users_birthday'] = $_SESSION['register']['birthday'];
+    $_POST['users_id'] = $_SESSION['register']['id'];
+    $_POST['users_password'] = $_SESSION['register']['password'];
+
+    $errors['rewrite'] = true;
+}
+
 if(!empty($_POST)){
     $name = $_POST['users_name'];
     $birthday = $_POST['users_birthday'];
@@ -28,8 +37,11 @@ if(!empty($_POST)){
         $errors['password'] = 'length';
     }
 
-    $file_name = array();
-    $file_name = $_FILES['users_img_name']['name'];
+    // 画像名を取得
+    $file_name = '';
+    if(!isset($_GET['action'])){
+        $file_name = $_FILES['users_img_name']['name'];
+    }
     if(!empty($file_name)){
         $file_type = substr($file_name, -3);
         $file_type = strtolower($file_type);
