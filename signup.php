@@ -1,4 +1,5 @@
 <?php
+session_start();
 date_default_timezone_set('Asia/Manila');
 $errors = array();
 
@@ -39,11 +40,21 @@ if(!empty($_POST)){
         $errors['img_name']= 'blank';
     }
 
+    //エラーがなかった時の処理
     if(empty($errors)){
         $date_str = date('YmdHis');
         $submit_file_name = $date_str . $file_name;
 
         move_uploaded_file($_FILES['users_img_name']['tmp_name'],'user_profile_image/'.$submit_file_name);
+
+        $_SESSION['register']['name'] = $_POST['users_name'];
+        $_SESSION['register']['birthday'] = $_POST['users_birthday'];
+        $_SESSION['register']['id'] = $_POST['users_id'];
+        $_SESSION['register']['password'] = $_POST['users_password'];
+
+        $_SESSION['register']['img_name'] = $submit_file_name;
+        header('Location: check.php');
+        exit();
     }
 }
 
@@ -54,7 +65,7 @@ if(!empty($_POST)){
 <html lang="en">
 <head>
     <meta name="viewport" content="width=device-width, initial-scale=1">
-<link rel="icon" type="images/favicon.png" href="assets/images/favicon.png">
+    <link rel="icon" type="images/favicon.png" href="assets/images/favicon.png">
     <link rel="stylesheet" type="text/css" href="assets/css/bootstrap.css">
     <!-- Website Font style -->
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.6.1/css/font-awesome.min.css">
