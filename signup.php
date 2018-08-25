@@ -20,11 +20,12 @@ if(!empty($_POST)){
         $errors['id'] = 'blank';
     }
 
+    $count = strlen($password);
     if($password == ''){
         $errors['password'] = 'blank';
+    }elseif ($count<4 || 16 < $count) {
+        $errors['password'] = 'length';
     }
-
-
 }
 
 
@@ -64,8 +65,11 @@ if(!empty($_POST)){
                         <div class="cols-sm-10">
                             <div class="input-group">
                                 <span class="input-group-addon"><i class="fa fa-user fa" aria-hidden="true"></i></span>
-                                <input type="text" class="form-control" name="users_name" id="name"  placeholder="Enter your Name" required>
+                                <input type="text" class="form-control" name="users_name" id="name"  placeholder="Enter your Name">
                             </div>
+                            <?php if(isset($errors['name']) && $errors['name'] == 'blank'): ?>
+                                    <p class="text-danger">Enter your name</p>
+                            <?php endif;?>
                         </div>
                     </div>
 
@@ -74,8 +78,11 @@ if(!empty($_POST)){
                         <div class="cols-sm-10">
                             <div class="input-group">
                                 <span class="input-group-addon"><i class="fa fa-users fa" aria-hidden="true"></i></span>
-                                <input type="date" class="form-control" name="users_birthday" id="birthday"  placeholder="Enter your Birthday" required>
+                                <input type="date" class="form-control" name="users_birthday" id="birthday"  placeholder="Enter your Birthday">
                             </div>
+                            <?php if(isset($errors['birthday']) && $errors['birthday'] == 'blank'): ?>
+                                    <p class="text-danger">Enter your birthday</p>
+                            <?php endif;?>
                         </div>
                     </div>
 
@@ -84,8 +91,11 @@ if(!empty($_POST)){
                         <div class="cols-sm-10">
                             <div class="input-group">
                                 <span class="input-group-addon"><i class="fa fa-users fa" aria-hidden="true"></i></span>
-                                <input type="text" class="form-control" name="users_id" id="users_id"  placeholder="Enter your User ID" required>
+                                <input type="text" class="form-control" name="users_id" id="users_id"  placeholder="Enter your User ID">
                             </div>
+                            <?php if(isset($errors['id']) && $errors['id'] == 'blank'): ?>
+                                    <p class="text-danger">Enter your id</p>
+                            <?php endif;?>
                         </div>
                     </div>
 
@@ -94,9 +104,14 @@ if(!empty($_POST)){
                         <div class="cols-sm-10">
                             <div class="input-group">
                                 <span class="input-group-addon"><i class="fa fa-lock fa-lg" aria-hidden="true"></i></span>
-                                <input type="password" class="form-control" name="users_password" id="password"  placeholder="Enter your Password" required>
+                                <input type="password" class="form-control" name="users_password" id="password"  placeholder="Enter your Password">
                             </div>
-                            <?php if(isset($errors['']))?>
+                            <?php if(isset($errors['password']) && $errors['password'] == 'blank'): ?>
+                                    <p class="text-danger">Enter your password</p>
+                            <?php endif;?>
+                            <?php if(isset($errors['password']) && $errors['password'] == 'length'): ?>
+                                <p class="text-danger">please enter 4〜16 letters</p>
+                            <?php endif; ?>
                         </div>
                     </div>
 
@@ -105,8 +120,13 @@ if(!empty($_POST)){
                         <div class="cols-sm-10">
                             <div class="input-group">
                                 <span class="input-group-addon"><i class="fa fa-lock fa-lg" aria-hidden="true"></i></span>
-                                <input type="password" class="form-control" name="confirm" id="confirm"  placeholder="Confirm your Password" oninput="CheckPassword(this)" required>
+                                <input type="password" class="form-control" name="confirm" id="confirm"  placeholder="Confirm your Password" oninput="CheckPassword(this)" >
                             </div>
+                            <?php if(isset($errors['password']) && $errors['password'] == 'blank'): ?>
+                                    <p class="text-danger">Enter your password</p>
+                            <?php endif;?>
+
+
                         </div>
                     </div>
 
