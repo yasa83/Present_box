@@ -1,5 +1,5 @@
 <?php
-
+date_default_timezone_set('Asia/Manila');
 $errors = array();
 
 if(!empty($_POST)){
@@ -37,6 +37,13 @@ if(!empty($_POST)){
         }
     }else{
         $errors['img_name']= 'blank';
+    }
+
+    if(empty($errors)){
+        $date_str = date('YmdHis');
+        $submit_file_name = $date_str . $file_name;
+
+        move_uploaded_file($_FILES['users_img_name']['tmp_name'],'user_profile_image/'.$submit_file_name);
     }
 }
 
