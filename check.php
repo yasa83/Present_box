@@ -1,3 +1,19 @@
+<?php
+session_start();
+
+if(!isset($_SESSION['register'])){
+    header('Location:signup.php');
+    exit();
+}
+
+    $_SESSION['register']['name'] . '<br>';
+    $_SESSION['register']['birthday'] . '<br>';
+    $_SESSION['register']['id'] . '<br>';
+    $_SESSION['register']['password'] . '<br>';
+    $_SESSION['register']['img_name'] . '<br>';
+
+
+?>
 <!DOCTYPE html>
 <html lang="ja">
 <head>
@@ -15,7 +31,7 @@
                 <h2 class="text-center content_header">Can you check again?</h2>
                 <div class="row">
                     <div class="col-xs-4">
-                        <img src="assets/images/friend1.png" class="img-responsive img-thumbnail">
+                        <img src="user_profile_image/<?php echo $_SESSION['register']['img_name']; ?>" width="200" class="img-responsive img-thumbnail">
                     </div>
                     <div class="col-xs-8">
                         <div>
