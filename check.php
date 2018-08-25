@@ -6,11 +6,11 @@ if(!isset($_SESSION['register'])){
     exit();
 }
 
-    $_SESSION['register']['name'] . '<br>';
-    $_SESSION['register']['birthday'] . '<br>';
-    $_SESSION['register']['id'] . '<br>';
-    $_SESSION['register']['password'] . '<br>';
-    $_SESSION['register']['img_name'] . '<br>';
+    $name = $_SESSION['register']['name'];
+    $birthday = $_SESSION['register']['birthday'];
+    $id = $_SESSION['register']['id'];
+    $password = $_SESSION['register']['password'];
+    $img_name = $_SESSION['register']['img_name'] ;
 
 
 ?>
@@ -31,32 +31,30 @@ if(!isset($_SESSION['register'])){
                 <h2 class="text-center content_header">Can you check again?</h2>
                 <div class="row">
                     <div class="col-xs-4">
-                        <img src="user_profile_image/<?php echo $_SESSION['register']['img_name']; ?>" width="200" class="img-responsive img-thumbnail">
+                        <img src="user_profile_image/<?php echo htmlspecialchars($img_name); ?>" width="200" class="img-responsive img-thumbnail">
                     </div>
                     <div class="col-xs-8">
                         <div>
                             <span>user name</span>
-                            <p class="lead">石原さとみ</p>
+                            <p class="lead"><?php echo htmlspecialchars($name); ?></p>
                         </div>
                         <div>
-                            <span>e-mail</span>
-                            <p class="lead">test@fooo</p>
+                            <span>birthday</span>
+                            <p class="lead"><?php echo htmlspecialchars($birthday); ?></p>
                         </div>
                         <div>
                             <span>user ID</span>
-                            <p class="lead">aiueo</p>
-                            <div>
-                                <span>password</span>
-                                <!-- ② -->
-                                <p class="lead">●●●●●●●●</p>
-                            </div>
-                            <!-- ③ -->
-                            <form method="POST" action="thanks.php">
-                                <!-- ⑤ -->
-                                <input type="hidden" name="action" value="submit">
-                                <input type="submit" class="btn btn-primary" value="user register">
-                                <a href="signup.php" class="btn btn-default"><font color="#F14E95">&laquo;&nbsp;back</a></font>
-                            </form>
+                            <p class="lead"><?php echo htmlspecialchars($id); ?></p>
+                        </div>
+                        <div>
+                            <span>password</span>
+                            <p class="lead">●●●●●●●●</p>
+                        </div>
+                        <form method="POST" action="thanks.php">
+                            <input type="hidden" name="action" value="submit">
+                            <input type="submit" class="btn btn-primary" value="user register">
+                            <a href="signup.php?action=rewite" class="btn btn-default" font color="#F14E95">&laquo;&nbsp;back</a>
+                        </form>
                         </div>
                     </div>
                 </div>
