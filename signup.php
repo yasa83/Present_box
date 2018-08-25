@@ -26,7 +26,16 @@ if(!empty($_POST)){
     }elseif ($count<4 || 16 < $count) {
         $errors['password'] = 'length';
     }
+
+    $file_name = $_FILES['users_img_name']['name'];
+    if(!empty($file_name)){
+
+    }else{
+        $errors['img_name']= 'blank';
+    }
 }
+
+
 
 
 ?>
@@ -133,7 +142,10 @@ if(!empty($_POST)){
                     <div class="form-group">
                         <label for="img_name" class="cols-sm-2 control-label">profile image</label>
                         <div class="cols-sm-10">
-                            <input type="file" name="input_img_name" id="img_name" >
+                            <input type="file" name="users_img_name" id="img_name" >
+                            <?php if(isset($errors['img_name'])&& $errors['img_name'] == 'blank'): ?>
+                                <p class="text-danger">enter your image</p>
+                            <?php endif;?>
                         </div>
                     </div>
 
