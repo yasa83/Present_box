@@ -1,5 +1,7 @@
 <?php 
 require('dbconnect.php');
+session_start();
+
 $errors = [];
 
 if(!empty($_POST)){
@@ -18,6 +20,9 @@ if(!empty($_POST)){
         }
 
         if(password_verify($password,$record['password'])){
+        	$_SESSION['id'] = $record['id'];
+        	header("Location: home.php");
+        	exit();
 
         }else{
         	$errors['signin'] = 'failed';
