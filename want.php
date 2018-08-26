@@ -43,7 +43,7 @@
         <div class="overlay" style="padding: 20px"></div>
 
 
-    <div class="container" style="padding-top:50px;">
+    <div class="container" style="padding-top:20px;">
       <div class="col-xs-8 col-xs-offset-2 thumbnail">
         <h2 class="text-center content_header">Want List</h2>
 
