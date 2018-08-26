@@ -1,3 +1,21 @@
+<?php
+session_start();
+require('dbconnect.php');
+
+//サインインユーザー情報取得
+$sql = 'SELECT * FROM `users` WHERE `id` =?';
+$data = array($_SESSION['id']);
+$stmt = $dbh->prepare($sql);
+$stmt->execute($data);
+
+$signin_user = $stmt->fetch(PDO::FETCH_ASSOC);
+
+
+
+
+
+?>
+
 <!DOCTYPE html>
 <html class="no-js"> 
 <head>
@@ -6,23 +24,19 @@
      <link rel="icon" type="images/favicon.png" href="assets/images/favicon.png">
     <title>Present Box</title>
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <meta name="description" content="Free HTML5 Template by FREEHTML5.CO" />
-    <meta name="keywords" content="free html5, free template, free bootstrap, html5, css3, mobile first, responsive" />
-    <meta name="author" content="FREEHTML5.CO" />
-
+    <meta name="description" content="Free HTML5 Template by FREEHTML5.CO">
+    <meta name="keywords" content="free html5, free template, free bootstrap, html5, css3, mobile first, responsive">
+    <meta name="author" content="FREEHTML5.CO">
     <link href='https://fonts.googleapis.com/css?family=Work+Sans:400,300,600,400italic,700' rel='stylesheet' type='text/css'>
     <link href="https://fonts.googleapis.com/css?family=Sacramento" rel="stylesheet">
-
     <!-- Animate.css -->
     <link rel="stylesheet" href="assets/css/animate.css">
     <!-- Icomoon Icon Fonts-->
     <link rel="stylesheet" href="assets/css/icomoon.css">
     <!-- Bootstrap  -->
     <link rel="stylesheet" href="assets/css/bootstrap.css">
-
     <!-- Magnific Popup -->
     <link rel="stylesheet" href="assets/css/magnific-popup.css">
-
     <!-- Owl Carousel  -->
     <link rel="stylesheet" href="assets/css/owl.carousel.min.css">
     <link rel="stylesheet" href="assets/css/owl.theme.default.min.css">
@@ -32,49 +46,15 @@
     <script src="assets/js/modernizr-2.6.2.min.js"></script>
 </head>
 <body>
-    <!-- ナビゲーション始まり -->
-    <div class="fh5co-loader"></div>
-    <div id="page">
-        <nav class="fh5co-nav" role="navigation">
-            <div class="container">
-                <div class="row">
-                    <div class="col-xs-4">
-                        <div id="fh5co-logo"><a href="home.html">Present Box<strong>.</strong></a></div>
-                    </div>
-                    <div class="col-xs-8 text-right menu-1">
-                        <ul>
-                            <li><a href="#">signout</a></li>
-                            <li class="active"><a href="#">mypage</a></li>
-                            <li class="has-dropdown">
-                                <a href="#"></a>
-                                <ul class="dropdown">
-                                    <li><a href="#">present</a></li>
-                                    <li><a href="#">friends</a></li>
-                                </li>
-                                <li><a href="#">####</a></li>
-                            </ul>
-                        </ul>
-                    </div>
-                </div>
-            </div>
-        </nav>
-    </div>
-    <!-- ナビゲーション終わり -->
-
-
-
+    <?php include("nav-var.php"); ?>
     <!-- ヘッダー始まり -->
     <header id="fh5co-header" class="fh5co-cover fh5co-cover-sm" role="banner" style="background-image:url(assets/images/want.jpg);">
         <div class="overlay" style="padding: 20px"></div>
-
-
         <div class="container" style="padding-top:50px;">
-          <div class="col-xs-10 col-xs-offset-1 thumbnail" style="background-color: #f5f5f5;">
-
-            <h2 class="text-center content_header"><br>新規追加</h2>
-
+            <div class="col-xs-10 col-xs-offset-1 thumbnail" style="background-color: #f5f5f5;">
+            <h2 class="text-center content_header"><br>Add your friend</h2>
             <div class="col-xs-5 flexbox-container-vertical-center">
-                <img src="images/friend1.png" class="piture-ajust img-profile" style="width: 370px; height: 330px;">
+                <img src="assets/images/friend1.png" class="piture-ajust img-profile" style="width: 370px; height: 330px;">
             </div>
 
             <div class="col-xs-7">
