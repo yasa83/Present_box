@@ -9,8 +9,6 @@ $stmt->execute($data);
 
 $signin_user = $stmt->fetch(PDO::FETCH_ASSOC);
 
-var_dump($signin_user);
-die();
 ?>
 
 <!DOCTYPE html>
@@ -43,7 +41,10 @@ die();
     <script src="assets/js/modernizr-2.6.2.min.js"></script>
 </head>
 <body>
-<?php include('nav-var.php'); ?>
+<?php include("nav-var.php"); ?>
+
+
+
 <!-- ヘッダー始まり -->
     <header id="fh5co-header" class="fh5co-cover fh5co-cover-sm" role="banner" style="background-image:url(assets/images/background-image1.jpg);" style="background-size: 100%;">
         <div class="overlay"></div>
