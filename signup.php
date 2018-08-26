@@ -192,7 +192,6 @@ if(!empty($_POST)){
                             <?php if(isset($errors['img_name'])&& $errors['img_name'] == 'type'): ?>
                                 <p class="text-danger">only 'jpg'.'png','gif' type</p>
                             <?php endif;?>
-
                         </div>
                     </div>
 
