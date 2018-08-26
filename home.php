@@ -2,12 +2,17 @@
 session_start();
 require('dbconnect.php');
 
+//サインインユーザー情報取得
 $sql = 'SELECT * FROM `users` WHERE `id` =?';
 $data = array($_SESSION['id']);
 $stmt = $dbh->prepare($sql);
 $stmt->execute($data);
 
 $signin_user = $stmt->fetch(PDO::FETCH_ASSOC);
+
+
+
+
 
 ?>
 
