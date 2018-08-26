@@ -12,8 +12,6 @@ $signin_user = $stmt->fetch(PDO::FETCH_ASSOC);
 
 
 
-
-
 ?>
 <!DOCTYPE html>
 <html class="no-js"> 
@@ -27,27 +25,21 @@ $signin_user = $stmt->fetch(PDO::FETCH_ASSOC);
     <meta name="author" content="FREEHTML5.CO">
     <link href='https://fonts.googleapis.com/css?family=Work+Sans:400,300,600,400italic,700' rel='stylesheet' type='text/css'>
     <link href="https://fonts.googleapis.com/css?family=Sacramento" rel="stylesheet">
-
     <!-- Animate.css -->
     <link rel="stylesheet" href="assets/css/animate.css">
     <!-- Icomoon Icon Fonts-->
     <link rel="stylesheet" href="assets/css/icomoon.css">
     <!-- Bootstrap  -->
     <link rel="stylesheet" href="assets/css/bootstrap.css">
-
     <!-- Magnific Popup -->
     <link rel="stylesheet" href="assets/css/magnific-popup.css">
-
     <!-- Owl Carousel  -->
     <link rel="stylesheet" href="assets/css/owl.carousel.min.css">
     <link rel="stylesheet" href="assets/css/owl.theme.default.min.css">
-
     <!-- Theme style  -->
     <link rel="stylesheet" href="assets/css/style.css">
-
     <!-- Modernizr JS -->
     <script src="assets/js/modernizr-2.6.2.min.js"></script>
-
 </head>
 <body>
 <?php include('nav-var.php'); ?>
@@ -293,12 +285,13 @@ $signin_user = $stmt->fetch(PDO::FETCH_ASSOC);
             <div class="row copyright">
                 <div class="col-md-12 text-center">
                     <p>
-                        <small class="block">&copy; チームはしうち　Nexseed</small> 
+                        <small class="block">&copy; 43batch チームはしうち　Nexseed<br>
+                        FREEHTML5.CO</small> 
                     </p>
                     <p>
                         <ul class="fh5co-social-icons">
-                            <li><a href="#"><i class="icon-twitter"></i></a></li>
-                            <li><a href="#"><i class="icon-facebook"></i></a></li>
+                            <li><a href="https://twitter.com/nexseed_cebu"><i class="icon-twitter"></i></a></li>
+                            <li><a href="https://www.facebook.com/NexSeed/"><i class="icon-facebook"></i></a></li>
                         </ul>
                     </p>
                 </div>
@@ -306,6 +299,7 @@ $signin_user = $stmt->fetch(PDO::FETCH_ASSOC);
         </div>
     </footer>
     <!-- フッター終わり -->
+    
     </div>
 
     <div class="gototop js-top">

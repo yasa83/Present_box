@@ -100,119 +100,28 @@ $signin_user = $stmt->fetch(PDO::FETCH_ASSOC);
 <!-- ヘッダー終わり -->
 
 
-<!--wrap始まり-->
 
-<div id="fh5co-gallery">
-    <div class="container">
-        <div class="row">
-            <div class="col-md-8 col-md-offset-2 text-center fh5co-heading animate-box">
-                <h2>your wants list</h2>
-                <p>あなたがほしいもの</p>
+
+    <!-- フッター始まり -->
+    <footer id="fh5co-footer" role="contentinfo">
+        <div class="container">
+            <div class="row copyright">
+                <div class="col-md-12 text-center">
+                    <p>
+                        <small class="block">&copy; 43batch チームはしうち　Nexseed<br>
+                        FREEHTML5.CO</small> 
+                    </p>
+                    <p>
+                        <ul class="fh5co-social-icons">
+                            <li><a href="https://twitter.com/nexseed_cebu"><i class="icon-twitter"></i></a></li>
+                            <li><a href="https://www.facebook.com/NexSeed/"><i class="icon-facebook"></i></a></li>
+                        </ul>
+                    </p>
+                </div>
             </div>
         </div>
-        <div class="row row-bottom-padded-md">
-            <div class="col-md-12">
-                <ul id="fh5co-gallery-list">
-
-                    <li class="one-third animate-box" data-animate-effect="fadeIn" style="background-image: url(assets/images/gallery-1.jpg); "> 
-                        <a href="assets/images/gallery-1.jpg">
-                            <div class="case-studies-summary">
-                                <h2>商品名</h2>
-                            </div>
-                        </a>
-                    </li>
-                    <li class="one-third animate-box" data-animate-effect="fadeIn" style="background-image: url(assets/images/gallery-2.jpg); ">
-                        <a href="#" class="color-2">
-                            <div class="case-studies-summary">
-                             <h2>商品名</h2>
-                         </div>
-                     </a>
-                 </li>
-
-
-                 <li class="one-third animate-box" data-animate-effect="fadeIn" style="background-image: url(assets/images/gallery-3.jpg); ">
-                    <a href="#" class="color-3">
-                        <div class="case-studies-summary">
-                         <h2>商品名</h2>
-                     </div>
-                 </a>
-             </li>
-             <li class="one-third animate-box" data-animate-effect="fadeIn" style="background-image: url(assets/images/gallery-4.jpg); ">
-                <a href="#" class="color-4">
-                    <div class="case-studies-summary">
-                     <h2>商品名</h2>
-                 </div>
-             </a>
-         </li>
-
-         <li class="one-third animate-box" data-animate-effect="fadeIn" style="background-image: url(assets/images/gallery-5.jpg); ">
-            <a href="#" class="color-3">
-                <div class="case-studies-summary">
-                 <h2>商品名</h2>
-             </div>
-         </a>
-     </li>
-     <li class="one-third animate-box" data-animate-effect="fadeIn" style="background-image: url(assets/images/gallery-6.jpg); ">
-        <a href="#" class="color-4">
-            <div class="case-studies-summary">
-               <h2>商品名</h2>
-           </div>
-       </a>
-   </li>
-
-   <li class="one-third animate-box" data-animate-effect="fadeIn" style="background-image: url(assets/images/gallery-7.jpg); ">
-    <a href="#" class="color-4">
-        <div class="case-studies-summary">
-            <h2>商品名</h2>
-        </div>
-    </a>
-</li>
-
-<li class="one-third animate-box" data-animate-effect="fadeIn" style="background-image: url(assets/images/gallery-8.jpg); "> 
-    <a href="#" class="color-5">
-        <div class="case-studies-summary">
-            <h2>商品名</h2>
-        </div>
-    </a>
-</li>
-<li class="one-third animate-box" data-animate-effect="fadeIn" style="background-image: url(assets/images/gallery-9.jpg); ">
-    <a href="#" class="color-6">
-        <div class="case-studies-summary">
-            <h2>商品名</h2>
-        </div>
-    </a>
-</li>
-</ul>       
-</div>
-</div>
-</div>
-</div>
-
-
-<!--wrap終わり-->
-
-
-
-
-<!-- フッター始まり -->
-<footer id="fh5co-footer" role="contentinfo">
-    <div class="container">
-        <div class="row copyright">
-            <div class="col-md-12 text-center">
-                <p>
-                    <small class="block"> チームはしうち　Nexseed</small> 
-                </p>
-                <p>
-                    <ul class="fh5co-social-icons">
-                        <li><a href="#"><i class="icon-twitter"></i></a></li>
-                        <li><a href="#"><i class="icon-facebook"></i></a></li>
-                    </ul>
-                </p>
-            </div>
-        </div>
-    </div>
-</footer>
-<!-- フッター終わり -->
+    </footer>
+    <!-- フッター終わり -->
 
 
 <!-- 画面遷移用の矢印 -->
