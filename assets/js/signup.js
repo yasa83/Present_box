@@ -1,5 +1,5 @@
 
-    var pass = $('#password').value();
+    // var pass = $('#password').value();
 
     function CheckPassword(confirm){
         // 入力値取得
@@ -13,3 +13,4 @@
             confirm.setCustomValidity('');
         }
     }
+    
