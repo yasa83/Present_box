@@ -11,9 +11,57 @@ $stmt->execute($data);
 $signin_user = $stmt->fetch(PDO::FETCH_ASSOC);
 
 
+// 友達情報登録
+$name = '';
+$birthday = '';
+$id = '';
+$errors = array();
+
+if(!empty($_POST)){
+    $name = $_POST['friend_name'];
+    $birthday = $_POST['friend_birthday'];
+    $id = $_POST['friend_id'];
+
+    if($name == ''){
+        $errors['name'] = 'blank';
+    }
+
+    if($birthday == ''){
+        $errors['birthday'] = 'blank';
+    }
+
+    // 画像名を取得
+    $file_name = '';
+    if(!isset($_GET['action'])){
+        $file_name = $_FILES['friend_img_name']['name'];
+    }
+    if(!empty($file_name)){
+        $file_type = substr($file_name, -3);
+        $file_type = strtolower($file_type);
+        if($file_type != 'jpg' && $file_type !='png' && $file_type!='gif'){
+            $errors['img_name'] = 'type';
+        }
+    }else{
+        $errors['img_name']= 'blank';
+    }
+
+    //エラーがなかった時の処理
+    if(empty($errors)){
+        $date_str = date('YmdHis');
+        $submit_file_name = $date_str . $file_name;
+
+        move_uploaded_file($_FILES['friend_img_name']['tmp_name'],'friend_profile_image/'.$submit_file_name);
 
 
+        $sql = 'INSERT INTO `friends` SET `friends_name` =?, `birthday`=?,`img_name` = ?, `created`= NOW(), `users_id`=?';
+        $data = array($name,$birthday,$file_name,$id);
+        $stmt = $dbh->prepare($sql);
+        $stmt->execute($data);
 
+        header('Location: home.php');
+        exit();
+    }
+}
 ?>
 
 <!DOCTYPE html>
@@ -52,51 +100,52 @@ $signin_user = $stmt->fetch(PDO::FETCH_ASSOC);
         <div class="overlay" style="padding: 5px"></div>
         <div class="container" style="padding-top:50px;">
             <div class="col-xs-10 col-xs-offset-1 thumbnail" style="background-color: #f5f5f5;">
-            <h2 class="text-center content_header"><br>Add your friend</h2>
-            <div class="col-xs-5 flexbox-container-vertical-center">
-                <img src="assets/images/friend1.png" class="piture-ajust img-profile" style="width: 370px; height: 330px;">
-            </div>
-
-            <div class="col-xs-7">
-
-                <form method="POST" action="friend.php" enctype="multipart/form-data">
-                  <div class="form-group">
-                    <label for="title">Name</label>
-                    <input type="text" name="input_title" class="form-control" id="title" placeholder="enter your friend's name">
+                <h2 class="text-center content_header"><br>Add your friend</h2>
+                <div class="col-xs-5 flexbox-container-vertical-center">
+                    <img src="assets/images/friend1.png" class="piture-ajust img-profile" style="width: 370px; height: 330px;">
                 </div>
-
-
-                <div class="form-group">
-                    <label for="price">Birthdy</label>
-                    <input type="text" name="input_price" class="form-control" value="" placeholder="enter your friend's birthday">
+                <div class="col-xs-7">
+                    <form method="POST" action="friend.php" enctype="multipart/form-data">
+                        <div class="form-group">
+                            <label for="title">Name</label>
+                            <input type="text" name="friend_name" class="form-control"  placeholder="enter your friend's name">
+                            <?php if(isset($errors['name']) && $errors['name'] == 'blank'): ?>
+                                <p class="text-danger">Enter friend's name</p>
+                            <?php endif;?>
+                        </div>
+                        <div class="form-group">
+                            <label for="price">Birthdy</label>
+                            <input type="date" name="friend_birthday" class="form-control"  placeholder="enter your friend's birthday">
+                            <?php if(isset($errors['birthday']) && $errors['birthday'] == 'blank'): ?>
+                            <p class="text-danger">Enter friend's birthday</p>
+                            <?php endif;?>
+                        </div>
+                        <div class="form-group">
+                            <label for="detail">search id</label>
+                            <input type="text" name="friend_id" class="form-control" rows="10" placeholder="enter id,if your friend have id" value="">
+                        </div>
+                        <div class="form-group">
+                            <label for="img_name">picture</label>
+                            <input type="file" name="friend_img_name" id="image/*"
+                        id="img_name">
+                            <?php if(isset($errors['img_name'])&& $errors['img_name'] == 'blank'): ?>
+                                <p class="text-danger">enter friend's image</p>
+                            <?php endif;?>
+                            <?php if(isset($errors['img_name'])&& $errors['img_name'] == 'type'): ?>
+                                <p class="text-danger">only 'jpg'.'png','gif' type</p>
+                            <?php endif;?>
+                        </div>
+                    </div>
+                    <br>
+                <div class="text-center content_header">
+                    <a href="home.php" style="margin: 15px,background-color: black;">Back</a>
+                    <input type="submit" class="btn btn-primary" value="POST">
                 </div>
-
-                <div class="form-group">
-                    <label for="detail">search id</label>
-                    <input type="text" name="input_detail" class="form-control" rows="10" placeholder="enter id,if your friend have id" value="">
-                </div>
-
-
-
-                <div class="form-group">
-                    <label for="img_name">picture</label>
-                    <input type="file" name="input_img_name" id="image/*"
-                    id="img_name">
-                </div>
-            </div>
-            <br>
-
-            <div class="text-center content_header">
-                <a href="home.php" style="margin: 15px,background-color: black;">Back</a>
-            <input type="submit" class="btn btn-primary" value="POST">
-            </div>
-        </form>
-
+                </form>
             </div>
         </div>
-        </div>
-
-        </header>
+    </div>
+    </header>
     <!-- ヘッダー終わり -->
 
 
@@ -131,7 +180,6 @@ $signin_user = $stmt->fetch(PDO::FETCH_ASSOC);
 </div>
 </div>
 
-
 <!-- jQuery -->
 <script src="assets/js/jquery.min.js"></script>
 <!-- jQuery Easing -->
@@ -144,13 +192,11 @@ $signin_user = $stmt->fetch(PDO::FETCH_ASSOC);
 <script src="assets/js/owl.carousel.min.js"></script>
 <!-- countTo -->
 <script src="assets/js/jquery.countTo.js"></script>
-
 <!-- Stellar -->
 <script src="assets/js/jquery.stellar.min.js"></script>
 <!-- Magnific Popup -->
 <script src="assets/js/jquery.magnific-popup.min.js"></script>
 <script src="assets/js/magnific-popup-options.js"></script>
-
 <!-- Main -->
 <script src="assets/js/main.js"></script>
 
