@@ -49,7 +49,7 @@ $signin_user = $stmt->fetch(PDO::FETCH_ASSOC);
     <?php include("nav-var.php"); ?>
     <!-- ヘッダー始まり -->
     <header id="fh5co-header" class="fh5co-cover fh5co-cover-sm" role="banner" style="background-image:url(assets/images/want.jpg);">
-        <div class="overlay" style="padding: 20px"></div>
+        <div class="overlay" style="padding: 5px"></div>
         <div class="container" style="padding-top:50px;">
             <div class="col-xs-10 col-xs-offset-1 thumbnail" style="background-color: #f5f5f5;">
             <h2 class="text-center content_header"><br>Add your friend</h2>
@@ -59,27 +59,27 @@ $signin_user = $stmt->fetch(PDO::FETCH_ASSOC);
 
             <div class="col-xs-7">
 
-                <form method="POST" action="home.php" enctype="multipart/form-data">
+                <form method="POST" action="friend.php" enctype="multipart/form-data">
                   <div class="form-group">
-                    <label for="title">名前</label>
-                    <input type="text" name="input_title" class="form-control" id="title" placeholder="あなたが欲しいものを入力してください">
+                    <label for="title">Name</label>
+                    <input type="text" name="input_title" class="form-control" id="title" placeholder="enter your friend's name">
                 </div>
 
 
                 <div class="form-group">
-                    <label for="price">誕生日</label>
-                    <input type="text" name="input_price" class="form-control" value="" placeholder="だいたいの値段を入力してください">
+                    <label for="price">Birthdy</label>
+                    <input type="text" name="input_price" class="form-control" value="" placeholder="enter your friend's birthday">
                 </div>
 
                 <div class="form-group">
-                    <label for="detail">id検索</label>
-                    <input type="text" name="input_detail" class="form-control" rows="10" placeholder="どこで買えるかなどを入力してください" value="">
+                    <label for="detail">search id</label>
+                    <input type="text" name="input_detail" class="form-control" rows="10" placeholder="enter id,if your friend have id" value="">
                 </div>
 
 
 
                 <div class="form-group">
-                    <label for="img_name"></label>
+                    <label for="img_name">picture</label>
                     <input type="file" name="input_img_name" id="image/*"
                     id="img_name">
                 </div>
@@ -92,12 +92,12 @@ $signin_user = $stmt->fetch(PDO::FETCH_ASSOC);
             </div>
         </form>
 
-    </div>
-</div>
-</div>
+            </div>
+        </div>
+        </div>
 
-</header>
-<!-- ヘッダー終わり -->
+        </header>
+    <!-- ヘッダー終わり -->
 
 
 
