@@ -14,21 +14,16 @@ if(!empty($_POST)){
         $stmt = $dbh->prepare($sql);
         $stmt->execute($data);
         $record = $stmt->fetch(PDO::FETCH_ASSOC);
-
         if($record == false){
         	$errors['signin'] = 'failed';
         }
-
         if(password_verify($password,$record['password'])){
         	$_SESSION['id'] = $record['id'];
         	header("Location: home.php");
         	exit();
-
         }else{
-        	$errors['signin'] = 'failed';
+            $errors['signin'] = 'failed';
         }
-
-
     }else{
         $errors['signin'] = 'blank';
     }
@@ -57,7 +52,6 @@ if(!empty($_POST)){
                     <?php if(isset($errors['signin']) && $errors['signin'] == 'failed'): ?>
                         <p style="margin:30px 5px 5px 80px; color: red;">failed Login</p>
                     <?php endif; ?>
-
                     <div class="wrap-input100 validate-input" data-validate = "Enter username">
                         <input class="input100" type="text" name="id" placeholder="User ID">
                         <span class="focus-input100" data-placeholder="&#xe82a;"></span>
@@ -76,6 +70,5 @@ if(!empty($_POST)){
     <script src="assets/js/jquery.min.js"></script>
     <script src="assets/js/bootstrap.min.js"></script>
     <script src="assets/js/main.js"></script>
-
 </body>
 </html>

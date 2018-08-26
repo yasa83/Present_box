@@ -1,3 +1,21 @@
+<?php
+session_start();
+require('dbconnect.php');
+
+//サインインユーザー情報取得
+$sql = 'SELECT * FROM `users` WHERE `id` =?';
+$data = array($_SESSION['id']);
+$stmt = $dbh->prepare($sql);
+$stmt->execute($data);
+
+$signin_user = $stmt->fetch(PDO::FETCH_ASSOC);
+
+
+
+
+
+?>
+
 <!DOCTYPE html>
 <html class="no-js"> 
 <head>
@@ -105,12 +123,13 @@
             <div class="row copyright">
                 <div class="col-md-12 text-center">
                     <p>
-                        <small class="block">&copy; チームはしうち　Nexseed</small> 
+                        <small class="block">&copy; 43batch チームはしうち　Nexseed<br>
+                        FREEHTML5.CO</small> 
                     </p>
                     <p>
                         <ul class="fh5co-social-icons">
-                            <li><a href="#"><i class="icon-twitter"></i></a></li>
-                            <li><a href="#"><i class="icon-facebook"></i></a></li>
+                            <li><a href="https://twitter.com/nexseed_cebu"><i class="icon-twitter"></i></a></li>
+                            <li><a href="https://www.facebook.com/NexSeed/"><i class="icon-facebook"></i></a></li>
                         </ul>
                     </p>
                 </div>
