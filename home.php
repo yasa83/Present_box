@@ -2,6 +2,12 @@
 session_start();
 require('dbconnect.php');
 
+// 直接このページに来たらsignin.phpに飛ぶようにする
+if(!isset($_SESSION['id'])){
+    header('Location:signin.php');
+    exit();
+}
+
 //サインインユーザー情報取得
 $sql = 'SELECT * FROM `users` WHERE `id` =?';
 $data = array($_SESSION['id']);
@@ -10,7 +16,23 @@ $stmt->execute($data);
 
 $signin_user = $stmt->fetch(PDO::FETCH_ASSOC);
 
+// エラーの初期化
+$errors = array();
 
+//友達データ取得
+$sql = 'SELECT * FROM `friends` WHERE `users_id` =? ORDER BY `id` DESC';
+$data = array($_SESSION['id']);
+$stmt = $dbh->prepare($sql);
+$stmt->execute($data);
+
+$friends = array();
+    while (1) {
+        $rec = $stmt->fetch(PDO::FETCH_ASSOC);
+        if($rec == false) {
+            break;
+        }
+        $friends[] = $rec;
+    }
 
 
 
