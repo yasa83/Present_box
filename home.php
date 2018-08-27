@@ -86,7 +86,7 @@ $friends = array();
                                 <div class=“input-group”>
                                 <input type=“text” placeholder=“友達の名前や商品名を入力してください“>
                                 <span class=“input-group-btn”>
-                                    <button type=“button” class=“btn">Search</button>
+                                    <button type=“button” class=“btn square_btn" style="color: #F14E95">Search</button>
                                 </span>
                                 </div>
                             </form>
