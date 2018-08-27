@@ -11,28 +11,30 @@ $stmt->execute($data);
 $signin_user = $stmt->fetch(PDO::FETCH_ASSOC);
 
 //友達へのプレゼント登録
-$check1 = '';
-$check2 = '';
+$check = '';
 $present = '';
 $date = '';
 $detail = '';
 $errors = array();
 
 if(!empty($_POST)){
-    $check1 = $_POST['cb1'];
-    $check2 = $_POST['cb2'];
+    $check = $_POST['check'];
     $present = $_POST['input_present'];
     $date = $_POST['input_date'];
     $detail = $_POST['input_detail'];
+
+    if($check = '' ){
+        $errors['check'] = 'blank';
+    } 
 
     if($present == ''){
         $errors['present'] = 'blank';
     }
 
-    if($birthday == ''){
+    if($date == ''){
         $errors['date'] = 'blank';
-
     }
+
         // 画像名を取得
     $file_name = '';
     if(!isset($_GET['action'])){
@@ -55,9 +57,9 @@ if(!empty($_POST)){
 
         move_uploaded_file($_FILES['input_img_name']['tmp_name'],'present_image/'.$submit_file_name);
 
-
+        $data = '';
         $sql = 'INSERT INTO `presents` SET `name` =?, `date`=?,`img_name` = ?, which` = ?';
-        $data = array($name,$date,$file_name, $check);
+        $data = array($present,$date,$file_name, $check);
         $stmt = $dbh->prepare($sql);
         $stmt->execute($data);
 
@@ -110,11 +112,14 @@ if(!empty($_POST)){
                 <form method="POST" action="list_make.php" enctype="multipart/form-data">
                     <div class="form-group">
                         <label class="checkbox-inline">
-                            <input type="radio" name="check">友達にあげたもの
+                            <input type="radio" name="check" value="give" checked="checked">友達にあげたもの
                         </label>
                         <label class="checkbox-inline">
-                            <input type="radio" name="check">友達からもらったもの
+                            <input type="radio" name="check" value="take">友達からもらったもの
                         </label>
+                        <?php if(isset($errors['check']) && $errors['check'] == 'blank'): ?>
+                            <p class="text-danger">Choose one</p>
+                        <?php endif;?>
                     </div>
                     <div class="form-group">
                         <label for="present">Present</label>
@@ -138,6 +143,12 @@ if(!empty($_POST)){
                         <label for="img_name"></label>
                         <input type="file" name="input_img_name" id="image/*"
                         id="img_name">
+                        <?php if(isset($errors['img_name'])&& $errors['img_name'] == 'blank'): ?>
+                            <p class="text-danger">enter present's image</p>
+                        <?php endif;?>
+                        <?php if(isset($errors['img_name'])&& $errors['img_name'] == 'type'): ?>
+                            <p class="text-danger">only 'jpg'.'png','gif' type</p>
+                        <?php endif;?>
                     </div>
                     <br>
                     <ul class="nav navbar-nav navbar-left">
