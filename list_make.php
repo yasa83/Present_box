@@ -104,60 +104,51 @@ if(!empty($_POST)){
     <!-- ヘッダー始まり -->
     <header id="fh5co-header" class="fh5co-cover fh5co-cover-sm" role="banner" style="background-image:url(assets/images/want.jpg);">
         <div class="overlay"></div>
-
-
-    <div class="container" style="padding-top:45px;">
-      <div class="col-xs-8 col-xs-offset-2 thumbnail">
-        <h2 class="text-center content_header">register present</h2>
-        <form method="POST" action="list_make.php" enctype="multipart/form-data">
-          <div class="form-group">
-                <label class="checkbox-inline">
-                <input type="radio" name="check">友達にあげたもの
-                </label>
-                <label class="checkbox-inline">
-                <input type="radio" name="check">友達からもらったもの
-                </label>
-          </div>
-
-          <div class="form-group">
-            <label for="present">Present</label>
-            <input type="text" name="input_present" class="form-control" value="" placeholder="商品名">
-            <?php if(isset($errors['present']) && $errors['present'] == 'blank'): ?>
-                <p class="text-danger">Enter present's name</p>
-            <?php endif;?>
-          </div>
-
-
-          <div class="form-group">
-            <label for="date">date</label>
-            <input type="date" name="input_date" class="form-control" value="" placeholder="もらった・あげた日付を登録してください">
-            <?php if(isset($errors['date']) && $errors['date'] == 'blank'): ?>
-                <p class="text-danger">Enter the date</p>
-                <?php endif;?>
-          </div>
-
-          <div class="form-group">
-            <label for="detail">Detail</label>
-            <input type="text" name="input_detail" class="form-control" rows="10" placeholder="メモを入力してください" value="">
-          </div>
-
-        <div class="form-group">
-            <label for="img_name"></label>
-            <input type="file" name="input_img_name" id="image/*"
-            id="img_name">
-        </div>
-          <br>
-          <ul class="nav navbar-nav navbar-left">
-            <li class="active"><a href="list.php" style="margin: 15px,background-color: black;">友達のページに戻る</a></li>
-          </ul>
-          <input type="submit" class="btn btn-primary" value="登録">
-        </form>
-      </div>
-    </div>
+        <div class="container" style="padding-top:45px;">
+            <div class="col-xs-8 col-xs-offset-2 thumbnail">
+                <h2 class="text-center content_header">register present</h2>
+                <form method="POST" action="list_make.php" enctype="multipart/form-data">
+                    <div class="form-group">
+                        <label class="checkbox-inline">
+                            <input type="radio" name="check">友達にあげたもの
+                        </label>
+                        <label class="checkbox-inline">
+                            <input type="radio" name="check">友達からもらったもの
+                        </label>
+                    </div>
+                    <div class="form-group">
+                        <label for="present">Present</label>
+                        <input type="text" name="input_present" class="form-control" value="" placeholder="商品名">
+                        <?php if(isset($errors['present']) && $errors['present'] == 'blank'): ?>
+                            <p class="text-danger">Enter present's name</p>
+                        <?php endif;?>
+                    </div>
+                    <div class="form-group">
+                        <label for="date">date</label>
+                        <input type="date" name="input_date" class="form-control" value="" placeholder="もらった・あげた日付を登録してください">
+                        <?php if(isset($errors['date']) && $errors['date'] == 'blank'): ?>
+                            <p class="text-danger">Enter the date</p>
+                        <?php endif;?>
+                    </div>
+                    <div class="form-group">
+                        <label for="detail">Detail</label>
+                        <input type="text" name="input_detail" class="form-control" rows="10" placeholder="メモを入力してください" value="">
+                    </div>
+                    <div class="form-group">
+                        <label for="img_name"></label>
+                        <input type="file" name="input_img_name" id="image/*"
+                        id="img_name">
+                    </div>
+                    <br>
+                    <ul class="nav navbar-nav navbar-left">
+                        <li class="active"><a href="list.php" style="margin: 15px,background-color: black;">友達のページに戻る</a></li>
+                    </ul>
+                    <input type="submit" class="btn btn-primary" value="登録">
+                </form>
+            </div>
         </div>
     </header>
-    <!-- ヘッダー終わり -->
-
+<!-- ヘッダー終わり -->
 
     <!-- フッター始まり -->
     <footer id="fh5co-footer" role="contentinfo">
@@ -180,37 +171,32 @@ if(!empty($_POST)){
     </footer>
     <!-- フッター終わり -->
 
+    <!-- 画面遷移用の矢印 -->
+    </div>
+    <div class="gototop js-top">
+        <a href="#" class="js-gotop"><i class="icon-arrow-up"></i></a>
+    </div>
+    </div>
 
-<!-- 画面遷移用の矢印 -->
-</div>
-<div class="gototop js-top">
-    <a href="#" class="js-gotop"><i class="icon-arrow-up"></i></a>
-</div>
-</div>
-
-
-<!-- jQuery -->
-<script src="assets/js/jquery.min.js"></script>
-<!-- jQuery Easing -->
-<script src="assets/js/jquery.easing.1.3.js"></script>
-<!-- Bootstrap -->
-<script src="assets/js/bootstrap.min.js"></script>
-<!-- Waypoints -->
-<script src="assets/js/jquery.waypoints.min.js"></script>
-<!-- Carousel -->
-<script src="assets/js/owl.carousel.min.js"></script>
-<!-- countTo -->
-<script src="assets/js/jquery.countTo.js"></script>
-
-<!-- Stellar -->
-<script src="assets/js/jquery.stellar.min.js"></script>
-<!-- Magnific Popup -->
-<script src="assets/js/jquery.magnific-popup.min.js"></script>
-<script src="assets/js/magnific-popup-options.js"></script>
-
-<!-- Main -->
-<script src="assets/js/main.js"></script>
-
+    <!-- jQuery -->
+    <script src="assets/js/jquery.min.js"></script>
+    <!-- jQuery Easing -->
+    <script src="assets/js/jquery.easing.1.3.js"></script>
+    <!-- Bootstrap -->
+    <script src="assets/js/bootstrap.min.js"></script>
+    <!-- Waypoints -->
+    <script src="assets/js/jquery.waypoints.min.js"></script>
+    <!-- Carousel -->
+    <script src="assets/js/owl.carousel.min.js"></script>
+    <!-- countTo -->
+    <script src="assets/js/jquery.countTo.js"></script>
+    <!-- Stellar -->
+    <script src="assets/js/jquery.stellar.min.js"></script>
+    <!-- Magnific Popup -->
+    <script src="assets/js/jquery.magnific-popup.min.js"></script>
+    <script src="assets/js/magnific-popup-options.js"></script>
+    <!-- Main -->
+    <script src="assets/js/main.js"></script>
 </body>
 </html>
 
