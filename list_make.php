@@ -13,7 +13,9 @@ $signin_user = $stmt->fetch(PDO::FETCH_ASSOC);
 //友達へのプレゼント登録
 $check1 = '';
 $check2 = '';
-$id = '';
+$present = '';
+$date = '';
+$detail = '';
 $errors = array();
 
 if(!empty($_POST)){
@@ -30,6 +32,37 @@ if(!empty($_POST)){
     if($birthday == ''){
         $errors['date'] = 'blank';
 
+    }
+        // 画像名を取得
+    $file_name = '';
+    if(!isset($_GET['action'])){
+        $file_name = $_FILES['input_img_name']['name'];
+    }
+    if(!empty($file_name)){
+        $file_type = substr($file_name, -3);
+        $file_type = strtolower($file_type);
+        if($file_type != 'jpg' && $file_type !='png' && $file_type!='gif'){
+            $errors['img_name'] = 'type';
+        }
+    }else{
+        $errors['img_name']= 'blank';
+    }
+
+    //エラーがなかった時の処理
+    if(empty($errors)){
+        $date_str = date('YmdHis');
+        $submit_file_name = $date_str . $file_name;
+
+        move_uploaded_file($_FILES['present_img_name']['tmp_name'],'present_image/'.$submit_file_name);
+
+
+        $sql = 'INSERT INTO `presents` SET `name` =?, `date`=?,`img_name` = ?, `users_id`= ?, `friends_id`=?, `which` = ?';
+        $data = array($name,$birthday,$file_name,$id);
+        $stmt = $dbh->prepare($sql);
+        $stmt->execute($data);
+
+        header('Location: list.php');
+        exit();
     }
 }
 
