@@ -19,8 +19,8 @@ $detail = '';
 $errors = array();
 
 if(!empty($_POST)){
-    $check1 = $_POST['cb1'];
-    $check2 = $_POST['cb2'];
+    $check = $_POST['cb1'];
+    $check = $_POST['cb2'];
     $present = $_POST['input_present'];
     $date = $_POST['input_date'];
     $detail = $_POST['input_detail'];
@@ -56,8 +56,8 @@ if(!empty($_POST)){
         move_uploaded_file($_FILES['present_img_name']['tmp_name'],'present_image/'.$submit_file_name);
 
 
-        $sql = 'INSERT INTO `presents` SET `name` =?, `date`=?,`img_name` = ?, `users_id`= ?, `friends_id`=?, `which` = ?';
-        $data = array($name,$birthday,$file_name,$id);
+        $sql = 'INSERT INTO `presents` SET `name` =?, `date`=?,`img_name` = ?, which` = ?';
+        $data = array($name,$date,$file_name, $check);
         $stmt = $dbh->prepare($sql);
         $stmt->execute($data);
 
@@ -75,26 +75,22 @@ if(!empty($_POST)){
 <head>
     <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
-     <link rel="icon" type="images/favicon.png" href="assets/images/favicon.png">
     <title>Present Box</title>
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <meta name="description" content="Free HTML5 Template by FREEHTML5.CO" />
     <meta name="keywords" content="free html5, free template, free bootstrap, html5, css3, mobile first, responsive" />
     <meta name="author" content="FREEHTML5.CO" />
-
+    <link rel="icon" type="images/favicon.png" href="assets/images/favicon.png">
     <link href='https://fonts.googleapis.com/css?family=Work+Sans:400,300,600,400italic,700' rel='stylesheet' type='text/css'>
     <link href="https://fonts.googleapis.com/css?family=Sacramento" rel="stylesheet">
-
     <!-- Animate.css -->
     <link rel="stylesheet" href="assets/css/animate.css">
     <!-- Icomoon Icon Fonts-->
     <link rel="stylesheet" href="assets/css/icomoon.css">
     <!-- Bootstrap  -->
     <link rel="stylesheet" href="assets/css/bootstrap.css">
-
     <!-- Magnific Popup -->
     <link rel="stylesheet" href="assets/css/magnific-popup.css">
-
     <!-- Owl Carousel  -->
     <link rel="stylesheet" href="assets/css/owl.carousel.min.css">
     <link rel="stylesheet" href="assets/css/owl.theme.default.min.css">
@@ -104,13 +100,7 @@ if(!empty($_POST)){
     <script src="assets/js/modernizr-2.6.2.min.js"></script>
 </head>
 <body>
-
-    <!-- ナビゲーション始まり -->
-<?php include('nav-var.php'); ?>
-    <!-- ナビゲーション終わり -->
-
-
-
+    <?php include('nav-var.php'); ?>
     <!-- ヘッダー始まり -->
     <header id="fh5co-header" class="fh5co-cover fh5co-cover-sm" role="banner" style="background-image:url(assets/images/want.jpg);">
         <div class="overlay"></div>
