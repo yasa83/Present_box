@@ -10,7 +10,28 @@ $stmt->execute($data);
 
 $signin_user = $stmt->fetch(PDO::FETCH_ASSOC);
 
+//友達へのプレゼント登録
+$check1 = '';
+$check2 = '';
+$id = '';
+$errors = array();
 
+if(!empty($_POST)){
+    $check1 = $_POST['cb1'];
+    $check2 = $_POST['cb2'];
+    $present = $_POST['input_present'];
+    $date = $_POST['input_date'];
+    $detail = $_POST['input_detail'];
+
+    if($present == ''){
+        $errors['present'] = 'blank';
+    }
+
+    if($birthday == ''){
+        $errors['date'] = 'blank';
+
+    }
+}
 
 
 
@@ -65,7 +86,7 @@ $signin_user = $stmt->fetch(PDO::FETCH_ASSOC);
     <div class="container" style="padding-top:45px;">
       <div class="col-xs-8 col-xs-offset-2 thumbnail">
         <h2 class="text-center content_header">register present</h2>
-        <form method="POST" action="list.php" enctype="multipart/form-data">
+        <form method="POST" action="list_make.php" enctype="multipart/form-data">
           <div class="form-group">
                 <label class="checkbox-inline">
                 <input type="checkbox" name="cb1">あげたもの
@@ -77,13 +98,19 @@ $signin_user = $stmt->fetch(PDO::FETCH_ASSOC);
 
           <div class="form-group">
             <label for="present">Present</label>
-            <input type="text" name="input_name" class="form-control" value="" placeholder="商品名">
+            <input type="text" name="input_present" class="form-control" value="" placeholder="商品名">
+            <?php if(isset($errors['present']) && $errors['present'] == 'blank'): ?>
+                <p class="text-danger">Enter present's name</p>
+            <?php endif;?>
           </div>
 
 
           <div class="form-group">
             <label for="date">date</label>
             <input type="date" name="input_date" class="form-control" value="" placeholder="もらった・あげた日付を登録してください">
+            <?php if(isset($errors['date']) && $errors['date'] == 'blank'): ?>
+                <p class="text-danger">Enter the date</p>
+                <?php endif;?>
           </div>
 
           <div class="form-group">
@@ -91,20 +118,12 @@ $signin_user = $stmt->fetch(PDO::FETCH_ASSOC);
             <input type="text" name="input_detail" class="form-control" rows="10" placeholder="メモを入力してください" value="">
           </div>
 
-          <div class="form-group">
+        <div class="form-group">
             <label for="img_name"></label>
             <input type="file" name="input_img_name" id="image/*"
             id="img_name">
-            <?php if(isset($errors['img_name']) && $errors['img_name'] == 'blank'): ?>
-            <p class="text-danger">画像を選択してください</p>
-            <?php endif; ?>
-            <?php if(isset($errors['img_name']) && $errors['img_name'] == 'type'): ?>
-            <p class="text-danger">拡張子が「jpg」「png」「gif」「jpge」の画像を選択して下さい</p>
-            <?php endif; ?>
-          </div>
-
+        </div>
           <br>
-
           <ul class="nav navbar-nav navbar-left">
             <li class="active"><a href="list.php" style="margin: 15px,background-color: black;">友達のページに戻る</a></li>
           </ul>
