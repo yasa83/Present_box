@@ -152,7 +152,7 @@ if(!empty($_POST)){
                         <div class="cols-sm-10">
                             <div class="input-group">
                                 <span class="input-group-addon"><i class="fa fa-lock fa-lg" aria-hidden="true"></i></span>
-                                <input type="password" class="form-control" name="users_password" id="password"  placeholder="4〜16 letters Password">
+                                <input type="password" class="form-control" name="users_password" id="users_password"  placeholder="4〜16 letters Password">
                             </div>
                             <?php if(isset($errors['password']) && $errors['password'] == 'blank'): ?>
                                     <p class="text-danger">Enter your password</p>
@@ -198,6 +198,22 @@ if(!empty($_POST)){
                     <div class="form-group ">
                         <button class="btn btn-primary btn-lg btn-block login-button">Register</button>
                     </div>
+                    <script>
+                      var form = document.forms[0];
+                      form.onsubmit = function() {
+                        // エラーメッセージをクリアする
+                        form.password.setCustomValidity("");
+                        // パスワードの一致確認
+                        if (form.users_password.value != form.confirm.value) {
+                          // 一致していなかったら、エラーメッセージを表示する
+                          form.users_password.setCustomValidity("パスワードと確認用パスワードが一致しません");
+                        }
+                      };
+                      // 入力値チェックエラーが発生したときの処理
+                      form.addEventListener("invalid", function() {
+                        document.getElementById("errorMessage").innerHTML = "入力値にエラーがあります";
+                      }, false);
+                    </script>
                     <div class="back">
                         <a href="index.php" class="btn btn-default"><font color="#F14E95">&laquo;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;back</a></font>
                     </div>

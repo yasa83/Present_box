@@ -13,7 +13,7 @@
 
                                     <a href="signout.php">signout</a>
                                     <a href="friend.php">addFriend</a></li>
-                                    <li class="active space-1"><a href="list_make.php">myWantList</a></li>
+                                    <li class="active space-1"><a href="want.php">myWantList</a></li>
                                     <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false"><img src="user_profile_img/<?php echo $signin_user['img_name']; ?>" width="40" class="img-circle"><?php echo $signin_user['users_name']; ?></a>
                                 </li>
                             </ul>

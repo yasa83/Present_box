@@ -2,6 +2,12 @@
 session_start();
 require('dbconnect.php');
 
+// 直接このページに来たらsignin.phpに飛ぶようにする
+if(!isset($_SESSION['id'])){
+    header('Location:signin.php');
+    exit();
+}
+
 //サインインユーザー情報取得
 $sql = 'SELECT * FROM `users` WHERE `id` =?';
 $data = array($_SESSION['id']);
@@ -10,7 +16,23 @@ $stmt->execute($data);
 
 $signin_user = $stmt->fetch(PDO::FETCH_ASSOC);
 
+// エラーの初期化
+$errors = array();
 
+//友達データ取得
+$sql = 'SELECT * FROM `friends`';
+$data = array();
+$stmt = $dbh->prepare($sql);
+$stmt->execute($data);
+
+$friends = array();
+    while (1) {
+        $rec = $stmt->fetch(PDO::FETCH_ASSOC);
+        if($rec == false) {
+            break;
+        }
+        $friends[] = $rec;
+    }
 
 
 
@@ -21,12 +43,12 @@ $signin_user = $stmt->fetch(PDO::FETCH_ASSOC);
 <head>
     <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <link rel="icon" type="images/favicon.png" href="assets/images/favicon.png">
     <title>Present Box</title>
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <meta name="description" content="Free HTML5 Template by FREEHTML5.CO">
     <meta name="keywords" content="free html5, free template, free bootstrap, html5, css3, mobile first, responsive">
     <meta name="author" content="FREEHTML5.CO">
+    <link rel="icon" type="assets/images/favicon.png" href="assets/images/favicon.png">
     <link href='https://fonts.googleapis.com/css?family=Work+Sans:400,300,600,400italic,700' rel='stylesheet' type='text/css'>
     <link href="https://fonts.googleapis.com/css?family=Sacramento" rel="stylesheet">
     <!-- Animate.css -->
@@ -75,72 +97,35 @@ $signin_user = $stmt->fetch(PDO::FETCH_ASSOC);
         </div>
     </header>
 <!-- ヘッダー終わり -->
-<body>
-    <hr>
-    <div class="container">
-        <div class="row">
-            <div class="flame">
-                <section class="profile clearfix" style="display: inline-block;">
-                    <a href="list.php">友達の名前</a>
-                    <div class="container">
-                        <div class="row">
-
-                            <div class="col-sm-3"><img src="assets/images/friend1.png" class="image fluied" align="left" style="margin:10px 20px 10px 50px;" href="list.php"></div>
-                            <div class="col-sm-2" ><img src="assets/images/present1.png" class="present-image" style="padding-top: 20px"></div>
-                            <div class="col-sm-2"><img src="assets/images/present1.png" class="present-image" style="padding-top: 20px"></div>
-                            <div class="col-sm-2"><img src="assets/images/present1.png" class="present-image" style="padding-top: 20px"></div>
-                            <div class="col-sm-2"><img src="assets/images/present1.png" class="present-image" style="padding-top: 20px"></div>
-                        </div>
-
-                    </section>
+    <div class="body">
+            <div class="container">
+                <div class="row">
+                    <div class="flame">
+                        <?php foreach($friends as $friend): ?>
+                            <section class="profile clearfix" style="display: inline-block;">
+                                <a ><?php echo $friend['friends_name']; ?></a>
+                                    <div class="container">
+                                        <div class="row">
+                                            <div class="col-sm-3">
+                                                <img src="friend_profile_image/<?php echo $friend['img_name']; ?>">
+                                            </div>
+                                            <div class="col-sm-2" ><img src="assets/images/present1.png" class="present-image" style="padding-top: 20px">
+                                            </div>
+                                            <div class="col-sm-2"><img src="assets/images/present1.png" class="present-image" style="padding-top: 20px">
+                                            </div>
+                                            <div class="col-sm-2"><img src="assets/images/present1.png" class="present-image" style="padding-top: 20px">
+                                            </div>
+                                            <div class="col-sm-2"><img src="assets/images/present1.png" class="present-image" style="padding-top: 20px">
+                                            </div>
+                                        </div>
+                                    </div>
+                            </section>
+                        <?php endforeach; ?>
+                    </div>
                 </div>
             </div>
-        </div>
     </div>
-
-    <hr>
-    <div class="container">
-        <div class="row">
-            <div class="flame">
-                <section class="profile clearfix" style="display: inline-block;">
-                    <br><a href="list.php">友達の名前</a>
-                    <div class="container">
-                        <div class="row">
-
-                            <div class="col-sm-3"><img src="assets/images/friend1.png" class="image fluied" align="left" style="margin:10px 20px 10px 50px;"></div>
-                            <div class="col-sm-2" ><img src="assets/images/present1.png" class="present-image" style="padding-top: 20px"></div>
-                            <div class="col-sm-2"><img src="assets/images/present1.png" class="present-image" style="padding-top: 20px"></div>
-                            <div class="col-sm-2"><img src="assets/images/present1.png" class="present-image" style="padding-top: 20px"></div>
-                            <div class="col-sm-2"><img src="assets/images/present1.png" class="present-image" style="padding-top: 20px"></div>
-                        </div>
-
-                    </section>
-                </div>
-            </div>
-        </div>
     </div>
-    <hr>
-    <div class="container">
-        <div class="row">
-            <div class="flame">
-                <section class="profile clearfix" style="display: inline-block;">
-                    <a href="">友達の名前</a>
-                    <div class="container">
-                        <div class="row">
-
-                            <div class="col-sm-3"><img src="assets/images/friend1.png" class="image fluied" align="left" style="margin:10px 20px 10px 50px;"></div>
-                            <div class="col-sm-2" ><img src="assets/images/present1.png" class="present-image" style="padding-top: 20px"></div>
-                            <div class="col-sm-2"><img src="assets/images/present1.png" class="present-image" style="padding-top: 20px"></div>
-                            <div class="col-sm-2"><img src="assets/images/present1.png" class="present-image" style="padding-top: 20px"></div>
-                            <div class="col-sm-2"><img src="assets/images/present1.png" class="present-image" style="padding-top: 20px"></div>
-                        </div>
-
-                    </section>
-                </div>
-            </div>
-        </div>
-    </div>
-</body>
 
 <!--wrap終わり-->
     <!-- フッター始まり -->
