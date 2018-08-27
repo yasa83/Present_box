@@ -107,7 +107,7 @@ $friends = array();
                                     <div class="container">
                                         <div class="row">
                                             <div class="col-sm-3">
-                                                <img src="friend_profile_image/<?php echo $friend['img_name']; ?>">
+                                                <img src="friend_profile_image/<?php echo $friend['img_name']; ?>" class="piture-ajust img-profile" style="width: 200px; height: 200px;">
                                             </div>
                                             <div class="col-sm-2" ><img src="assets/images/present1.png" class="present-image" style="padding-top: 20px">
                                             </div>
