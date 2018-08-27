@@ -19,8 +19,8 @@ $detail = '';
 $errors = array();
 
 if(!empty($_POST)){
-    $check = $_POST['cb1'];
-    $check = $_POST['cb2'];
+    $check1 = $_POST['cb1'];
+    $check2 = $_POST['cb2'];
     $present = $_POST['input_present'];
     $date = $_POST['input_date'];
     $detail = $_POST['input_detail'];
@@ -53,7 +53,7 @@ if(!empty($_POST)){
         $date_str = date('YmdHis');
         $submit_file_name = $date_str . $file_name;
 
-        move_uploaded_file($_FILES['present_img_name']['tmp_name'],'present_image/'.$submit_file_name);
+        move_uploaded_file($_FILES['input_img_name']['tmp_name'],'present_image/'.$submit_file_name);
 
 
         $sql = 'INSERT INTO `presents` SET `name` =?, `date`=?,`img_name` = ?, which` = ?';
@@ -112,10 +112,10 @@ if(!empty($_POST)){
         <form method="POST" action="list_make.php" enctype="multipart/form-data">
           <div class="form-group">
                 <label class="checkbox-inline">
-                <input type="checkbox" name="cb1">あげたもの
+                <input type="radio" name="check">友達にあげたもの
                 </label>
                 <label class="checkbox-inline">
-                <input type="checkbox" name="cb2">もらったもの
+                <input type="radio" name="check">友達からもらったもの
                 </label>
           </div>
 
