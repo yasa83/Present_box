@@ -10,6 +10,24 @@ $stmt->execute($data);
 
 $signin_user = $stmt->fetch(PDO::FETCH_ASSOC);
 
+// エラーの初期化
+$errors = array();
+
+//プレゼントデータ取得
+$sql = 'SELECT * FROM `presents`';
+$data = array();
+$stmt = $dbh->prepare($sql);
+$stmt->execute($data);
+
+$presents = array();
+    while (1) {
+        $rec = $stmt->fetch(PDO::FETCH_ASSOC);
+        if($rec == false) {
+            break;
+        }
+        $presents[] = $rec;
+    }
+
 
 
 ?>
@@ -23,6 +41,7 @@ $signin_user = $stmt->fetch(PDO::FETCH_ASSOC);
     <meta name="description" content="Free HTML5 Template by FREEHTML5.CO">
     <meta name="keywords" content="free html5, free template, free bootstrap, html5, css3, mobile first, responsive">
     <meta name="author" content="FREEHTML5.CO">
+    <link rel="icon" type="images/favicon.png" href="assets/images/favicon.png"”>
     <link href='https://fonts.googleapis.com/css?family=Work+Sans:400,300,600,400italic,700' rel='stylesheet' type='text/css'>
     <link href="https://fonts.googleapis.com/css?family=Sacramento" rel="stylesheet">
     <!-- Animate.css -->
@@ -44,15 +63,15 @@ $signin_user = $stmt->fetch(PDO::FETCH_ASSOC);
 <body>
 <?php include('nav-var.php'); ?>
 
-<header id="fh5co-header" class="fh5co-cover" role="banner" style="background-image:url(assets/images/img_bg_2.jpg);" data-stellar-background-ratio="0.5">
+<header id="fh5co-header" class="fh5co-cover" role="banner" style="background-image:url(assets/images/alcohl.jpg);" data-stellar-background-ratio="0.5">
     <div class="overlay"></div>
     <div class="container">
         <div class="row">
             <div class="col-md-8 col-md-offset-2 text-center">
                 <div class="display-t">
                     <div class="display-tc animate-box" data-animate-effect="fadeIn">
-                        <h1>トモダチの名前</h1>
-                        <h2>誕生日</h2>
+                        <h1>name</h1>
+                        <h2>birthday</h2>
                     </div>
                 </div>
             </div>
@@ -62,13 +81,10 @@ $signin_user = $stmt->fetch(PDO::FETCH_ASSOC);
 
 <div id="fh5co-gallery" class="fh5co-section-gray">
     <div class="container">
-
         <div class="row">
             <div class="col-md-8 col-md-offset-2 text-center fh5co-heading animate-box">
                 <span>Our Memories</span>
-                <h2>プレゼントボックス</h2>
-                <p></p>
-
+                <h2>present</h2>
                 <form method="GET" action="" class="" role="search">
                     <div class="form-group">
                         <input type="text" name="search_word" class="form-control" placeholder="投稿を検索">
@@ -89,20 +105,19 @@ $signin_user = $stmt->fetch(PDO::FETCH_ASSOC);
         <!-- あげたもの -->
         <div class="row row-bottom-padded-md " id="give-picture">
             <div class="col-md-12">
-                <br>
                 <h1 class="text-center">あげたもの</h1>
-
-                <div class="row">
-                    <div class="col-xs-4 ">
-                        <a data-target="con1" class="modal-open"><img src="assets/images/prezent_1.jpg" class="picture-size"></a>
+                    <div class="row">
+                        <?php foreach ($presents as $presnet): ?>
+                        <div class="col-xs-4 ">
+                        <a data-target="con1" class="modal-open"><img src="present_image/<?php echo $present['img_name']; ?>" class="picture-size" style="width:300px; height:300px; border-radius: 5%; margin: 10px; "></a>
                     </div>
 
                     <div class="col-xs-4">
-                        <a data-target="con2" class="modal-open"><img src="assets/images/prezent_2.jpg" class="picture-size"></a>
+                        <a data-target="con2" class="modal-open"><img src="assets/images/present2.jpg" class="picture-size" style="border-radius: 5%;"></a>
                     </div>
 
                     <div class="col-xs-4">
-                        <a data-target="con3" class="modal-open"><img src="assets/images/prezent_3.jpg" class="picture-size"></a>
+                        <a data-target="con3" class="modal-open"><img src="assets/images/present3.jpg" class="picture-size" style="border-radius: 5%;"></a>
                     </div>
 
 
@@ -110,7 +125,7 @@ $signin_user = $stmt->fetch(PDO::FETCH_ASSOC);
                     <div id="con1" class="modal-content" style="width: 800px; height: 500px;">
                         <div class="row">
                             <div class="col-md-6">
-                                <br><br><img src="assets/images/prezent_1.jpg" class="picture-size">
+                                <br><br><img src="assets/images/present1.png" class="picture-size">
                             </div>
                             <div class="col-md-6" style="font-size: 25px; line-height: 4em;">
                                 <ul class="text-left" >
@@ -128,10 +143,17 @@ $signin_user = $stmt->fetch(PDO::FETCH_ASSOC);
                     <div id="con2" class="modal-content" style="width: 800px; height: 500px;">
                         <div class="row">
                             <div class="col-md-6">
-                                <br><br><img src="assets/images/prezent_2.jpg" class="picture-size">
+                                <br><br><img src="assets/images/present1.png" class="picture-size">
                             </div>
-                            <div class="col-md-6"><p>リンク1の内容です。</p>
-                                <p><a class="modal-close">閉じる</a></p>
+                            <div class="col-md-6" style="font-size: 25px; line-height: 4em;">
+                                <ul class="text-left" >
+                                    <li>商品名</li>
+                                    <li>値段</li>
+                                    <li>ひとこと</li>
+                                </ul>
+                                <p style="font-size: 15px; line-height: 1em;">リンク1の内容です。</p>
+                                <br>
+                                <p><a class="modal-close right-under">閉じる</a></p>
                             </div>
                         </div>
                     </div>
@@ -147,12 +169,9 @@ $signin_user = $stmt->fetch(PDO::FETCH_ASSOC);
                         </div>
                     </div>
                 </div>
+            <?php endforeach; ?>
             </div>
         </div>
-
-
-
-
 
         <!-- もらったもの -->
         <div class="row row-bottom-padded-md " id="get-picture">
@@ -299,12 +318,12 @@ $signin_user = $stmt->fetch(PDO::FETCH_ASSOC);
         </div>
     </footer>
     <!-- フッター終わり -->
-    
-    </div>
 
+    <!-- 画面遷移用の矢印 -->
     <div class="gototop js-top">
         <a href="#" class="js-gotop"><i class="icon-arrow-up"></i></a>
     </div>
+
 
     <!-- jQuery -->
     <script src="assets/js/jquery.min.js"></script>
@@ -318,7 +337,6 @@ $signin_user = $stmt->fetch(PDO::FETCH_ASSOC);
     <script src="assets/js/owl.carousel.min.js"></script>
     <!-- countTo -->
     <script src="assets/js/jquery.countTo.js"></script>
-
     <!-- Stellar -->
     <script src="assets/js/jquery.stellar.min.js"></script>
     <!-- Magnific Popup -->
@@ -326,11 +344,9 @@ $signin_user = $stmt->fetch(PDO::FETCH_ASSOC);
     <script src="assets/js/magnific-popup-options.js"></script>
     <!--    自分で作ったやつ -->
     <script src="assets/js/script.js"></script>
-
     <script src="assets/js/simplyCountdown.js"></script>
     <!-- Main -->
     <script src="assets/js/main.js"></script>
-
     <script>
         var d = new Date(new Date().getTime() + 200 * 120 * 120 * 2000);
 
@@ -348,7 +364,7 @@ $signin_user = $stmt->fetch(PDO::FETCH_ASSOC);
         day: d.getDate(),
         enableUtc: false
     });
-</script>
+    </script>
 
 </body>
 </html>
