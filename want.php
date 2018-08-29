@@ -3,15 +3,49 @@ session_start();
 require('dbconnect.php');
 
 //サインインユーザー情報取得
-$sql = 'SELECT * FROM `users` WHERE `id` =?';
+$sql = 'SELECT * FROM `users`where `id` =?';
 $data = array($_SESSION['id']);
 $stmt = $dbh->prepare($sql);
 $stmt->execute($data);
 
 $signin_user = $stmt->fetch(PDO::FETCH_ASSOC);
 
- 
+$title = '';
+$price = '';
+$detail = '';
 
+if(!empty($_POSTｔ    $title = $_POST['input_title'];
+    $price = $_POST['input_price'];
+    $detail = $_POST['input_detail'];
+
+    if ($name == '') {
+        $errors['title'] = 'blank';
+    }
+
+    if($price == ''){
+        $errors['price'] = 'blank';
+    }
+
+    if($detail == '') {
+        $errors['detail'] = 'blank';
+        // var_dump($errors);
+    }
+
+    if(empty($errors)){
+        $date_str = date('YmdHis');
+        $submit_file_name = $date_str . $file_name;
+
+        move_uploaded_file($_FILES['friend_img_name']['tmp_name'],'friend_profile_image/'.$submit_file_name);
+
+        $sql = 'INSERT INTO `wants` SET `name` =?,`date`=?,`img_name` = ?,`done`=?,`user_id`=?,`friends_id`=? `created`= NOW(), `users_id`=?';
+        $data = array($name,$price,$detail,$id);
+        $stmt = $dbh->prepare($sql);
+        $stmt->execute($data);
+
+        header('Location: home.php');
+        exit();
+    }
+    }        
 
 ?>
 
@@ -68,17 +102,25 @@ $signin_user = $stmt->fetch(PDO::FETCH_ASSOC);
           <div class="form-group">
             <label for="title">Title</label>
             <input type="text" name="input_title" class="form-control" id="title" placeholder="あなたが欲しいものを入力してください">
+            <?php if(isset($errors['title']) && $errors['title'] =='blank'): ?>
+            <p class="text-danger">Enter Title</p>
+            <?php endif;?>
           </div>
-
 
           <div class="form-group">
             <label for="price">Price</label>
             <input type="text" name="input_price" class="form-control" value="" placeholder="だいたいの値段を入力してください">
+            <?php if(isset($errors['price']) && $errors['price'] =='blank'): ?>
+                <p class="text-danger">Enter Price</p>
+            <?php endif;?>
           </div>
 
           <div class="form-group">
             <label for="detail">Detail</label>
             <input type="text" name="input_detail" class="form-control" rows="10" placeholder="どこで買えるかなどを入力してください" value="">
+            <?php if(isset($errors['detail']) && $errors['detail'] =='blank'): ?>
+                <p class="text-danger">Enter Detail</p>
+            <?php endif;?>
           </div>
 
           <div class="form-group">
