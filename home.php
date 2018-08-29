@@ -101,15 +101,18 @@ $friends = array();
             <div class="container">
                 <div class="row">
                     <div class="flame">
+                    <?php if($friends['users_id'] == $_SESSION["users_id"]): ?>
                         <?php foreach($friends as $friend): ?>
-                            <section class="profile clearfix" style="display: inline-block;">
-                                <a ><?php echo $friend['friends_name']; ?></a>
+                                <section class="profile clearfix" style="display: inline-block;">
+                                    <a href="list.php?$id="<?php echo $friend["id"];?>" class="btn btn-primary"><?php echo $friend["friends_name"]; ?></a>
                                     <div class="container">
                                         <div class="row">
-                                            <div class="col-sm-3">
-                                                <img src="friend_profile_image/<?php echo $friend['img_name']; ?>" class="piture-ajust img-profile " style="width: 200px; height: 200px; border-radius: 50%;" link="list.php">
+                                            <div class="col-sm-4">
+                                                <a href="list.php?$id="<?php echo $friend["id"];?>">
+                                                    <img src="friend_profile_image/<?php echo $friend['img_name']; ?>" class="piture-ajust img-profile " style="width: 200px; height: 200px; border-radius: 50%;" link="list.php">
+                                                </a>
                                             </div>
-                                            <div class="col-sm-2" ><img src="assets/images/present1.png" class="present-image" style="padding-top: 20px">
+                                            <div class="col-sm-2" ><img src="present_image/<?php echo $friend["img_name"]; ?>" class="present-image" style="padding-top: 20px; ">
                                             </div>
                                             <div class="col-sm-2"><img src="assets/images/present1.png" class="present-image" style="padding-top: 20px">
                                             </div>
@@ -120,7 +123,9 @@ $friends = array();
                                         </div>
                                     </div>
                             </section>
+
                         <?php endforeach; ?>
+                    <?php endif; ?>
                     </div>
                 </div>
             </div>
