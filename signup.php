@@ -1,5 +1,6 @@
 <?php
 session_start();
+require('dbconnect.php');
 date_default_timezone_set('Asia/Manila');
 
 if(isset($_REQUEST['action']) && $_REQUEST['action'] == 'rewrite'){
@@ -9,9 +10,6 @@ if(isset($_REQUEST['action']) && $_REQUEST['action'] == 'rewrite'){
     $_POST['users_password'] = $_SESSION['register']['password'];
 
     $errors['rewrite'] = true;
-
-    // var_dump($_POST['users_name']);
-    // die();
 }
 
 $name = '';
@@ -59,6 +57,34 @@ if(!empty($_POST)){
         $errors['img_name']= 'blank';
     }
 
+    // 重複チェック
+    // $sql = 'SELECT * FROM `users`';
+    // $data = array();
+    // $stmt = $dbh->prepare($sql);
+    // $stmt->execute($data);
+
+    // $id = array(); 
+    // while(1) {
+    // if($item['id'] == $id){
+    //     $error = '<p class="error">ご希望のidは既に使用されています。</p>';
+    //     }else{
+    //     $id = $id;
+    //     }
+    //     }
+
+    $arCheckCount = array_count_values($id);
+    $iMaxCount = count($id);
+    $bRepetition = false;
+      
+    for ($i1=0; $i1 < $iMaxCount; $i1++){  
+        if ($arCheckCount[$arSample[$i1]] > 1){  
+            $bRepetition = true;  
+        }  
+    }  
+    if ($bRepetition){  
+        echo '値が重複しています';  
+    }  
+
     //エラーがなかった時の処理
     if(empty($errors)){
         $date_str = date('YmdHis');
@@ -76,8 +102,6 @@ if(!empty($_POST)){
         exit();
     }
 }
-
-
 ?>
 
 
