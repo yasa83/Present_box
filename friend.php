@@ -20,7 +20,7 @@ $errors = array();
 if(!empty($_POST)){
     $name = $_POST['friend_name'];
     $birthday = $_POST['friend_birthday'];
-    $id = $_POST['friend_id'];
+    $friend_id = $_POST['friend_id'];
 
     if($name == ''){
         $errors['name'] = 'blank';
@@ -54,7 +54,7 @@ if(!empty($_POST)){
 
 
         $sql = 'INSERT INTO `friends` SET `friends_name` =?, `birthday`=?,`img_name` = ?, `created`= NOW(), `users_id`=?';
-        $data = array($name,$birthday,$submit_file_name,$id);
+        $data = array($name,$birthday,$submit_file_name,$friend_id);
         $stmt = $dbh->prepare($sql);
         $stmt->execute($data);
 
