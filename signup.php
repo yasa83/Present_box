@@ -72,18 +72,18 @@ if(!empty($_POST)){
     //     }
     //     }
 
-    $arCheckCount = array_count_values($id);
-    $iMaxCount = count($id);
-    $bRepetition = false;
+    // $arCheckCount = array_count_values($id);
+    // $iMaxCount = count($id);
+    // $bRepetition = false;
       
-    for ($i1=0; $i1 < $iMaxCount; $i1++){  
-        if ($arCheckCount[$arSample[$i1]] > 1){  
-            $bRepetition = true;  
-        }  
-    }  
-    if ($bRepetition){  
-        echo '値が重複しています';  
-    }  
+    // for ($i1=0; $i1 < $iMaxCount; $i1++){  
+    //     if ($arCheckCount[$arSample[$i1]] > 1){  
+    //         $bRepetition = true;  
+    //     }  
+    // }  
+    // if ($bRepetition){  
+    //     echo '値が重複しています';  
+    // }  
 
     //エラーがなかった時の処理
     if(empty($errors)){
