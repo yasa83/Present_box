@@ -14,12 +14,14 @@ $title = '';
 $price = '';
 $detail = '';
 
-if(!empty($_POSTｔ    $title = $_POST['input_title'];
+if(!empty($_POST)){
+    $title = $_POST['input_title'];
     $price = $_POST['input_price'];
     $detail = $_POST['input_detail'];
 
-    if ($name == '') {
+    if ($title == '') {
         $errors['title'] = 'blank';
+
     }
 
     if($price == ''){
@@ -31,18 +33,33 @@ if(!empty($_POSTｔ    $title = $_POST['input_title'];
         // var_dump($errors);
     }
 
+$file_name = '';
+    if(!isset($_GET['action'])){
+        $file_name = $_FILES['img_name']['name'];
+    }
+    if(!empty($file_name)){
+        $file_type = substr($file_name, -3);
+
+        $file_type = strtolower($file_type);
+        if($file_type != 'jpg' && $file_type !='png' && $file_type!='gif'){
+            $errors['img_name'] = 'type';
+        }
+    }else{
+        $errors['img_name']= 'blank';
+    }
+
     if(empty($errors)){
         $date_str = date('YmdHis');
         $submit_file_name = $date_str . $file_name;
 
-        move_uploaded_file($_FILES['friend_img_name']['tmp_name'],'friend_profile_image/'.$submit_file_name);
+        move_uploaded_file($_FILES['img_name']['tmp_name'],'want_image/'.$submit_file_name);
 
-        $sql = 'INSERT INTO `wants` SET `name` =?,`date`=?,`img_name` = ?,`done`=?,`user_id`=?,`friends_id`=? `created`= NOW(), `users_id`=?';
-        $data = array($name,$price,$detail,$id);
+        $sql = 'INSERT INTO `wants` SET `name` =?,`price`=?,`detail`=?,`img_name`=?';
+        $data = array($name,$price,$detail,$submit_file_name);
         $stmt = $dbh->prepare($sql);
         $stmt->execute($data);
 
-        header('Location: home.php');
+        header('Location: want.php');
         exit();
     }
     }        
@@ -125,7 +142,7 @@ if(!empty($_POSTｔ    $title = $_POST['input_title'];
 
           <div class="form-group">
             <label for="img_name"></label>
-            <input type="file" name="input_img_name" id="image/*"
+            <input type="file" name="img_name" id="image/*"
             id="img_name">
             <?php if(isset($errors['img_name']) && $errors['img_name'] == 'blank'): ?>
             <p class="text-danger">画像を選択してください</p>
