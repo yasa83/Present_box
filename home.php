@@ -169,13 +169,11 @@ $friends = array();
 <script src="assets/js/owl.carousel.min.js"></script>
 <!-- countTo -->
 <script src="assets/js/jquery.countTo.js"></script>
-
 <!-- Stellar -->
 <script src="assets/js/jquery.stellar.min.js"></script>
 <!-- Magnific Popup -->
 <script src="assets/js/jquery.magnific-popup.min.js"></script>
 <script src="assets/js/magnific-popup-options.js"></script>
-
 <!-- Main -->
 <script src="assets/js/main.js"></script>
 
