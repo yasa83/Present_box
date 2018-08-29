@@ -58,32 +58,18 @@ if(!empty($_POST)){
     }
 
     // 重複チェック
-    // $sql = 'SELECT * FROM `users`';
-    // $data = array();
-    // $stmt = $dbh->prepare($sql);
-    // $stmt->execute($data);
+    $sql = 'SELECT * FROM `users` WHERE users_id = ?';
+    $data = array($id);
+    $stmt = $dbh->prepare($sql);
+    $stmt->execute($data);
 
-    // $id = array(); 
-    // while(1) {
-    // if($item['id'] == $id){
-    //     $error = '<p class="error">ご希望のidは既に使用されています。</p>';
-    //     }else{
-    //     $id = $id;
-    //     }
-    //     }
+    $hoge = $stmt->fetch(PDO::FETCH_ASSOC);
+    if (!empty($hoge)) {
+        $errors['id'] = 'double';
+        ;
 
-    // $arCheckCount = array_count_values($id);
-    // $iMaxCount = count($id);
-    // $bRepetition = false;
-      
-    // for ($i1=0; $i1 < $iMaxCount; $i1++){  
-    //     if ($arCheckCount[$arSample[$i1]] > 1){  
-    //         $bRepetition = true;  
-    //     }  
-    // }  
-    // if ($bRepetition){  
-    //     echo '値が重複しています';  
-    // }  
+    }
+
 
     //エラーがなかった時の処理
     if(empty($errors)){
@@ -167,6 +153,9 @@ if(!empty($_POST)){
                             </div>
                             <?php if(isset($errors['id']) && $errors['id'] == 'blank'): ?>
                                     <p class="text-danger">Enter your id</p>
+                            <?php endif;?>
+                            <?php if(isset($errors['id']) && $errors['id'] == 'double'): ?>
+                                <p class="text-danger">Other user use the id already</p>
                             <?php endif;?>
                         </div>
                     </div>
