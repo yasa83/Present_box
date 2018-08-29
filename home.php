@@ -86,7 +86,7 @@ $friends = array();
                                 <div class=“input-group”>
                                 <input type=“text” placeholder=“友達の名前や商品名を入力してください“>
                                 <span class=“input-group-btn”>
-                                    <button type=“button” class=“btn">Search</button>
+                                    <button type=“button” class=“btn square_btn" style="color: #F14E95">Search</button>
                                 </span>
                                 </div>
                             </form>
@@ -107,7 +107,7 @@ $friends = array();
                                     <div class="container">
                                         <div class="row">
                                             <div class="col-sm-3">
-                                                <img src="friend_profile_image/<?php echo $friend['img_name']; ?>">
+                                                <img src="friend_profile_image/<?php echo $friend['img_name']; ?>" class="piture-ajust img-profile " style="width: 200px; height: 200px; border-radius: 50%;" link="list.php">
                                             </div>
                                             <div class="col-sm-2" ><img src="assets/images/present1.png" class="present-image" style="padding-top: 20px">
                                             </div>
@@ -126,8 +126,8 @@ $friends = array();
             </div>
     </div>
     </div>
-
 <!--wrap終わり-->
+
     <!-- フッター始まり -->
     <footer id="fh5co-footer" role="contentinfo">
         <div class="container">
@@ -169,13 +169,11 @@ $friends = array();
 <script src="assets/js/owl.carousel.min.js"></script>
 <!-- countTo -->
 <script src="assets/js/jquery.countTo.js"></script>
-
 <!-- Stellar -->
 <script src="assets/js/jquery.stellar.min.js"></script>
 <!-- Magnific Popup -->
 <script src="assets/js/jquery.magnific-popup.min.js"></script>
 <script src="assets/js/magnific-popup-options.js"></script>
-
 <!-- Main -->
 <script src="assets/js/main.js"></script>
 

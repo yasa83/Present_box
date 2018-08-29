@@ -57,8 +57,10 @@ if(!empty($_POST)){
 
         move_uploaded_file($_FILES['input_img_name']['tmp_name'],'present_image/'.$submit_file_name);
 
-        $sql = 'INSERT INTO `presents` SET `name` =?, `date`=?,`img_name` = ?, `which` = ?';
-        $data = array($present,$date,$submit_file_name, $check);
+        var_dump($check);
+        die();
+        $sql = 'INSERT INTO `presents` SET `name` =?, `date`=?, `detail` = ?,`img_name` = ?, `which` = ?';
+        $data = array($present,$date,$detail,$submit_file_name, $check);
         $stmt = $dbh->prepare($sql);
         $stmt->execute($data);
 
