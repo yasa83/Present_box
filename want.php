@@ -62,7 +62,23 @@ $file_name = '';
         header('Location: want.php');
         exit();
     }
-    }        
+
+}
+
+    $sql ="SELECT * FROM `wants`";
+    $stmt= $dbh->prepare($sql);
+    $stmt->execute();
+
+    $feeds = array();
+
+    while (true) {
+        $record = $stmt->fetch(PDO::FETCH_ASSOC);
+        if ($record == false) {
+            break;
+        }
+
+        $feeds[] = $record;
+    }
 
 ?>
 
@@ -180,74 +196,15 @@ $file_name = '';
                 <div class="col-md-12">
                     <ul id="fh5co-gallery-list">
                         
-                        <li class="one-third animate-box" data-animate-effect="fadeIn" style="background-image: url(assets/images/gallery-1.jpg); "> 
-                        <a href="assets/images/gallery-1.jpg">
-                            <div class="case-studies-summary">
-                                <h2>商品名</h2>
-                            </div>
-                        </a>
-                    </li>
-                    <li class="one-third animate-box" data-animate-effect="fadeIn" style="background-image: url(assets/images/gallery-2.jpg); ">
-                        <a href="#" class="color-2">
-                            <div class="case-studies-summary">
-                               <h2>商品名</h2>
-                            </div>
-                        </a>
-                    </li>
-
-
-                    <li class="one-third animate-box" data-animate-effect="fadeIn" style="background-image: url(assets/images/gallery-3.jpg); ">
-                        <a href="#" class="color-3">
-                            <div class="case-studies-summary">
-                               <h2>商品名</h2>
-                            </div>
-                        </a>
-                    </li>
-                    <li class="one-third animate-box" data-animate-effect="fadeIn" style="background-image: url(assets/images/gallery-4.jpg); ">
-                        <a href="#" class="color-4">
-                            <div class="case-studies-summary">
-                               <h2>商品名</h2>
-                            </div>
-                        </a>
-                    </li>
-
-                        <li class="one-third animate-box" data-animate-effect="fadeIn" style="background-image: url(assets/images/gallery-5.jpg); ">
-                            <a href="#" class="color-3">
-                                <div class="case-studies-summary">
-                                   <h2>商品名</h2>
-                                </div>
-                            </a>
-                        </li>
-                        <li class="one-third animate-box" data-animate-effect="fadeIn" style="background-image: url(assets/images/gallery-6.jpg); ">
-                            <a href="#" class="color-4">
-                                <div class="case-studies-summary">
-                                 <h2>商品名</h2>
-                                </div>
-                            </a>
-                        </li>
-
-                        <li class="one-third animate-box" data-animate-effect="fadeIn" style="background-image: url(assets/images/gallery-7.jpg); ">
-                            <a href="#" class="color-4">
+                        <?php foreach ($feeds as $feed) {?>
+                        <li class="one-third animate-box" data-animate-effect="fadeIn"> 
+                           <img src="want_image/<?php echo $feed['img_name']; ?>" width="330">
                                 <div class="case-studies-summary">
                                     <h2>商品名</h2>
                                 </div>
                             </a>
-                        </li>
-
-                        <li class="one-third animate-box" data-animate-effect="fadeIn" style="background-image: url(assets/images/gallery-8.jpg); "> 
-                            <a href="#" class="color-5">
-                                <div class="case-studies-summary">
-                                    <h2>商品名</h2>
-                                </div>
-                            </a>
-                        </li>
-                        <li class="one-third animate-box" data-animate-effect="fadeIn" style="background-image: url(assets/images/gallery-9.jpg); ">
-                            <a href="#" class="color-6">
-                                <div class="case-studies-summary">
-                                    <h2>商品名</h2>
-                                </div>
-                            </a>
-                        </li>
+                        </li>  
+                    <?php } ?>
                     </ul>       
                 </div>
             </div>
