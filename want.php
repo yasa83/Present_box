@@ -195,10 +195,9 @@ $file_name = '';
             <div class="row row-bottom-padded-md">
                 <div class="col-md-12">
                     <ul id="fh5co-gallery-list">
-                        
-                        <?php foreach ($feeds as $feed) {?>
-                        <li class="one-third animate-box" data-animate-effect="fadeIn"> 
-                           <img src="want_image/<?php echo $feed['img_name']; ?>" width="330">
+                  <?php foreach ($feeds as $feed) {?>
+                        <li class="one-third animate-box" data-animate-effect="fadeIn" style="background-image: url(want_image/<?php echo $feed['img_name']; ?>); "> 
+                            <a href=want_image/<?php echo $feed['img_name']; ?>>
                                 <div class="case-studies-summary">
                                     <h2>商品名</h2>
                                 </div>
