@@ -14,13 +14,13 @@ $signin_user = $stmt->fetch(PDO::FETCH_ASSOC);
 // 友達情報登録
 $name = '';
 $birthday = '';
-$id = '';
+// $id = '';
 $errors = array();
 
 if(!empty($_POST)){
     $name = $_POST['friend_name'];
     $birthday = $_POST['friend_birthday'];
-    $friend_id = $_POST['friend_id'];
+    // $friend_id = $_POST['friend_id'];
 
     if($name == ''){
         $errors['name'] = 'blank';
@@ -53,8 +53,8 @@ if(!empty($_POST)){
         move_uploaded_file($_FILES['friend_img_name']['tmp_name'],'friend_profile_image/'.$submit_file_name);
 
 
-        $sql = 'INSERT INTO `friends` SET `friends_name` =?, `birthday`=?,`img_name` = ?, `created`= NOW(), `users_id`=?, `friends_id` = ?';
-        $data = array($name,$birthday,$submit_file_name,$signin_user['users_id'],$friend_id);
+        $sql = 'INSERT INTO `friends` SET `friends_name` =?, `birthday`=?,`img_name` = ?, `created`= NOW(), `user_id`=?';
+        $data = array($name,$birthday,$submit_file_name,$signin_user['id']);
         $stmt = $dbh->prepare($sql);
         $stmt->execute($data);
 
@@ -121,8 +121,9 @@ if(!empty($_POST)){
                             <?php endif;?>
                         </div>
                         <div class="form-group">
-                            <label for="detail">search id</label>
-                            <input type="text" name="friend_id" class="form-control" rows="10" placeholder="enter id,if your friend have id" value="">
+                            <div type="hidden" class="box" style="height: 40px;">
+                           <!--  <label for="detail">search id</label>
+                            <input type="text" name="friend_id" class="form-control" rows="10" placeholder="enter id,if your friend have id" value=""> -->
                         </div>
                         <div class="form-group">
                             <label for="img_name">picture</label>

@@ -13,9 +13,10 @@ $signin_user = $stmt->fetch(PDO::FETCH_ASSOC);
 // エラーの初期化
 $errors = array();
 
-//プレゼントデータ取得
-$sql = 'SELECT * FROM `presents`';
-$data = array();
+
+//DBからプレゼントデータ取得
+$sql = 'SELECT * FROM `presents` WHERE `friend_id` = ?';
+$data = array($_GET['id']);
 $stmt = $dbh->prepare($sql);
 $stmt->execute($data);
 
@@ -27,6 +28,13 @@ $presents = array();
         }
         $presents[] = $rec;
     }
+
+// DBから友達のデータを取得する処理
+$sql = 'SELECT * FROM `friends` WHERE `id` = ?';
+$data = array($_GET['id']);
+$stmt = $dbh->prepare($sql);
+$stmt->execute($data);
+$friends = $stmt->fetch(PDO::FETCH_ASSOC);
 
 
 
@@ -63,28 +71,12 @@ $presents = array();
 <body>
 <?php include('nav-var.php'); ?>
 
-    <header id="fh5co-header" class="fh5co-cover" role="banner" style="background-image:url(assets/images/alcohl.jpg);" data-stellar-background-ratio="0.5">
-        <div class="overlay"></div>
-        <div class="container">
-            <div class="row">
-                <div class="col-md-8 col-md-offset-2 text-center">
-                    <div class="display-t">
-                        <div class="display-tc animate-box" data-animate-effect="fadeIn">
-                            <h1>name</h1>
-                            <h2>birthday</h2>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </header>
-
     <div id="fh5co-gallery" class="fh5co-section-gray">
         <div class="container">
             <div class="row">
                 <div class="col-md-8 col-md-offset-2 text-center fh5co-heading animate-box">
-                    <span>Our Memories</span>
-                    <h2>present</h2>
+                    <span><?php echo $friends['birthday']; ?></span>
+                    <h2><?php echo $friends['friends_name']; ?></h2>
                     <form method="GET" action="" class="" role="search">
                         <div class="form-group">
                             <input type="text" name="search_word" class="form-control" placeholder="投稿を検索">
@@ -92,20 +84,21 @@ $presents = array();
                         <span class="form-group">
                             <button type="submit" class="btn square_btn">検索</button>
                         </span>
+                            
                     </form>
                 </div>
             </div>
 
             <div class="row">
-                <div class="col-xs-4 give_1" align="center"><button type="button" class="btn square_btn">あげたもの</button></div>
-                <div class="col-xs-4 get_1" align="center"><button type="button" class="btn square_btn">もらったもの</button></div>
-                <div class="col-xs-4 want_1" align="center"><button type="button" class="btn square_btn">ほしいもの</button></div>
+                <div class="col-xs-4 give_1" align="center"><button type="button" class="btn square_btn">give</button></div>
+                <div class="col-xs-4 get_1" align="center"><button type="button" class="btn square_btn">take</button></div>
+                <div class="col-xs-4 want_1" align="center"><button type="button" class="btn square_btn">want</button></div>
             </div>
 
             <!-- あげたもの -->
             <div class="row row-bottom-padded-md " id="give-picture">
                 <div class="col-md-12">
-                    <h1 class="text-center">あげたもの</h1>
+                    <h1 class="text-center">give</h1>
                     <div class="row">
                         <?php foreach ($presents as $present): ?>
                             <div class="col-xs-4 ">

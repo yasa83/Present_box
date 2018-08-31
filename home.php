@@ -20,8 +20,8 @@ $signin_user = $stmt->fetch(PDO::FETCH_ASSOC);
 $errors = array();
 
 //友達データ取得
-$sql = 'SELECT * FROM `friends` WHERE `users_id`=?';
-$data = array($signin_user['users_id']);
+$sql = 'SELECT * FROM `friends` WHERE `user_id`=?';
+$data = array($signin_user['id']);
 $stmt = $dbh->prepare($sql);
 $stmt->execute($data);
 
@@ -33,6 +33,7 @@ $friends = array();
         }
         $friends[] = $rec;
     }
+
 
 
 ?>
@@ -97,16 +98,17 @@ $friends = array();
     </header>
 <!-- ヘッダー終わり -->
     <div class="body">
+        <div class="block" style="margin-top: 100px"></div>
             <div class="container">
                 <div class="row">
                     <div class="flame">
                         <?php foreach($friends as $friend): ?>
                                 <section class="profile clearfix" style="display: inline-block;">
-                                    <a href="list.php?$id="<?php echo $friend["id"];?>" class="btn btn-primary"><?php echo $friend["friends_name"]; ?></a>
+                                    <a href="list.php?id=<?php echo $friend["id"]; ?>" class="btn btn-primary"><?php echo $friend["friends_name"]; ?></a>
                                     <div class="container">
                                         <div class="row">
                                             <div class="col-sm-4">
-                                                <a href="list.php?$id="<?php echo $friend["id"];?>">
+                                                <a href="list.php?id=<?php echo $friend["id"];?>">
                                                     <img src="friend_profile_image/<?php echo $friend['img_name']; ?>" class="piture-ajust img-profile " style="width: 200px; height: 200px; border-radius: 50%;" link="list.php">
                                                 </a>
                                             </div>
