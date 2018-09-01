@@ -79,48 +79,55 @@ $friends = $stmt->fetch(PDO::FETCH_ASSOC);
                     <h2><?php echo $friends['friends_name']; ?></h2>
                     <form method="GET" action="" class="" role="search">
                         <div class="form-group">
-                            <input type="text" name="search_word" class="form-control" placeholder="投稿を検索">
+                            <input type="text" name="search_word"  placeholder="プレゼントを検索">
+                            <span class="form-group">
+                                <button type="button" class="btn square_btn">Serch</button>
+                            </span>
                         </div>
-                        <span class="form-group">
-                            <button type="submit" class="btn square_btn">検索</button>
-                        </span>
-                            
                     </form>
                 </div>
             </div>
 
-            <div class="row">
-                <div class="col-xs-4 give_1" align="center"><button type="button" class="btn square_btn">give</button></div>
-                <div class="col-xs-4 get_1" align="center"><button type="button" class="btn square_btn">take</button></div>
-                <div class="col-xs-4 want_1" align="center"><button type="button" class="btn square_btn">want</button></div>
+            <div class="container">
+                <div class="row">
+                      <ul class="nav nav-tabs">
+                        <li class="col-xs-2 give_1 active"><a href="#">友達にあげたもの</a></li>
+                        <li class="col-xs-2 get_1"><a href="#">友達からもらったもの</a></li>
+                        <li class="col-xs-2 want_1"><a href="#">友達がほしいもの</a></li>
+                      </ul>
+                      <br>
+                </div>
             </div>
 
             <!-- あげたもの -->
+        <div class="container">
             <div class="row row-bottom-padded-md " id="give-picture">
                 <div class="col-md-12">
-                    <h1 class="text-center">give</h1>
+                    <h1 class="text-center">you gave these presents</h1>
                     <div class="row">
                         <?php foreach ($presents as $present): ?>
-                            <div class="col-xs-4 ">
-                                <a data-target="con1" class="modal-open">
-                                    <img src="present_image/<?php echo $present['img_name']; ?>" class="picture-size" style="width:300px; height:300px; border-radius: 5%; margin: 10px; ">
-                                </a>
-                            </div>
-                            <!-- モーダル -->
-                            <div id="con1" class="modal-content" style="width: 800px; height: 500px;">
-                                <div class="row">
-                                    <div class="col-md-6">
-                                        <br><br><img src="present_image/<?php echo $present['img_name']; ?>" class="picture-size">
-                                    </div>
-                                    <div class="col-md-6" style="font-size: 25px; line-height: 4em;">
-                                        <ul class="text-left" >
-                                            <li>商品名</li>
-                                            <li>値段</li>
-                                            <li>ひとこと</li>
-                                        </ul>
-                                        <p style="font-size: 15px; line-height: 1em;">リンク1の内容です。</p>
-                                        <br>
-                                        <p><a class="modal-close right-under">閉じる</a></p>
+                            <div class="<?php echo $present["which"] ?>">
+                                <div class="col-xs-4">
+                                    <a data-target="con1" class="modal-open">
+                                        <img src="present_image/<?php echo $present['img_name']; ?>" class="picture-size" style="width:300px; height:300px; border-radius: 5%; margin: 10px; ">
+                                    </a>
+                                </div>
+                                <!-- モーダル -->
+                                <div id="con1" class="modal-content" style="width: 800px; height: 500px;">
+                                    <div class="row">
+                                        <div class="col-md-6">
+                                            <br><br><img src="present_image/<?php echo $present['img_name']; ?>" class="picture-size">
+                                        </div>
+                                        <div class="col-md-6" style="font-size: 25px; line-height: 4em;">
+                                            <ul class="text-left" >
+                                                <li>商品名</li>
+                                                <li>値段</li>
+                                                <li>ひとこと</li>
+                                            </ul>
+                                            <p style="font-size: 15px; line-height: 1em;">リンク1の内容です。</p>
+                                            <br>
+                                            <p><a class="modal-close right-under">閉じる</a></p>
+                                        </div>
                                     </div>
                                 </div>
                             </div>
@@ -129,131 +136,92 @@ $friends = $stmt->fetch(PDO::FETCH_ASSOC);
                     </div>
                 </div>
             </div>
+        </div>
 
-            <!-- もらったもの -->
+
+<!-- もらったもの -->
+        <div class="container">
             <div class="row row-bottom-padded-md " id="get-picture">
                 <div class="col-md-12">
-                    <br>
-                    <h1 class="text-center">もらったもの</h1>
-
+                    <h1 class="text-center">you got these presents</h1>
                     <div class="row">
-                        <div class="col-xs-4 ">
-                            <a data-target="con4" class="modal-open"><img src="assets/images/gallery-1.jpg" class="picture-size"></a>
-
-                        </div>
-
-                        <div class="col-xs-4">
-                            <a data-target="con5" class="modal-open"><img src="assets/images/friend1.png" class="picture-size"></a>
-                        </div>
-
-                        <div class="col-xs-4">
-                            <a data-target="con6" class="modal-open"><img src="assets/images/friend1.png" class="picture-size"></a>
-                        </div>
-
-
-                        <!-- モーダル -->
-                        <div id="con4" class="modal-content" style="width: 800px; height: 500px;">
-                            <div class="row">
-                                <div class="col-md-6">
-                                    <br><br><img src="assets/images/gallery-1.jpg" class="picture-size">
+                        <?php foreach ($presents as $present): ?>
+                            <div class="<?php echo $present["which"] ?>">
+                                <div class="col-xs-4 ">
+                                    <a data-target="con1" class="modal-open">
+                                        <img src="present_image/<?php echo $present['img_name']; ?>" class="picture-size" style="width:300px; height:300px; border-radius: 5%; margin: 10px; ">
+                                    </a>
                                 </div>
-                                <div class="col-md-6"><p>リンク1の内容です。</p>
-                                    <p><a class="modal-close">閉じる</a></p>
-                                </div>
-                            </div>
-                        </div>
-
-                        <div id="con5" class="modal-content" style="width: 800px; height: 500px;">
-                            <div class="row">
-                                <div class="col-md-6">
-                                    <br><br><img src="assets/images/friend1.png" class="picture-size">
-                                </div>
-                                <div class="col-md-6"><p>リンク1の内容です。</p>
-                                    <p><a class="modal-close">閉じる</a></p>
+                                <!-- モーダル -->
+                                <div id="con1" class="modal-content" style="width: 800px; height: 500px;">
+                                    <div class="row">
+                                        <div class="col-md-6">
+                                            <br><br><img src="present_image/<?php echo $present['img_name']; ?>" class="picture-size">
+                                        </div>
+                                        <div class="col-md-6" style="font-size: 25px; line-height: 4em;">
+                                            <ul class="text-left" >
+                                                <li>商品名</li>
+                                                <li>値段</li>
+                                                <li>ひとこと</li>
+                                            </ul>
+                                            <p style="font-size: 15px; line-height: 1em;">リンク1の内容です。</p>
+                                            <br>
+                                            <p><a class="modal-close right-under">閉じる</a></p>
+                                        </div>
+                                    </div>
                                 </div>
                             </div>
-                        </div>
 
-                        <div id="con6" class="modal-content" style="width: 800px; height: 500px;">
-                            <div class="row">
-                                <div class="col-md-8">
-                                    <br><br><img src="assets/images/friend1.png" class="picture-size">
-                                </div>
-                                <div class="col-md-4"><p>リンク1の内容です。</p>
-                                    <p><a class="modal-close">閉じる</a></p>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-
-
-            <!-- ほしいもの -->
-            <div class="row row-bottom-padded-md " id="want-picture">
-                <div class="col-md-12">
-                    <br>
-                    <h1 class="text-center">ほしいもの</h1>
-
-                    <div class="row">
-                        <div class="col-xs-4 ">
-                            <a data-target="con7" class="modal-open"><img src="assets/images/gallery-1.jpg" class="picture-size"></a>
-
-                        </div>
-
-                        <div class="col-xs-4">
-                            <a data-target="con8" class="modal-open"><img src="assets/images/friend1.png" class="picture-size"></a>
-                        </div>
-
-                        <div class="col-xs-4">
-                            <a data-target="con9" class="modal-open"><img src="assets/images/friend1.png" class="picture-size"></a>
-                        </div>
-
-
-                        <!-- モーダル -->
-                        <div id="con7" class="modal-content" style="width: 800px; height: 500px;">
-                            <div class="row">
-                                <div class="col-md-6">
-                                    <br><br><img src="assets/images/gallery-1.jpg" class="picture-size">
-                                </div>
-                                <div class="col-md-6">
-                                    <ul>
-                                        <li>商品名</li>
-                                        <li>値段</li>
-                                        <li>ひとこと</li>
-                                    </ul>
-                                    <p>リンク1の内容です。</p>
-                                    <p><a class="modal-close">閉じる</a></p>
-                                </div>
-                            </div>
-                        </div>
-
-                        <div id="con8" class="modal-content" style="width: 800px; height: 500px;">
-                            <div class="row">
-                                <div class="col-md-6">
-                                    <br><br><img src="assets/images/friend1.png" class="picture-size">
-                                </div>
-                                <div class="col-md-6"><p>リンク1の内容です。</p>
-                                    <p><a class="modal-close">閉じる</a></p>
-                                </div>
-                            </div>
-                        </div>
-
-                        <div id="con9" class="modal-content" style="width: 800px; height: 500px;">
-                            <div class="row">
-                                <div class="col-md-6">
-                                    <br><br><img src="assets/images/friend1.png" class="picture-size">
-                                </div>
-                                <div class="col-md-6"><p>リンク1の内容です。</p>
-                                    <p><a class="modal-close">閉じる</a></p>
-                                </div>
-                            </div>
-                        </div>
+                        <?php endforeach; ?>
                     </div>
                 </div>
             </div>
         </div>
-    </div>
+
+
+<!-- ほしいもの -->
+
+            <div class="row row-bottom-padded-md " id="want-picture">
+                <div class="col-md-12">
+                    <h1 class="text-center">your friend want these presents</h1>
+                    <div class="row">
+                        <?php foreach ($presents as $present): ?>
+                            <div class="<?php echo $present["which"] ?>">
+                                <div class="col-xs-4 ">
+                                    <a data-target="con1" class="modal-open">
+                                        <img src="present_image/<?php echo $present['img_name']; ?>" class="picture-size" style="width:300px; height:300px; border-radius: 5%; margin: 10px; ">
+                                    </a>
+                                </div>
+                                <!-- モーダル -->
+                                <div id="con1" class="modal-content" style="width: 800px; height: 500px;">
+                                    <div class="row">
+                                        <div class="col-md-6">
+                                            <br><br><img src="present_image/<?php echo $present['img_name']; ?>" class="picture-size">
+                                        </div>
+                                        <div class="col-md-6" style="font-size: 25px; line-height: 4em;">
+                                            <ul class="text-left" >
+                                                <li>商品名</li>
+                                                <li>値段</li>
+                                                <li>ひとこと</li>
+                                            </ul>
+                                            <p style="font-size: 15px; line-height: 1em;">リンク1の内容です。</p>
+                                            <br>
+                                            <p><a class="modal-close right-under">閉じる</a></p>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+
+                        <?php endforeach; ?>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+
+
+
+
 
     <!-- フッター始まり -->
     <footer id="fh5co-footer" role="contentinfo">
