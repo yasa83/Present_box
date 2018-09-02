@@ -8,6 +8,51 @@ if(!isset($_SESSION['id'])){
     exit();
 }
 
+// ページネーション
+const CONTENT_PER_PAGE = 5;
+
+// -1などのページ数として不正な値を渡された場合の対策
+$page = max($page, 1);
+
+// ヒットしたレコードの数を取得するSQL
+$sql_count = "SELECT COUNT(*) AS `cnt` FROM `friends`";
+
+$stmt_count = $dbh->prepare($sql_count);
+$stmt_count->execute();
+
+$record_cnt = $stmt_count->fetch(PDO::FETCH_ASSOC);
+
+// 取得したページ数を1ページあたりに表示する件数で割って何ページが最後になるか取得
+$last_page = ceil($record_cnt['cnt'] / CONTENT_PER_PAGE);
+
+// 最後のページより大きい値を渡された場合の対策
+$page = min($page, $last_page);
+
+$start = ($page - 1) * CONTENT_PER_PAGE;
+
+$sql = 'SELECT `friends` FROM * ORDER BY `created` DESC LIMIT '. CONTENT_PER_PAGE .' OFFSET ' . $start;
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 //サインインユーザー情報取得
 $sql = 'SELECT * FROM `users` WHERE `id` =?';
 $data = array($_SESSION['id']);
@@ -20,8 +65,8 @@ $signin_user = $stmt->fetch(PDO::FETCH_ASSOC);
 $errors = array();
 
 //友達データ取得
-$sql = 'SELECT * FROM `friends`';
-$data = array();
+$sql = 'SELECT * FROM `friends` WHERE `user_id`=?';
+$data = array($signin_user['id']);
 $stmt = $dbh->prepare($sql);
 $stmt->execute($data);
 
@@ -84,7 +129,7 @@ $friends = array();
                             <h2>do you search?</h2>
                             <form>
                                 <div class=“input-group”>
-                                <input type=“text” placeholder=“友達の名前や商品名を入力してください“>
+                                <input type=“text” placeholder=“友達の名前や商品名を入力してください“ style="width:300px; height: 30px;">
                                 <span class=“input-group-btn”>
                                     <button type=“button” class=“btn square_btn" style="color: #F14E95">Search</button>
                                 </span>
@@ -98,18 +143,21 @@ $friends = array();
     </header>
 <!-- ヘッダー終わり -->
     <div class="body">
+        <div class="block" style="margin-top: 100px"></div>
             <div class="container">
                 <div class="row">
                     <div class="flame">
                         <?php foreach($friends as $friend): ?>
-                            <section class="profile clearfix" style="display: inline-block;">
-                                <a ><?php echo $friend['friends_name']; ?></a>
+                                <section class="profile clearfix" style="display: inline-block;">
+                                    <a href="list.php?id=<?php echo $friend["id"]; ?>" class="btn btn-primary"><?php echo $friend["friends_name"]; ?></a>
                                     <div class="container">
                                         <div class="row">
-                                            <div class="col-sm-3">
-                                                <img src="friend_profile_image/<?php echo $friend['img_name']; ?>" class="piture-ajust img-profile " style="width: 200px; height: 200px; border-radius: 50%;" link="list.php">
+                                            <div class="col-sm-4">
+                                                <a href="list.php?id=<?php echo $friend["id"];?>">
+                                                    <img src="friend_profile_image/<?php echo $friend['img_name']; ?>" class="piture-ajust img-profile " style="width: 200px; height: 200px; border-radius: 50%;" link="list.php">
+                                                </a>
                                             </div>
-                                            <div class="col-sm-2" ><img src="assets/images/present1.png" class="present-image" style="padding-top: 20px">
+                                            <div class="col-sm-2" ><img src="present_image/<?php echo $friend["img_name"]; ?>" class="present-image" style="padding-top: 20px; ">
                                             </div>
                                             <div class="col-sm-2"><img src="assets/images/present1.png" class="present-image" style="padding-top: 20px">
                                             </div>
@@ -120,7 +168,22 @@ $friends = array();
                                         </div>
                                     </div>
                             </section>
-                        <?php endforeach; ?>
+                            <?php endforeach; ?>
+                        <!-- ページネーション -->
+                        <div aria-label="Page navigation">
+                            <ul class="pager">
+                                <?php if ($page == 1): ?>
+                                    <li class="previous disabled"><a><span aria-hidden="true">&larr;</span> Pre</a></li>
+                                <?php else: ?>
+                                    <li class="previous"><a href="home.php?page=<?= $page - 1; ?>"><span aria-hidden="true">&larr;</span> Pre</a></li>
+                                <?php endif; ?>
+                                <?php if ($page == $last_page): ?>
+                                    <li class="next disabled"><a>Next <span aria-hidden="true">&rarr;</span></a></li>
+                                <?php else: ?>
+                                    <li class="next"><a href="home.php?page=<?= $page + 1; ?>">Next <span aria-hidden="true">&rarr;</span></a></li>
+                                <?php endif; ?>
+                            </ul>
+                        </div>
                     </div>
                 </div>
             </div>

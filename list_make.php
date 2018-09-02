@@ -10,11 +10,17 @@ $stmt->execute($data);
 
 $signin_user = $stmt->fetch(PDO::FETCH_ASSOC);
 
+
+
+
 //友達へのプレゼント登録
 $check = '';
 $present = '';
 $date = '';
 $detail = '';
+$friend_id = $_GET['id'];
+
+
 $errors = array();
 
 if(!empty($_POST)){
@@ -23,7 +29,9 @@ if(!empty($_POST)){
     $date = $_POST['input_date'];
     $detail = $_POST['input_detail'];
 
-    if($check = '' ){
+
+
+    if($check == '' ){
         $errors['check'] = 'blank';
     } 
 
@@ -57,10 +65,10 @@ if(!empty($_POST)){
 
         move_uploaded_file($_FILES['input_img_name']['tmp_name'],'present_image/'.$submit_file_name);
 
-        var_dump($check);
-        die();
-        $sql = 'INSERT INTO `presents` SET `name` =?, `date`=?, `detail` = ?,`img_name` = ?, `which` = ?';
-        $data = array($present,$date,$detail,$submit_file_name, $check);
+
+
+        $sql = 'INSERT INTO `presents` SET `name` =?, `date`=?, `detail` = ?,`img_name` = ?,`friend_id`= ?, `which` = ?';
+        $data = array($present,$date,$detail,$submit_file_name, $friend_id, $check);
         $stmt = $dbh->prepare($sql);
         $stmt->execute($data);
 
@@ -153,7 +161,7 @@ if(!empty($_POST)){
                     </div>
                     <br>
                     <ul class="nav navbar-nav navbar-left">
-                        <li class="active"><a href="list.php" style="margin: 15px,background-color: black;">友達のページに戻る</a></li>
+                        <li class="active"><a href="list.php=id<?php echo $friends['id']; ?>" style="margin: 15px,background-color: black;">友達のページに戻る</a></li>
                     </ul>
                     <input type="submit" class="btn btn-primary" value="登録">
                 </form>
