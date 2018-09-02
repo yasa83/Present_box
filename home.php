@@ -34,8 +34,25 @@ $sql = 'SELECT `friends` FROM * ORDER BY `created` DESC LIMIT '. CONTENT_PER_PAG
 
 
 
+// 検索ボックス
+// if (isset($_GET['search_word'])) {
+//         $sql = 'SELECT `f`.*, `p`.* FROM `friends` AS `f` LEFT JOIN `presents` AS `p` ON `f`.`id`=`p`.`friend_id` WHERE `f`.`friends_name` LIKE "%"? "%" ORDER BY `created` DESC LIMIT '. CONTENT_PER_PAGE .' OFFSET ' . $start;
+//         $data = [$_GET['search_word']];
+//     } else {
+//         // LEFT JOINで全件取得
+//         $sql = 'SELECT `f`.*, `p`.* FROM `friends` AS `f` LEFT JOIN `presents` AS `p` ON `f`.`id`=`p`.`friends_id` ORDER BY `created` DESC LIMIT '. CONTENT_PER_PAGE .' OFFSET ' . $start;
+//         $data = [];
+//     }
 
-
+// 検索ボックス
+if (isset($_GET['search_word'])) {
+        $sql = 'SELECT `f`.*, `p`.* FROM `presents` AS `p` LEFT JOIN `friends` AS `f` ON `f`.`id`=`p`.`friend_id` WHERE `f`.`friends_name` LIKE "%"? "%" ORDER BY `created` DESC LIMIT '. CONTENT_PER_PAGE .' OFFSET ' . $start;
+        $data = [$_GET['search_word']];
+    } else {
+        // LEFT JOINで全件取得
+        $sql = 'SELECT `f`.*, `p`.* FROM `presents` AS `p` LEFT JOIN `friends` AS `f` ON `f`.`id`=`p`.`friends_id` ORDER BY `created` DESC LIMIT '. CONTENT_PER_PAGE .' OFFSET ' . $start;
+        $data = [];
+    }
 
 
 
@@ -127,11 +144,11 @@ $friends = array();
                         <div class="display-tc animate-box" data-animate-effect="fadeIn">
                             <h1>Whose present</h1>
                             <h2>do you search?</h2>
-                            <form>
+                            <form method="GET" action="" class="navbar-form navbar-center" role="search">
                                 <div class=“input-group”>
-                                <input type=“text” placeholder=“友達の名前や商品名を入力してください“ style="width:300px; height: 30px;">
+                                <input type=“text” name="search_word" placeholder=“友達の名前や商品名を入力してください“ style="width:300px; height: 30px;">
                                 <span class=“input-group-btn”>
-                                    <button type=“button” class=“btn square_btn" style="color: #F14E95">Search</button>
+                                    <button class=“btn btn-primary"  style="color: #F14E95">Search</button>
                                 </span>
                                 </div>
                             </form>
