@@ -86,10 +86,7 @@ $friends = $stmt->fetch(PDO::FETCH_ASSOC);
                             </span>
                         </div>
                     </form>
-                    <form method="GET" action="">
-                        <input type="hidden" >
-                    <button class="btn btn-primary" formaction="list_make.php">register present</button>
-                    </form>
+                    <a href="list_make.php?id=<?php echo $friends["id"]; ?>" class="btn btn-primary">register present</a>
                 </div>
             </div>
 
