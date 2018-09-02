@@ -23,20 +23,16 @@ $signin_user = $stmt->fetch(PDO::FETCH_ASSOC);
     <meta name="description" content="Free HTML5 Template by FREEHTML5.CO" />
     <meta name="keywords" content="free html5, free template, free bootstrap, html5, css3, mobile first, responsive" />
     <meta name="author" content="FREEHTML5.CO" />
-
     <link href='https://fonts.googleapis.com/css?family=Work+Sans:400,300,600,400italic,700' rel='stylesheet' type='text/css'>
     <link href="https://fonts.googleapis.com/css?family=Sacramento" rel="stylesheet">
-
     <!-- Animate.css -->
     <link rel="stylesheet" href="assets/css/animate.css">
     <!-- Icomoon Icon Fonts-->
     <link rel="stylesheet" href="assets/css/icomoon.css">
     <!-- Bootstrap  -->
     <link rel="stylesheet" href="assets/css/bootstrap.css">
-
     <!-- Magnific Popup -->
     <link rel="stylesheet" href="assets/css/magnific-popup.css">
-
     <!-- Owl Carousel  -->
     <link rel="stylesheet" href="assets/css/owl.carousel.min.css">
     <link rel="stylesheet" href="assets/css/owl.theme.default.min.css">
@@ -49,9 +45,6 @@ $signin_user = $stmt->fetch(PDO::FETCH_ASSOC);
     <!-- ナビゲーション始まり -->
 <?php include('nav-var.php'); ?>
     <!-- ナビゲーション終わり -->
-
-
-
     <!-- ヘッダー始まり -->
     <header id="fh5co-header" class="fh5co-cover fh5co-cover-sm" role="banner" style="background-image:url(assets/images/want.jpg);">
         <div class="overlay" style="padding: 20px"></div>
