@@ -10,6 +10,13 @@ $stmt->execute($data);
 
 $signin_user = $stmt->fetch(PDO::FETCH_ASSOC);
 
+// DBから友達のデータを取得する処理
+$sql = 'SELECT * FROM `friends` WHERE `id` = ?';
+$data = array($_GET['id']);
+$stmt = $dbh->prepare($sql);
+$stmt->execute($data);
+$friends = $stmt->fetch(PDO::FETCH_ASSOC);
+
 //友達へのプレゼント登録
 $check = '';
 $present = '';
@@ -153,7 +160,7 @@ if(!empty($_POST)){
                     </div>
                     <br>
                     <ul class="nav navbar-nav navbar-left">
-                        <li class="active"><a href="list.php" style="margin: 15px,background-color: black;">友達のページに戻る</a></li>
+                        <li class="active"><a href="list.php=id<?php echo $friends['id']; ?>" style="margin: 15px,background-color: black;">友達のページに戻る</a></li>
                     </ul>
                     <input type="submit" class="btn btn-primary" value="登録">
                 </form>

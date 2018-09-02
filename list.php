@@ -38,6 +38,7 @@ $friends = $stmt->fetch(PDO::FETCH_ASSOC);
 
 
 
+
 ?>
 <!DOCTYPE html>
 <html class="no-js"> 
@@ -79,11 +80,15 @@ $friends = $stmt->fetch(PDO::FETCH_ASSOC);
                     <h2><?php echo $friends['friends_name']; ?></h2>
                     <form method="GET" action="" class="" role="search">
                         <div class="form-group">
-                            <input type="text" name="search_word"  placeholder="プレゼントを検索">
+                            <input type="text" style="width:200px"  name="search_word"  placeholder="プレゼントを検索">
                             <span class="form-group">
                                 <button type="button" class="btn square_btn">Serch</button>
                             </span>
                         </div>
+                    </form>
+                    <form method="GET" action="">
+                        <input type="hidden" >
+                    <button class="btn btn-primary" formaction="list_make.php">register present</button>
                     </form>
                 </div>
             </div>
@@ -106,7 +111,7 @@ $friends = $stmt->fetch(PDO::FETCH_ASSOC);
                     <h1 class="text-center">you gave these presents</h1>
                     <div class="row">
                         <?php foreach ($presents as $present): ?>
-                            <div class="<?php echo $present["which"] ?>">
+                            <div class="<?php echo $present["which"];?>">
                                 <div class="col-xs-4">
                                     <a data-target="con1" class="modal-open">
                                         <img src="present_image/<?php echo $present['img_name']; ?>" class="picture-size" style="width:300px; height:300px; border-radius: 5%; margin: 10px; ">
