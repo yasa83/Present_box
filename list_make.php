@@ -12,7 +12,7 @@ $signin_user = $stmt->fetch(PDO::FETCH_ASSOC);
 
 
 
-
+var_dump($_GET);die();
 //友達へのプレゼント登録
 $check = '';
 $present = '';
