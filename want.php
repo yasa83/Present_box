@@ -112,6 +112,10 @@ $file_name = '';
     <link rel="stylesheet" href="assets/css/owl.theme.default.min.css">
     <!-- Theme style  -->
     <link rel="stylesheet" href="assets/css/style.css">
+    <link rel="stylesheet" href="assets/css/want.css">
+
+
+
     <!-- Modernizr JS -->
     <script src="assets/js/modernizr-2.6.2.min.js"></script>
 </head>
@@ -200,6 +204,12 @@ $file_name = '';
                             <a href=want_image/<?php echo $feed['img_name']; ?>>
                                 <div class="case-studies-summary">
                                     <h2>商品名</h2>
+                                    <figure>
+
+  <figcaption>
+    <p>ミジンコほいほい</p>
+  </figcaption>
+</figure>
                                 </div>
                             </a>
                         </li>  
