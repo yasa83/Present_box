@@ -53,7 +53,7 @@ if(!empty($_POST)){
         move_uploaded_file($_FILES['friend_img_name']['tmp_name'],'friend_profile_image/'.$submit_file_name);
 
 
-        $sql = 'INSERT INTO `friends` SET `friends_name` =?, `birthday`=?,`img_name` = ?, `created`= NOW(), `user_id`=?';
+        $sql = 'INSERT INTO `friends` SET `friends_name` =?, `birthday`=?,`friend_img` = ?, `created`= NOW(), `user_id`=?';
         $data = array($name,$birthday,$submit_file_name,$signin_user['id']);
         $stmt = $dbh->prepare($sql);
         $stmt->execute($data);
