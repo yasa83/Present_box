@@ -202,14 +202,14 @@ $file_name = '';
                   <?php foreach ($feeds as $feed) {?>
                         <li class="one-third animate-box" data-animate-effect="fadeIn" style="background-image: url(want_image/<?php echo $feed['img_name']; ?>); "> 
                             <a href=want_image/<?php echo $feed['img_name']; ?>>
-                                <div class="case-studies-summary">
-                                    <h2>商品名</h2>
+                                <div class="case-studies-summary">                               
+                                    <h2><?php echo $feed['name']; ?></h2>
+                                    <h3><?php echo $feed['price']; ?></h3>
                                     <figure>
-
-  <figcaption>
-    <p>ミジンコほいほい</p>
-  </figcaption>
-</figure>
+                                        <figcaption>
+                                        <p> <?php echo $feed['detail']; ?></p>
+                                        </figcaption>
+                                    </figure>
                                 </div>
                             </a>
                         </li>  
