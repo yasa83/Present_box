@@ -44,31 +44,6 @@ $sql = 'SELECT `friends` FROM * ORDER BY `created` DESC LIMIT '. CONTENT_PER_PAG
 //         $data = [];
 //     }
 
-// 検索ボックス
-if (isset($_GET['search_word'])) {
-        $sql = 'SELECT `f`.*, `p`.* FROM `presents` AS `p` LEFT JOIN `friends` AS `f` ON `f`.`id`=`p`.`friend_id` WHERE `f`.`friends_name` LIKE "%"? "%" ORDER BY `created` DESC LIMIT '. CONTENT_PER_PAGE .' OFFSET ' . $start;
-        $data = [$_GET['search_word']];
-    } else {
-        // LEFT JOINで全件取得
-        $sql = 'SELECT `f`.*, `p`.* FROM `presents` AS `p` LEFT JOIN `friends` AS `f` ON `f`.`id`=`p`.`friends_id` ORDER BY `created` DESC LIMIT '. CONTENT_PER_PAGE .' OFFSET ' . $start;
-        $data = [];
-    }
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 
 //サインインユーザー情報取得
 $sql = 'SELECT * FROM `users` WHERE `id` =?';
@@ -95,6 +70,36 @@ $friends = array();
         }
         $friends[] = $rec;
     }
+
+
+// 検索ボックス
+if (isset($_GET['search_word'])) {
+        $sql = 'SELECT `f`.*, `p`.* FROM `presents` AS `p` LEFT JOIN `friends` AS `f` ON `f`.`id`=`p`.`friend_id` WHERE `f`.`friends_name` LIKE "%"? "%" ORDER BY `created` DESC LIMIT '. CONTENT_PER_PAGE .' OFFSET ' . $start;
+        $data = [$_GET['search_word']];
+    } else {
+        // LEFT JOINで全件取得
+        $sql = 'SELECT `f`.*, `p`.* FROM `presents` AS `p` LEFT JOIN `friends` AS `f` ON `f`.`id`=`p`.`friends_id` ORDER BY `created` DESC LIMIT '. CONTENT_PER_PAGE .' OFFSET ' . $start;
+        $data = [];
+    }
+
+var_dump($_GET['search_word']);
+die();
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 
