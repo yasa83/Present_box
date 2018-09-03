@@ -2,14 +2,85 @@
 session_start();
 require('dbconnect.php');
 
+
+
 //サインインユーザー情報取得
-$sql = 'SELECT * FROM `users` WHERE `id` =?';
+$sql = 'SELECT * FROM `users`where `id` =?';
 $data = array($_SESSION['id']);
 $stmt = $dbh->prepare($sql);
 $stmt->execute($data);
 
 $signin_user = $stmt->fetch(PDO::FETCH_ASSOC);
 
+$title = '';
+$price = '';
+$detail = '';
+
+if(!empty($_POST)){
+    $title = $_POST['input_title'];
+    $price = $_POST['input_price'];
+    $detail = $_POST['input_detail'];
+
+    if ($title == '') {
+        $errors['title'] = 'blank';
+
+    }
+
+    if($price == ''){
+        $errors['price'] = 'blank';
+    }
+
+    if($detail == '') {
+        $errors['detail'] = 'blank';
+        // var_dump($errors);
+    }
+
+$file_name = '';
+    if(!isset($_GET['action'])){
+        $file_name = $_FILES['img_name']['name'];
+    }
+    if(!empty($file_name)){
+        $file_type = substr($file_name, -3);
+
+        $file_type = strtolower($file_type);
+        if($file_type != 'jpg' && $file_type !='png' && $file_type!='gif'){
+            $errors['img_name'] = 'type';
+        }
+    }else{
+        $errors['img_name']= 'blank';
+    }
+
+    if(empty($errors)){
+        $date_str = date('YmdHis');
+        $submit_file_name = $date_str . $file_name;
+
+        move_uploaded_file($_FILES['img_name']['tmp_name'],'want_image/'.$submit_file_name);
+
+        $sql = 'INSERT INTO `wants` SET `name` =?,`price`=?,`detail`=?,`img_name`=?';
+        $data = array($title,$price,$detail,$submit_file_name);
+        $stmt = $dbh->prepare($sql);
+        $stmt->execute($data);
+
+        header('Location: want.php');
+        exit();
+    }
+
+}
+
+    $sql ="SELECT * FROM `wants`";
+    $stmt= $dbh->prepare($sql);
+    $stmt->execute();
+
+    $feeds = array();
+
+    while (true) {
+        $record = $stmt->fetch(PDO::FETCH_ASSOC);
+        if ($record == false) {
+            break;
+        }
+
+        $feeds[] = $record;
+    }
 
 ?>
 
@@ -42,6 +113,10 @@ $signin_user = $stmt->fetch(PDO::FETCH_ASSOC);
     <link rel="stylesheet" href="assets/css/owl.theme.default.min.css">
     <!-- Theme style  -->
     <link rel="stylesheet" href="assets/css/style.css">
+    <link rel="stylesheet" href="assets/css/want.css">
+
+
+
     <!-- Modernizr JS -->
     <script src="assets/js/modernizr-2.6.2.min.js"></script>
 </head>
@@ -52,7 +127,7 @@ $signin_user = $stmt->fetch(PDO::FETCH_ASSOC);
 
 
 
-    <!-- ヘッダー始まり -->
+    <!-- ヘッダー -->
     <header id="fh5co-header" class="fh5co-cover fh5co-cover-sm" role="banner" style="background-image:url(assets/images/want.jpg);">
         <div class="overlay" style="padding: 20px"></div>
 
@@ -65,22 +140,30 @@ $signin_user = $stmt->fetch(PDO::FETCH_ASSOC);
           <div class="form-group">
             <label for="title">Title</label>
             <input type="text" name="input_title" class="form-control" id="title" placeholder="あなたが欲しいものを入力してください">
+            <?php if(isset($errors['title']) && $errors['title'] =='blank'): ?>
+            <p class="text-danger">Enter Title</p>
+            <?php endif;?>
           </div>
-
 
           <div class="form-group">
             <label for="price">Price</label>
             <input type="text" name="input_price" class="form-control" value="" placeholder="だいたいの値段を入力してください">
+            <?php if(isset($errors['price']) && $errors['price'] =='blank'): ?>
+                <p class="text-danger">Enter Price</p>
+            <?php endif;?>
           </div>
 
           <div class="form-group">
             <label for="detail">Detail</label>
             <input type="text" name="input_detail" class="form-control" rows="10" placeholder="どこで買えるかなどを入力してください" value="">
+            <?php if(isset($errors['detail']) && $errors['detail'] =='blank'): ?>
+                <p class="text-danger">Enter Detail</p>
+            <?php endif;?>
           </div>
 
           <div class="form-group">
             <label for="img_name"></label>
-            <input type="file" name="input_img_name" id="image/*"
+            <input type="file" name="img_name" id="image/*"
             id="img_name">
             <?php if(isset($errors['img_name']) && $errors['img_name'] == 'blank'): ?>
             <p class="text-danger">画像を選択してください</p>
@@ -117,75 +200,21 @@ $signin_user = $stmt->fetch(PDO::FETCH_ASSOC);
             <div class="row row-bottom-padded-md">
                 <div class="col-md-12">
                     <ul id="fh5co-gallery-list">
-                        
-                        <li class="one-third animate-box" data-animate-effect="fadeIn" style="background-image: url(assets/images/gallery-1.jpg); "> 
-                        <a href="assets/images/gallery-1.jpg">
-                            <div class="case-studies-summary">
-                                <h2>商品名</h2>
-                            </div>
-                        </a>
-                    </li>
-                    <li class="one-third animate-box" data-animate-effect="fadeIn" style="background-image: url(assets/images/gallery-2.jpg); ">
-                        <a href="#" class="color-2">
-                            <div class="case-studies-summary">
-                               <h2>商品名</h2>
-                            </div>
-                        </a>
-                    </li>
-
-
-                    <li class="one-third animate-box" data-animate-effect="fadeIn" style="background-image: url(assets/images/gallery-3.jpg); ">
-                        <a href="#" class="color-3">
-                            <div class="case-studies-summary">
-                               <h2>商品名</h2>
-                            </div>
-                        </a>
-                    </li>
-                    <li class="one-third animate-box" data-animate-effect="fadeIn" style="background-image: url(assets/images/gallery-4.jpg); ">
-                        <a href="#" class="color-4">
-                            <div class="case-studies-summary">
-                               <h2>商品名</h2>
-                            </div>
-                        </a>
-                    </li>
-
-                        <li class="one-third animate-box" data-animate-effect="fadeIn" style="background-image: url(assets/images/gallery-5.jpg); ">
-                            <a href="#" class="color-3">
-                                <div class="case-studies-summary">
-                                   <h2>商品名</h2>
-                                </div>
-                            </a>
-                        </li>
-                        <li class="one-third animate-box" data-animate-effect="fadeIn" style="background-image: url(assets/images/gallery-6.jpg); ">
-                            <a href="#" class="color-4">
-                                <div class="case-studies-summary">
-                                 <h2>商品名</h2>
-                                </div>
-                            </a>
-                        </li>
-
-                        <li class="one-third animate-box" data-animate-effect="fadeIn" style="background-image: url(assets/images/gallery-7.jpg); ">
-                            <a href="#" class="color-4">
-                                <div class="case-studies-summary">
-                                    <h2>商品名</h2>
-                                </div>
-                            </a>
-                        </li>
-
-                        <li class="one-third animate-box" data-animate-effect="fadeIn" style="background-image: url(assets/images/gallery-8.jpg); "> 
-                            <a href="#" class="color-5">
-                                <div class="case-studies-summary">
-                                    <h2>商品名</h2>
-                                </div>
-                            </a>
-                        </li>
-                        <li class="one-third animate-box" data-animate-effect="fadeIn" style="background-image: url(assets/images/gallery-9.jpg); ">
-                            <a href="#" class="color-6">
-                                <div class="case-studies-summary">
-                                    <h2>商品名</h2>
-                                </div>
-                            </a>
-                        </li>
+                        <?php foreach ($feeds as $feed) {?>
+                        <li class="one-third animate-box" data-animate-effect="fadeIn" style="background-image: url(want_image/<?php echo $feed['img_name']; ?>); "> 
+                                <a href=want_image/<?php echo $feed['img_name']; ?>>
+                                    <div class="case-studies-summary">                               
+                                    <h2><?php echo $feed['name']; ?></h2>
+                                    <h3><?php echo $feed['price']; ?></h3>
+                                        <figure>
+                                        <figcaption>
+                                        <p> <?php echo $feed['detail']; ?></p>
+                                        </figcaption>
+                                    </figure>
+                                    </div>
+                                </a>
+                            </li>  
+                        <?php } ?>
                     </ul>       
                 </div>
             </div>
