@@ -2,6 +2,8 @@
 session_start();
 require('dbconnect.php');
 
+
+
 //サインインユーザー情報取得
 $sql = 'SELECT * FROM `users`where `id` =?';
 $data = array($_SESSION['id']);
@@ -55,7 +57,7 @@ $file_name = '';
         move_uploaded_file($_FILES['img_name']['tmp_name'],'want_image/'.$submit_file_name);
 
         $sql = 'INSERT INTO `wants` SET `name` =?,`price`=?,`detail`=?,`img_name`=?';
-        $data = array($name,$price,$detail,$submit_file_name);
+        $data = array($title,$price,$detail,$submit_file_name);
         $stmt = $dbh->prepare($sql);
         $stmt->execute($data);
 
