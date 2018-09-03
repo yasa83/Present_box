@@ -128,7 +128,7 @@ $file_name = '';
 
 
 
-    <!-- ヘッダー始まり -->
+    <!-- ヘッダー -->
     <header id="fh5co-header" class="fh5co-cover fh5co-cover-sm" role="banner" style="background-image:url(assets/images/want.jpg);">
         <div class="overlay" style="padding: 20px"></div>
 
@@ -201,21 +201,21 @@ $file_name = '';
             <div class="row row-bottom-padded-md">
                 <div class="col-md-12">
                     <ul id="fh5co-gallery-list">
-                  <?php foreach ($feeds as $feed) {?>
+                        <?php foreach ($feeds as $feed) {?>
                         <li class="one-third animate-box" data-animate-effect="fadeIn" style="background-image: url(want_image/<?php echo $feed['img_name']; ?>); "> 
-                            <a href=want_image/<?php echo $feed['img_name']; ?>>
-                                <div class="case-studies-summary">                               
+                                <a href=want_image/<?php echo $feed['img_name']; ?>>
+                                    <div class="case-studies-summary">                               
                                     <h2><?php echo $feed['name']; ?></h2>
                                     <h3><?php echo $feed['price']; ?></h3>
-                                    <figure>
+                                        <figure>
                                         <figcaption>
                                         <p> <?php echo $feed['detail']; ?></p>
                                         </figcaption>
                                     </figure>
-                                </div>
-                            </a>
-                        </li>  
-                    <?php } ?>
+                                    </div>
+                                </a>
+                            </li>  
+                        <?php } ?>
                     </ul>       
                 </div>
             </div>
