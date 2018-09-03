@@ -16,8 +16,12 @@ $check = '';
 $present = '';
 $date = '';
 $detail = '';
-$friend_id = $_GET['id'];
 
+// list.phpから飛んで来た時データを受け取る
+if(!empty($_GET)){
+    $friend_id = $_GET['id'];
+
+}
 
 $errors = array();
 
@@ -26,7 +30,7 @@ if(!empty($_POST)){
     $present = $_POST['input_present'];
     $date = $_POST['input_date'];
     $detail = $_POST['input_detail'];
-
+    $friend_id = $_POST['friend_id'];
 
 
     if($check == '' ){
@@ -64,13 +68,12 @@ if(!empty($_POST)){
         move_uploaded_file($_FILES['input_img_name']['tmp_name'],'present_image/'.$submit_file_name);
 
 
-
         $sql = 'INSERT INTO `presents` SET `name` =?, `date`=?, `detail` = ?,`img_name` = ?,`friend_id`= ?, `which` = ?';
         $data = array($present,$date,$detail,$submit_file_name, $friend_id, $check);
         $stmt = $dbh->prepare($sql);
         $stmt->execute($data);
 
-        header('Location: list.php');
+        header('Location: list.php?id=' . $friend_id);
         exit();
     }
 }
@@ -115,7 +118,7 @@ if(!empty($_POST)){
         <div class="overlay"></div>
         <div class="container" style="padding-top:45px;">
             <div class="col-xs-8 col-xs-offset-2 thumbnail">
-                <h2 class="text-center content_header">register present</h2>
+                <h2 class="text-center content_header">To present</h2>
                 <form method="POST" action="list_make.php" enctype="multipart/form-data">
                     <div class="form-group">
                         <label class="checkbox-inline">
@@ -157,9 +160,10 @@ if(!empty($_POST)){
                             <p class="text-danger">only 'jpg'.'png','gif' type</p>
                         <?php endif;?>
                     </div>
+                        <input type="hidden" name="friend_id" value="<?php echo $friend_id; ?>">
                     <br>
                     <ul class="nav navbar-nav navbar-left">
-                        <li class="active"><a href="list.php=id<?php echo $friends['id']; ?>" style="margin: 15px,background-color: black;">友達のページに戻る</a></li>
+                        <li class="active"><a href="list.php?id=<?php echo $friend_id;?>" style="margin: 15px,background-color: black;">友達のページに戻る</a></li>
                     </ul>
                     <input type="submit" class="btn btn-primary" value="登録">
                 </form>
