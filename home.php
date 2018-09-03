@@ -45,7 +45,7 @@ $start = ($page - 1) * CONTENT_PER_PAGE;
 
 //友達データとプレゼントデータ取得
 if (isset($_GET['search_word'])) {
-        $sql = 'SELECT `f`.`id`,`f`.`friends_name`,`f`.`friend_img`,`f`.`created`,`f`.`user_id`,`p`.`name`,`p`.`img_name` FROM `friends` AS `f` LEFT OUTER JOIN `presents` AS `p` ON `f`.`id`=`p`.`friend_id` WHERE `f`.`user_id` = ? AND`f`.`friends_name`LIKE "%" ? "%" ORDER BY `created` DESC LIMIT '. CONTENT_PER_PAGE .' OFFSET ' . $start;
+        $sql = 'SELECT `f`.`id`,`f`.`friends_name`,`f`.`friend_img`,`f`.`created`,`f`.`user_id`,`p`.`name`,`p`.`img_name` FROM `friends` AS `f` LEFT OUTER JOIN `presents` AS `p` ON `f`.`id`=`p`.`friend_id` WHERE `f`.`user_id` = ? AND `f`.`friends_name` LIKE "%" ? "%" ORDER BY `created` DESC LIMIT '. CONTENT_PER_PAGE .' OFFSET ' . $start;
         $data = [$signin_user['id'],$_GET['search_word']];
     } else {
         // LEFT JOINで全件取得
