@@ -1,5 +1,6 @@
 <?php
 session_start();
+require('dbconnect.php');
 date_default_timezone_set('Asia/Manila');
 
 if(isset($_REQUEST['action']) && $_REQUEST['action'] == 'rewrite'){
@@ -9,9 +10,6 @@ if(isset($_REQUEST['action']) && $_REQUEST['action'] == 'rewrite'){
     $_POST['users_password'] = $_SESSION['register']['password'];
 
     $errors['rewrite'] = true;
-
-    // var_dump($_POST['users_name']);
-    // die();
 }
 
 $name = '';
@@ -59,6 +57,20 @@ if(!empty($_POST)){
         $errors['img_name']= 'blank';
     }
 
+    // 重複チェック
+    $sql = 'SELECT * FROM `users` WHERE users_id = ?';
+    $data = array($id);
+    $stmt = $dbh->prepare($sql);
+    $stmt->execute($data);
+
+    $hoge = $stmt->fetch(PDO::FETCH_ASSOC);
+    if (!empty($hoge)) {
+        $errors['id'] = 'double';
+        ;
+
+    }
+
+
     //エラーがなかった時の処理
     if(empty($errors)){
         $date_str = date('YmdHis');
@@ -76,8 +88,6 @@ if(!empty($_POST)){
         exit();
     }
 }
-
-
 ?>
 
 
@@ -144,6 +154,9 @@ if(!empty($_POST)){
                             <?php if(isset($errors['id']) && $errors['id'] == 'blank'): ?>
                                     <p class="text-danger">Enter your id</p>
                             <?php endif;?>
+                            <?php if(isset($errors['id']) && $errors['id'] == 'double'): ?>
+                                <p class="text-danger">Other user use the id already</p>
+                            <?php endif;?>
                         </div>
                     </div>
 
@@ -152,7 +165,7 @@ if(!empty($_POST)){
                         <div class="cols-sm-10">
                             <div class="input-group">
                                 <span class="input-group-addon"><i class="fa fa-lock fa-lg" aria-hidden="true"></i></span>
-                                <input type="password" class="form-control" name="users_password" id="password"  placeholder="4〜16 letters Password">
+                                <input type="password" class="form-control" name="users_password" id="users_password"  placeholder="4〜16 letters Password">
                             </div>
                             <?php if(isset($errors['password']) && $errors['password'] == 'blank'): ?>
                                     <p class="text-danger">Enter your password</p>
@@ -198,6 +211,22 @@ if(!empty($_POST)){
                     <div class="form-group ">
                         <button class="btn btn-primary btn-lg btn-block login-button">Register</button>
                     </div>
+                    <script>
+                      var form = document.forms[0];
+                      form.onsubmit = function() {
+                        // エラーメッセージをクリアする
+                        form.password.setCustomValidity("");
+                        // パスワードの一致確認
+                        if (form.users_password.value != form.confirm.value) {
+                          // 一致していなかったら、エラーメッセージを表示する
+                          form.users_password.setCustomValidity("パスワードと確認用パスワードが一致しません");
+                        }
+                      };
+                      // 入力値チェックエラーが発生したときの処理
+                      form.addEventListener("invalid", function() {
+                        document.getElementById("errorMessage").innerHTML = "入力値にエラーがあります";
+                      }, false);
+                    </script>
                     <div class="back">
                         <a href="index.php" class="btn btn-default"><font color="#F14E95">&laquo;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;back</a></font>
                     </div>
