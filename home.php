@@ -24,6 +24,7 @@ $errors = array();
 const CONTENT_PER_PAGE = 5;
 
 // -1などのページ数として不正な値を渡された場合の対策
+$page = '';
 $page = max($page, 1);
 
 // ヒットしたレコードの数を取得するSQL
@@ -42,11 +43,16 @@ $page = min($page, $last_page);
 
 $start = ($page - 1) * CONTENT_PER_PAGE;
 
-$sql = 'SELECT `friends` FROM * ORDER BY `created` DESC LIMIT '. CONTENT_PER_PAGE .' OFFSET ' . $start;
+//友達データとプレゼントデータ取得
+if (isset($_GET['search_word'])) {
+        $sql = 'SELECT `f`.`id`,`f`.`friends_name`,`f`.`friend_img`,`f`.`created`,`f`.`user_id`,`p`.`name`,`p`.`img_name` FROM `friends` AS `f` LEFT OUTER JOIN `presents` AS `p` ON `f`.`id`=`p`.`friend_id` WHERE `f`.`user_id` = ? AND`f`.`friends_name`LIKE "%" ? "%" ORDER BY `created` DESC LIMIT '. CONTENT_PER_PAGE .' OFFSET ' . $start;
+        $data = [$signin_user['id'],$_GET['search_word']];
+    } else {
+        // LEFT JOINで全件取得
+        $sql = 'SELECT `f`.`id`,`f`.`friends_name`,`f`.`friend_img`,`f`.`created`,`f`.`user_id`,`p`.`name`,`p`.`img_name` FROM `friends` AS `f` LEFT OUTER JOIN `presents` AS `p` ON `f`.`id`=`p`.`friend_id` WHERE `f`.`user_id` = ? ORDER BY `created` DESC LIMIT '. CONTENT_PER_PAGE .' OFFSET ' . $start;
+        $data = array($signin_user['id']);
+    }
 
-//友達データ取得
-$sql = 'SELECT * FROM `friends` WHERE `user_id`=? ORDER BY `created` DESC LIMIT '. CONTENT_PER_PAGE .' OFFSET ' . $start ;
-$data = array($signin_user['id']);
 $stmt = $dbh->prepare($sql);
 $stmt->execute($data);
 
@@ -59,32 +65,10 @@ $friends = array();
         $friends[] = $rec;
     }
 
-// 検索ボックス
-// if (isset($_GET['search_word'])) {
-//         $sql = 'SELECT `f`.*, `p`.* FROM `friends` AS `f` LEFT JOIN `presents` AS `p` ON `f`.`id`=`p`.`friend_id` WHERE `f`.`friends_name` LIKE "%"? "%" ORDER BY `created` DESC LIMIT '. CONTENT_PER_PAGE .' OFFSET ' . $start;
-//         $data = [$_GET['search_word']];
-//     } else {
-//         // LEFT JOINで全件取得
-//         $sql = 'SELECT `f`.*, `p`.* FROM `friends` AS `f` LEFT JOIN `presents` AS `p` ON `f`.`id`=`p`.`friends_id` ORDER BY `created` DESC LIMIT '. CONTENT_PER_PAGE .' OFFSET ' . $start;
-//         $data = [];
-//     }
-
-
-
-
-// 検索ボックス
-// if (isset($_GET['search_word'])) {
-//         $sql = 'SELECT `f`.*, `p`.* FROM `presents` AS `p` LEFT JOIN `friends` AS `f` ON `f`.`id`=`p`.`friend_id` WHERE `f`.`friends_name` LIKE "%"? "%" ORDER BY `created` DESC LIMIT '. CONTENT_PER_PAGE .' OFFSET ' . $start;
-//         $data = [$_GET['search_word']];
-//     } else {
-//         // LEFT JOINで全件取得
-//         $sql = 'SELECT `f`.*, `p`.* FROM `presents` AS `p` LEFT JOIN `friends` AS `f` ON `f`.`id`=`p`.`friends_id` ORDER BY `created` DESC LIMIT '. CONTENT_PER_PAGE .' OFFSET ' . $start;
-//         $data = [];
-//     }
-
-// var_dump($_GET['search_word']);
+// echo "<pre>";
+// var_dump($friends);
+// echo "</pre>";
 // die();
-
 
 
 
@@ -176,10 +160,10 @@ $friends = array();
                                         <div class="row">
                                             <div class="col-sm-4">
                                                 <a href="list.php?id=<?php echo $friend["id"];?>">
-                                                    <img src="friend_profile_image/<?php echo $friend['img_name']; ?>" class="piture-ajust img-profile " style="width: 200px; height: 200px; border-radius: 50%;" link="list.php">
+                                                    <img src="friend_profile_image/<?php echo $friend['friend_img']; ?>" class="piture-ajust img-profile " style="width: 200px; height: 200px; border-radius: 50%;" link="list.php">
                                                 </a>
                                             </div>
-                                            <div class="col-sm-2" ><img src="present_image/<?php echo $friend["img_name"]; ?>" class="present-image" style="padding-top: 20px; ">
+                                            <div class="col-sm-2" ><img src="present_image/<?php echo $friend['img_name']; ?>" class="present-image" style="width: 180px; height: auto; margin-top: 20px; ">
                                             </div>
                                             <div class="col-sm-2"><img src="assets/images/present1.png" class="present-image" style="padding-top: 20px">
                                             </div>
