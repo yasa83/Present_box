@@ -49,7 +49,11 @@ $page = min($page, $last_page);
 $start = ($page - 1) * CONTENT_PER_PAGE;
 
 
-// 友達のデータだけ取得
+// 最終的な結果を入れる配列の用意
+$results = [];
+// 友達一覧の結果を入れる配列の用意
+$friends = [];
+/// 友達一覧を取得する処理
 if (isset($_GET['search_word'])) {
     $sql = 'SELECT * FROM `friends` WHERE `user_id` = ? AND `friends_name` LIKE "%" ? "%" ORDER BY `created` DESC LIMIT '. CONTENT_PER_PAGE .' OFFSET ' . $start;
     $data = [$signin_user['id'],$_GET['search_word']];
@@ -57,40 +61,48 @@ if (isset($_GET['search_word'])) {
     $sql = 'SELECT * FROM `friends` WHERE `user_id` = ? ORDER BY `created` DESC LIMIT '. CONTENT_PER_PAGE .' OFFSET ' . $start;
     $data = array($signin_user['id']);
 }
-
 $stmt = $dbh->prepare($sql);
 $stmt->execute($data);
 
-$friends = array();
+while (1) {
+    $rec = $stmt->fetch(PDO::FETCH_ASSOC);
+    if($rec == false) {
+        break;
+    }
+    $friends[] = $rec;
+}
+
+// 友達一覧を繰り返す処理
+foreach($friends as $friend){
+    // プレゼントを取得する処理
+    $sql = 'SELECT * FROM `presents` WHERE `friend_id`= ? LIMIT 4 OFFSET 0';
+
+    $data = array($friend['id']);
+    $stmt = $dbh->prepare($sql);
+    $stmt->execute($data);
+
     while (1) {
         $rec = $stmt->fetch(PDO::FETCH_ASSOC);
         if($rec == false) {
             break;
         }
-        $friends[] = $rec;
-    }
-
-
-// プレゼントのデータを取得
-$sql = 'SELECT * FROM `presents` WHERE `friend_id`= ? LIMIT 4 OFFSET 0';
-
-$data = array($friends[0]['id']);
-$stmt = $dbh->prepare($sql);
-$stmt->execute($data);
-
-$presents = array();
-    while (1) {
-        $rec = $stmt->fetch(PDO::FETCH_ASSOC);
-        if($rec == false) {
-            break;
-        }
-        $presents[] = $rec;
-    }
-
+        // 取得できたプレゼントを$friendに付け加える
+        $friend['present'] = $rec;
+                
 // echo "<pre>";
-// var_dump($friends[0]['id']);
+// var_dump($friend['present']);
 // echo "</pre>";
 // die();
+
+    }
+    // 結果に格納
+        $results[] = $friend;
+}
+
+
+
+
+
 
 
 
@@ -175,20 +187,18 @@ $presents = array();
             <div class="container">
                 <div class="row">
                     <div class="flame">
-                        <?php foreach($friends as $friend): ?>
+                        <?php foreach($results as $result): ?>
                                 <section class="profile clearfix" style="display: inline-block;">
-                                    <a href="list.php?id=<?php echo $friend["id"]; ?>" class="btn btn-primary"><?php echo $friend["friends_name"]; ?></a>
+                                    <a href="list.php?id=<?php echo $result["id"]; ?>" class="btn btn-primary"><?php echo $result["friends_name"]; ?></a>
                                     <div class="container">
                                         <div class="row">
                                             <div class="col-sm-4">
-                                                <a href="list.php?id=<?php echo $friend["id"];?>">
-                                                    <img src="friend_profile_image/<?php echo $friend['friend_img']; ?>" class="piture-ajust img-profile " style="width: 200px; height: 200px; border-radius: 50%;" link="list.php">
+                                                <a href="list.php?id=<?php echo $result["id"];?>">
+                                                    <img src="friend_profile_image/<?php echo $result['friend_img']; ?>" class="piture-ajust img-profile " style="width: 200px; height: 200px; border-radius: 50%;" link="list.php">
                                                 </a>
                                             </div>
-                                            <?php foreach($presents as $present): ?>
-                                                <div class="col-sm-2" ><img src="present_image/<?php echo $present['img_name']; ?>" class="present-image" style="width: 180px; height: 150px; margin-top: 20px; border-radius: 10%;">
+                                                <div class="col-sm-2" ><img src="present_image/<?php echo $result['present']['img_name']; ?>" class="present-image" style="width: 180px; height: 150px; margin-top: 20px; border-radius: 10%;">
                                                 </div>
-                                            <?php endforeach; ?>
                                         </div>
                                     </div>
                             </section>
