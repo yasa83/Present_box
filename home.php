@@ -50,14 +50,23 @@ $start = ($page - 1) * CONTENT_PER_PAGE;
 
 
 //友達データとプレゼントデータ取得
+// if (isset($_GET['search_word'])) {
+//         $sql = 'SELECT `f`.`id`,`f`.`friends_name`,`f`.`friend_img`,`f`.`created`,`f`.`user_id`,`p`.`name`,`p`.`img_name` FROM `friends` AS `f` LEFT OUTER JOIN `presents` AS `p` ON `f`.`id`=`p`.`friend_id` WHERE `f`.`user_id` = ? AND `f`.`friends_name` LIKE "%" ? "%" ORDER BY `created` DESC LIMIT '. CONTENT_PER_PAGE .' OFFSET ' . $start;
+//         $data = [$signin_user['id'],$_GET['search_word']];
+//     } else {
+//         // LEFT JOINで全件取得
+//         $sql = 'SELECT `f`.`id`,`f`.`friends_name`,`f`.`friend_img`,`f`.`created`,`f`.`user_id`,`p`.`name`,`p`.`img_name` FROM `friends` AS `f` LEFT OUTER JOIN `presents` AS `p` ON `f`.`id`=`p`.`friend_id` WHERE `f`.`user_id` = ? ORDER BY `created` DESC LIMIT '. CONTENT_PER_PAGE .' OFFSET ' . $start;
+//         $data = array($signin_user['id']);
+//     }
+
+// 友達のデータだけ取得
 if (isset($_GET['search_word'])) {
-        $sql = 'SELECT `f`.`id`,`f`.`friends_name`,`f`.`friend_img`,`f`.`created`,`f`.`user_id`,`p`.`name`,`p`.`img_name` FROM `friends` AS `f` LEFT OUTER JOIN `presents` AS `p` ON `f`.`id`=`p`.`friend_id` WHERE `f`.`user_id` = ? AND `f`.`friends_name` LIKE "%" ? "%" ORDER BY `created` DESC LIMIT '. CONTENT_PER_PAGE .' OFFSET ' . $start;
-        $data = [$signin_user['id'],$_GET['search_word']];
-    } else {
-        // LEFT JOINで全件取得
-        $sql = 'SELECT `f`.`id`,`f`.`friends_name`,`f`.`friend_img`,`f`.`created`,`f`.`user_id`,`p`.`name`,`p`.`img_name` FROM `friends` AS `f` LEFT OUTER JOIN `presents` AS `p` ON `f`.`id`=`p`.`friend_id` WHERE `f`.`user_id` = ? ORDER BY `created` DESC LIMIT '. CONTENT_PER_PAGE .' OFFSET ' . $start;
-        $data = array($signin_user['id']);
-    }
+    $sql = 'SELECT * FROM `friends` WHERE `user_id` = ? AND `friends_name` LIKE "%" ? "%" ORDER BY `created` DESC LIMIT '. CONTENT_PER_PAGE .' OFFSET ' . $start;
+    $data = [$signin_user['id'],$_GET['search_word']];
+} else {
+    $sql = 'SELECT * FROM `friends` WHERE `user_id` = ? ORDER BY `created` DESC LIMIT '. CONTENT_PER_PAGE .' OFFSET ' . $start;
+    $data = array($signin_user['id']);
+}
 
 $stmt = $dbh->prepare($sql);
 $stmt->execute($data);
@@ -70,6 +79,8 @@ $friends = array();
         }
         $friends[] = $rec;
     }
+
+// プレゼントのデータを取得
 
 // echo "<pre>";
 // var_dump($friends);
@@ -141,7 +152,7 @@ $friends = array();
                             <h2>do you search?</h2>
                             <form method="GET" action="" class="navbar-form navbar-center" role="search">
                                 <div class=“input-group”>
-                                <input type=“text” name="search_word" placeholder=“友達の名前や商品名を入力してください“ style="width:300px; height: 30px;">
+                                <input type=“text” name="search_word" placeholder=“友達の名前で検索できます“ style="width:300px; height: 30px;">
                                 <span class=“input-group-btn”>
                                     <button class=“btn btn-primary"  style="color: #F14E95">Search</button>
                                 </span>
