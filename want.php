@@ -76,10 +76,10 @@ $file_name = '';
         $file_name = $_FILES['img_name']['name'];
     }
     if(!empty($file_name)){
-        $file_type = substr($file_name, -3);
+        $file_type = substr($file_name, -4);
 
         $file_type = strtolower($file_type);
-        if($file_type != 'jpg' && $file_type !='png' && $file_type!='gif'){
+        if($file_type != '.jpg' && $file_type !='.png' && $file_type!='.gif' && $file_type!='jpeg'){
             $errors['img_name'] = 'type';
         }
     }else{
@@ -199,7 +199,7 @@ $file_name = '';
             <p class="text-danger">画像を選択してください</p>
             <?php endif; ?>
             <?php if(isset($errors['img_name']) && $errors['img_name'] == 'type'): ?>
-            <p class="text-danger">拡張子が「jpg」「png」「gif」「jpge」の画像を選択して下さい</p>
+            <p class="text-danger">拡張子が「jpg」「png」「gif」「jpeg」の画像を選択して下さい</p>
             <?php endif; ?>
           </div>
 
