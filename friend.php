@@ -36,9 +36,9 @@ if(!empty($_POST)){
         $file_name = $_FILES['friend_img_name']['name'];
     }
     if(!empty($file_name)){
-        $file_type = substr($file_name, -3);
+        $file_type = substr($file_name, -4);
         $file_type = strtolower($file_type);
-        if($file_type != 'jpg' && $file_type !='png' && $file_type!='gif'){
+        if($file_type != '.jpg' && $file_type !='.png' && $file_type!='.gif' && $file_type!= 'jpeg'){
             $errors['img_name'] = 'type';
         }
     }else{
