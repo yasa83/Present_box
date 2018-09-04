@@ -19,12 +19,17 @@ $signin_user = $stmt->fetch(PDO::FETCH_ASSOC);
 // エラーの初期化
 $errors = array();
 
+// 何ページ目を開いているか決める
+if (isset($_GET['page'])) {
+    $page = $_GET['page'];
+} else {
+    $page = 1;
+}
 
 // ページネーション
 const CONTENT_PER_PAGE = 5;
 
 // -1などのページ数として不正な値を渡された場合の対策
-$page = '';
 $page = max($page, 1);
 
 // ヒットしたレコードの数を取得するSQL
@@ -42,6 +47,7 @@ $last_page = ceil($record_cnt['cnt'] / CONTENT_PER_PAGE);
 $page = min($page, $last_page);
 
 $start = ($page - 1) * CONTENT_PER_PAGE;
+
 
 //友達データとプレゼントデータ取得
 if (isset($_GET['search_word'])) {
@@ -163,14 +169,10 @@ $friends = array();
                                                     <img src="friend_profile_image/<?php echo $friend['friend_img']; ?>" class="piture-ajust img-profile " style="width: 200px; height: 200px; border-radius: 50%;" link="list.php">
                                                 </a>
                                             </div>
+                                            <?php foreach($friends as $friend): ?>
                                             <div class="col-sm-2" ><img src="present_image/<?php echo $friend['img_name']; ?>" class="present-image" style="width: 180px; height: auto; margin-top: 20px; ">
                                             </div>
-                                            <div class="col-sm-2"><img src="assets/images/present1.png" class="present-image" style="padding-top: 20px">
-                                            </div>
-                                            <div class="col-sm-2"><img src="assets/images/present1.png" class="present-image" style="padding-top: 20px">
-                                            </div>
-                                            <div class="col-sm-2"><img src="assets/images/present1.png" class="present-image" style="padding-top: 20px">
-                                            </div>
+                                            <?php endforeach; ?>
                                         </div>
                                     </div>
                             </section>
