@@ -127,9 +127,10 @@ $file_name = '';
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <title>Present Box</title>
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <meta name="description" content="Free HTML5 Template by FREEHTML5.CO" />
-    <meta name="keywords" content="free html5, free template, free bootstrap, html5, css3, mobile first, responsive" />
-    <meta name="author" content="FREEHTML5.CO" />
+    <meta name="description" content="Free HTML5 Template by FREEHTML5.CO">
+    <meta name="keywords" content="free html5, free template, free bootstrap, html5, css3, mobile first, responsive">
+    <meta name="author" content="FREEHTML5.CO">
+    <link rel="icon" type="assets/images/favicon.png" href="assets/images/favicon.png">
     <link href='https://fonts.googleapis.com/css?family=Work+Sans:400,300,600,400italic,700' rel='stylesheet' type='text/css'>
     <link href="https://fonts.googleapis.com/css?family=Sacramento" rel="stylesheet">
     <!-- Animate.css -->
@@ -234,13 +235,13 @@ $file_name = '';
                         <li class="one-third animate-box" data-animate-effect="fadeIn" style="background-image: url(want_image/<?php echo $feed['img_name']; ?>); "> 
                                 <a href=want_image/<?php echo $feed['img_name']; ?>>
                                     <div class="case-studies-summary">                               
-                                    <h2><?php echo $feed['name']; ?></h2>
-                                    <h3><?php echo $feed['price']; ?></h3>
+                                        <h2><?php echo $feed['name']; ?></h2>
+                                        <h3><?php echo $feed['price']; ?></h3>
                                         <figure>
-                                        <figcaption>
-                                        <p> <?php echo $feed['detail']; ?></p>
-                                        </figcaption>
-                                    </figure>
+                                            <figcaption>
+                                                <p> <?php echo $feed['detail']; ?></p>
+                                            </figcaption>
+                                        </figure>
                                     </div>
                                 </a>
                             </li>  
