@@ -79,13 +79,28 @@ $friends = array();
         }
         $friends[] = $rec;
     }
+    
 
 // プレゼントのデータを取得
+$sql = 'SELECT * FROM `presents` WHERE `friend_id`= ?';
 
-// echo "<pre>";
-// var_dump($friends);
-// echo "</pre>";
-// die();
+$data = array($friends['id']);
+$stmt = $dbh->prepare($sql);
+$stmt->execute($data);
+
+$presents = array();
+    while (1) {
+        $rec = $stmt->fetch(PDO::FETCH_ASSOC);
+        if($rec == false) {
+            break;
+        }
+        $presents[] = $rec;
+    }
+
+echo "<pre>";
+var_dump($friends['id']);
+echo "</pre>";
+die();
 
 
 
@@ -180,9 +195,9 @@ $friends = array();
                                                     <img src="friend_profile_image/<?php echo $friend['friend_img']; ?>" class="piture-ajust img-profile " style="width: 200px; height: 200px; border-radius: 50%;" link="list.php">
                                                 </a>
                                             </div>
-                                            <?php foreach($friends as $friend): ?>
-                                            <div class="col-sm-2" ><img src="present_image/<?php echo $friend['img_name']; ?>" class="present-image" style="width: 180px; height: auto; margin-top: 20px; ">
-                                            </div>
+                                            <?php foreach($presents as $present): ?>
+                                                <div class="col-sm-2" ><img src="present_image/<?php echo $present['img_name']; ?>" class="present-image" style="width: 180px; height: auto; margin-top: 20px; ">
+                                                </div>
                                             <?php endforeach; ?>
                                         </div>
                                     </div>
