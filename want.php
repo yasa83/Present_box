@@ -2,6 +2,42 @@
 session_start();
 require('dbconnect.php');
 
+// 直接このページに来たらsignin.phpに飛ぶようにする
+if(!isset($_SESSION['id'])){
+    header('Location:signin.php');
+    exit();
+}
+
+  if (isset($_GET['page'])) {
+        $page = $_GET['page'];
+    } else {
+        $page = 1;
+    }
+
+// ページネーション
+const CONTENT_PER_PAGE = 9;
+
+// -1などのページ数として不正な値を渡された場合の対策
+$page = max($page, 1);
+
+// ヒットしたレコードの数を取得するSQL
+$sql_count = "SELECT COUNT(*) AS `cnt` FROM `wants`";
+
+$stmt_count = $dbh->prepare($sql_count);
+$stmt_count->execute();
+
+$record_cnt = $stmt_count->fetch(PDO::FETCH_ASSOC);
+
+// 取得したページ数を1ページあたりに表示する件数で割って何ページが最後になるか取得
+$last_page = ceil($record_cnt['cnt'] / CONTENT_PER_PAGE);
+
+// 最後のページより大きい値を渡された場合の対策
+$page = min($page, $last_page);
+
+$start = ($page - 1) * CONTENT_PER_PAGE;
+
+
+
 
 
 //サインインユーザー情報取得
@@ -67,7 +103,7 @@ $file_name = '';
 
 }
 
-    $sql ="SELECT * FROM `wants`";
+    $sql ='SELECT * FROM `wants` LIMIT '. CONTENT_PER_PAGE .' OFFSET ' . $start;
     $stmt= $dbh->prepare($sql);
     $stmt->execute();
 
@@ -209,7 +245,21 @@ $file_name = '';
                                 </a>
                             </li>  
                         <?php } ?>
-                    </ul>       
+                            </ul>
+                        </div>
+                    </ul> 
+                     <div aria-label="Page navigation">
+                            <ul class="pager">
+                                <?php if ($page == 1): ?>
+                                    <li class="previous disabled"><a><span aria-hidden="true">&larr;</span> Pre</a></li>
+                                <?php else: ?>
+                                    <li class="previous"><a href="want.php?page=<?= $page - 1; ?>"><span aria-hidden="true">&larr;</span> Pre</a></li>
+                                <?php endif; ?>
+                                <?php if ($page == $last_page): ?>
+                                    <li class="next disabled"><a>Next <span aria-hidden="true">&rarr;</span></a></li>
+                                <?php else: ?>
+                                    <li class="next"><a href="want.php?page=<?php echo $page + 1; ?>">Next <span aria-hidden="true">&rarr;</span></a></li>
+                                <?php endif; ?>     
                 </div>
             </div>
         </div>
