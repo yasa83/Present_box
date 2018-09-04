@@ -49,16 +49,6 @@ $page = min($page, $last_page);
 $start = ($page - 1) * CONTENT_PER_PAGE;
 
 
-//友達データとプレゼントデータ取得
-// if (isset($_GET['search_word'])) {
-//         $sql = 'SELECT `f`.`id`,`f`.`friends_name`,`f`.`friend_img`,`f`.`created`,`f`.`user_id`,`p`.`name`,`p`.`img_name` FROM `friends` AS `f` LEFT OUTER JOIN `presents` AS `p` ON `f`.`id`=`p`.`friend_id` WHERE `f`.`user_id` = ? AND `f`.`friends_name` LIKE "%" ? "%" ORDER BY `created` DESC LIMIT '. CONTENT_PER_PAGE .' OFFSET ' . $start;
-//         $data = [$signin_user['id'],$_GET['search_word']];
-//     } else {
-//         // LEFT JOINで全件取得
-//         $sql = 'SELECT `f`.`id`,`f`.`friends_name`,`f`.`friend_img`,`f`.`created`,`f`.`user_id`,`p`.`name`,`p`.`img_name` FROM `friends` AS `f` LEFT OUTER JOIN `presents` AS `p` ON `f`.`id`=`p`.`friend_id` WHERE `f`.`user_id` = ? ORDER BY `created` DESC LIMIT '. CONTENT_PER_PAGE .' OFFSET ' . $start;
-//         $data = array($signin_user['id']);
-//     }
-
 // 友達のデータだけ取得
 if (isset($_GET['search_word'])) {
     $sql = 'SELECT * FROM `friends` WHERE `user_id` = ? AND `friends_name` LIKE "%" ? "%" ORDER BY `created` DESC LIMIT '. CONTENT_PER_PAGE .' OFFSET ' . $start;
@@ -79,12 +69,12 @@ $friends = array();
         }
         $friends[] = $rec;
     }
-    
+
 
 // プレゼントのデータを取得
-$sql = 'SELECT * FROM `presents` WHERE `friend_id`= ?';
+$sql = 'SELECT * FROM `presents` WHERE `friend_id`= ? LIMIT 4 OFFSET 0';
 
-$data = array($friends['id']);
+$data = array($friends[0]['id']);
 $stmt = $dbh->prepare($sql);
 $stmt->execute($data);
 
@@ -97,10 +87,10 @@ $presents = array();
         $presents[] = $rec;
     }
 
-echo "<pre>";
-var_dump($friends['id']);
-echo "</pre>";
-die();
+// echo "<pre>";
+// var_dump($friends[0]['id']);
+// echo "</pre>";
+// die();
 
 
 
@@ -196,7 +186,7 @@ die();
                                                 </a>
                                             </div>
                                             <?php foreach($presents as $present): ?>
-                                                <div class="col-sm-2" ><img src="present_image/<?php echo $present['img_name']; ?>" class="present-image" style="width: 180px; height: auto; margin-top: 20px; ">
+                                                <div class="col-sm-2" ><img src="present_image/<?php echo $present['img_name']; ?>" class="present-image" style="width: 180px; height: 150px; margin-top: 20px; border-radius: 10%;">
                                                 </div>
                                             <?php endforeach; ?>
                                         </div>
