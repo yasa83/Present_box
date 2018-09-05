@@ -127,6 +127,9 @@ if(!empty($_POST)){
                         <label class="checkbox-inline">
                             <input type="radio" name="check" value="take">友達からもらったもの
                         </label>
+                        <label class="checkbox-inline">
+                            <input type="radio" name="check" value="want">友達がほしいもの
+                        </label>
                         <?php if(isset($errors['check']) && $errors['check'] == 'blank'): ?>
                             <p class="text-danger">Choose one</p>
                         <?php endif;?>
