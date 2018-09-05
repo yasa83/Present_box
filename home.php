@@ -33,15 +33,20 @@ const CONTENT_PER_PAGE = 5;
 $page = max($page, 1);
 
 // ヒットしたレコードの数を取得するSQL
-$sql_count = "SELECT COUNT(*) AS `cnt` FROM `friends`";
-
+$sql_count = "SELECT COUNT(*) AS `cnt` FROM `friends` WHERE `user_id` = ?";
+$data = array($signin_user['id']);
 $stmt_count = $dbh->prepare($sql_count);
-$stmt_count->execute();
+$stmt_count->execute($data);
 
 $record_cnt = $stmt_count->fetch(PDO::FETCH_ASSOC);
 
 // 取得したページ数を1ページあたりに表示する件数で割って何ページが最後になるか取得
 $last_page = ceil($record_cnt['cnt'] / CONTENT_PER_PAGE);
+
+// echo "<pre>";
+// var_dump($record_cnt['cnt']);
+// echo "</pre>";
+// die();
 
 // 最後のページより大きい値を渡された場合の対策
 $page = min($page, $last_page);
@@ -93,10 +98,6 @@ foreach($friends as $friend){
         $results[] = $friend;
 }
 
-// echo "<pre>";
-// var_dump($friend);
-// echo "</pre>";
-// die();
 
 
 
@@ -211,7 +212,7 @@ foreach($friends as $friend){
                                     <li class="previous"><a href="home.php?page=<?= $page - 1; ?>"><span aria-hidden="true">&larr;</span> Pre</a></li>
                                 <?php endif; ?>
                                 <?php if ($page == $last_page): ?>
-                                    <li class="next disabled"><a>Next <span aria-hidden="true">&rarr;</span></a></li>
+                                    <li class="next disabled"><a> Next<span aria-hidden="true">&rarr;</span></a></li>
                                 <?php else: ?>
                                     <li class="next"><a href="home.php?page=<?= $page + 1; ?>">Next <span aria-hidden="true">&rarr;</span></a></li>
                                 <?php endif; ?>
