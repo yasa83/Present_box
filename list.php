@@ -21,8 +21,8 @@ $stmt = $dbh->prepare($sql);
 $stmt->execute($data);
 
 $presents = array();
-$give = [];
-$take = [];
+$gives = [];
+$takes = [];
     while (1) {
         $rec = $stmt->fetch(PDO::FETCH_ASSOC);
         if($rec == false) {
@@ -30,15 +30,15 @@ $take = [];
         }
 
         if ($rec['which'] == 'give') {
-            $give[] = $rec;
+            $gives[] = $rec;
         } elseif ($rec['which'] == 'take') {
-            $take[] = $rec;
+            $takes[] = $rec;
         }
 
         $presents[] = $rec;
     }
     // echo "<pre>";
-    // var_dump($give, $take);
+    // var_dump($gives);
     // echo "<pre>";
     // die();
 
@@ -120,18 +120,18 @@ $friends = $stmt->fetch(PDO::FETCH_ASSOC);
                 <div class="col-md-12">
                     <h1 class="text-center">you gave these presents</h1>
                     <div class="row">
-                        <?php foreach ($presents as $present): ?>
-                            <div class="<?php echo $present["which"];?>">
+                        <?php foreach ($gives as $give): ?>
+                            <div class="<?php echo $give;?>">
                                 <div class="col-xs-4">
                                     <a data-target="con1" class="modal-open">
-                                        <img src="present_image/<?php echo $present['img_name']; ?>" class="picture-size" style="width:300px; height:300px; border-radius: 5%; margin: 10px; ">
+                                        <img src="present_image/<?php echo $give['img_name']; ?>" class="picture-size" style="width:300px; height:300px; border-radius: 5%; margin: 10px; ">
                                     </a>
                                 </div>
                                 <!-- モーダル -->
                                 <div id="con1" class="modal-content" style="width: 800px; height: 500px;">
                                     <div class="row">
                                         <div class="col-md-6">
-                                            <br><br><img src="present_image/<?php echo $present['img_name']; ?>" class="picture-size">
+                                            <br><br><img src="present_image/<?php echo $give['img_name']; ?>" class="picture-size">
                                         </div>
                                         <div class="col-md-6" style="font-size: 25px; line-height: 4em;">
                                             <ul class="text-left" >
@@ -160,18 +160,18 @@ $friends = $stmt->fetch(PDO::FETCH_ASSOC);
                 <div class="col-md-12">
                     <h1 class="text-center">you got these presents</h1>
                     <div class="row">
-                        <?php foreach ($presents as $present): ?>
-                            <div class="<?php echo $present["which"] ?>">
+                        <?php foreach ($takes as $take): ?>
+                            <div class="<?php echo $take; ?>">
                                 <div class="col-xs-4 ">
                                     <a data-target="con1" class="modal-open">
-                                        <img src="present_image/<?php echo $present['img_name']; ?>" class="picture-size" style="width:300px; height:300px; border-radius: 5%; margin: 10px; ">
+                                        <img src="present_image/<?php echo $take['img_name']; ?>" class="picture-size" style="width:300px; height:300px; border-radius: 5%; margin: 10px; ">
                                     </a>
                                 </div>
                                 <!-- モーダル -->
                                 <div id="con1" class="modal-content" style="width: 800px; height: 500px;">
                                     <div class="row">
                                         <div class="col-md-6">
-                                            <br><br><img src="present_image/<?php echo $present['img_name']; ?>" class="picture-size">
+                                            <br><br><img src="present_image/<?php echo $take['img_name']; ?>" class="picture-size">
                                         </div>
                                         <div class="col-md-6" style="font-size: 25px; line-height: 4em;">
                                             <ul class="text-left" >
