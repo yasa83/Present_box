@@ -8,51 +8,6 @@ if(!isset($_SESSION['id'])){
     exit();
 }
 
-// ページネーション
-const CONTENT_PER_PAGE = 5;
-
-// -1などのページ数として不正な値を渡された場合の対策
-$page = max($page, 1);
-
-// ヒットしたレコードの数を取得するSQL
-$sql_count = "SELECT COUNT(*) AS `cnt` FROM `friends`";
-
-$stmt_count = $dbh->prepare($sql_count);
-$stmt_count->execute();
-
-$record_cnt = $stmt_count->fetch(PDO::FETCH_ASSOC);
-
-// 取得したページ数を1ページあたりに表示する件数で割って何ページが最後になるか取得
-$last_page = ceil($record_cnt['cnt'] / CONTENT_PER_PAGE);
-
-// 最後のページより大きい値を渡された場合の対策
-$page = min($page, $last_page);
-
-$start = ($page - 1) * CONTENT_PER_PAGE;
-
-$sql = 'SELECT `friends` FROM * ORDER BY `created` DESC LIMIT '. CONTENT_PER_PAGE .' OFFSET ' . $start;
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 //サインインユーザー情報取得
 $sql = 'SELECT * FROM `users` WHERE `id` =?';
 $data = array($_SESSION['id']);
@@ -64,20 +19,103 @@ $signin_user = $stmt->fetch(PDO::FETCH_ASSOC);
 // エラーの初期化
 $errors = array();
 
-//友達データ取得
-$sql = 'SELECT * FROM `friends` WHERE `user_id`=?';
+// 何ページ目を開いているか決める
+if (isset($_GET['page'])) {
+    $page = $_GET['page'];
+} else {
+    $page = 1;
+}
+
+// ページネーション
+const CONTENT_PER_PAGE = 5;
+
+// -1などのページ数として不正な値を渡された場合の対策
+$page = max($page, 1);
+
+// ヒットしたレコードの数を取得するSQL
+$sql_count = "SELECT COUNT(*) AS `cnt` FROM `friends` WHERE `user_id` = ?";
 $data = array($signin_user['id']);
+$stmt_count = $dbh->prepare($sql_count);
+$stmt_count->execute($data);
+
+$record_cnt = $stmt_count->fetch(PDO::FETCH_ASSOC);
+
+// 取得したページ数を1ページあたりに表示する件数で割って何ページが最後になるか取得
+$last_page = ceil($record_cnt['cnt'] / CONTENT_PER_PAGE);
+
+// echo "<pre>";
+// var_dump($record_cnt['cnt']);
+// echo "</pre>";
+// die();
+
+// 最後のページより大きい値を渡された場合の対策
+$page = min($page, $last_page);
+
+$start = ($page - 1) * CONTENT_PER_PAGE;
+
+
+// 最終的な結果を入れる配列の用意
+$results = [];
+// 友達一覧の結果を入れる配列の用意
+$friends = [];
+/// 友達一覧を取得する処理
+if (isset($_GET['search_word'])) {
+    $sql = 'SELECT * FROM `friends` WHERE `user_id` = ? AND `friends_name` LIKE "%" ? "%" ORDER BY `created` DESC LIMIT '. CONTENT_PER_PAGE .' OFFSET ' . $start;
+    $data = [$signin_user['id'],$_GET['search_word']];
+} else {
+    $sql = 'SELECT * FROM `friends` WHERE `user_id` = ? ORDER BY `created` DESC LIMIT '. CONTENT_PER_PAGE .' OFFSET ' . $start;
+    $data = array($signin_user['id']);
+}
 $stmt = $dbh->prepare($sql);
 $stmt->execute($data);
 
-$friends = array();
+while (1) {
+    $rec = $stmt->fetch(PDO::FETCH_ASSOC);
+    if($rec == false) {
+        break;
+    }
+    $friends[] = $rec;
+}
+
+// 友達一覧を繰り返す処理
+foreach($friends as $friend){
+    // プレゼントを取得する処理
+    $sql = 'SELECT * FROM `presents` WHERE `friend_id`= ? LIMIT 4 OFFSET 0';
+
+    $data = array($friend['id']);
+    $stmt = $dbh->prepare($sql);
+    $stmt->execute($data);
+
     while (1) {
         $rec = $stmt->fetch(PDO::FETCH_ASSOC);
         if($rec == false) {
             break;
         }
-        $friends[] = $rec;
+        // 取得できたプレゼントを$friendに付け加える
+        $friend['present'][] = $rec;
     }
+    // 結果に格納
+        $results[] = $friend;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 
@@ -127,11 +165,11 @@ $friends = array();
                         <div class="display-tc animate-box" data-animate-effect="fadeIn">
                             <h1>Whose present</h1>
                             <h2>do you search?</h2>
-                            <form>
+                            <form method="GET" action="" class="navbar-form navbar-center" role="search">
                                 <div class=“input-group”>
-                                <input type=“text” placeholder=“友達の名前や商品名を入力してください“ style="width:300px; height: 30px;">
+                                <input type=“text” name="search_word" placeholder=“友達の名前で検索できます“ style="width:300px; height: 30px;">
                                 <span class=“input-group-btn”>
-                                    <button type=“button” class=“btn square_btn" style="color: #F14E95">Search</button>
+                                    <button class=“btn btn-primary"  style="color: #F14E95">Search</button>
                                 </span>
                                 </div>
                             </form>
@@ -147,24 +185,20 @@ $friends = array();
             <div class="container">
                 <div class="row">
                     <div class="flame">
-                        <?php foreach($friends as $friend): ?>
+                        <?php foreach($results as $result): ?>
                                 <section class="profile clearfix" style="display: inline-block;">
-                                    <a href="list.php?id=<?php echo $friend["id"]; ?>" class="btn btn-primary"><?php echo $friend["friends_name"]; ?></a>
+                                    <a href="list.php?id=<?php echo $result["id"]; ?>" class="btn btn-primary"><?php echo $result["friends_name"]; ?></a>
                                     <div class="container">
                                         <div class="row">
                                             <div class="col-sm-4">
-                                                <a href="list.php?id=<?php echo $friend["id"];?>">
-                                                    <img src="friend_profile_image/<?php echo $friend['img_name']; ?>" class="piture-ajust img-profile " style="width: 200px; height: 200px; border-radius: 50%;" link="list.php">
+                                                <a href="list.php?id=<?php echo $result["id"];?>">
+                                                    <img src="friend_profile_image/<?php echo $result['friend_img']; ?>" class="piture-ajust img-profile " style="width: 200px; height: 200px; border-radius: 50%;" link="list.php">
                                                 </a>
                                             </div>
-                                            <div class="col-sm-2" ><img src="present_image/<?php echo $friend["img_name"]; ?>" class="present-image" style="padding-top: 20px; ">
-                                            </div>
-                                            <div class="col-sm-2"><img src="assets/images/present1.png" class="present-image" style="padding-top: 20px">
-                                            </div>
-                                            <div class="col-sm-2"><img src="assets/images/present1.png" class="present-image" style="padding-top: 20px">
-                                            </div>
-                                            <div class="col-sm-2"><img src="assets/images/present1.png" class="present-image" style="padding-top: 20px">
-                                            </div>
+                                            <?php foreach($result['present'] as $v): ?>
+                                                <div class="col-sm-2" ><img src="present_image/<?php echo $v['img_name']; ?>" class="present-image" style="width: 180px; height: 150px; margin-top: 20px; border-radius: 10%;">
+                                                </div>
+                                            <?php endforeach; ?>
                                         </div>
                                     </div>
                             </section>
@@ -178,7 +212,7 @@ $friends = array();
                                     <li class="previous"><a href="home.php?page=<?= $page - 1; ?>"><span aria-hidden="true">&larr;</span> Pre</a></li>
                                 <?php endif; ?>
                                 <?php if ($page == $last_page): ?>
-                                    <li class="next disabled"><a>Next <span aria-hidden="true">&rarr;</span></a></li>
+                                    <li class="next disabled"><a> Next<span aria-hidden="true">&rarr;</span></a></li>
                                 <?php else: ?>
                                     <li class="next"><a href="home.php?page=<?= $page + 1; ?>">Next <span aria-hidden="true">&rarr;</span></a></li>
                                 <?php endif; ?>
@@ -191,34 +225,7 @@ $friends = array();
     </div>
 <!--wrap終わり-->
 
-    <!-- フッター始まり -->
-    <footer id="fh5co-footer" role="contentinfo">
-        <div class="container">
-            <div class="row copyright">
-                <div class="col-md-12 text-center">
-                    <p>
-                        <small class="block">&copy; 43batch チームはしうち　Nexseed<br>
-                        FREEHTML5.CO</small> 
-                    </p>
-                    <p>
-                        <ul class="fh5co-social-icons">
-                            <li><a href="https://twitter.com/nexseed_cebu"><i class="icon-twitter"></i></a></li>
-                            <li><a href="https://www.facebook.com/NexSeed/"><i class="icon-facebook"></i></a></li>
-                        </ul>
-                    </p>
-                </div>
-            </div>
-        </div>
-    </footer>
-    <!-- フッター終わり -->
-
-
-<!-- 画面遷移用の矢印 -->
-</div>
-<div class="gototop js-top">
-    <a href="#" class="js-gotop"><i class="icon-arrow-up"></i></a>
-</div>
-</div>
+    <?php include('footer.php'); ?>
 
 <!-- jQuery -->
 <script src="assets/js/jquery.min.js"></script>

@@ -36,9 +36,9 @@ if(!empty($_POST)){
         $file_name = $_FILES['friend_img_name']['name'];
     }
     if(!empty($file_name)){
-        $file_type = substr($file_name, -3);
+        $file_type = substr($file_name, -4);
         $file_type = strtolower($file_type);
-        if($file_type != 'jpg' && $file_type !='png' && $file_type!='gif'){
+        if($file_type != '.jpg' && $file_type !='.png' && $file_type!='.gif' && $file_type!= 'jpeg'){
             $errors['img_name'] = 'type';
         }
     }else{
@@ -53,7 +53,7 @@ if(!empty($_POST)){
         move_uploaded_file($_FILES['friend_img_name']['tmp_name'],'friend_profile_image/'.$submit_file_name);
 
 
-        $sql = 'INSERT INTO `friends` SET `friends_name` =?, `birthday`=?,`img_name` = ?, `created`= NOW(), `user_id`=?';
+        $sql = 'INSERT INTO `friends` SET `friends_name` =?, `birthday`=?,`friend_img` = ?, `created`= NOW(), `user_id`=?';
         $data = array($name,$birthday,$submit_file_name,$signin_user['id']);
         $stmt = $dbh->prepare($sql);
         $stmt->execute($data);
@@ -152,35 +152,7 @@ if(!empty($_POST)){
 
 
 
-    <!-- フッター始まり -->
-    <footer id="fh5co-footer" role="contentinfo">
-        <div class="container">
-            <div class="row copyright">
-                <div class="col-md-12 text-center">
-                    <p>
-                        <small class="block">&copy; 43batch チームはしうち　Nexseed<br>
-                        FREEHTML5.CO</small> 
-                    </p>
-                    <p>
-                        <ul class="fh5co-social-icons">
-                            <li><a href="https://twitter.com/nexseed_cebu"><i class="icon-twitter"></i></a></li>
-                            <li><a href="https://www.facebook.com/NexSeed/"><i class="icon-facebook"></i></a></li>
-                        </ul>
-                    </p>
-                </div>
-            </div>
-        </div>
-    </footer>
-    <!-- フッター終わり -->
-
-
-<!-- 画面遷移用の矢印 -->
-</div>
-<div class="gototop js-top">
-    <a href="#" class="js-gotop"><i class="icon-arrow-up"></i></a>
-</div>
-</div>
-
+    <?php include('footer.php'); ?>
 <!-- jQuery -->
 <script src="assets/js/jquery.min.js"></script>
 <!-- jQuery Easing -->

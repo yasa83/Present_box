@@ -41,7 +41,7 @@ $start = ($page - 1) * CONTENT_PER_PAGE;
 
 
 //サインインユーザー情報取得
-$sql = 'SELECT * FROM `users`where `id` =?';
+$sql = 'SELECT * FROM `users` WHERE `id` =?';
 $data = array($_SESSION['id']);
 $stmt = $dbh->prepare($sql);
 $stmt->execute($data);
@@ -76,10 +76,10 @@ $file_name = '';
         $file_name = $_FILES['img_name']['name'];
     }
     if(!empty($file_name)){
-        $file_type = substr($file_name, -3);
+        $file_type = substr($file_name, -4);
 
         $file_type = strtolower($file_type);
-        if($file_type != 'jpg' && $file_type !='png' && $file_type!='gif'){
+        if($file_type != '.jpg' && $file_type !='.png' && $file_type!='.gif' && $file_type!='jpeg'){
             $errors['img_name'] = 'type';
         }
     }else{
@@ -127,23 +127,20 @@ $file_name = '';
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <title>Present Box</title>
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <meta name="description" content="Free HTML5 Template by FREEHTML5.CO" />
-    <meta name="keywords" content="free html5, free template, free bootstrap, html5, css3, mobile first, responsive" />
-    <meta name="author" content="FREEHTML5.CO" />
-
+    <meta name="description" content="Free HTML5 Template by FREEHTML5.CO">
+    <meta name="keywords" content="free html5, free template, free bootstrap, html5, css3, mobile first, responsive">
+    <meta name="author" content="FREEHTML5.CO">
+    <link rel="icon" type="assets/images/favicon.png" href="assets/images/favicon.png">
     <link href='https://fonts.googleapis.com/css?family=Work+Sans:400,300,600,400italic,700' rel='stylesheet' type='text/css'>
     <link href="https://fonts.googleapis.com/css?family=Sacramento" rel="stylesheet">
-
     <!-- Animate.css -->
     <link rel="stylesheet" href="assets/css/animate.css">
     <!-- Icomoon Icon Fonts-->
     <link rel="stylesheet" href="assets/css/icomoon.css">
     <!-- Bootstrap  -->
     <link rel="stylesheet" href="assets/css/bootstrap.css">
-
     <!-- Magnific Popup -->
     <link rel="stylesheet" href="assets/css/magnific-popup.css">
-
     <!-- Owl Carousel  -->
     <link rel="stylesheet" href="assets/css/owl.carousel.min.css">
     <link rel="stylesheet" href="assets/css/owl.theme.default.min.css">
@@ -160,8 +157,6 @@ $file_name = '';
     <!-- ナビゲーション始まり -->
 <?php include('nav-var.php'); ?>
     <!-- ナビゲーション終わり -->
-
-
 
     <!-- ヘッダー -->
     <header id="fh5co-header" class="fh5co-cover fh5co-cover-sm" role="banner" style="background-image:url(assets/images/want.jpg);">
@@ -205,7 +200,7 @@ $file_name = '';
             <p class="text-danger">画像を選択してください</p>
             <?php endif; ?>
             <?php if(isset($errors['img_name']) && $errors['img_name'] == 'type'): ?>
-            <p class="text-danger">拡張子が「jpg」「png」「gif」「jpge」の画像を選択して下さい</p>
+            <p class="text-danger">拡張子が「jpg」「png」「gif」「jpeg」の画像を選択して下さい</p>
             <?php endif; ?>
           </div>
 
@@ -240,13 +235,13 @@ $file_name = '';
                         <li class="one-third animate-box" data-animate-effect="fadeIn" style="background-image: url(want_image/<?php echo $feed['img_name']; ?>); "> 
                                 <a href=want_image/<?php echo $feed['img_name']; ?>>
                                     <div class="case-studies-summary">                               
-                                    <h2><?php echo $feed['name']; ?></h2>
-                                    <h3><?php echo $feed['price']; ?></h3>
+                                        <h2><?php echo $feed['name']; ?></h2>
+                                        <h3><?php echo $feed['price']; ?></h3>
                                         <figure>
-                                        <figcaption>
-                                        <p> <?php echo $feed['detail']; ?></p>
-                                        </figcaption>
-                                    </figure>
+                                            <figcaption>
+                                                <p> <?php echo $feed['detail']; ?></p>
+                                            </figcaption>
+                                        </figure>
                                     </div>
                                 </a>
                             </li>  
@@ -273,38 +268,7 @@ $file_name = '';
 
 
             <!--wrap終わり-->
-
-
-
-
-    <!-- フッター始まり -->
-    <footer id="fh5co-footer" role="contentinfo">
-        <div class="container">
-            <div class="row copyright">
-                <div class="col-md-12 text-center">
-                    <p>
-                        <small class="block">&copy; 43batch チームはしうち　Nexseed<br>
-                        FREEHTML5.CO</small> 
-                    </p>
-                    <p>
-                        <ul class="fh5co-social-icons">
-                            <li><a href="https://twitter.com/nexseed_cebu"><i class="icon-twitter"></i></a></li>
-                            <li><a href="https://www.facebook.com/NexSeed/"><i class="icon-facebook"></i></a></li>
-                        </ul>
-                    </p>
-                </div>
-            </div>
-        </div>
-    </footer>
-    <!-- フッター終わり -->
-
-
-<!-- 画面遷移用の矢印 -->
-</div>
-<div class="gototop js-top">
-    <a href="#" class="js-gotop"><i class="icon-arrow-up"></i></a>
-</div>
-</div>
+    <?php include('footer.php'); ?>
 
 <!-- jQuery -->
 <script src="assets/js/jquery.min.js"></script>

@@ -11,15 +11,17 @@ $stmt->execute($data);
 $signin_user = $stmt->fetch(PDO::FETCH_ASSOC);
 
 
-
-
 //友達へのプレゼント登録
 $check = '';
 $present = '';
 $date = '';
 $detail = '';
-$friend_id = $_GET['id'];
 
+// list.phpから飛んで来た時データを受け取る
+if(!empty($_GET)){
+    $friend_id = $_GET['id'];
+
+}
 
 $errors = array();
 
@@ -28,7 +30,7 @@ if(!empty($_POST)){
     $present = $_POST['input_present'];
     $date = $_POST['input_date'];
     $detail = $_POST['input_detail'];
-
+    $friend_id = $_POST['friend_id'];
 
 
     if($check == '' ){
@@ -49,9 +51,9 @@ if(!empty($_POST)){
         $file_name = $_FILES['input_img_name']['name'];
     }
     if(!empty($file_name)){
-        $file_type = substr($file_name, -3);
+        $file_type = substr($file_name, -4);
         $file_type = strtolower($file_type);
-        if($file_type != 'jpg' && $file_type !='png' && $file_type!='gif'){
+        if($file_type != '.jpg' && $file_type !='.png' && $file_type!='.gif' && $file_type!='jpeg'){
             $errors['img_name'] = 'type';
         }
     }else{
@@ -66,13 +68,12 @@ if(!empty($_POST)){
         move_uploaded_file($_FILES['input_img_name']['tmp_name'],'present_image/'.$submit_file_name);
 
 
-
         $sql = 'INSERT INTO `presents` SET `name` =?, `date`=?, `detail` = ?,`img_name` = ?,`friend_id`= ?, `which` = ?';
         $data = array($present,$date,$detail,$submit_file_name, $friend_id, $check);
         $stmt = $dbh->prepare($sql);
         $stmt->execute($data);
 
-        header('Location: list.php');
+        header('Location: list.php?id=' . $friend_id);
         exit();
     }
 }
@@ -117,7 +118,7 @@ if(!empty($_POST)){
         <div class="overlay"></div>
         <div class="container" style="padding-top:45px;">
             <div class="col-xs-8 col-xs-offset-2 thumbnail">
-                <h2 class="text-center content_header">register present</h2>
+                <h2 class="text-center content_header">To present</h2>
                 <form method="POST" action="list_make.php" enctype="multipart/form-data">
                     <div class="form-group">
                         <label class="checkbox-inline">
@@ -159,9 +160,10 @@ if(!empty($_POST)){
                             <p class="text-danger">only 'jpg'.'png','gif' type</p>
                         <?php endif;?>
                     </div>
+                        <input type="hidden" name="friend_id" value="<?php echo $friend_id; ?>">
                     <br>
                     <ul class="nav navbar-nav navbar-left">
-                        <li class="active"><a href="list.php=id<?php echo $friends['id']; ?>" style="margin: 15px,background-color: black;">友達のページに戻る</a></li>
+                        <li class="active"><a href="list.php?id=<?php echo $friend_id;?>" style="margin: 15px,background-color: black;">友達のページに戻る</a></li>
                     </ul>
                     <input type="submit" class="btn btn-primary" value="登録">
                 </form>
@@ -170,34 +172,7 @@ if(!empty($_POST)){
     </header>
 <!-- ヘッダー終わり -->
 
-    <!-- フッター始まり -->
-    <footer id="fh5co-footer" role="contentinfo">
-        <div class="container">
-            <div class="row copyright">
-                <div class="col-md-12 text-center">
-                    <p>
-                        <small class="block">&copy; 43batch チームはしうち　Nexseed<br>
-                        FREEHTML5.CO</small> 
-                    </p>
-                    <p>
-                        <ul class="fh5co-social-icons">
-                            <li><a href="https://twitter.com/nexseed_cebu"><i class="icon-twitter"></i></a></li>
-                            <li><a href="https://www.facebook.com/NexSeed/"><i class="icon-facebook"></i></a></li>
-                        </ul>
-                    </p>
-                </div>
-            </div>
-        </div>
-    </footer>
-    <!-- フッター終わり -->
-
-    <!-- 画面遷移用の矢印 -->
-    </div>
-    <div class="gototop js-top">
-        <a href="#" class="js-gotop"><i class="icon-arrow-up"></i></a>
-    </div>
-    </div>
-
+    <?php include('footer.php'); ?>
     <!-- jQuery -->
     <script src="assets/js/jquery.min.js"></script>
     <!-- jQuery Easing -->
