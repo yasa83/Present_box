@@ -87,7 +87,7 @@ foreach($friends as $friend){
             break;
         }
         // 取得できたプレゼントを$friendに付け加える
-        $friend['present'] = $rec;
+        $friend['present'][] = $rec;
     }
     // 結果に格納
         $results[] = $friend;
@@ -194,8 +194,10 @@ foreach($friends as $friend){
                                                     <img src="friend_profile_image/<?php echo $result['friend_img']; ?>" class="piture-ajust img-profile " style="width: 200px; height: 200px; border-radius: 50%;" link="list.php">
                                                 </a>
                                             </div>
-                                                <div class="col-sm-2" ><img src="present_image/<?php echo $result['present']['img_name']; ?>" class="present-image" style="width: 180px; height: 150px; margin-top: 20px; border-radius: 10%;">
+                                            <?php foreach($result['present'] as $v): ?>
+                                                <div class="col-sm-2" ><img src="present_image/<?php echo $v['img_name']; ?>" class="present-image" style="width: 180px; height: 150px; margin-top: 20px; border-radius: 10%;">
                                                 </div>
+                                            <?php endforeach; ?>
                                         </div>
                                     </div>
                             </section>
