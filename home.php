@@ -88,18 +88,15 @@ foreach($friends as $friend){
         }
         // 取得できたプレゼントを$friendに付け加える
         $friend['present'] = $rec;
-                
-// echo "<pre>";
-// var_dump($friend['present']);
-// echo "</pre>";
-// die();
-
     }
     // 結果に格納
         $results[] = $friend;
 }
 
-
+// echo "<pre>";
+// var_dump($friend);
+// echo "</pre>";
+// die();
 
 
 
