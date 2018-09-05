@@ -229,11 +229,12 @@ $file_name = '';
                 </div>
             </div>
             <div class="row row-bottom-padded-md">
-                <div class="col-md-12">
+                <div class="col-md-12 ">
                     <ul id="fh5co-gallery-list">
                         <?php foreach ($feeds as $feed) {?>
                         <li class="one-third animate-box" data-animate-effect="fadeIn" style="background-image: url(want_image/<?php echo $feed['img_name']; ?>); "> 
-                                <a href=want_image/<?php echo $feed['img_name']; ?>>
+                                <a  class="popup-modal"  href="#inline-wrap<?php echo $feed["id"] ?>"><img src=<?php echo $feed['img_name'] ?>" class="img_g"> > 
+
                                     <div class="case-studies-summary">                               
                                         <h2><?php echo $feed['name']; ?></h2>
                                         <h3><?php echo $feed['price']; ?></h3>
@@ -291,6 +292,8 @@ $file_name = '';
 
 <!-- Main -->
 <script src="assets/js/main.js"></script>
+<script src="assets/js/want.js"></script>
+
 
 </body>
 </html>
