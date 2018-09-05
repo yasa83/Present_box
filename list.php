@@ -21,13 +21,26 @@ $stmt = $dbh->prepare($sql);
 $stmt->execute($data);
 
 $presents = array();
+$give = [];
+$take = [];
     while (1) {
         $rec = $stmt->fetch(PDO::FETCH_ASSOC);
         if($rec == false) {
             break;
         }
+
+        if ($rec['which'] == 'give') {
+            $give[] = $rec;
+        } elseif ($rec['which'] == 'take') {
+            $take[] = $rec;
+        }
+
         $presents[] = $rec;
     }
+    // echo "<pre>";
+    // var_dump($give, $take);
+    // echo "<pre>";
+    // die();
 
 // DBから友達のデータを取得する処理
 $sql = 'SELECT * FROM `friends` WHERE `id` = ?';
