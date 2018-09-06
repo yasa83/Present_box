@@ -14,20 +14,45 @@ $signin_user = $stmt->fetch(PDO::FETCH_ASSOC);
 $errors = array();
 
 
-//DBからプレゼントデータ取得
-$sql = 'SELECT * FROM `presents` WHERE `friend_id` = ?';
-$data = array($_GET['id']);
-$stmt = $dbh->prepare($sql);
-$stmt->execute($data);
+$gives = [];
+$takes = [];
+$wants = [];
+$id = $_GET['id'];
 
-$presents = array();
-    while (1) {
-        $rec = $stmt->fetch(PDO::FETCH_ASSOC);
-        if($rec == false) {
-            break;
+//DBからプレゼントデータ取得
+if (isset($_GET['search_word'])) {
+    $id = $_GET['id'];
+    $sql = 'SELECT * FROM `presents` WHERE `friend_id` = ? AND `name` LIKE "%" ? "%"';
+    $data = array($id,$_GET['search_word']);
+} else{
+    $sql = 'SELECT * FROM `presents` WHERE `friend_id` = ?';
+    $data = array($_GET['id']);
+}
+    $stmt = $dbh->prepare($sql);
+    $stmt->execute($data);
+
+    $presents = array();
+    
+        while (1) {
+            $rec = $stmt->fetch(PDO::FETCH_ASSOC);
+            if($rec == false) {
+                break;
+            }
+
+            if ($rec['which'] == 'give') {
+                $gives[] = $rec;
+            } elseif ($rec['which'] == 'take') {
+                $takes[] = $rec;
+            } elseif ($rec['which'] == 'want') {
+                $wants[] = $rec;
+            }
+
+            $presents[] = $rec;
         }
-        $presents[] = $rec;
-    }
+    // echo "<pre>";
+    // var_dump($wants);
+    // echo "<pre>";
+    // die();
 
 // DBから友達のデータを取得する処理
 $sql = 'SELECT * FROM `friends` WHERE `id` = ?';
@@ -81,8 +106,9 @@ $friends = $stmt->fetch(PDO::FETCH_ASSOC);
                     <form method="GET" action="" class="" role="search">
                         <div class="form-group">
                             <input type="text" style="width:200px"  name="search_word"  placeholder="プレゼントを検索">
+                            <input type="hidden" name="id=$id;?>">
                             <span class="form-group">
-                                <button type="button" class="btn square_btn">Serch</button>
+                                <button  class="btn square_btn">Serch</button>
                             </span>
                         </div>
                     </form>
@@ -93,9 +119,9 @@ $friends = $stmt->fetch(PDO::FETCH_ASSOC);
             <div class="container">
                 <div class="row">
                       <ul class="nav nav-tabs">
-                        <li class="col-xs-2 give_1 active"><a href="#">友達にあげたもの</a></li>
-                        <li class="col-xs-2 get_1"><a href="#">友達からもらったもの</a></li>
-                        <li class="col-xs-2 want_1"><a href="#">友達がほしいもの</a></li>
+                        <li class="col-xs-2 give_1 active"><a>友達にあげたもの</a></li>
+                        <li class="col-xs-2 get_1"><a>友達からもらったもの</a></li>
+                        <li class="col-xs-2 want_1"><a>友達がほしいもの</a></li>
                       </ul>
                       <br>
                 </div>
@@ -107,26 +133,25 @@ $friends = $stmt->fetch(PDO::FETCH_ASSOC);
                 <div class="col-md-12">
                     <h1 class="text-center">you gave these presents</h1>
                     <div class="row">
-                        <?php foreach ($presents as $present): ?>
-                            <div class="<?php echo $present["which"];?>">
+                        <?php foreach ($gives as $give): ?>
+                            <div class="give">
                                 <div class="col-xs-4">
-                                    <a data-target="con1" class="modal-open">
-                                        <img src="present_image/<?php echo $present['img_name']; ?>" class="picture-size" style="width:300px; height:300px; border-radius: 5%; margin: 10px; ">
+                                    <a data-target="give_<?echo $give['id']?>" class="modal-open" >
+                                        <img src="present_image/<?php echo $give['img_name']; ?>" class="picture-size" style="width:300px; height:300px; border-radius: 5%; margin: 10px; ">
                                     </a>
                                 </div>
                                 <!-- モーダル -->
-                                <div id="con1" class="modal-content" style="width: 800px; height: 500px;">
+                                <div id="give_<?echo $give['id']?>" class="modal-content" style="width: 800px; height: 500px;">
                                     <div class="row">
                                         <div class="col-md-6">
-                                            <br><br><img src="present_image/<?php echo $present['img_name']; ?>" class="picture-size">
+                                            <br><br><img src="present_image/<?php echo $give['img_name']; ?>" class="picture-size">
                                         </div>
                                         <div class="col-md-6" style="font-size: 25px; line-height: 4em;">
                                             <ul class="text-left" >
-                                                <li>商品名</li>
-                                                <li>値段</li>
-                                                <li>ひとこと</li>
+                                                <li><?php echo $give['name'] ?></li>
+                                                <li><?php echo $give['date'] ?></li>
+                                                <li><?php echo $give['detail'] ?></li>
                                             </ul>
-                                            <p style="font-size: 15px; line-height: 1em;">リンク1の内容です。</p>
                                             <br>
                                             <p><a class="modal-close right-under">閉じる</a></p>
                                         </div>
@@ -147,24 +172,24 @@ $friends = $stmt->fetch(PDO::FETCH_ASSOC);
                 <div class="col-md-12">
                     <h1 class="text-center">you got these presents</h1>
                     <div class="row">
-                        <?php foreach ($presents as $present): ?>
-                            <div class="<?php echo $present["which"] ?>">
+                        <?php foreach ($takes as $take): ?>
+                            <div class="take">
                                 <div class="col-xs-4 ">
-                                    <a data-target="con1" class="modal-open">
-                                        <img src="present_image/<?php echo $present['img_name']; ?>" class="picture-size" style="width:300px; height:300px; border-radius: 5%; margin: 10px; ">
+                                    <a data-target="take_<?php $take['id'] ?>" class="modal-open">
+                                        <img src="present_image/<?php echo $take['img_name']; ?>" class="picture-size" style="width:300px; height:300px; border-radius: 5%; margin: 10px; ">
                                     </a>
                                 </div>
                                 <!-- モーダル -->
-                                <div id="con1" class="modal-content" style="width: 800px; height: 500px;">
+                                <div id="take_<?php $take['id']?>" class="modal-content" style="width: 800px; height: 500px;">
                                     <div class="row">
                                         <div class="col-md-6">
-                                            <br><br><img src="present_image/<?php echo $present['img_name']; ?>" class="picture-size">
+                                            <br><br><img src="present_image/<?php echo $take['img_name']; ?>" class="picture-size">
                                         </div>
                                         <div class="col-md-6" style="font-size: 25px; line-height: 4em;">
                                             <ul class="text-left" >
-                                                <li>商品名</li>
-                                                <li>値段</li>
-                                                <li>ひとこと</li>
+                                                <li><?php echo $take['name']?></li>
+                                                <li><?php echo $take['date']?></li>
+                                                <li><?php echo $take['detail']?></li>
                                             </ul>
                                             <p style="font-size: 15px; line-height: 1em;">リンク1の内容です。</p>
                                             <br>
@@ -187,26 +212,25 @@ $friends = $stmt->fetch(PDO::FETCH_ASSOC);
                 <div class="col-md-12">
                     <h1 class="text-center">your friend want these presents</h1>
                     <div class="row">
-                        <?php foreach ($presents as $present): ?>
-                            <div class="<?php echo $present["which"] ?>">
+                        <?php foreach ($wants as $want): ?>
+                            <div class="want">
                                 <div class="col-xs-4 ">
-                                    <a data-target="con1" class="modal-open">
-                                        <img src="present_image/<?php echo $present['img_name']; ?>" class="picture-size" style="width:300px; height:300px; border-radius: 5%; margin: 10px; ">
+                                    <a data-target="want_<?php $want['id']?>" class="modal-open">
+                                        <img src="present_image/<?php echo $want['img_name']; ?>" class="picture-size" style="width:300px; height:300px; border-radius: 5%; margin: 10px; ">
                                     </a>
                                 </div>
                                 <!-- モーダル -->
-                                <div id="con1" class="modal-content" style="width: 800px; height: 500px;">
+                                <div id="want_<?php $want['id']?>" class="modal-content" style="width: 800px; height: 500px;">
                                     <div class="row">
                                         <div class="col-md-6">
-                                            <br><br><img src="present_image/<?php echo $present['img_name']; ?>" class="picture-size">
+                                            <br><br><img src="present_image/<?php echo $want['img_name']; ?>" class="picture-size">
                                         </div>
                                         <div class="col-md-6" style="font-size: 25px; line-height: 4em;">
                                             <ul class="text-left" >
-                                                <li>商品名</li>
-                                                <li>値段</li>
-                                                <li>ひとこと</li>
+                                                <li><?php echo $want['name']; ?></li>
+                                                <li><?php echo $want['date']; ?></li>
+                                                <li><?php echo $want['detail']; ?></li>
                                             </ul>
-                                            <p style="font-size: 15px; line-height: 1em;">リンク1の内容です。</p>
                                             <br>
                                             <p><a class="modal-close right-under">閉じる</a></p>
                                         </div>
