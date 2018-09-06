@@ -37,6 +37,9 @@ if(!empty($_POST)){
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <link rel="icon" type="images/favicon.png" href="assets/images/favicon.png">
 <link rel="stylesheet" type="text/css" href="assets/css/signin.css">
+<link rel="stylesheet" media="(max-width: 640px)" href="assets/css/mobile.css">
+
+
 </head>
 <body background="assets/images/alcohl.jpg">
     <div class="limiter">

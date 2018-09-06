@@ -90,6 +90,7 @@ if(!empty($_POST)){
     <link rel="stylesheet" href="assets/css/owl.theme.default.min.css">
     <!-- Theme style  -->
     <link rel="stylesheet" href="assets/css/style.css">
+       <link rel="stylesheet" media="(max-width: 640px)" href="assets/css/mobile.css">
     <!-- Modernizr JS -->
     <script src="assets/js/modernizr-2.6.2.min.js"></script>
 </head>
