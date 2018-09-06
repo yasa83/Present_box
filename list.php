@@ -270,7 +270,7 @@ $friends = $stmt->fetch(PDO::FETCH_ASSOC);
     <script src="assets/js/simplyCountdown.js"></script>
     <!-- Main -->
     <script src="assets/js/main.js"></script>
-    <script>
+<!--     <script>
         var d = new Date(new Date().getTime() + 200 * 120 * 120 * 2000);
 
     // default example
@@ -287,7 +287,7 @@ $friends = $stmt->fetch(PDO::FETCH_ASSOC);
         day: d.getDate(),
         enableUtc: false
     });
-    </script>
+    </script> -->
 
 </body>
 </html>
