@@ -17,6 +17,7 @@ $errors = array();
 $gives = [];
 $takes = [];
 $wants = [];
+$id = $_GET['id'];
 
 //DBからプレゼントデータ取得
 if (isset($_GET['search_word'])) {
@@ -105,7 +106,7 @@ $friends = $stmt->fetch(PDO::FETCH_ASSOC);
                     <form method="GET" action="" class="" role="search">
                         <div class="form-group">
                             <input type="text" style="width:200px"  name="search_word"  placeholder="プレゼントを検索">
-                            <input type="hidden" name="id=<?php echo $_GET['id'];?>">
+                            <input type="hidden" name="id=$id;?>">
                             <span class="form-group">
                                 <button  class="btn square_btn">Serch</button>
                             </span>
@@ -186,9 +187,9 @@ $friends = $stmt->fetch(PDO::FETCH_ASSOC);
                                         </div>
                                         <div class="col-md-6" style="font-size: 25px; line-height: 4em;">
                                             <ul class="text-left" >
-                                                <li><?php $take['name']?></li>
-                                                <li><?php $take['date']?></li>
-                                                <li><?php $take['detail']?></li>
+                                                <li><?php echo $take['name']?></li>
+                                                <li><?php echo $take['date']?></li>
+                                                <li><?php echo $take['detail']?></li>
                                             </ul>
                                             <p style="font-size: 15px; line-height: 1em;">リンク1の内容です。</p>
                                             <br>
@@ -226,9 +227,9 @@ $friends = $stmt->fetch(PDO::FETCH_ASSOC);
                                         </div>
                                         <div class="col-md-6" style="font-size: 25px; line-height: 4em;">
                                             <ul class="text-left" >
-                                                <li><?php $want['name']; ?></li>
-                                                <li><?php $want['date']; ?></li>
-                                                <li><?php $want['detail']; ?></li>
+                                                <li><?php echo $want['name']; ?></li>
+                                                <li><?php echo $want['date']; ?></li>
+                                                <li><?php echo $want['detail']; ?></li>
                                             </ul>
                                             <br>
                                             <p><a class="modal-close right-under">閉じる</a></p>
