@@ -71,7 +71,7 @@ $friends = $stmt->fetch(PDO::FETCH_ASSOC);
     <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <title>Present Box</title>
-    <meta name="viewport" content="width=device-width, initial-scale=1">
+   <meta name="viewport" content="width=580">
     <meta name="description" content="Free HTML5 Template by FREEHTML5.CO">
     <meta name="keywords" content="free html5, free template, free bootstrap, html5, css3, mobile first, responsive">
     <meta name="author" content="FREEHTML5.CO">
@@ -91,6 +91,8 @@ $friends = $stmt->fetch(PDO::FETCH_ASSOC);
     <link rel="stylesheet" href="assets/css/owl.theme.default.min.css">
     <!-- Theme style  -->
     <link rel="stylesheet" href="assets/css/style.css">
+       <link rel="stylesheet" media="(max-width: 640px)" href="assets/css/mobile.css">
+
     <!-- Modernizr JS -->
     <script src="assets/js/modernizr-2.6.2.min.js"></script>
 </head>

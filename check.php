@@ -30,11 +30,14 @@ if(!isset($_SESSION['register'])){
 <html lang="ja">
 <head>
     <meta charset="utf-8">
+     <meta name="viewport" content="width=device-width, initial-scale=1">
     <title>Present Box</title>
     <link rel="icon" type="images/favicon.png" href="assets/images/favicon.png">
     <link rel="stylesheet" type="text/css" href="assets/css/bootstrap.css">
     <link rel="stylesheet" type="text/css" href="assets/css/style.css">
     <link rel="stylesheet" type="text/css" href="assets/css/check.css">
+    <link rel="stylesheet" media="(max-width: 640px)" href="assets/css/mobile.css">
+
 
 </head>
 <body background="assets/images/alcohl.jpg">

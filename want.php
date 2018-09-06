@@ -124,6 +124,8 @@ $file_name = '';
 <html class="no-js"> 
 <head>
     <meta charset="utf-8">
+<!-- inital scale -->
+
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <title>Present Box</title>
     <meta name="viewport" content="width=device-width, initial-scale=1">
@@ -147,6 +149,9 @@ $file_name = '';
     <!-- Theme style  -->
     <link rel="stylesheet" href="assets/css/style.css">
     <link rel="stylesheet" href="assets/css/want.css">
+    <link rel="stylesheet" media="(max-width: 640px)" href="assets/css/mobile.css">
+
+  
 
 
 
@@ -233,9 +238,11 @@ $file_name = '';
                     <ul id="fh5co-gallery-list">
                         <?php foreach ($feeds as $feed) {?>
                         <li class="one-third animate-box" data-animate-effect="fadeIn" style="background-image: url(want_image/<?php echo $feed['img_name']; ?>); "> 
-                                <a  class="popup-modal"  href="#inline-wrap<?php echo $feed["id"] ?>"><img src=<?php echo $feed['img_name'] ?>" class="img_g"> > 
+                                <a  class="popup-modal"  href="#inline-wrap<?php echo $feed["id"] ?>">
+                                    
 
-                                    <div class="case-studies-summary">                               
+
+                                    <div class="case-studies-summary">                              
                                         <h2><?php echo $feed['name']; ?></h2>
                                         <h3><?php echo $feed['price']; ?></h3>
                                         <figure>
