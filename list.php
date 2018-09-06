@@ -196,9 +196,11 @@ $friends = $stmt->fetch(PDO::FETCH_ASSOC);
                                                 <li><?php echo $take['date']?></li>
                                                 <li><?php echo $take['detail']?></li>
                                             </ul>
-                                            <p style="font-size: 15px; line-height: 1em;">リンク1の内容です。</p>
+                                                <div class="btn_user">
+                                                    <a href="list_edit.php?feed_id=<?php echo $allfeed["id"] ?>" class="btn btn-primary btn-sm">edit</a>
+                                                    <a onclick="return confilm('ほんとに消すの？');" href="list_delete.php?id=<?php echo $take["id"] ?>&friend=<?php echo $_GET['id'];?>" class="btn btn-danger btn-sm">delete</a>
+                                                </div>
                                             <br>
-                                            <p><a class="modal-close right-under">閉じる</a></p>
                                         </div>
                                     </div>
                                 </div>
@@ -236,8 +238,11 @@ $friends = $stmt->fetch(PDO::FETCH_ASSOC);
                                                 <li><?php echo $want['date']; ?></li>
                                                 <li><?php echo $want['detail']; ?></li>
                                             </ul>
+                                                <div class="btn_user">
+                                                    <a href="list_edit.php?feed_id=<?php echo $allfeed["id"] ?>" class="btn btn-primary btn-sm">edit</a>
+                                                    <a onclick="return confilm('ほんとに消すの？');" href="list_delete.php?id=<?php echo $want["id"] ?>&friend=<?php echo $_GET['id'];?>" class="btn btn-danger btn-sm">delete</a>
+                                                </div>
                                             <br>
-                                            <p><a class="modal-close right-under">閉じる</a></p>
                                         </div>
                                     </div>
                                 </div>
