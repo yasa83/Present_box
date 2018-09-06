@@ -156,7 +156,7 @@ $friends = $stmt->fetch(PDO::FETCH_ASSOC);
                                             </ul>
                                             <div class="btn_user">
                                                 <a href="list_edit.php?feed_id=<?php echo $allfeed["id"] ?>" class="btn btn-primary btn-sm">edit</a>
-                                                <a onclick="return confilm('ほんとに消すの？');" href="list_delete.php?id=<?php echo $give["id"] ?>" class="btn btn-danger btn-sm">delete</a>
+                                                <a onclick="return confilm('ほんとに消すの？');" href="list_delete.php?id=<?php echo $give["id"] ?>&friend=<?php echo $_GET['id'];?>" class="btn btn-danger btn-sm">delete</a>
                                             </div>
                                             <br>
                                         </div>
