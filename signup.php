@@ -92,8 +92,9 @@ if(!empty($_POST)){
 
 
 <!DOCTYPE html>
-<html lang="en">
+<html lang="ja">
 <head>
+
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <link rel="icon" type="images/favicon.png" href="assets/images/favicon.png">
     <link rel="stylesheet" type="text/css" href="assets/css/bootstrap.css">
@@ -105,6 +106,11 @@ if(!empty($_POST)){
     <link href="//maxcdn.bootstrapcdn.com/bootstrap/3.3.0/css/bootstrap.min.css" rel="stylesheet" id="bootstrap-css">
     <link rel="stylesheet" type="text/css" href="assets/css/style.css">
     <link rel="stylesheet" type="text/css" href="assets/css/signup.css">
+
+<!-- StyleSheet -->
+
+<link rel="stylesheet" media="(max-width: 640px)" href="assets/css/mobile.css">
+
     <title>Present Box</title>
 
 </head>
