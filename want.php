@@ -237,26 +237,36 @@ $file_name = '';
                 <div class="col-md-12 ">
                     <ul id="fh5co-gallery-list">
                         <?php foreach ($feeds as $feed) {?>
-                        <li class="one-third animate-box" data-animate-effect="fadeIn" style="background-image: url(want_image/<?php echo $feed['img_name']; ?>); "> 
-                                <a  class="popup-modal"  href="#inline-wrap<?php echo $feed["id"] ?>">
-                                    
-
-
-                                    <div class="case-studies-summary">                              
+                            
+                                <li class="one-third animate-box" data-animate-effect="fadeIn" style="background-image: url(want_image/<?php echo $feed['img_name']; ?>); "> <a data-target="want_<?php echo $feed['id']?>" class="modal-open" >
+                                    <div class="case-studies-summary">
                                         <h2><?php echo $feed['name']; ?></h2>
                                         <h3><?php echo $feed['price']; ?></h3>
-                                        <figure>
-                                            <figcaption>
-                                                <p> <?php echo $feed['detail']; ?></p>
-                                            </figcaption>
-                                        </figure>
                                     </div>
                                 </a>
-                            </li>  
+                            </li> 
                         <?php } ?>
-                            </ul>
+                    </ul>
+                </div>
+             <?php foreach ($feeds as $feed) {?>
+                <div id="want_<?php echo $feed['id']?>" class="modal-content" style="width: 800px; height: 500px;">
+                    <div class="row">
+                        <div class="col-md-6">
+                            <br><br><img src="want_image/<?php echo $feed['img_name']; ?>" class="picture-size">
                         </div>
-                    </ul> 
+                        <div class="col-md-6" style="font-size: 25px; line-height: 4em;">
+                            <ul class="text-left" >
+                                <li><?php echo $feed['name'] ?></li>
+                                <li><?php echo $feed['price'] ?></li>
+                                <li><?php echo $feed['detail'] ?></li>
+                            </ul>
+                            <br>
+                            <p><a class="modal-close right-under">閉じる</a></p>
+                        </div>
+                    </div>
+                </div>
+             <?php } ?>
+                 
                      <div aria-label="Page navigation">
                             <ul class="pager">
                                 <?php if ($page == 1): ?>
@@ -300,6 +310,7 @@ $file_name = '';
 <!-- Main -->
 <script src="assets/js/main.js"></script>
 <script src="assets/js/want.js"></script>
+<script src="assets/js/script.js"></script>
 
 
 </body>
