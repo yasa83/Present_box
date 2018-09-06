@@ -159,7 +159,6 @@ $friends = $stmt->fetch(PDO::FETCH_ASSOC);
                                                 <a onclick="return confilm('ほんとに消すの？');" href="list_delete.php?id=<?php echo $give["id"] ?>" class="btn btn-danger btn-sm">delete</a>
                                             </div>
                                             <br>
-                                            <p><a class="modal-close right-under">閉じる</a></p>
                                         </div>
                                     </div>
                                 </div>
