@@ -237,11 +237,8 @@ $file_name = '';
                 <div class="col-md-12 ">
                     <ul id="fh5co-gallery-list">
                         <?php foreach ($feeds as $feed) {?>
-                        <li class="one-third animate-box" data-animate-effect="fadeIn" style="background-image: url(want_image/<?php echo $feed['img_name']; ?>); "> 
-                                <a  class="popup-modal"  href="#inline-wrap<?php echo $feed["id"] ?>">
-                                    
-
-
+                            <li class="one-third animate-box " data-animate-effect="fadeIn" style="background-image: url(want_image/<?php echo $feed['img_name']; ?>); "> 
+                                <a data-target="want_<?echo $feed['id']?>" class="modal-open">
                                     <div class="case-studies-summary">                              
                                         <h2><?php echo $feed['name']; ?></h2>
                                         <h3><?php echo $feed['price']; ?></h3>
@@ -252,11 +249,37 @@ $file_name = '';
                                         </figure>
                                     </div>
                                 </a>
-                            </li>  
+                            </li> 
                         <?php } ?>
-                            </ul>
-                        </div>
-                    </ul> 
+                    </ul>
+                </div>
+                    <?php foreach ($feeds as $feed): ?>
+                        <div id="want_<?echo $feed['id']?>" class="modal-content" style="width: 800px; height: 500px;">
+                                <div class="row">
+                                    <div class="col-md-6">
+                                        <br><br><img src="want_image/<?php echo $feed['img_name']; ?>" class="picture-size" style="border-radius: 5%;">
+                                    </div>
+                                    <div class="col-md-6" style="font-size: 25px; line-height: 4em;">
+                                        <ul class="text-left" >
+                                            <li><?php echo $feed['name'] ?></li>
+                                            <li><?php echo $feed['price'] ?></li>
+                                            <li><?php echo $feed['detail'] ?></li>
+                                        </ul>
+                                        <div class="btn_user">
+                                            <a href="list_edit.php?feed_id=<?php echo $allfeed["id"] ?>" class="btn btn-primary btn-sm">edit</a>
+                                            <a onclick="return confilm('ほんとに消すの？');" href="list_delete.php?id=<?php echo $give["id"] ?>" class="btn btn-danger btn-sm">delete</a>
+                                        </div>
+                                        <br>
+                                        <p><a class="modal-close right-under">閉じる</a></p>
+                                    </div>
+                                </div>
+                            </div>
+                        </div> 
+                <?php endforeach; ?>
+
+
+
+
                      <div aria-label="Page navigation">
                             <ul class="pager">
                                 <?php if ($page == 1): ?>
@@ -298,6 +321,7 @@ $file_name = '';
 <script src="assets/js/magnific-popup-options.js"></script>
 
 <!-- Main -->
+<script src="assets/js/script.js"></script>
 <script src="assets/js/main.js"></script>
 <script src="assets/js/want.js"></script>
 
