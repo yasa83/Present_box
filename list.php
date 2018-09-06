@@ -146,7 +146,7 @@ $friends = $stmt->fetch(PDO::FETCH_ASSOC);
                                 <div id="give_<?echo $give['id']?>" class="modal-content" style="width: 800px; height: 500px;">
                                     <div class="row">
                                         <div class="col-md-6">
-                                            <br><br><img src="present_image/<?php echo $give['img_name']; ?>" class="picture-size">
+                                            <br><br><img src="present_image/<?php echo $give['img_name']; ?>" class="picture-size" style="border-radius: 5%;">
                                         </div>
                                         <div class="col-md-6" style="font-size: 25px; line-height: 4em;">
                                             <ul class="text-left" >
@@ -154,8 +154,11 @@ $friends = $stmt->fetch(PDO::FETCH_ASSOC);
                                                 <li><?php echo $give['date'] ?></li>
                                                 <li><?php echo $give['detail'] ?></li>
                                             </ul>
+                                            <div class="btn_user">
+                                                <a href="list_edit.php?feed_id=<?php echo $allfeed["id"] ?>" class="btn btn-primary btn-sm">edit</a>
+                                                <a onclick="return confilm('ほんとに消すの？');" href="list_delete.php?id=<?php echo $give["id"] ?>" class="btn btn-danger btn-sm">delete</a>
+                                            </div>
                                             <br>
-                                            <p><a class="modal-close right-under">閉じる</a></p>
                                         </div>
                                     </div>
                                 </div>
@@ -185,7 +188,7 @@ $friends = $stmt->fetch(PDO::FETCH_ASSOC);
                                 <div id="take_<?php $take['id']?>" class="modal-content" style="width: 800px; height: 500px;">
                                     <div class="row">
                                         <div class="col-md-6">
-                                            <br><br><img src="present_image/<?php echo $take['img_name']; ?>" class="picture-size">
+                                            <br><br><img src="present_image/<?php echo $take['img_name']; ?>" class="picture-size" style="border-radius: 5%;">
                                         </div>
                                         <div class="col-md-6" style="font-size: 25px; line-height: 4em;">
                                             <ul class="text-left" >
@@ -225,7 +228,7 @@ $friends = $stmt->fetch(PDO::FETCH_ASSOC);
                                 <div id="want_<?php $want['id']?>" class="modal-content" style="width: 800px; height: 500px;">
                                     <div class="row">
                                         <div class="col-md-6">
-                                            <br><br><img src="present_image/<?php echo $want['img_name']; ?>" class="picture-size">
+                                            <br><br><img src="present_image/<?php echo $want['img_name']; ?>" class="picture-size" style="border-radius: 5%;">
                                         </div>
                                         <div class="col-md-6" style="font-size: 25px; line-height: 4em;">
                                             <ul class="text-left" >
@@ -239,7 +242,6 @@ $friends = $stmt->fetch(PDO::FETCH_ASSOC);
                                     </div>
                                 </div>
                             </div>
-
                         <?php endforeach; ?>
                     </div>
                 </div>
@@ -269,7 +271,7 @@ $friends = $stmt->fetch(PDO::FETCH_ASSOC);
     <script src="assets/js/simplyCountdown.js"></script>
     <!-- Main -->
     <script src="assets/js/main.js"></script>
-    <script>
+<!--     <script>
         var d = new Date(new Date().getTime() + 200 * 120 * 120 * 2000);
 
     // default example
@@ -286,7 +288,7 @@ $friends = $stmt->fetch(PDO::FETCH_ASSOC);
         day: d.getDate(),
         enableUtc: false
     });
-    </script>
+    </script> -->
 
 </body>
 </html>
