@@ -17,12 +17,12 @@ $errors = array();
 $gives = [];
 $takes = [];
 $wants = [];
-$id = $_GET['id'];
+
 
 //DBからプレゼントデータ取得
 if (isset($_GET['search_word'])) {
     $id = $_GET['id'];
-    $sql = 'SELECT * FROM `presents` WHERE `friend_id` = ? AND `name` LIKE "%" ? "%"';
+    $sql = 'SELECT * FROM `presents` WHERE `friend_id` = ? AND (`name` OR `detail` LIKE "%" ? "%")';
     $data = array($id,$_GET['search_word']);
 } else{
     $sql = 'SELECT * FROM `presents` WHERE `friend_id` = ?';
@@ -106,7 +106,7 @@ $friends = $stmt->fetch(PDO::FETCH_ASSOC);
                     <form method="GET" action="" class="" role="search">
                         <div class="form-group">
                             <input type="text" style="width:200px"  name="search_word"  placeholder="プレゼントを検索">
-                            <input type="hidden" name="id=$id;?>">
+                            <input type="hidden" name="id" value="<?php echo $_GET['id'] ?>">
                             <span class="form-group">
                                 <button  class="btn square_btn">Serch</button>
                             </span>
