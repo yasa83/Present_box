@@ -24,7 +24,9 @@
     <link rel="stylesheet" href="assets/css/owl.theme.default.min.css">
     <!-- Theme style  -->
     <link rel="stylesheet" href="assets/css/style.css">
+
        <link rel="stylesheet" media="(max-width: 640px)" href="assets/css/mobile.css">
+        <link rel="stylesheet" href="assets/css/index.css">
     <!-- Modernizr JS -->
     <script src="assets/js/modernizr-2.6.2.min.js"></script>
 </head>
@@ -78,57 +80,89 @@
             <div class="row">
                 <div class="col-md-8 col-md-offset-2 text-center fh5co-heading animate-box">
                     <h2>How to use</h2>
-                    <p>つかいかた</p>
+                    <!-- <p>つかいかた</p> -->
                 </div>
             </div>
 
-            <div class="container1" style="background-color: #f5f5f5;margin-bottom: 20px;">
-                <div class="row">
+          <!--   <div class="container1" style="background-color: #f5f5f5;margin-bottom: 20px;">
+                <div class="row box">
                     <div class="col-xs-12 col-md-4">
-                        <img src="assets/images/web.png" class="image fluied" align="left" style="margin:10px 20px 10px 50px;">
-                    </div>
-                    <div class="col-xs-12 col-md-8">
-                         <p>LolemLorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
+                        <img src="assets/images/web.png" class="img image fluied" align="left" style="margin:10px 20px 10px 50px;"> -->
+                   <!--  </div>
+                    <div class="col-xs-12 col-md-8 text-box">
+                        <li class="first f-list">アカウント作成</li>
+                        <p class="second">名前・誕生日・ID・パスワード・プロフィール画像を設定しましょう。</p>
+                        <li class="third">サインイン</li>
+                        <p class="fourth">先ほど設定した名前とIDを入力しましょう。</p>
                     </div>
                 </div>
             </div>
 
             <div class="container2" style="margin-bottom: 20px;">
-                <div class="row">
-                    <div class="col-xs-12 col-md-4">
-                        <img src="assets/images/web.png" class="image fluied" align="left" style="margin:10px 20px 10px 50px;">
+                <div class="row box">
+                    <div class="col-xs-12 col-md-4 text-box">
+                        <img src="assets/images/web.png" class="img image fluied" align="left" style="margin:10px 20px 10px 50px;">
                     </div>
                     <div class="col-xs-12 col-md-8">
-                            <p>LolemLorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
-
+                        <li class="fifth">友達を登録する</li>
+                        <p class="sixth">友達のプロフィールを入力し、リストに追加</p>
+                        <li class="seventh">マイページから友達のページへ</li>
+                        <p class="eighth">マイページに表示されている友達の名前をクリックすると、友達へのページへ飛べます</p>
                     </div>
                 </div>
             </div>
 
             <div class="container3" style="background-color: #f5f5f5;margin-bottom: 20px;">
-                <div class="row">
+                <div class="row box">
                     <div class="col-xs-12 col-md-4">
                         <img src="assets/images/web.png" class="image fluied" align="left" style="margin:10px 20px 10px 50px;">
                     </div>
-                    <div class="col-xs-12 col-md-8">
-                         <p>LolemLorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
+                    <div class="col-xs-12 col-md-8 text-box">
+                        <li class="ninth">プレゼントを登録</li>
+                        <p class="tenth">プレゼントをそれぞれのリスト登録にできます</p>
                     </div>
                 </div>
             </div>
 
             <div class="container4" style="margin-bottom: 20px;">
-                <div class="row">
+                <div class="row box">
                     <div class="col-xs-12 col-md-4">
                         <img src="assets/images/web.png" class="image fluied" align="left" style="margin:10px 20px 10px 50px;">
                     </div>
-                    <div class="col-xs-12 col-md-8">
-                            <p>LolemLorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
-                    </div>
+                    <div class="col-xs-12 col-md-8 text-box">
+                            <li class="eleventh">自分の欲しいものを登録</li>
+                            <p class="twelfth">自分のほしいももリストに登録できちゃうんです！</p>
                 </div>
             </div>
         </div>
-    </div>
-                
+    </div> -->
+              
+
+
+ <div class="item">
+  <div class="item-image"><img src="https://source.unsplash.com/400x300/?flower" alt=""></div>
+  <div class="item-text">
+    <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. At quisquam iusto tempora vel, quia consequuntur.</p>
+  </div>
+</div>
+<div class="item">
+  <div class="item-image"><img src="https://source.unsplash.com/400x300/?flower" alt=""></div>
+  <div class="item-text">
+    <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. At quisquam iusto tempora vel, quia consequuntur.</p>
+  </div>
+</div>
+<div class="item">
+  <div class="item-image"><img src="https://source.unsplash.com/400x300/?flower" alt=""></div>
+  <div class="item-text">
+    <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. At quisquam iusto tempora vel, quia consequuntur.</p>
+  </div>
+</div>
+
+
+
+
+
+
 
         <!--wrap終わり-->
 
