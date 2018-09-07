@@ -237,18 +237,17 @@ $file_name = '';
                 <div class="col-md-12 ">
                     <ul id="fh5co-gallery-list">
                         <?php foreach ($feeds as $feed) {?>
-                            
                                 <li class="one-third animate-box" data-animate-effect="fadeIn" style="background-image: url(want_image/<?php echo $feed['img_name']; ?>); "> <a data-target="want_<?php echo $feed['id']?>" class="modal-open" >
                                     <div class="case-studies-summary">
                                         <h2><?php echo $feed['name']; ?></h2>
                                         <h3><?php echo $feed['price']; ?></h3>
                                     </div>
-                                </a>
-                            </li> 
+                                    </a>
+                                </li> 
                         <?php } ?>
                     </ul>
                 </div>
-             <?php foreach ($feeds as $feed) {?>
+                    <?php foreach ($feeds as $feed) {?>
                 <div id="want_<?php echo $feed['id']?>" class="modal-content" style="width: 800px; height: 500px;">
                     <div class="row">
                         <div class="col-md-6">
@@ -265,20 +264,21 @@ $file_name = '';
                         </div>
                     </div>
                 </div>
-             <?php } ?>
-                 
+                    <?php } ?>
                      <div aria-label="Page navigation">
-                            <ul class="pager">
-                                <?php if ($page == 1): ?>
-                                    <li class="previous disabled"><a><span aria-hidden="true">&larr;</span> Pre</a></li>
-                                <?php else: ?>
-                                    <li class="previous"><a href="want.php?page=<?= $page - 1; ?>"><span aria-hidden="true">&larr;</span> Pre</a></li>
-                                <?php endif; ?>
-                                <?php if ($page == $last_page): ?>
-                                    <li class="next disabled"><a>Next <span aria-hidden="true">&rarr;</span></a></li>
-                                <?php else: ?>
-                                    <li class="next"><a href="want.php?page=<?php echo $page + 1; ?>">Next <span aria-hidden="true">&rarr;</span></a></li>
-                                <?php endif; ?>     
+                        <ul class="pager">
+                            <?php if ($page == 1): ?>
+                                <li class="previous disabled"><a><span aria-hidden="true">&larr;</span> Pre</a></li>
+                            <?php else: ?>
+                                <li class="previous"><a href="want.php?page=<?= $page - 1; ?>"><span aria-hidden="true">&larr;</span> Pre</a></li>
+                            <?php endif; ?>
+                            <?php if ($page == $last_page): ?>
+                                <li class="next disabled"><a>Next <span aria-hidden="true">&rarr;</span></a></li>
+                            <?php else: ?>
+                                <li class="next"><a href="want.php?page=<?php echo $page + 1; ?>">Next <span aria-hidden="true">&rarr;</span></a></li>
+                            <?php endif; ?>
+                        </ul>
+                    </div>
                 </div>
             </div>
         </div>
@@ -308,6 +308,7 @@ $file_name = '';
 <script src="assets/js/magnific-popup-options.js"></script>
 
 <!-- Main -->
+<script src="assets/js/script.js"></script>
 <script src="assets/js/main.js"></script>
 <script src="assets/js/want.js"></script>
 <script src="assets/js/script.js"></script>
