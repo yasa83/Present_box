@@ -18,6 +18,23 @@ $gives = [];
 $takes = [];
 $wants = [];
 
+// editボタンを押した時にプレゼントのデータが更新される
+if(!empty($_POST)){
+    // var_dump($_POST['id']);
+    // die();
+
+    $friend_id = $_POST['friend_id'];
+    $update_sql = "UPDATE `presents` SET `name` = ?,`date` = ?,`detail` = ? WHERE `id` = ? ";
+    $data = array($_POST['name'],$_POST['date'],$_POST['detail'],$_POST['id']);
+    $stmt = $dbh->prepare($update_sql);
+    $stmt->execute($data);
+
+    // var_dump($_POST['id']);
+    // die();
+
+    header('Location:list.php?id='.$friend_id);
+    exit();
+}
 
 //DBからプレゼントデータ取得
 if (isset($_GET['search_word'])) {
@@ -60,6 +77,8 @@ $data = array($_GET['id']);
 $stmt = $dbh->prepare($sql);
 $stmt->execute($data);
 $friends = $stmt->fetch(PDO::FETCH_ASSOC);
+
+
 
 
 
@@ -149,21 +168,26 @@ $friends = $stmt->fetch(PDO::FETCH_ASSOC);
                                             <br><br><img src="present_image/<?php echo $give['img_name']; ?>" class="picture-size" style="border-radius: 5%;">
                                         </div>
                                         <div class="col-md-6" style="font-size: 25px; line-height: 4em;">
-                                            <ul class="text-left" >
-                                                <li><?php echo $give['name'] ?></li>
-                                                <li><?php echo $give['date'] ?></li>
-                                                <li><?php echo $give['detail'] ?></li>
-                                            </ul>
-                                            <div class="btn_user">
-                                                <a href="list_edit.php?feed_id=<?php echo $allfeed["id"] ?>" class="btn btn-primary btn-sm">edit</a>
-                                                <a onclick="return confilm('ほんとに消すの？');" href="list_delete.php?id=<?php echo $give["id"] ?>" class="btn btn-danger btn-sm">delete</a>
-                                            </div>
-                                            <br>
+                                            <form class="form-group" method="post" action="list.php">
+                                                <ul class="text-left" >
+                                                    <li><textarea name="name" class="form-control"><?php echo $give['name'] ?></textarea></li>
+                                                    <li><textarea name="date" class="form-control"><?php echo $give['date'] ?></textarea></li>
+                                                    <li><textarea name="detail" class="form-control"><?php echo $give['detail'] ?></textarea></li>
+                                                </ul>
+                                                <div class="btn_user ">
+                                                    <input type="hidden" name="friend_id" value="<?php echo $give['friend_id'] ?>" >
+                                                    <input type="hidden" name="id" value="<?php echo $give['id'] ?>" >
+
+                                                    <input type="submit" class="btn btn-primary" value="edit">
+
+                                                    <a onclick="return confilm('ほんとに消すの？');" href="list_delete.php?id=<?php echo $give["id"] ?>&friend=<?php echo $_GET['id'];?>" class="btn btn-danger btn-sm">delete</a>
+                                                </div>
+                                            </form>
                                         </div>
+                                        <br>
                                     </div>
                                 </div>
                             </div>
-
                         <?php endforeach; ?>
                     </div>
                 </div>
@@ -191,19 +215,26 @@ $friends = $stmt->fetch(PDO::FETCH_ASSOC);
                                             <br><br><img src="present_image/<?php echo $take['img_name']; ?>" class="picture-size" style="border-radius: 5%;">
                                         </div>
                                         <div class="col-md-6" style="font-size: 25px; line-height: 4em;">
-                                            <ul class="text-left" >
-                                                <li><?php echo $take['name']?></li>
-                                                <li><?php echo $take['date']?></li>
-                                                <li><?php echo $take['detail']?></li>
-                                            </ul>
-                                            <p style="font-size: 15px; line-height: 1em;">リンク1の内容です。</p>
-                                            <br>
-                                            <p><a class="modal-close right-under">閉じる</a></p>
+                                            <form class="form-group" method="post" action="list.php">
+                                                <ul class="text-left" >
+                                                    <li><textarea name="name" class="form-control"><?php echo $take['name'] ?></textarea></li>
+                                                    <li><textarea name="date" class="form-control"><?php echo $take['date'] ?></textarea></li>
+                                                    <li><textarea name="detail" class="form-control"><?php echo $take['detail'] ?></textarea></li>
+                                                </ul>
+                                                <div class="btn_user ">
+                                                    <input type="hidden" name="friend_id" value="<?php echo $take['friend_id'] ?>" >
+                                                    <input type="hidden" name="id" value="<?php echo $take['id'] ?>" >
+
+                                                    <input type="submit" class="btn btn-primary" value="edit">
+
+                                                    <a onclick="return confilm('ほんとに消すの？');" href="list_delete.php?id=<?php echo $take["id"] ?>&friend=<?php echo $_GET['id'];?>" class="btn btn-danger btn-sm">delete</a>
+                                                </div>
+                                            </form>
                                         </div>
+                                        <br>
                                     </div>
                                 </div>
                             </div>
-
                         <?php endforeach; ?>
                     </div>
                 </div>
@@ -231,14 +262,23 @@ $friends = $stmt->fetch(PDO::FETCH_ASSOC);
                                             <br><br><img src="present_image/<?php echo $want['img_name']; ?>" class="picture-size" style="border-radius: 5%;">
                                         </div>
                                         <div class="col-md-6" style="font-size: 25px; line-height: 4em;">
-                                            <ul class="text-left" >
-                                                <li><?php echo $want['name']; ?></li>
-                                                <li><?php echo $want['date']; ?></li>
-                                                <li><?php echo $want['detail']; ?></li>
-                                            </ul>
-                                            <br>
-                                            <p><a class="modal-close right-under">閉じる</a></p>
+                                            <form class="form-group" method="post" action="list.php">
+                                                <ul class="text-left" >
+                                                    <li><textarea name="name" class="form-control"><?php echo $want['name'] ?></textarea></li>
+                                                    <li><textarea name="date" class="form-control"><?php echo $want['date'] ?></textarea></li>
+                                                    <li><textarea name="detail" class="form-control"><?php echo $want['detail'] ?></textarea></li>
+                                                </ul>
+                                                <div class="btn_user ">
+                                                    <input type="hidden" name="friend_id" value="<?php echo $want['friend_id'] ?>" >
+                                                    <input type="hidden" name="id" value="<?php echo $want['id'] ?>" >
+
+                                                    <input type="submit" class="btn btn-primary" value="edit">
+
+                                                    <a onclick="return confilm('ほんとに消すの？');" href="list_delete.php?id=<?php echo $want["id"] ?>&friend=<?php echo $_GET['id'];?>" class="btn btn-danger btn-sm">delete</a>
+                                                </div>
+                                            </form>
                                         </div>
+                                        <br>
                                     </div>
                                 </div>
                             </div>
