@@ -254,13 +254,21 @@ $file_name = '';
                             <br><br><img src="want_image/<?php echo $feed['img_name']; ?>" class="picture-size">
                         </div>
                         <div class="col-md-6" style="font-size: 25px; line-height: 4em;">
-                            <ul class="text-left" >
-                                <li><?php echo $feed['name'] ?></li>
-                                <li><?php echo $feed['price'] ?></li>
-                                <li><?php echo $feed['detail'] ?></li>
-                            </ul>
-                            <br>
-                            <p><a class="modal-close right-under">閉じる</a></p>
+                            <form class="form-group" method="post" action="want.php">
+                                <ul class="text-left" >
+                                    <li><textarea name="name" class="form-control"><?php echo $feed['name'] ?></textarea></li>
+                                    <li><textarea name="price" class="form-control"><?php echo $feed['price'] ?></textarea></li>
+                                    <li><textarea name="detail" class="form-control"><?php echo $feed['detail'] ?></textarea></li>
+                                </ul>
+                            <div class="btn_user">
+                                <input type="hidden" name="user_id" value="<?php echo $feed['user_id'] ?>" >
+                                <input type="hidden" name="id" value="<?php echo $feed['id'] ?>" >
+
+                                <input type="submit" class="btn btn-primary" value="edit">
+
+                                    <a onclick="return confilm('ほんとに消すの？');" href="want_delete.php?id=<?php echo $feed["id"]?>" class="btn btn-danger btn-sm">delete</a>
+                            </div>
+                        </form>
                         </div>
                     </div>
                 </div>

@@ -249,4 +249,3 @@ foreach($friends as $friend){
 
 </body>
 </html>
-

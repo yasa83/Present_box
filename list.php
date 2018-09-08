@@ -162,7 +162,7 @@ $friends = $stmt->fetch(PDO::FETCH_ASSOC);
                                     </a>
                                 </div>
                                 <!-- モーダル -->
-                                <div id="give_<?echo $give['id']?>" class="modal-content" style="width: 800px; height: 500px;">
+                                <div id="give_<?echo $give['id']?>" class="modal-content" style="width: 800px; height: 400px;">
                                     <div class="row">
                                         <div class="col-md-6">
                                             <br><br><img src="present_image/<?php echo $give['img_name']; ?>" class="picture-size" style="border-radius: 5%;">
@@ -174,7 +174,7 @@ $friends = $stmt->fetch(PDO::FETCH_ASSOC);
                                                     <li><textarea name="date" class="form-control"><?php echo $give['date'] ?></textarea></li>
                                                     <li><textarea name="detail" class="form-control"><?php echo $give['detail'] ?></textarea></li>
                                                 </ul>
-                                                <div class="btn_user ">
+                                                <div class="btn_user">
                                                     <input type="hidden" name="friend_id" value="<?php echo $give['friend_id'] ?>" >
                                                     <input type="hidden" name="id" value="<?php echo $give['id'] ?>" >
 
@@ -209,7 +209,7 @@ $friends = $stmt->fetch(PDO::FETCH_ASSOC);
                                     </a>
                                 </div>
                                 <!-- モーダル -->
-                                <div id="take_<?php $take['id']?>" class="modal-content" style="width: 800px; height: 500px;">
+                                <div id="take_<?php $take['id']?>" class="modal-content" style="width: 800px; height: 400px;">
                                     <div class="row">
                                         <div class="col-md-6">
                                             <br><br><img src="present_image/<?php echo $take['img_name']; ?>" class="picture-size" style="border-radius: 5%;">
@@ -256,7 +256,7 @@ $friends = $stmt->fetch(PDO::FETCH_ASSOC);
                                     </a>
                                 </div>
                                 <!-- モーダル -->
-                                <div id="want_<?php $want['id']?>" class="modal-content" style="width: 800px; height: 500px;">
+                                <div id="want_<?php $want['id']?>" class="modal-content" style="width: 800px; height: 400px;">
                                     <div class="row">
                                         <div class="col-md-6">
                                             <br><br><img src="present_image/<?php echo $want['img_name']; ?>" class="picture-size" style="border-radius: 5%;">
