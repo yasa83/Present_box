@@ -142,21 +142,31 @@
 
 
  <div class="item">
-  <div class="item-image"><img src="https://source.unsplash.com/400x300/?flower" alt=""></div>
+  <div class="item-image"><img src="assets/images/eplain1.jpg" alt=""></div>
   <div class="item-text">
-    <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. At quisquam iusto tempora vel, quia consequuntur.</p>
+    <li>アカウントをつくる</li>
+    <p>名前・ID・パスワード・プロフィール写真を入力してアカウントを作りましょう</p>
   </div>
 </div>
 <div class="item">
-  <div class="item-image"><img src="https://source.unsplash.com/400x300/?flower" alt=""></div>
+  <div class="item-image"><img src="assets/images/explain2.jpg" alt=""></div>
   <div class="item-text">
-    <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. At quisquam iusto tempora vel, quia consequuntur.</p>
+    <li>友達追加</li>
+    <p>友達のプロフィールを入力して、マイページの友達一覧に追加しましょう。</p>
   </div>
 </div>
 <div class="item">
-  <div class="item-image"><img src="https://source.unsplash.com/400x300/?flower" alt=""></div>
+  <div class="item-image"><img src="assets/images/explain3.jpg" alt=""></div>
   <div class="item-text">
-    <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. At quisquam iusto tempora vel, quia consequuntur.</p>
+    <li>一覧表示</li>
+    <p>友達のページに飛んで貰った物やあげたもの、ほしい物を追加できます。</p>
+  </div>
+</div>
+<div class="item">
+  <div class="item-image"><img src="assets/images/explain4.jpg" alt=""></div>
+  <div class="item-text">
+    <li>自分のほしいものを登録</li>
+    <p>Mｙ want listから自分の好きなものを追加できます</p>
   </div>
 </div>
 
