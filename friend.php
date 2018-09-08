@@ -103,7 +103,7 @@ if(!empty($_POST)){
             <div class="col-xs-10 col-xs-offset-1 thumbnail" style="background-color: #f5f5f5;">
                 <h2 class="text-center content_header"><br>Add your friend</h2>
                 <div class="col-xs-5 flexbox-container-vertical-center">
-                    <img src="assets/images/friend1.png" class="piture-ajust img-profile" style="width: 370px; height: 330px;">
+                    <img src="assets/images/girls.jpg" class="piture-ajust img-profile" style="width: 290px; height: 330px; border-radius: 5%;">
                 </div>
                 <div class="col-xs-7">
                     <form method="POST" action="friend.php" enctype="multipart/form-data">
