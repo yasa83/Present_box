@@ -187,8 +187,8 @@ foreach($friends as $friend){
                             <?php endforeach; ?>
                         <?php endif; ?>
                         <!-- ページネーション -->
-                        <div aria-label="Page navigation">
-                            <ul class="pager">
+                        <div aria-label="Page navigation" class="page-nation">
+                            <ul class="pager nation">
                                 <?php if ($page == 1): ?>
                                     <li class="previous disabled"><a><span aria-hidden="true">&larr;</span> Pre</a></li>
                                 <?php else: ?>
