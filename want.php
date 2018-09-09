@@ -8,6 +8,7 @@ if(!isset($_SESSION['id'])){
     exit();
 }
 
+// 現在いるページを取得
   if (isset($_GET['page'])) {
         $page = $_GET['page'];
     } else {
