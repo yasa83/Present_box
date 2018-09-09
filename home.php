@@ -40,13 +40,14 @@ $stmt_count->execute($data);
 
 $record_cnt = $stmt_count->fetch(PDO::FETCH_ASSOC);
 
+// -1などのページ数として不正な値を渡された場合の対策
+$record_cnt['cnt'] = max($record_cnt['cnt'], 1);
+
+
 // 取得したページ数を1ページあたりに表示する件数で割って何ページが最後になるか取得
 $last_page = ceil($record_cnt['cnt'] / CONTENT_PER_PAGE);
 
-// echo "<pre>";
-// var_dump($record_cnt['cnt']);
-// echo "</pre>";
-// die();
+
 
 // 最後のページより大きい値を渡された場合の対策
 $page = min($page, $last_page);
@@ -97,26 +98,6 @@ foreach($friends as $friend){
     // 結果に格納
         $results[] = $friend;
 }
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 
 
 ?>
@@ -185,6 +166,7 @@ foreach($friends as $friend){
             <div class="container">
                 <div class="row">
                     <div class="flame">
+                        <?php if(isset($results)):?>
                         <?php foreach($results as $result): ?>
                                 <section class="profile clearfix" style="display: inline-block;">
                                     <a href="list.php?id=<?php echo $result["id"]; ?>" class="btn btn-primary"><?php echo $result["friends_name"]; ?></a>
@@ -203,6 +185,7 @@ foreach($friends as $friend){
                                     </div>
                             </section>
                             <?php endforeach; ?>
+                        <?php endif; ?>
                         <!-- ページネーション -->
                         <div aria-label="Page navigation">
                             <ul class="pager">
