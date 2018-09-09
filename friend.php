@@ -91,6 +91,7 @@ if(!empty($_POST)){
     <!-- Theme style  -->
     <link rel="stylesheet" href="assets/css/style.css">
        <link rel="stylesheet" media="(max-width: 640px)" href="assets/css/mobile.css">
+         <link rel="stylesheet" href="assets/css/moc_fix.css">
     <!-- Modernizr JS -->
     <script src="assets/js/modernizr-2.6.2.min.js"></script>
 </head>
@@ -107,26 +108,26 @@ if(!empty($_POST)){
                 </div>
                 <div class="col-xs-7">
                     <form method="POST" action="friend.php" enctype="multipart/form-data">
-                        <div class="form-group">
+                        <div class="form-group first">
                             <label for="title">Name</label>
                             <input type="text" name="friend_name" class="form-control"  placeholder="enter your friend's name">
                             <?php if(isset($errors['name']) && $errors['name'] == 'blank'): ?>
                                 <p class="text-danger">Enter friend's name</p>
                             <?php endif;?>
                         </div>
-                        <div class="form-group">
+                        <div class="form-group second">
                             <label for="price">Birthdy</label>
                             <input type="date" name="friend_birthday" class="form-control"  placeholder="enter your friend's birthday">
                             <?php if(isset($errors['birthday']) && $errors['birthday'] == 'blank'): ?>
                             <p class="text-danger">Enter friend's birthday</p>
                             <?php endif;?>
                         </div>
-                        <div class="form-group">
+                        <div class="form-group third third-first">
                             <div type="hidden" class="box" style="height: 40px;">
                            <!--  <label for="detail">search id</label>
                             <input type="text" name="friend_id" class="form-control" rows="10" placeholder="enter id,if your friend have id" value=""> -->
                         </div>
-                        <div class="form-group">
+                        <div class="form-group fourth bt-1">
                             <label for="img_name">picture</label>
                             <input type="file" name="friend_img_name" id="image/*"
                         id="img_name">
@@ -139,7 +140,7 @@ if(!empty($_POST)){
                         </div>
                     </div>
                     <br>
-                <div class="text-center content_header">
+                <div class="text-center content_header bt-2">
                     <a href="home.php" style="margin: 15px,background-color: black;">Back</a>
                     <input type="submit" class="btn btn-primary" value="POST">
                 </div>
