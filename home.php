@@ -42,7 +42,7 @@ $stmt_count->execute($data);
 
 $record_cnt = $stmt_count->fetch(PDO::FETCH_ASSOC);
 
-//このコードで１より大きいものを取得できるようにする
+//上でこのコードで１より大きいものを取得できるようにする
 $record_cnt['cnt'] = max($record_cnt['cnt'], 1);
 
 // 取得したページ数を1ページあたりに表示する件数で割って何ページが最後になるか取得
