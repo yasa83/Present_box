@@ -266,7 +266,7 @@ $file_name = '';
                                 <input type="hidden" name="id" value="<?php echo $feed['id'] ?>" >
 
                                 <input type="submit" class="btn btn-primary" value="edit">
-                                <a onclick="return confilm('ほんとに消すの？');" href="want_delete.php?id=<?php echo $give["id"] ?> class="btn btn-danger btn-sm">delete</a>
+                                <a onclick="return confilm('ほんとに消すの？');" href="want_delete.php?id=<?php echo $feed["id"] ?> class="btn btn-danger btn-sm">delete</a>
                             </div>
                             </form>
                         </div>
