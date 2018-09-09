@@ -12,7 +12,7 @@
                                 <li class="dropdown">
                                     <!-- ユーザーID取得 -->
                                     <span hidden id="signin-user"><? $signin_user['id']; ?></span>
-                                    <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false" style="background-color: #F14E95; color: white; height: 20px;">
+                                    <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false" style="background-color: #F14E95; color: white;">
                                         <?php echo $signin_user['users_name']; ?><span class="caret"></span></a>
                                     <ul class="dropdown-menu">
                                         <li><a href="want.php">my want list</a></li>
