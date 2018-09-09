@@ -31,6 +31,8 @@ const CONTENT_PER_PAGE = 5;
 
 // -1などのページ数として不正な値を渡された場合の対策
 $page = max($page, 1);
+// var_dump($page);
+// die();
 
 // ヒットしたレコードの数を取得するSQL
 $sql_count = "SELECT COUNT(*) AS `cnt` FROM `friends` WHERE `user_id` = ?";
@@ -40,19 +42,25 @@ $stmt_count->execute($data);
 
 $record_cnt = $stmt_count->fetch(PDO::FETCH_ASSOC);
 
+//このコードで１より大きいものを取得できるようにする
+$record_cnt['cnt'] = max($record_cnt['cnt'], 1);
+
 // 取得したページ数を1ページあたりに表示する件数で割って何ページが最後になるか取得
 $last_page = ceil($record_cnt['cnt'] / CONTENT_PER_PAGE);
 
 // echo "<pre>";
-// var_dump($record_cnt['cnt']);
+// var_dump($record_cnt);
 // echo "</pre>";
 // die();
 
 // 最後のページより大きい値を渡された場合の対策
 $page = min($page, $last_page);
+// var_dump($last_page);
+// die();
 
 $start = ($page - 1) * CONTENT_PER_PAGE;
-
+// var_dump($start);
+// die();
 
 // 最終的な結果を入れる配列の用意
 $results = [];
