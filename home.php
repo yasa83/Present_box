@@ -100,26 +100,6 @@ foreach($friends as $friend){
 }
 
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 ?>
 
 <!DOCTYPE html>
@@ -186,6 +166,7 @@ foreach($friends as $friend){
             <div class="container">
                 <div class="row">
                     <div class="flame">
+                        <?php if(isset($results)):?>
                         <?php foreach($results as $result): ?>
                                 <section class="profile clearfix" style="display: inline-block;">
                                     <a href="list.php?id=<?php echo $result["id"]; ?>" class="btn btn-primary"><?php echo $result["friends_name"]; ?></a>
@@ -204,6 +185,7 @@ foreach($friends as $friend){
                                     </div>
                             </section>
                             <?php endforeach; ?>
+                        <?php endif; ?>
                         <!-- ページネーション -->
                         <div aria-label="Page navigation">
                             <ul class="pager">
