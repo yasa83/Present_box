@@ -255,7 +255,7 @@ $file_name = '';
                             <br><br><img src="want_image/<?php echo $feed['img_name']; ?>" class="picture-size">
                         </div>
                         <div class="col-md-6" style="font-size: 25px; line-height: 4em;">
-                            <form class="form-group" method="post" action="want.php">
+                            <form class="form-group" method="post" action="want_edit.php">
                                 <ul class="text-left" >
                                     <li><textarea name="name" class="form-control"><?php echo $feed['name'] ?></textarea></li>
                                     <li><textarea name="price" class="form-control"><?php echo $feed['price'] ?></textarea></li>

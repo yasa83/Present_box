@@ -40,13 +40,14 @@ $stmt_count->execute($data);
 
 $record_cnt = $stmt_count->fetch(PDO::FETCH_ASSOC);
 
+// -1などのページ数として不正な値を渡された場合の対策
+$record_cnt['cnt'] = max($record_cnt['cnt'], 1);
+
+
 // 取得したページ数を1ページあたりに表示する件数で割って何ページが最後になるか取得
 $last_page = ceil($record_cnt['cnt'] / CONTENT_PER_PAGE);
 
-// echo "<pre>";
-// var_dump($record_cnt['cnt']);
-// echo "</pre>";
-// die();
+
 
 // 最後のページより大きい値を渡された場合の対策
 $page = min($page, $last_page);
