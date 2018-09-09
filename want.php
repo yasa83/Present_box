@@ -151,7 +151,7 @@ $file_name = '';
     <link rel="stylesheet" href="assets/css/style.css">
     <link rel="stylesheet" href="assets/css/want.css">
     <link rel="stylesheet" media="(max-width: 640px)" href="assets/css/mobile.css">
-
+      
   
 
 
@@ -174,7 +174,7 @@ $file_name = '';
         <h2 class="text-center content_header">Want List</h2>
 
         <form method="POST" action="want.php" enctype="multipart/form-data">
-          <div class="form-group">
+          <div class="form-first">
             <label for="title">Title</label>
             <input type="text" name="input_title" class="form-control" id="title" placeholder="あなたが欲しいものを入力してください">
             <?php if(isset($errors['title']) && $errors['title'] =='blank'): ?>
