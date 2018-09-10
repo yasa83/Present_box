@@ -151,6 +151,8 @@ $file_name = '';
     <link rel="stylesheet" href="assets/css/style.css">
     <link rel="stylesheet" media="(max-width: 640px)" href="assets/css/mobile.css">
      <link rel="stylesheet" href="assets/css/want.css">
+     <link rel="stylesheet" href="assets/css/moc_fix.css">
+
       
   
 
