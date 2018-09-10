@@ -1,25 +1,18 @@
-
-*
-  フォント名は Win と Mac で少しだけ異なる。
-  Windows: "游ゴシック", "Yu Gothic"
-  Mac: "游ゴシック体", "YuGothic"
-*/
-@font-face {
-  font-family: "YuGothic M";
-  src: local("Yu Gothic Medium"),
-       local("Yu Gothic");
-  font-weight: 500;
-       /*
-         Chrome 58.0.3029.110 (64-bit) では
-         "Yu Gothic Medium" を認識しないバグあるため
-         "Yu Gothic" と font-weight も併せて指定。
-       */
-}
-
-
-
-h2.text-center ,.content_header
+.text-center ,.content_header
 {color: #F14E95;
- font-family: "游ゴシック体", YuGothic, "YuGothic M", sans-serif;
-
+ font-family:
 }
+
+h2{    margin-bottom: 1px;}
+
+.a ,.b{
+    margin-top: 6px;
+    margin-bottom: -7px
+}
+
+.c{    margin-bottom: -10px;
+    margin-top: 15px;}
+
+p{margin-bottom: -12px;}
+
+.d{margin-bottom:2px;}
