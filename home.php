@@ -182,10 +182,12 @@ foreach($friends as $friend){
                                                     <img src="friend_profile_image/<?php echo $result['friend_img']; ?>" class="piture-ajust img-profile " style="width: 200px; height: 180px; border-radius: 50%;" link="list.php">
                                                 </a>
                                             </div>
+                                            <?php if(isset($result['present'])): ?>
                                             <?php foreach($result['present'] as $v): ?>
                                                 <div class="col-sm-2" ><img src="present_image/<?php echo $v['img_name']; ?>" class="present-image" style="width: 180px; height: 150px; margin-top: 20px; border-radius: 10%;">
                                                 </div>
                                             <?php endforeach; ?>
+                                        <?php endif; ?>
                                         </div>
                                     </div>
                             </section>
