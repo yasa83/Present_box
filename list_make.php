@@ -167,9 +167,9 @@ if(!empty($_POST)){
                         <input type="hidden" name="friend_id" value="<?php echo $friend_id; ?>">
                     <br>
                     <ul class="nav navbar-nav navbar-left">
-                        <li class="active"><a href="list.php?id=<?php echo $friend_id;?>" style="margin: 15px,background-color: black;">友達のページに戻る</a></li>
+                        <li class="active"><a href="list.php?id=<?php echo $friend_id;?>" style="margin: 15px,background-color: black;">Back</a></li>
                     </ul>
-                    <input type="submit" class="btn btn-primary" value="登録">
+                    <input type="submit" class="btn btn-primary" value="POST">
                 </form>
             </div>
         </div>

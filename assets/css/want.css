@@ -16,9 +16,10 @@
 }
 
 
-h3 .text-center ,.content_header
-{color: white;
- font-family: "游ゴシック体", YuGothic, "YuGothic M", sans-serif;}
+h3 
+{ font-family: "游ゴシック体", YuGothic, "YuGothic M", sans-serif;
+color: white;
+}
 
 .text-center ,.content_header
 {
