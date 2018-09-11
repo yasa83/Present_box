@@ -108,6 +108,7 @@ if(!empty($_POST)){
     <link rel="stylesheet" href="assets/css/owl.theme.default.min.css">
     <!-- Theme style  -->
     <link rel="stylesheet" href="assets/css/style.css">
+      <link rel="stylesheet" href="assets/css/friend.css">
     <!-- Modernizr JS -->
     <script src="assets/js/modernizr-2.6.2.min.js"></script>
 </head>
@@ -120,7 +121,7 @@ if(!empty($_POST)){
             <div class="col-xs-8 col-xs-offset-2 thumbnail">
                 <h2 class="text-center content_header">To present</h2>
                 <form method="POST" action="list_make.php" enctype="multipart/form-data">
-                    <div class="form-group">
+                    <div class="form-group a">
                         <label class="checkbox-inline">
                             <input type="radio" name="check" value="give" checked="checked">友達にあげたもの
                         </label>
@@ -134,14 +135,14 @@ if(!empty($_POST)){
                             <p class="text-danger">Choose one</p>
                         <?php endif;?>
                     </div>
-                    <div class="form-group">
+                    <div class="form-group b">
                         <label for="present">Present</label>
                         <input type="text" name="input_present" class="form-control" value="" placeholder="商品名">
                         <?php if(isset($errors['present']) && $errors['present'] == 'blank'): ?>
                             <p class="text-danger">Enter present's name</p>
                         <?php endif;?>
                     </div>
-                    <div class="form-group">
+                    <div class="form-group c">
                         <label for="date">date</label>
                         <input type="date" name="input_date" class="form-control" value="" placeholder="もらった・あげた日付を登録してください">
                         <?php if(isset($errors['date']) && $errors['date'] == 'blank'): ?>
@@ -152,7 +153,7 @@ if(!empty($_POST)){
                         <label for="detail">Detail</label>
                         <input type="text" name="input_detail" class="form-control" rows="10" placeholder="メモを入力してください" value="">
                     </div>
-                    <div class="form-group">
+                    <div class="form-group d">
                         <label for="img_name"></label>
                         <input type="file" name="input_img_name" id="image/*"
                         id="img_name">
@@ -160,15 +161,15 @@ if(!empty($_POST)){
                             <p class="text-danger">enter present's image</p>
                         <?php endif;?>
                         <?php if(isset($errors['img_name'])&& $errors['img_name'] == 'type'): ?>
-                            <p class="text-danger">only 'jpg'.'png','gif' type</p>
+                            <p class="text-danger d">only 'jpg'.'png','gif' type</p>
                         <?php endif;?>
                     </div>
                         <input type="hidden" name="friend_id" value="<?php echo $friend_id; ?>">
                     <br>
                     <ul class="nav navbar-nav navbar-left">
-                        <li class="active"><a href="list.php?id=<?php echo $friend_id;?>" style="margin: 15px,background-color: black;">友達のページに戻る</a></li>
+                        <li class="active"><a href="list.php?id=<?php echo $friend_id;?>" style="margin: 15px,background-color: black;">Back</a></li>
                     </ul>
-                    <input type="submit" class="btn btn-primary" value="登録">
+                    <input type="submit" class="btn btn-primary" value="POST">
                 </form>
             </div>
         </div>
