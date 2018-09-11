@@ -179,21 +179,23 @@ foreach($friends as $friend){
                                         <div class="row">
                                             <div class="col-sm-4">
                                                 <a href="list.php?id=<?php echo $result["id"];?>">
-                                                    <img src="friend_profile_image/<?php echo $result['friend_img']; ?>" class="piture-ajust img-profile " style="width: 200px; height: 180px; border-radius: 50%;" link="list.php">
+                                                    <img src="friend_profile_image/<?php echo $result['friend_img']; ?>" class="piture-ajust img-profile " style="width: 200px; height: 160px; border-radius: 50%;" link="list.php">
                                                 </a>
                                             </div>
+                                            <?php if(isset($result['present'])): ?>
                                             <?php foreach($result['present'] as $v): ?>
                                                 <div class="col-sm-2" ><img src="present_image/<?php echo $v['img_name']; ?>" class="present-image" style="width: 180px; height: 150px; margin-top: 20px; border-radius: 10%;">
                                                 </div>
                                             <?php endforeach; ?>
+                                        <?php endif; ?>
                                         </div>
                                     </div>
                             </section>
                             <?php endforeach; ?>
                         <?php endif; ?>
                         <!-- ページネーション -->
-                        <div aria-label="Page navigation">
-                            <ul class="pager">
+                        <div aria-label="Page navigation" class="page-nation">
+                            <ul class="pager nation">
                                 <?php if ($page == 1): ?>
                                     <li class="previous disabled"><a><span aria-hidden="true">&larr;</span> Pre</a></li>
                                 <?php else: ?>

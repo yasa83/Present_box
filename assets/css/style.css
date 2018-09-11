@@ -2021,3 +2021,8 @@ input::-webkit-input-placeholder {
 .btn_user{
     text-align: right;
 }
+
+.nation{
+  margin: 30px 20% 10px 20%;
+}
+
