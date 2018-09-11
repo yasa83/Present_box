@@ -124,6 +124,7 @@ $friends = $stmt->fetch(PDO::FETCH_ASSOC);
         <div class="container">
             <div class="row">
                 <div class="col-md-8 col-md-offset-2 text-center fh5co-heading animate-box">
+                    <img src="friend_profile_image/<?php echo $friends['img_name'];?>">
                     <span><?php echo $friends['birthday']; ?></span>
                     <h2><?php echo $friends['friends_name']; ?></h2>
                     <form method="GET" action="" class="" role="search">
