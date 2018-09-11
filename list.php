@@ -159,12 +159,12 @@ $friends = $stmt->fetch(PDO::FETCH_ASSOC);
                         <?php foreach ($gives as $give): ?>
                             <div class="give">
                                 <div class="col-xs-4">
-                                    <a data-target="give_<?echo $give['id']?>" class="modal-open" >
+                                    <a data-target="give_<?php echo $give['id']?>" class="modal-open" >
                                         <img src="present_image/<?php echo $give['img_name']; ?>" class="picture-size" style="width:300px; height:300px; border-radius: 5%; margin: 10px; ">
                                     </a>
                                 </div>
                                 <!-- モーダル -->
-                                <div id="give_<?echo $give['id']?>" class="modal-content" style="width: 800px; height: 400px;">
+                                <div id="give_<?php echo $give['id']?>" class="modal-content" style="width: 800px; height: 400px;">
                                     <div class="row">
                                         <div class="col-md-6">
                                             <br><br><img src="present_image/<?php echo $give['img_name']; ?>" class="picture-size" style="border-radius: 5%;">
