@@ -124,18 +124,22 @@ $friends = $stmt->fetch(PDO::FETCH_ASSOC);
         <div class="container">
             <div class="row">
                 <div class="col-md-8 col-md-offset-2 text-center fh5co-heading animate-box">
-                    <img src="friend_profile_image/<?php echo $friends['img_name'];?>">
-                    <span><?php echo $friends['birthday']; ?></span>
-                    <h2><?php echo $friends['friends_name']; ?></h2>
-                    <form method="GET" action="" class="" role="search">
+                    <div>
+                        <img  class="friend_img" src="friend_profile_image/<?php echo $friends['friend_img'];?>">
+                        <span class="friend_title"><?php echo $friends['friends_name']; ?>さんのBirthday<br><?php echo $friends['birthday']; ?></span><br><br>
+                        <h2 class="friend_title"><?php echo $friends['friends_name']; ?></h2>
+                    </div>
+                    <br><br><br><br>
+                    <form method="GET" action="list.php" role="search">
                         <div class="form-group">
                             <input type="text" style="width:200px"  name="search_word"  placeholder="プレゼントを検索">
                             <input type="hidden" name="id" value="<?php echo $_GET['id'] ?>">
-                            <span class="form-group">
+                            <span class="form-group list_search">
                                 <button  class="btn square_btn">Serch</button>
                             </span>
                         </div>
                     </form>
+                    <a href="friend_edit.php?id=<?php echo $friends["id"]; ?>" class="btn btn-primary">edit friend profile</a>
                     <a href="list_make.php?id=<?php echo $friends["id"]; ?>" class="btn btn-primary">register present</a>
                 </div>
             </div>
