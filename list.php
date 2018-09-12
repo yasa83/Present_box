@@ -165,12 +165,12 @@ $friends = $stmt->fetch(PDO::FETCH_ASSOC);
                         <?php foreach ($gives as $give): ?>
                             <div class="give">
                                 <div class="col-xs-4">
-                                    <a data-target="give_<?echo $give['id']?>" class="modal-open" >
+                                    <a data-target="give_<?php echo $give['id']?>" class="modal-open" >
                                         <img src="present_image/<?php echo $give['img_name']; ?>" class="picture-size" style="width:300px; height:300px; border-radius: 5%; margin: 10px; ">
                                     </a>
                                 </div>
                                 <!-- モーダル -->
-                                <div id="give_<?echo $give['id']?>" class="modal-content" style="width: 800px; height: 400px;">
+                                <div id="give_<?php echo $give['id']?>" class="modal-content" style="width: 800px; height: 400px;">
                                     <div class="row">
                                         <div class="col-md-6">
                                             <br><br><img src="present_image/<?php echo $give['img_name']; ?>" class="picture-size" style="border-radius: 5%;">
@@ -212,12 +212,12 @@ $friends = $stmt->fetch(PDO::FETCH_ASSOC);
                         <?php foreach ($takes as $take): ?>
                             <div class="take">
                                 <div class="col-xs-4 ">
-                                    <a data-target="take_<?php $take['id'] ?>" class="modal-open">
+                                    <a data-target="take_<?php echo $take['id'] ?>" class="modal-open">
                                         <img src="present_image/<?php echo $take['img_name']; ?>" class="picture-size" style="width:300px; height:300px; border-radius: 5%; margin: 10px; ">
                                     </a>
                                 </div>
                                 <!-- モーダル -->
-                                <div id="take_<?php $take['id']?>" class="modal-content" style="width: 800px; height: 400px;">
+                                <div id="take_<?php echo $take['id']?>" class="modal-content" style="width: 800px; height: 400px;">
                                     <div class="row">
                                         <div class="col-md-6">
                                             <br><br><img src="present_image/<?php echo $take['img_name']; ?>" class="picture-size" style="border-radius: 5%;">
@@ -259,12 +259,12 @@ $friends = $stmt->fetch(PDO::FETCH_ASSOC);
                         <?php foreach ($wants as $want): ?>
                             <div class="want">
                                 <div class="col-xs-4 ">
-                                    <a data-target="want_<?php $want['id']?>" class="modal-open">
+                                    <a data-target="want_<?php echo $want['id']?>" class="modal-open">
                                         <img src="present_image/<?php echo $want['img_name']; ?>" class="picture-size" style="width:300px; height:300px; border-radius: 5%; margin: 10px; ">
                                     </a>
                                 </div>
                                 <!-- モーダル -->
-                                <div id="want_<?php $want['id']?>" class="modal-content" style="width: 800px; height: 400px;">
+                                <div id="want_<?php echo $want['id']?>" class="modal-content" style="width: 800px; height: 400px;">
                                     <div class="row">
                                         <div class="col-md-6">
                                             <br><br><img src="present_image/<?php echo $want['img_name']; ?>" class="picture-size" style="border-radius: 5%;">
