@@ -39,12 +39,13 @@ if(!empty($_POST)){
 //DBからプレゼントデータ取得
 if (isset($_GET['search_word'])) {
     $id = $_GET['id'];
-    $sql = 'SELECT * FROM `presents` WHERE `friend_id` = ? AND (`name` OR `detail` LIKE "%" ? "%")';
-    $data = array($id,$_GET['search_word']);
+    $sql = 'SELECT * FROM `presents` WHERE `friend_id` = ? AND (`name` LIKE "%" ? "%" OR `detail` LIKE "%" ? "%")';
+    $data = array($id, $_GET['search_word'], $_GET['search_word']);
 } else{
     $sql = 'SELECT * FROM `presents` WHERE `friend_id` = ?';
     $data = array($_GET['id']);
 }
+    // var_dump($sql);die();
     $stmt = $dbh->prepare($sql);
     $stmt->execute($data);
 
