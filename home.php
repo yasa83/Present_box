@@ -179,7 +179,7 @@ foreach($friends as $friend){
                                         <div class="row">
                                             <div class="col-sm-4">
                                                 <a href="list.php?id=<?php echo $result["id"];?>">
-                                                    <img src="friend_profile_image/<?php echo $result['friend_img']; ?>" class="piture-ajust img-profile " style="width: 200px; height: 160px; border-radius: 50%;" link="list.php">
+                                                    <img src="friend_profile_image/<?php echo $result['friend_img']; ?>" class="piture-ajust img-profile " style="width: 230px; height: 200px; border-radius: 50%;" link="list.php">
                                                 </a>
                                             </div>
                                             <?php if(isset($result['present'])): ?>
