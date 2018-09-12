@@ -259,8 +259,11 @@ $file_name = '';
                         <div class="col-md-6" style="font-size: 25px; line-height: 4em;">
                             <form class="form-group" method="post" action="want_edit.php">
                                 <ul class="text-left" >
+                                    <h5>Name</h5>
                                     <li><textarea name="name" class="form-control"><?php echo $feed['name'] ?></textarea></li>
+                                    <h5>Price</h5>
                                     <li><textarea name="price" class="form-control"><?php echo $feed['price'] ?></textarea></li>
+                                    <h5>Detail</h5>
                                     <li><textarea name="detail" class="form-control"><?php echo $feed['detail'] ?></textarea></li>
                                 </ul>
                             <div class="btn_user">
