@@ -1,6 +1,7 @@
 <?php
 session_start();
 require('dbconnect.php');
+require('function.php');
 
 // 直接このページに来たらsignin.phpに飛ぶようにする
 if(!isset($_SESSION['id'])){
@@ -9,12 +10,8 @@ if(!isset($_SESSION['id'])){
 }
 
 //サインインユーザー情報取得
-$sql = 'SELECT * FROM `users` WHERE `id` =?';
-$data = array($_SESSION['id']);
-$stmt = $dbh->prepare($sql);
-$stmt->execute($data);
+$signin_user = get_user($dbh, $_SESSION['id']);
 
-$signin_user = $stmt->fetch(PDO::FETCH_ASSOC);
 
 // エラーの初期化
 $errors = array();
