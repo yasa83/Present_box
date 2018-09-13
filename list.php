@@ -174,8 +174,11 @@ $friends = $stmt->fetch(PDO::FETCH_ASSOC);
                                         <div class="col-md-6" style="font-size: 25px; line-height: 4em;">
                                             <form class="form-group" method="post" action="list.php">
                                                 <ul class="text-left" >
+                                                    <h5>Name</h5>
                                                     <li><textarea name="name" class="form-control"><?php echo $give['name'] ?></textarea></li>
+                                                    <h5>Date</h5>
                                                     <li><textarea name="date" class="form-control"><?php echo $give['date'] ?></textarea></li>
+                                                    <h5>Detail</h5>
                                                     <li><textarea name="detail" class="form-control"><?php echo $give['detail'] ?></textarea></li>
                                                 </ul>
                                                 <div class="btn_user">
