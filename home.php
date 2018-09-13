@@ -83,7 +83,7 @@ while (1) {
 // 友達一覧を繰り返す処理
 foreach($friends as $friend){
     // プレゼントを取得する処理
-    $sql = 'SELECT * FROM `presents` WHERE `friend_id`= ? LIMIT 4 OFFSET 0';
+    $sql = 'SELECT * FROM `presents` WHERE `friend_id`= ? ORDER BY `id` DESC LIMIT 4 OFFSET 0';
 
     $data = array($friend['id']);
     $stmt = $dbh->prepare($sql);
