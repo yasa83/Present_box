@@ -23,12 +23,7 @@ const CONTENT_PER_PAGE = 9;
 $page = max($page, 1);
 
 // ヒットしたレコードの数を取得するSQL
-$sql_count = "SELECT COUNT(*) AS `cnt` FROM `wants`";
-
-$stmt_count = $dbh->prepare($sql_count);
-$stmt_count->execute();
-
-$record_cnt = $stmt_count->fetch(PDO::FETCH_ASSOC);
+$record_cnt = get_cnt($dbh);
 
 // 取得したページ数を1ページあたりに表示する件数で割って何ページが最後になるか取得
 $last_page = ceil($record_cnt['cnt'] / CONTENT_PER_PAGE);

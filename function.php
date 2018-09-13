@@ -23,4 +23,16 @@ function get_page($dbh,$users_id)
 }
 
 
+
+// ヒットしたレコードの数を取得するSQLwant.php
+function get_cnt($dbh)
+{
+    $sql_count = "SELECT COUNT(*) AS `cnt` FROM `wants`";
+    $stmt_count = $dbh->prepare($sql_count);
+    $stmt_count->execute();
+
+    return $stmt_count->fetch(PDO::FETCH_ASSOC);
+}
+
+
 ?>
