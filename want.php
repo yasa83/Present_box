@@ -33,10 +33,6 @@ $page = min($page, $last_page);
 
 $start = ($page - 1) * CONTENT_PER_PAGE;
 
-
-
-
-
 //サインインユーザー情報取得
 $signin_user = get_user($dbh, $_SESSION['id']);
 
@@ -84,8 +80,8 @@ $file_name = '';
 
         move_uploaded_file($_FILES['img_name']['tmp_name'],'want_image/'.$submit_file_name);
 
-        $sql = 'INSERT INTO `wants` SET `name` =?,`price`=?,`detail`=?,`img_name`=?';
-        $data = array($title,$price,$detail,$submit_file_name);
+        $sql = 'INSERT INTO `wants` SET `name` =?,`price`=?,`detail`=?,`img_name`=?, `user_id` = ?';
+        $data = array($title,$price,$detail,$submit_file_name, $signin_user['id']);
         $stmt = $dbh->prepare($sql);
         $stmt->execute($data);
 
@@ -95,9 +91,10 @@ $file_name = '';
 
 }
 
-    $sql ='SELECT * FROM `wants` LIMIT '. CONTENT_PER_PAGE .' OFFSET ' . $start;
-    $stmt= $dbh->prepare($sql);
-    $stmt->execute();
+    $sql ='SELECT * FROM `wants` WHERE `user_id` = ? LIMIT '. CONTENT_PER_PAGE .' OFFSET ' . $start;
+    $data = array($signin_user['id']); 
+    $stmt = $dbh->prepare($sql);
+    $stmt->execute($data);
 
     $feeds = array();
 
