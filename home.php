@@ -12,7 +12,6 @@ if(!isset($_SESSION['id'])){
 //サインインユーザー情報取得
 $signin_user = get_user($dbh, $_SESSION['id']);
 
-
 // エラーの初期化
 $errors = array();
 
@@ -32,12 +31,7 @@ $page = max($page, 1);
 // die();
 
 // ヒットしたレコードの数を取得するSQL
-$sql_count = "SELECT COUNT(*) AS `cnt` FROM `friends` WHERE `user_id` = ?";
-$data = array($signin_user['id']);
-$stmt_count = $dbh->prepare($sql_count);
-$stmt_count->execute($data);
-
-$record_cnt = $stmt_count->fetch(PDO::FETCH_ASSOC);
+$record_cnt = get_page($dbh, $signin_user['id']);
 
 
 //上でこのコードで１より大きいものを取得できるようにする
